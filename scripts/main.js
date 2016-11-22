@@ -1,4 +1,4 @@
-// TODO Edit the code so that it functions properly (This is just copied from the tutorial)
+// TODO Edit the code so that it functions properly (This is mainly just copied from the tutorial)
 function docLoaded(fn) {
 	if (document.readyState !== 'loading'){
 		fn();
