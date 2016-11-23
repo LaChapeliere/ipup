@@ -55,5 +55,5 @@ function docLoaded(fn) {
 function indexPageLoaded() {
 	var api = new APIConnect();
 	var testObject = {username: "Fred", password: "passwd", action: "be_a_badass!"};
-	api.constructURL(testObject);
+	constructURL(testObject);
 }
