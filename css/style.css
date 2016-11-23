@@ -1,1 +1,25 @@
 @import url("reset.css");
+
+html {
+	font-size: 30px;
+}
+
+header dt {
+	display: inline;
+	border: 1px solid #333;
+	border-radius: 1em;
+	padding: 1px 10px 1px;
+	background-color:#2f92de ;
+}
+
+header dl {
+	text-align: center;
+	padding: 1px 10px 1px;
+}
+
+header {
+	border: 1px solid #dddddd;
+	padding: 1.5em 1em .7em;
+	background-color:#898989 ;
+}
+
