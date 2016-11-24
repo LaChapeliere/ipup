@@ -18,15 +18,16 @@ header dt {
 	display: inline;
 }
 
-header button {
+header button, a {
 	font-size: 30px;
 	border: 1px solid #333;
 	border-radius: 1em;
 	padding: 3px 20px 3px;
 	background-color:#1ab3fd ;
+	text-decoration: none;
 }
 
-header button:hover {
+header button:hover, a:hover {
 	color: #1330ee;
 }
 
@@ -122,3 +123,15 @@ header {
 #sidebar div {
 	font-size: 20px;
 	}
+
+
+/*Stuff only related to the history/stats page!*/
+
+#historycontent {
+	font-size: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+
