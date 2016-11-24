@@ -1,4 +1,6 @@
 @import url("reset.css");
+@import "https://fonts.googleapis.com/css?family=Pacifico|Dosis";
+
 
 html {
 	font-size: 30px;
@@ -20,6 +22,8 @@ header dt {
 
 header button, a {
 	font-size: 30px;
+	color: black;
+	font-family: Dosis, sans-serif; /* Just to have something to work with, otherwise links and non-links gor different fonts*/
 	border: 1px solid #333;
 	border-radius: 1em;
 	padding: 3px 20px 3px;
