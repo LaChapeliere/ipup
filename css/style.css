@@ -86,6 +86,11 @@ header {
 	margin-top: 2em;
 	}
 
+#cart {
+	border: 1px solid #333;
+	border-radius: 1em;
+}
+
 #sidebar_footer button{
 	font-size: 16px;
 	border: 1px solid #333;
