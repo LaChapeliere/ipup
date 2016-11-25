@@ -5,10 +5,13 @@
 	<meta charset="utf-8" />
 	<link href="../css/reset.css" rel="stylesheet" />
 	<link href="../css/style.css" rel="stylesheet" />
-	<!-- <script src="../scripts/api.js"></script> -->
+	<script
+				  src="http://code.jquery.com/jquery-3.1.1.min.js"
+				  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+				  crossorigin="anonymous"></script>	<script src="../scripts/api.js"></script>
 	<script src="../scripts/main.js"></script>
 	<script>
-		docLoaded(indexPageLoaded);
+     $(document).ready(function() {indexPageLoaded});
 	</script>
 	<div id="wrapper">
 	<div class="container">
@@ -20,24 +23,24 @@
 			<dt><a href="historystats.html">History/Stats</a></dt>
 		</dl>
 		</header>
-		
+
    		<div id="sidebar">
    			<div id="sidebar_header">
    				Profile pic / Placeholder here
-   			
+
    			</div>
    			<div id="sidebar_header2">
    				<a href="https://www.youtube.com/watch?v=aSLZFdqwh7E">Log off</a> <!--We need to insert something that logs the son of gun out-->
-   				
+
    			</div>
    			<div id="sidebar_content">
    				<textarea id="cart" rows="17" placeholder="This is where your drinks go"></textarea>
-   			
+
    			</div>
    			<div id="sidebar_footer">
    				<button>Clear all</button>
    				<button>Purchase</button>
-   			
+
    			</div>
    		</div>
    		<div id="content">
@@ -71,12 +74,12 @@
    				<td>Drink</td>
    			</tr>
    			</table>
-   		
-   		
+
+
    		</div>
 	</div>
 	</div>
-	
+
 
 <body>
 
