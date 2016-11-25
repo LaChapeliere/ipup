@@ -11,14 +11,60 @@ function testAPIConnection() {
     'use strict';
     var api = new APIConnect();
 
-    console.log("Test");
+    console.log("Test api connection");
+    
+    //Test inventory_get
+    api.setUser('jorass', 'jorass');
+    api.fetchInventory(function (usr) {
+        console.log("Test inventory");
+        console.log(usr);
+    });
+    
+    //Test purchases_get
+    api.setUser('jorass', 'jorass');
+    api.fetchPurchases( function (usr) {
+        console.log("Test purchases_get admin");
+        console.log(usr);
+    });
+    api.setUser('edraug', 'edraug');
+    api.fetchPurchases( function (usr) {
+        console.log("Test purchases_get user");
+        console.log(usr);
+    });
+    
+    //Test purchases_get_all
+    api.setUser('jorass', 'jorass');
+    api.fetchPurchasesAll( function (usr) {
+        console.log("Test purchases_get_all");
+        console.log(usr);
+    });
+    
+    //Test purchases_get
+    api.setUser('jorass', 'jorass');
+    api.fetchPayments( function (usr) {
+        console.log("Test payments_get admin");
+        console.log(usr);
+    });
+    api.setUser('edraug', 'edraug');
+    api.fetchPayments( function (usr) {
+        console.log("Test payments_get user");
+        console.log(usr);
+    });
+    
+    //Test purchases_get_all
+    api.setUser('jorass', 'jorass');
+    api.fetchPaymentsAll( function (usr) {
+        console.log("Test payments_get_all");
+        console.log(usr);
+    });
 
-    //Test fetchIOU
+    //Test iou_get
     api.setUser('jorass', 'jorass');
     api.fetchIOU(function (usr) {
         var info = JSON.parse(usr),
             name = info.payload[0].first_name + " " + info.payload[0].last_name,
             credit = info.payload[0].assets;
+        console.log("Test iou_get admin");
         console.log(name);
         console.log(credit);
     });
@@ -27,13 +73,34 @@ function testAPIConnection() {
         var info = JSON.parse(usr),
             name = info.payload[0].first_name + " " + info.payload[0].last_name,
             credit = info.payload[0].assets;
+        console.log("Test iou_get user");
         console.log(name);
         console.log(credit);
+    });
+    
+    //Test iou_get_all
+    api.setUser('jorass', 'jorass');
+    api.fetchIOUall(function (usr) {
+        console.log("Test iou_get_all");
+        console.log(usr);
+    });
+    
+    //Test beer_data_get
+    api.setUser('jorass', 'jorass');
+    api.fetchBeerData("207504", function (usr) {
+        console.log("Test beer_data_get admin");
+        console.log(usr);
+    });
+    api.setUser('edraug', 'edraug');
+    api.fetchBeerData("207504", function (usr) {
+        console.log("Test beer_data_get user");
+        console.log(usr);
     });
 
     //Test user_get_all
     api.setUser('jorass', 'jorass');
     api.fetchUsers(function (usr) {
+        console.log("Test user_get_all");
         console.log(usr);
     });
 }

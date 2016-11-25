@@ -65,22 +65,87 @@ function APIConnect() {
         username = un;
         password = pw;
     };
-
+    
+    
     /**
-    * Method to fetch the users from the database and all their information
+    * Method to fetch the inventory from the database
     * @param callback The callback function to call on the response
     */
-    this.fetchUsers = function (callback) {
-        var url = constructURL({action: 'user_get_all', username: username, password: password});
+    this.fetchInventory = function (callback) {
+        var url = constructURL({action: 'inventory_get', username: username, password: password});
         request(url, callback);
     };
-
+    
+    /**
+    * Method to fetch the history of purchases for the current user from the database
+    * @param callback The callback function to call on the response
+    */
+    this.fetchPurchases = function (callback) {
+        var url = constructURL({action: 'purchases_get', username: username, password: password});
+        request(url, callback);
+    };
+    
+    /**
+    * Method to fetch the history of purchases for all users from the database
+    * @param callback The callback function to call on the response
+    */
+    this.fetchPurchasesAll = function (callback) {
+        var url = constructURL({action: 'purchases_get_all', username: username, password: password});
+        request(url, callback);
+    };
+    
+    /**
+    * Method to fetch the history of payments for the current user from the database
+    * @param callback The callback function to call on the response
+    */
+    this.fetchPayments = function (callback) {
+        var url = constructURL({action: 'payments_get', username: username, password: password});
+        request(url, callback);
+    };
+    
+    /**
+    * Method to fetch the history of payments for all users from the database
+    * @param callback The callback function to call on the response
+    */
+    this.fetchPaymentsAll = function (callback) {
+        var url = constructURL({action: 'payments_get_all', username: username, password: password});
+        request(url, callback);
+    };
+    
     /**
     * Method to fetch the basic information for the current user from the database
     * @param callback The callback function to call on the response
     */
     this.fetchIOU = function (callback) {
         var url = constructURL({action: 'iou_get', username: username, password: password});
+        request(url, callback);
+    };
+    
+    /**
+    * Method to fetch the basic information for all users from the database
+    * @param callback The callback function to call on the response
+    */
+    this.fetchIOUall = function (callback) {
+        var url = constructURL({action: 'iou_get_all', username: username, password: password});
+        request(url, callback);
+    };
+        
+    /**
+    * Method to fetch the data on a specified beer from the database
+    * @param beerId The id of the specified beer
+    * @param callback The callback function to call on the response
+    */
+    this.fetchBeerData = function (beerId, callback) {
+        var url = constructURL({action: 'beer_data_get', username: username, password: password, beer_id: beerId});
+        request(url, callback);
+    };
+
+    /**
+    * Method to fetch the users from the database and all their information from the database
+    * @param callback The callback function to call on the response
+    */
+    this.fetchUsers = function (callback) {
+        var url = constructURL({action: 'user_get_all', username: username, password: password});
         request(url, callback);
     };
 }
