@@ -65,7 +65,7 @@ header {
 	margin-top: 4em;
 	margin-right: auto;
 	}
-	
+
 #sidebar_header2 {
 	margin-top: 4em;
 	}
@@ -85,7 +85,7 @@ header {
 #sidebar_header2 a{
 	text-decoration: none;
 	}
-		
+
 #sidebar_content{
 	margin-top: 2em;
 	}
@@ -120,10 +120,10 @@ header {
    vertical-align: middle;
    color: black;
    padding: 1.5em;
-   background-color: #26A69A ;
+   background-color: background-color: #26C6DA ;
 
 }
-	
+
 #sidebar div {
 	font-size: 20px;
 	}
@@ -137,5 +137,3 @@ header {
 	margin-right: auto;
 	text-align: center;
 }
-
-
