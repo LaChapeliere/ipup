@@ -6,6 +6,7 @@
 /**
  * Constructor for the APIConnect object
  */
+
 function APIConnect() {
     'use strict';
     var baseURL = 'http://pub.jamaica-inn.net/fpdb/api.php', //The base url to connect to the database
@@ -18,25 +19,6 @@ function APIConnect() {
     * @return The string of the request url
     */
     function constructURL(params) {
-/*        var constructedURL = baseURL +"username"+ "=" + username +"&" + "password"+"="+password+"&";
-    //    var userArray = [];
-        for (var key in params) {
-            if (params.hasOwnProperty(key)) {
-                constructedURL += key + "=" + params[key] +"&";
-            //    console.log(constructedURL);
-            //    userArray.push(key);
-            //    userArray.push(params[key]);
-            //    console.log(key + " -> " + params[key]);
-            //    console.log(userArray);
-            }
-        }
-    //    userArray = userArray.slice(4);
-    //    console.log(userArray);
-        constructedURL = constructedURL.slice(0, -1);
-
-        // console.log(constructedURL);
-        return constructedURL;
-        */
         var param,
             url = baseURL;
         url += "?";
@@ -82,12 +64,6 @@ function APIConnect() {
     this.setUser = function(un, pw) {
         username = un;
         password = pw;
-/*
-        console.log(constructURL({
-            action: 'user_get_all',
-            action12: 'be_a_superman'
-        }));
-        */
     };
 
     /**
@@ -105,13 +81,6 @@ function APIConnect() {
     */
     this.fetchIOU = function (callback) {
         var url = constructURL({action: 'iou_get', username: username, password: password});
-        request(url, callback);
-    };
-
-    this.fetchIOU = function(callback) {
-        var url = constructURL({
-            action: 'iou_get'
-        });
         request(url, callback);
     };
 }
