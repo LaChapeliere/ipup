@@ -61,13 +61,21 @@ header {
     margin: 0 auto;
 	}
 
+#Language {
+	margin-top: 1em;
+}
+
 #sidebar_header {
 	margin-top: 4em;
 	margin-right: auto;
 	}
 
+#debt {
+	margin-top: 1em;
+}
+
 #sidebar_header2 {
-	margin-top: 4em;
+	margin-top: 2.5em;
 	}
 
 #sidebar_header2 [a] {
