@@ -68,7 +68,7 @@ function APIConnect() {
     
     
     /**
-    * Method to fetch the inventory from the database
+    * Method to fetch the inventory from the database -admin-
     * @param callback The callback function to call on the response
     */
     this.fetchInventory = function (callback) {
@@ -86,11 +86,21 @@ function APIConnect() {
     };
     
     /**
-    * Method to fetch the history of purchases for all users from the database
+    * Method to fetch the history of purchases for all users from the database -admin-
     * @param callback The callback function to call on the response
     */
     this.fetchPurchasesAll = function (callback) {
         var url = constructURL({action: 'purchases_get_all', username: username, password: password});
+        request(url, callback);
+    };
+    
+    /**
+    * Method to append a purchase for the current user in the database
+    * @param beerId The id of the purchased beer
+    * @param callback The callback function to call on the response
+    */
+    this.appendPurchases = function (beerId, callback) {
+        var url = constructURL({action: 'purchases_append', username: username, password: password, beer_id: beerId});
         request(url, callback);
     };
     
@@ -104,11 +114,23 @@ function APIConnect() {
     };
     
     /**
-    * Method to fetch the history of payments for all users from the database
+    * Method to fetch the history of payments for all users from the database -admin-
     * @param callback The callback function to call on the response
     */
     this.fetchPaymentsAll = function (callback) {
         var url = constructURL({action: 'payments_get_all', username: username, password: password});
+        request(url, callback);
+    };
+    
+    /**
+    * Method to append a payment for a user in the database -admin-
+    * The api doc says the role for this is user but in reality it is admin
+    * @param amount The amount of the payment
+    * @param user_id The user id to add the payment to
+    * @param callback The callback function to call on the response
+    */
+    this.appendPayments = function (amount, userId, callback) {
+        var url = constructURL({action: 'payments_append', username: username, password: password, amount: amount, user_id: userId});
         request(url, callback);
     };
     
@@ -122,7 +144,7 @@ function APIConnect() {
     };
     
     /**
-    * Method to fetch the basic information for all users from the database
+    * Method to fetch the basic information for all users from the database -admin-
     * @param callback The callback function to call on the response
     */
     this.fetchIOUall = function (callback) {
@@ -139,13 +161,40 @@ function APIConnect() {
         var url = constructURL({action: 'beer_data_get', username: username, password: password, beer_id: beerId});
         request(url, callback);
     };
+    
+    /**
+    * Method to create a new user or edit the user info for a user in the database -admin-
+    * @param targetUsername The new username to create a new user or the username of the user to modify
+    * @param newPassword The new password of the user
+    * @param firstName The new user first name
+    * @param lastName The new user last name in the database
+    * @param email The new user's email
+    * @param phone The new user's phone
+    * @param callback The callback function to call on the response
+    */
+    this.editUser = function (targetUsername, newPassword, firstName, lastName, email, phone, callback) {
+        var url = constructURL({action: 'user_edit', username: username, password: password, new_username: targetUsername, new_password: newPassword, first_name: firstName, last_name: lastName, email: email, phone: phone});
+        request(url, callback);
+    };
 
     /**
-    * Method to fetch the users from the database and all their information from the database
+    * Method to fetch the users from the database and all their information from the database -admin-
     * @param callback The callback function to call on the response
     */
     this.fetchUsers = function (callback) {
         var url = constructURL({action: 'user_get_all', username: username, password: password});
+        request(url, callback);
+    };
+    
+    /**
+    * Method to update the amount of bottles and the price for a specified beer in the database
+    * @param beerId The id of the specified beer
+    * @param amount The new amount of bottle in inventory
+    * @param price The new price of the beer
+    * @param callback The callback function to call on the response
+    */
+    this.updateInventory = function (beerId, amount, price, callback) {
+        var url = constructURL({action: 'inventory_append', username: username, password: password, beer_id: beerId, amount: amount, price: price});
         request(url, callback);
     };
 }

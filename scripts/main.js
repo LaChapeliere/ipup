@@ -39,7 +39,19 @@ function testAPIConnection() {
         console.log(usr);
     });
     
-    //Test purchases_get
+    //Test purchases_append
+    api.setUser('jorass', 'jorass');
+    api.appendPurchases( "207504", function (usr) {
+        console.log("Test purchases_append admin");
+        console.log(usr);
+    });
+    api.setUser('edraug', 'edraug');
+    api.appendPurchases( "207504", function (usr) {
+        console.log("Test purchases_append user");
+        console.log(usr);
+    });
+    
+    //Test payments_get
     api.setUser('jorass', 'jorass');
     api.fetchPayments( function (usr) {
         console.log("Test payments_get admin");
@@ -51,10 +63,17 @@ function testAPIConnection() {
         console.log(usr);
     });
     
-    //Test purchases_get_all
+    //Test payments_get_all
     api.setUser('jorass', 'jorass');
     api.fetchPaymentsAll( function (usr) {
         console.log("Test payments_get_all");
+        console.log(usr);
+    });
+    
+    //Test payments_append
+    api.setUser('jorass', 'jorass');
+    api.appendPayments( "59", "18", function (usr) {
+        console.log("Test payments_append admin");
         console.log(usr);
     });
 
@@ -96,11 +115,25 @@ function testAPIConnection() {
         console.log("Test beer_data_get user");
         console.log(usr);
     });
+    
+    //Test user_edit
+    api.setUser('jorass', 'jorass');
+    api.editUser('tester', 'retset', 'Tes', 'Ter', 'testmail@web.com', '0123456789', function(usr) {
+        console.log("Test user_edit");
+        console.log(usr);
+    });
 
     //Test user_get_all
     api.setUser('jorass', 'jorass');
     api.fetchUsers(function (usr) {
         console.log("Test user_get_all");
+        console.log(usr);
+    });
+    
+    //Test inventory_append -the result cannot really be tested because inventory_get is static
+    api.setUser('jorass', 'jorass');
+    api.updateInventory("22590", "20", "6.0", function (usr) {
+        console.log("Test inventory_append");
         console.log(usr);
     });
 }
