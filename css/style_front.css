@@ -6,13 +6,14 @@ html {
 }
 
 body {
+    border-radius: 25px;
     padding: 70px 0;
     text-align: center;
     background: #efeff8;
     box-shadow: 0 0 2px rgba(245, 9, 9, 0.06);
     color: #545454;
     font-family: Dosis, sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 1.5;
     margin: 0 auto;
     max-width: 800px;
