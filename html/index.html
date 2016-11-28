@@ -15,8 +15,9 @@
     //  $(document).ready(function() {indexPageLoaded});
 		docLoaded(testAPIConnection);
 	</script>
-	<div id="wrapper">
+	<div id="wrapper"> 
 	<div class="container">
+      <!-- The top bar starts here-->
 		<header id="Top bar">
 		<dl>
 			<dt><button>All Beverages</button></dt>
@@ -26,25 +27,40 @@
 		</dl>
 		</header>
 
+         <!--THE SIDEBAR STARTS HERE -->
    		<div id="sidebar">
+
+            <!-- Language setting - Top of sidebar -->
+            <div id="Language">language setting</div>
+
+            <!-- The code for the profil picture -->
    			<div id="sidebar_header">
    				Profile pic / Placeholder here
-
    			</div>
+
+            <!-- The debt area-->
+            <div id="debt">Debt</div>
+
+            <!-- The Log off button-->
    			<div id="sidebar_header2">
-   				<a href="https://www.youtube.com/watch?v=aSLZFdqwh7E">Log off</a> <!--We need to insert something that logs the son of gun out-->
-
+   				<a href="login_yeah.html">Log off</a> <!--We need to insert something that logs the son of gun out-->
    			</div>
+
+            <!-- The text area, where the shopping cart is-->
    			<div id="sidebar_content">
    				<textarea id="cart" rows="17" placeholder="This is where your drinks go"></textarea>
-
    			</div>
+
+            <!-- Clear all / Puchase button area-->
    			<div id="sidebar_footer">
    				<button>Clear all</button>
    				<button>Purchase</button>
-
    			</div>
    		</div>
+
+         <!-- THE MAIN CONTENT STARTS HERE, I.E NOT TOP BAR OR SIDE BAR -->
+
+         <!-- A table for all of the drinks to appear in-->
    		<div id="content">
    			<table>
    			<tr>
