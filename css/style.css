@@ -231,23 +231,25 @@ input:checked + .slider:before {
 }
 
 .slotElement {
-    background-color: aqua;
-    width: 100px;
-    height: 120px;
+    background-color: aquamarine;
+    width: 90px;
+    height: 110px;
     vertical-align: middle;
     display: inline-block;
     background-position: center center;
 	background-size: cover;
+    float: right;
 }
 
-.slotElement div {
-    width: 50px;
-    height: 20px;
+.slotLeft {
+    width: 100px;
+    height: 110px;
+    float: left;
     background-color: bisque;
 }
 
-.slotElement p {
-    font-size: 12px;
+.slotleft p {
+    max-width: inherit;
 }
 
 /*Stuff only related to the history/stats page!*/
