@@ -229,28 +229,36 @@ input:checked + .slider:before {
     border-radius: 1em;
     float: right;
 }
-
+/* Right part of slot element, with picture as background */
 .slotElement {
-    background-color: aquamarine;
     width: 90px;
     height: 110px;
-    vertical-align: middle;
     display: inline-block;
     background-position: center center;
 	background-size: cover;
     float: right;
 }
 
+/* The left part of the slot, where name price and stock are */
 .slotLeft {
     width: 100px;
     height: 110px;
     float: left;
-    background-color: bisque;
 }
 
-.slotleft p {
-    max-width: inherit;
+/* All paragraphs of the slotLeft */
+.slotLeft p {
+    color: rgb(116, 70, 16);
 }
+
+.drinkName {
+    margin: 20px 0 6px 3px;
+}
+
+.price, .stock {
+    margin: 0 0 0 3px;
+}
+
 
 /*Stuff only related to the history/stats page!*/
 
