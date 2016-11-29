@@ -221,7 +221,13 @@ input:checked + .slider:before {
    text-align: center;
    vertical-align: middle;
    color: black;
-   padding: .5em;
+   /*When usin this uniform padding, the images ended up slightly to the right. Might
+   have to be revised later on - removing padding-left & padding-right if Emma figures
+   our how to center the img via JS indstead of here, manually.
+   padding: .5em;  
+   */
+   padding-left: 0em;
+   padding-right: .6em;
    background-color: background-color: #26C6DA ;
    max-width: 140px;
 
