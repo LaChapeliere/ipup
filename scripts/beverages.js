@@ -21,12 +21,7 @@ function Slot(beer_id, name, price, amount, category, displayBlock) {
     * Fetch the image corresponding to the beverage category and set it as the display child image
     */
     this.fetchImage = function() {
-        var path = "../resources/img/" + category + ".png",
-            img = document.createElement("img");
-        img.setAttribute("src", path);
-        img.setAttribute("alt", category);
-        img.className = "beverageImg";
-        display.appendChild(img);
+        display.getElementsByClassName("slotElement")[0].style.backgroundImage = 'url("./../resources/img/' + category + '.png")';
     }
 }
 

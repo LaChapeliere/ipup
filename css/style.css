@@ -236,6 +236,8 @@ input:checked + .slider:before {
     height: 120px;
     vertical-align: middle;
     display: inline-block;
+    background-position: center center;
+	background-size: cover;
 }
 
 .slotElement div {
