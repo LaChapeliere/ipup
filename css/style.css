@@ -80,6 +80,7 @@ header {
 	margin-top: 0.3em;
 	margin-right: auto;
 	width: 180px;
+	max-height: 120px;
 	border-radius: 5em;
 	}
 
