@@ -227,12 +227,6 @@ input:checked + .slider:before {
 
 }
 
-#drinkelement {
-	text-align: center;
-	vertical-align: middle;
-
-}
-
 /*Stuff only related to the history/stats page!*/
 
 #historycontent {
