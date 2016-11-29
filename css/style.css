@@ -244,6 +244,7 @@ input:checked + .slider:before {
     width: 100px;
     height: 110px;
     float: left;
+    position: relative; /* This is so I can use position absolute in the .editSlot. If written like this, this cemoes the parent div the .editSlot relates to, so when using the position: absolute, it wont place in the corner of the entire page, but the corner of the parent, namely this div :D */
 }
 
 /* All paragraphs of the slotLeft */
@@ -263,7 +264,12 @@ input:checked + .slider:before {
 
 /* The edit button for every slot */
 .editSlot {
-    float: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: deepskyblue;
+    border-radius: 1em;
+    
 }
 
 
