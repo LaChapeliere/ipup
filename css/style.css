@@ -209,33 +209,23 @@ input:checked + .slider:before {
 /* The table itself in the content section. Where all the drinks should appear */
 #content table {
 	border-collapse: separate;
-	border-spacing: 1em .3em;
+	border-spacing: 1.5em .3em;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 /* The specific element in the table */
 #content td {
-   border-radius: 1.5em;
+   border-radius: 1em;
    box-shadow: 0 2px 2px 1px #333;
-   text-align: center;
-   vertical-align: middle;
    color: black;
-   /*When usin this uniform padding, the images ended up slightly to the right. Might
-   have to be revised later on - removing padding-left & padding-right if Emma figures
-   our how to center the img via JS indstead of here, manually.
-   padding: .5em;  
-   */
-   padding-left: 0em;
-   padding-right: .6em;
-   background-color: background-color: #26C6DA ;
-   max-width: 140px;
-
 }
 
 .beverageImg {
-    width: 80%;
+    width: 63%;
     border: 2px solid #aaaaaa;
+    border-radius: 1em;
+    float: right;
 }
 
 /*Stuff only related to the history/stats page!*/
