@@ -251,12 +251,19 @@ input:checked + .slider:before {
     color: rgb(116, 70, 16);
 }
 
+/* The name of the drink-paragraph */
 .drinkName {
     margin: 20px 0 6px 3px;
 }
 
+/* The price and stock paragraph */
 .price, .stock {
     margin: 0 0 0 3px;
+}
+
+/* The edit button for every slot */
+.editSlot {
+    float: right;
 }
 
 
