@@ -6,7 +6,6 @@
 /**
  * Constructor for the APIConnect object
  */
-
 function APIConnect() {
     'use strict';
     var baseURL = 'http://pub.jamaica-inn.net/fpdb/api.php', //The base url to connect to the database

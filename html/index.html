@@ -11,9 +11,10 @@
 				  crossorigin="anonymous"></script>	<script src="../scripts/api.js"></script>
 	<script src="../scripts/main.js"></script>
     <script src="../scripts/api.js"></script>
+    <script src="../scripts/beverages.js"></script>
 	<script>
     //  $(document).ready(function() {indexPageLoaded});
-		docLoaded(testAPIConnection);
+		docLoaded(populateSlotsConsumer);
 	</script>
 
          <!-- Wrapper for all content-->
@@ -69,7 +70,7 @@
 
          <!-- A table for all of the drinks to appear in-->
    		<div id="content">
-   			<table>
+   			<table id="beveragesTable">
                <!-- Row one -->
    			<tr>
    				<td>Drink</td>
