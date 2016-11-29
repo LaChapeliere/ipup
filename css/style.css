@@ -209,7 +209,7 @@ input:checked + .slider:before {
 /* The table itself in the content section. Where all the drinks should appear */
 #content table {
 	border-collapse: separate;
-	border-spacing: 1.5em .3em;
+	border-spacing: .5em .3em;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -221,8 +221,9 @@ input:checked + .slider:before {
    color: black;
 }
 
+/* The image that is fetched and inserted into the table element */
 .beverageImg {
-    width: 63%;
+    width: 50%;
     border: 2px solid #aaaaaa;
     border-radius: 1em;
     float: right;
