@@ -219,14 +219,22 @@ input:checked + .slider:before {
    border-radius: 1em;
    box-shadow: 0 2px 2px 1px #333;
    color: black;
+   width: 230px;
 }
 
 /* The image that is fetched and inserted into the table element */
 .beverageImg {
-    width: 50%;
+    width: 85px;
     border: 2px solid #aaaaaa;
     border-radius: 1em;
     float: right;
+}
+
+#testing {
+    background-color: aqua;
+    width: 50px;
+    height: 10px;
+    margin-top: 25px;
 }
 
 /*Stuff only related to the history/stats page!*/
