@@ -5,7 +5,7 @@
 
 /**
  * Utily function to execute js scripts linked to an html only when the page has finished loading
- * @param The funtion to be executed
+ * @param The function to be executed
  */
 function docLoaded(fn) {
     'use strict';
