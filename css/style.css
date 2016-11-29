@@ -6,20 +6,32 @@ html {
 	font-size: 30px;
 }
 
+/* The wrapper wraps both top bar and side bar */
 #wrapper {
 	margin-left:auto;
 	margin-right:auto;
 	width:1240px;
 }
 
+/* The div in which the top bar is, */
 header {
 	position: static;
+	padding: 1.5em 1em .7em;
+	background-color:rgb(116, 70, 16) ;
 }
 
+/* The list in which the top bar button are placed */
+header dl {
+	text-align: center;
+	padding: 1px 10px 1px;
+}
+
+/* Each element in the list */
 header dt {
 	display: inline;
 }
 
+/* The top bar buttons and links */ 
 header button, a {
 	font-size: 30px;
 	color: black;
@@ -31,26 +43,15 @@ header button, a {
 	text-decoration: none;
 }
 
+/* Hovering over over both the top bar buttons and the top bar links */
 header button:hover, a:hover {
 	color: #1330ee;
 }
 
-header dl {
-	text-align: center;
-	padding: 1px 10px 1px;
-}
-
-header {
-	padding: 1.5em 1em .7em;
-	background-color:rgb(116, 70, 16) ;
-}
-
+/* Basically the wrapper. contains basically everything on the webpage  */
 .container { position:relative; padding:0 0 0 200px; }
 
-#sidebar div {
-	font-size: 20px;
-}
-
+/* The entire sidebar */
 #sidebar {
     position:absolute;
     top:0; bottom:0; left:0;
@@ -61,22 +62,26 @@ header {
     margin: 0 auto;
 	}
 
-/* The language div */
+/* All divs in the sidebar */
+#sidebar div {
+	font-size: 20px;
+}
+
+
+/* The language div in the sidebar*/
 #Language {
 	margin-top: .2em;
 
 }
 
-/* The language buttons */
+/* The language buttons in the sidebar */
 #language img {
 	width: 50px;
 	display: inline-block;
-	display: r;
 }
 
 
-
-/* The picture */
+/* The picture in the sidebar */
 #sidebar_header, img {
 	display: inline-block;
 	margin-top: 0.3em;
@@ -91,7 +96,6 @@ header {
 }
 
 /* THE TOGGLE!!! - The switch - the box around the slider */
-
 #toggle_div, p {
 	font-size: 16px;
 	margin-top: 1em;
@@ -162,22 +166,20 @@ input:checked + .slider:before {
 	margin-top: 1em;
 	}
 
+/* The link in the logg off button */
 #sidebar_header2 [a] {
 	font-size: 16px;
 	border: 1px solid #333;
 	border-radius: 1em;
 	padding: .5em 1em .5em;
 	background-color: #1ab3fd ;
+	text-decoration: none;
+
 	}
 
-/* Text area */
-
+/* Hovering over Logoff button */
 #sidebar_header2 a:hover {
 	color: #1330ee;
-	}
-
-#sidebar_header2 a{
-	text-decoration: none;
 	}
 
 /* text area div */
@@ -191,6 +193,7 @@ input:checked + .slider:before {
 	border-radius: 1em;
 }
 
+/* The two buttons at the bottom of the sidebar */
 #sidebar_footer button{
 	font-size: 16px;
 	border: 1px solid #333;
@@ -198,16 +201,19 @@ input:checked + .slider:before {
 	background-color: #2196F3;
 }
 
+/* The div in which the table is placed, i.e where all the drinks should appear */
 #content {
 	height: 510px;
 }
 
+/* The table itself in the content section. Where all the drinks should appear */
 #content table {
 	border-collapse: separate;
 	border-spacing: 1em .3em;
 	margin-left: auto;
 	margin-right: auto;
 }
+
 
 #content td {
    border-radius: 1.5em;
@@ -219,11 +225,6 @@ input:checked + .slider:before {
    background-color: background-color: #26C6DA ;
 
 }
-
-#sidebar div {
-	font-size: 20px;
-	}
-
 
 /*Stuff only related to the history/stats page!*/
 
