@@ -25,6 +25,7 @@ function Slot(beer_id, name, price, amount, category, displayBlock) {
             img = document.createElement("img");
         img.setAttribute("src", path);
         img.setAttribute("alt", category);
+        img.className = "beverageImg";
         display.appendChild(img);
     }
 }

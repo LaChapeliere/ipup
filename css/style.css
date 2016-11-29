@@ -233,6 +233,11 @@ input:checked + .slider:before {
 
 }
 
+.beverageImg {
+    width: 80%;
+    border: 2px solid #aaaaaa;
+}
+
 /*Stuff only related to the history/stats page!*/
 
 #historycontent {
@@ -241,3 +246,5 @@ input:checked + .slider:before {
 	margin-right: auto;
 	text-align: center;
 }
+
+
