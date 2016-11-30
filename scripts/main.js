@@ -113,6 +113,7 @@ function dragNDrop() {
         console.log("The total cost is now: " + totalCost);
         console.log(data);
         $('#cartcontent').datagrid('loadData', data);
+        // Here is needed to maybe change the reference from #total to .total in the shopping cart
         $('#total').html('Total: $' + totalCost);
     }
 }
