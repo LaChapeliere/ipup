@@ -210,10 +210,10 @@ input:checked + .slider:before {
 #cartcontent {
     width: 180px;
     background-color: white;
-    display: inline-block;
     margin-left: auto;
     margin-right: auto;
     margin-top: .5em;
+    border: 1px solid #333;
     border-radius: 1em;
 }
 
