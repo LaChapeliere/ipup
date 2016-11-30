@@ -223,17 +223,10 @@ input:checked + .slider:before {
    width: 230px;
 }
 
-/* The image that is fetched and inserted into the table element */
-.beverageImg {
-    width: 85px;
-    border: 2px solid #aaaaaa;
-    border-radius: 1em;
-    float: right;
-}
 /* Right part of slot element, with picture as background */
 .slotElement {
     width: 90px;
-    height: 110px;
+    height: 117px;
     display: inline-block;
     background-position: center center;
 	background-size: cover;
@@ -243,7 +236,7 @@ input:checked + .slider:before {
 /* The left part of the slot, where name price and stock are */
 .slotLeft {
     width: 100px;
-    height: 110px;
+    height: 117px;
     float: left;
     position: relative; /* This is so I can use position absolute in the .editSlot. If written like this, this cemoes the parent div the .editSlot relates to, so when using the position: absolute, it wont place in the corner of the entire page, but the corner of the parent, namely this div :D */
 }
@@ -255,7 +248,8 @@ input:checked + .slider:before {
 
 /* The name of the drink-paragraph */
 .drinkName {
-    margin: 20px 0 6px 3px;
+    margin: 17px 0 8px 3px;
+    font-size: 18px;
 }
 
 /* The price and stock paragraph */
