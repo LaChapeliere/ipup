@@ -20,14 +20,27 @@ function docLoaded(fn) {
  * Function to execute drag 'n drop functionality
  */
 function dragNDrop() {
-    console.log("Function ran.");
+    'use strict';
     var data = { "total": 0, "rows": [] };
     var totalCost = 0;
+    var sidebar = document.getElementById("sidebar");
+    console.log(sidebar);
 
     /**
      * This method handles the drag 'n drop functionality
      */
     $(function() {
+        // Attempts to highlight when the draggable is over the droppable.
+        /*
+        function changeId() {
+            if (sidebar.id == "sidebar") {
+                sidebar.setAttribute('id', 'sidebarHighlighted');
+            } else {
+                sidebar.className = "sidebar";
+            }
+        }
+
+*/
         $('#cartcontent').datagrid({
             singleSelect: true
         });
@@ -41,20 +54,25 @@ function dragNDrop() {
             },
             onStopDrag: function() {
                 console.log("Stopped dragging");
+                console.log($(this));
                 $(this).draggable('options').cursor = 'pointer';
             }
         });
         $('#sidebar').droppable({
             onDragEnter: function(e, source) {
-                console.log("Started onDragEnter");
                 $(source).draggable('options').cursor = 'auto';
+                //   sidebar.changeId();
+                console.log($(this));
+
             },
             onDragLeave: function(e, source) {
                 console.log("Started onDragLeave");
+                //     sidebar.changeId();
                 $(source).draggable('options').cursor = 'not-allowed';
             },
             onDrop: function(e, source) {
                 console.log("Started onDrop");
+                //       sidebar.changeId();
                 var name = $(source).find('p:eq(0)').html();
                 console.log(source);
                 console.log(name);
