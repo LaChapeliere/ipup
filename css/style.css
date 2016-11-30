@@ -66,7 +66,7 @@ header button:hover, a:hover {
     position:absolute;
     top:0; bottom:0; left:0;
     width:200px;
-    height: 637px;
+    height: 768px;
     background-color:rgb(116, 70, 16);
     text-align: center;
     margin: 0 auto;
@@ -196,12 +196,12 @@ input:checked + .slider:before {
 	color: #1330ee;
 	}
 
-/* text area div */
+/* table area div */
 #sidebar_content{
-	margin-top: .5em;
+	margin-top: 1em;
 	}
 
-/* The text area itself */
+/* The text area itself - Not currently used*/
 #cart {
 	border: 1px solid #333;
 	border-radius: 1em;
@@ -209,8 +209,16 @@ input:checked + .slider:before {
 
 #cartcontent {
     width: 180px;
-    height: auto;
-    background-color: aqua;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: .5em;
+    border-radius: 1em;
+}
+
+#cartcontent th {
+    padding: .2em .1em .2em;
+    border: 1px solid #333;
 }
 
 /* The two buttons at the bottom of the sidebar */
