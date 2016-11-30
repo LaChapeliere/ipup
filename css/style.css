@@ -15,11 +15,20 @@ html {
 }
 
 /* The div in which the top bar is, */
-header {
+ #topBar {
 	position: static;
 	padding: 1.5em 1em .7em;
 	background-color:rgb(116, 70, 16) ;
 }
+
+ #adminTopbar {
+	position: static;
+	padding: 1.5em 1em .7em;
+	background-color:rgb(116, 70, 16) ;
+    display: none;
+}
+
+
 
 /* The list in which the top bar button are placed */
 header dl {
@@ -100,8 +109,12 @@ header button:hover, a:hover {
 #toggle_div, p {
 	font-size: 16px;
 	margin-top: 1em;
-
 }
+
+#toggle_div {
+    display: none;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -192,6 +205,12 @@ input:checked + .slider:before {
 #cart {
 	border: 1px solid #333;
 	border-radius: 1em;
+}
+
+#cartcontent {
+    width: 180px;
+    height: auto;
+    background-color: aqua;
 }
 
 /* The two buttons at the bottom of the sidebar */

@@ -23,11 +23,20 @@
 	  <div class="container">
 
       <!-- The top bar starts here-->
-		<header id="Top bar">
+		<header id="topBar">
 		<dl>
 			<dt><button>All Beverages</button></dt>
 			<dt><button>Soft Drinks</button></dt>
 			<dt><button>Alcoholic Drinks</button></dt>
+			<dt><a href="historystats.html">History/Stats</a></dt>
+		</dl>
+		</header>
+          
+        <header id="adminTopbar">
+		<dl>
+			<dt><button>Users</button></dt>
+			<dt><button>Machine stock</button></dt>
+			<dt><button>Inventory</button></dt>
 			<dt><a href="historystats.html">History/Stats</a></dt>
 		</dl>
 		</header>
@@ -48,6 +57,15 @@
 
             <!-- The debt area-->
             <div id="debt">Your current debt:</div>
+            
+            <!-- Toggle button -->
+            <div id="toggle_div">
+               <p>Admin view</p>
+               <label class="switch">
+               <input type="checkbox"> 
+               <div class="slider round"></div>
+               </label>
+            </div>
 
             <!-- The Log off button-->
    			<div id="sidebar_header2">
@@ -56,7 +74,16 @@
 
             <!-- The text area, where the shopping cart is-->
    			<div id="sidebar_content">
-   				<textarea id="cart" rows="17" placeholder="This is where your drinks go"></textarea>
+   				<table id="cartcontent">
+                    <thead>
+                        <tr>
+                            <th field="name" width=120>Name</th>
+                            <th field="quantity" width=30 align="right">Quantity</th>
+                            <th field="price" width=30 align="right">Price</th>
+                        </tr>
+                    </thead>
+                </table>
+                <p class="total">Total: $0</p>
    			</div>
 
             <!-- Clear all / Puchase button area-->
