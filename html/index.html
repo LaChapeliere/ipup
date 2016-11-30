@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<<<<<<< HEAD
 	<title>Beverage vending machine</title>
 	<meta charset="utf-8" />
 	<link href="../css/reset.css" rel="stylesheet" />
@@ -14,8 +12,10 @@
     <script src="../scripts/api.js"></script>
     <script src="../scripts/beverages.js"></script>
 	<script>
-    //  $(document).ready(function() {indexPageLoaded});
-		docLoaded(populateSlotsConsumer);
+        $(document).ready(function() {
+            dragging
+        });
+        docLoaded(populateSlotsConsumer);
 	</script>
 
          <!-- Wrapper for all content-->
@@ -44,41 +44,6 @@
 
          <!--THE SIDEBAR STARTS HERE -->
    		<div id="sidebar">
-=======
-<title>Beverage vending machine</title>
-<meta charset="utf-8" />
-<link href="../css/reset.css" rel="stylesheet" />
-<link href="../css/style.css" rel="stylesheet" />
-<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-<script src="../scripts/api.js"></script>
-<script src="../scripts/main.js"></script>
-<script src="../scripts/api.js"></script>
-<script src="../scripts/beverages.js"></script>
-<script>
-    $(document).ready(function() {
-        dragging
-    });
-    docLoaded(populateSlotsConsumer);
-</script>
-
-<!-- Wrapper for all content-->
-
-<div id="wrapper">
-    <div class="container">
-
-        <!-- The top bar starts here-->
-        <header id="Top bar">
-            <dl>
-                <dt><button>All Beverages</button></dt>
-                <dt><button>Soft Drinks</button></dt>
-                <dt><button>Alcoholic Drinks</button></dt>
-                <dt><a href="historystats.html">History/Stats</a></dt>
-            </dl>
-        </header>
-
-        <!--THE SIDEBAR STARTS HERE -->
-        <div id="sidebar">
->>>>>>> origin/master
 
             <!-- Language setting - Top of sidebar -->
             <div id="language">
@@ -110,7 +75,6 @@
             </div>
 
             <!-- The text area, where the shopping cart is-->
-<<<<<<< HEAD
    			<div id="sidebar_content">
    				<table id="cartcontent">
                     <thead>
@@ -123,11 +87,6 @@
                 </table>
                 <p class="total">Total: $0</p>
    			</div>
-=======
-            <div id="sidebar_content">
-                <textarea id="cart" rows="17" placeholder="This is where your drinks go"></textarea>
-            </div>
->>>>>>> origin/master
 
             <!-- Clear all / Puchase button area-->
             <div id="sidebar_footer">
