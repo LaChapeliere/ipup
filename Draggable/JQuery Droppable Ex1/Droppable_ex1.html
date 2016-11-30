@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/javascript" src="http://www.pureexample.com/js/lib/jquery.ui.touch-punch.min.js"></script>
+
+
+<!-- CSS -->
+<style type="text/css">
+    .square {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        text-align: center;
+        line-height: 100px;
+        float: left;
+        background-color: lightblue;
+        cursor: pointer;
+    }
+    
+    .squaredotted {
+        width: 150px;
+        height: 150px;
+        border: 1px dotted gray;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        text-align: center;
+        line-height: 150px;
+        float: left;
+        background-color: lightgray;
+    }
+</style>
+
+
+<!-- Javascript -->
+<script>
+    $(function() {
+        $("#s1").draggable({
+            revert: "valid",
+            //  revert: true,
+            drag: function(event, ui) {
+                $("#info").html("<font color=red>This square will go back to it`s original position once it`s dropped in target zone. </font>");
+            }
+        });
+        $("#s2").draggable({
+            revert: "invalid",
+            // revert: false,
+            drag: function(event, ui) {
+                $("#info").html("<font color=red>This square will go back to it`s original position, unless it`s dropped in target zone.</font> ");
+            }
+        });
+        $(".squaredotted").droppable({
+            drop: function(event, ui) {
+                $(this).css("background-color", "lightgreen")
+            },
+            out: function(event, ui) {
+                $(this).css("background-color", "")
+            }
+        });
+    });
+</script>
+
+<!-- HTML -->
+<div style="float:left">
+    <div id="s1" class="square">revert: "valid" </div>
+</div>
+<div style="float:left">
+    <div id="s2" class="square">revert: "invalid"</div>
+</div>
+<div style="float:left;margin-left:50px;">
+    <div class="squaredotted">Drop here(target zone)</div>
+</div>
+<div id="info" style="clear:both;padding-top:50px"></div>
