@@ -16,42 +16,66 @@ function docLoaded(fn) {
     }
 }
 
-function dragging() {
+/**
+ * Function to execute drag 'n drop functionality
+ */
+function dragNDrop() {
+    console.log("Function ran.");
     var data = { "total": 0, "rows": [] };
     var totalCost = 0;
 
+    /**
+     * This method handles the drag 'n drop functionality
+     */
     $(function() {
         $('#cartcontent').datagrid({
             singleSelect: true
         });
-        $('.slotElement').draggable({
+        $('.product').draggable({
             revert: true,
-            proxy: 'clone',
+            //     proxy: 'clone',
             onStartDrag: function() {
+                console.log("Started dragging");
                 $(this).draggable('options').cursor = 'pointer';
-                $(this).draggable('proxy').css('z-index', 10);
+                //     $(this).draggable('proxy').css('z-index', 10);
             },
             onStopDrag: function() {
+                console.log("Stopped dragging");
                 $(this).draggable('options').cursor = 'pointer';
             }
         });
         $('#sidebar').droppable({
             onDragEnter: function(e, source) {
+                console.log("Started onDragEnter");
                 $(source).draggable('options').cursor = 'auto';
             },
             onDragLeave: function(e, source) {
+                console.log("Started onDragLeave");
                 $(source).draggable('options').cursor = 'not-allowed';
             },
             onDrop: function(e, source) {
+                console.log("Started onDrop");
                 var name = $(source).find('p:eq(0)').html();
+                console.log(source);
+                console.log(name);
                 var price = $(source).find('p:eq(1)').html();
-                addProduct(name, parseFloat(price.split('$')[1]));
+                console.log(price);
+                addProduct(name, parseFloat(price));
             }
         });
     });
-
+    /**
+     * Function handles adding a product with a certain price to data array which holds information
+     * on the product and price and finally loads the new row or quantity number to datagrid.  
+     * @param name The name of the product
+     * @param price The price of the product placed 
+     */
     function addProduct(name, price) {
+        console.log("The addProduct price: " + price);
+
         function add() {
+            console.log("Add method ran now.");
+            // For loop handles increasing the quantity of a same named product
             for (var i = 0; i < data.total; i++) {
                 var row = data.rows[i];
                 if (row.name == name) {
@@ -68,7 +92,9 @@ function dragging() {
         }
         add();
         totalCost += price;
+        console.log("The total cost is now: " + totalCost);
+        console.log(data);
         $('#cartcontent').datagrid('loadData', data);
-        $('div.cart .total').html('Total: $' + totalCost);
+        $('#total').html('Total: $' + totalCost);
     }
 }
