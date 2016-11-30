@@ -12,17 +12,18 @@
 	<script src="../scripts/main.js"></script>
     <script src="../scripts/api.js"></script>
     <script src="../scripts/beverages.js"></script>
+
 	<script>
     //  $(document).ready(function() {indexPageLoaded});
 		docLoaded(populateSlotsConsumer);
 	</script>
 
-         <!-- Wrapper for all content-->
+            <!-- Wrapper for all content-->
 
 	<div id="wrapper"> 
-	  <div class="container">
+	<div class="container">
 
-      <!-- The top bar starts here-->
+         <!-- The top bar starts here-->
 		<header id="Top bar">
 		<dl>
 			<dt><button>All Beverages</button></dt>
@@ -42,15 +43,25 @@
             </div>
 
             <!-- The code for the profil picture -->
-   			<div id="sidebar_header">
-   				<img src="img/niklas_test_photo.jpg">
-   			</div>
+            <div id="sidebar_header">
+               <img src="img/niklas_test_photo.jpg">
+            </div>
 
             <!-- The debt area-->
-            <div id="debt">Your current debt:</div>
+            <div id="debt">Your current debt: </div>
+
+            <!-- Toggle button -->
+            <div id="toggle_div">
+               <p>Admin view</p>
+               <label class="switch">
+               <input type="checkbox"> 
+               <div class="slider round"></div>
+               </label>
+            </div>
 
             <!-- The Log off button-->
    			<div id="sidebar_header2">
+
    				<a href="login_yeah.html">Log off</a> <!--We need to insert something that logs the son of gun out-->
    			</div>
 
@@ -69,10 +80,10 @@
          <!-- THE MAIN CONTENT STARTS HERE, I.E NOT TOP BAR OR SIDE BAR -->
 
          <!-- A table for all of the drinks to appear in-->
-   		<div id="content">
-   			<table id="beveragesTable">
+      <div id="content">
+            <table id="beveragesTable">
                <!-- Row one -->
-   			<tr>
+            <tr>
    				<td><div class="slotElement"> </div><div class="slotLeft">
                     <p class="drinkName">Name</p>
                     <p class="price">Price here</p>
@@ -103,10 +114,10 @@
                     <p class="stock">Stock here</p>
                     <button class="editSlot">Edit</button>
                     </div></td>
-   			</tr>
+            </tr>
 
             <!-- Row two -->
-   			<tr>
+            <tr>
    				<td><div class="slotElement"> </div><div class="slotLeft">
                     <p class="drinkName">Name</p>
                     <p class="price">Price here</p>
@@ -137,10 +148,10 @@
                     <p class="stock">Stock here</p>
                     <button class="editSlot">Edit</button>
                     </div></td>
-   			</tr>
+            </tr>
 
             <!-- Row three -->
-   			<tr>
+            <tr>
    				<td><div class="slotElement"> </div><div class="slotLeft">
                     <p class="drinkName">Name</p>
                     <p class="price">Price here</p>
@@ -171,10 +182,10 @@
                     <p class="stock">Stock here</p>
                     <button class="editSlot">Edit</button>
                     </div></td>
-   			</tr>
+            </tr>
 
             <!-- Row four -->
-   			<tr>
+            <tr>
    				<td><div class="slotElement"> </div><div class="slotLeft">
                     <p class="drinkName">Name</p>
                     <p class="price">Price here</p>
@@ -205,13 +216,13 @@
                     <p class="stock">Stock here</p>
                     <button class="editSlot">Edit</button>
                     </div></td>
-   			</tr>
-   			</table>
+            </tr>
+            </table>
 
 
-   		</div>
-	</div>
-	</div>
+         </div>
+   </div>
+   </div>
 
 
 <body>

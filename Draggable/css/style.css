@@ -1,49 +1,285 @@
 @import url("reset.css");
+@import "https://fonts.googleapis.com/css?family=Pacifico|Dosis";
 
-#outer-dropzone {
-  height: 140px;
+
+html {
+	font-size: 30px;
 }
 
-#inner-dropzone {
-  height: 80px;
+/* The wrapper wraps both top bar and side bar */
+#wrapper {
+	margin-left:auto;
+	margin-right:auto;
+	width:1240px;
 }
 
-.dropzone {
-  background-color: #ccc;
-  border: dashed 4px transparent;
-  border-radius: 4px;
-  margin: 10px auto 30px;
-  padding: 10px;
-  width: 80%;
-  transition: background-color 0.3s;
+/* The div in which the top bar is, */
+header {
+	position: static;
+	padding: 1.5em 1em .7em;
+	background-color:rgb(116, 70, 16) ;
 }
 
-.drop-active {
-  border-color: #aaa;
+/* The list in which the top bar button are placed */
+header dl {
+	text-align: center;
+	padding: 1px 10px 1px;
 }
 
-.drop-target {
-  background-color: #29e;
-  border-color: #fff;
-  border-style: solid;
+/* Each element in the list */
+header dt {
+	display: inline;
 }
 
-.drag-drop {
+/* The top bar buttons and links */ 
+header button, a {
+	font-size: 30px;
+	color: black;
+	font-family: Dosis, sans-serif; /* Just to have something to work with, otherwise links and non-links gor different fonts*/
+	border: 1px solid #333;
+	border-radius: 1em;
+	padding: 3px 20px 3px;
+	background-color:#2196F3 ;
+	text-decoration: none;
+}
+
+/* Hovering over over both the top bar buttons and the top bar links */
+header button:hover, a:hover {
+	color: #1330ee;
+}
+
+/* Basically the wrapper. contains basically everything on the webpage  */
+.container { position:relative; padding:0 0 0 200px; }
+
+/* The entire sidebar */
+#sidebar {
+    position:absolute;
+    top:0; bottom:0; left:0;
+    width:200px;
+    height: 637px;
+    background-color:rgb(116, 70, 16);
+    text-align: center;
+    margin: 0 auto;
+	}
+
+/* All divs in the sidebar */
+#sidebar div {
+	font-size: 20px;
+}
+
+
+/* The language div in the sidebar*/
+#language {
+	margin-top: .2em;
+
+}
+
+/* The language buttons in the sidebar */
+#language img {
+	width: 50px;
+	display: inline-block;
+}
+
+
+/* The picture in the sidebar */
+#sidebar_header, img {
+	display: inline-block;
+	margin-top: 0.3em;
+	margin-right: auto;
+	width: 160px;
+	max-height: 120px;
+	border-radius: 5em;
+	}
+
+#debt {
+	margin-top: 1em;
+}
+
+/* THE TOGGLE!!! - The switch - the box around the slider */
+#toggle_div, p {
+	font-size: 16px;
+	margin-top: 1em;
+
+}
+.switch {
+  position: relative;
   display: inline-block;
-  min-width: 40px;
-  padding: 2em 0.5em;
-
-  color: #fff;
-  background-color: #29e;
-  border: solid 2px #fff;
-
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-
-  transition: background-color 0.3s;
+  width: 60px;
+  height: 34px;
 }
 
-.drag-drop.can-drop {
-  color: #000;
-  background-color: #4e4;
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* END OF TOGGLE*/
+
+/* Log off button */
+#sidebar_header2 {
+	margin-top: 1em;
+	}
+
+/* The link in the logg off button */
+#sidebar_header2 [a] {
+	font-size: 16px;
+	border: 1px solid #333;
+	border-radius: 1em;
+	padding: .5em 1em .5em;
+	background-color: #1ab3fd ;
+	text-decoration: none;
+
+	}
+
+/* Hovering over Logoff button */
+#sidebar_header2 a:hover {
+	color: #1330ee;
+	}
+
+/* text area div */
+#sidebar_content{
+	margin-top: .5em;
+	}
+
+/* The text area itself */
+#cart {
+	border: 1px solid #333;
+	border-radius: 1em;
+}
+
+/* The two buttons at the bottom of the sidebar */
+#sidebar_footer button{
+	font-size: 16px;
+	border: 1px solid #333;
+	border-radius: 1em;
+	background-color: #2196F3;
+}
+
+/* The div in which the table is placed, i.e where all the drinks should appear */
+#content {
+	height: 510px;
+}
+
+/* The table itself in the content section. Where all the drinks should appear */
+#content table {
+	border-collapse: separate;
+	border-spacing: .5em .3em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* The specific element in the table */
+#content td {
+   border-radius: 1em;
+   box-shadow: 0 2px 2px 1px #333;
+   color: black;
+   width: 230px;
+}
+
+/* The image that is fetched and inserted into the table element */
+.beverageImg {
+    width: 85px;
+    border: 2px solid #aaaaaa;
+    border-radius: 1em;
+    float: right;
+}
+/* Right part of slot element, with picture as background */
+.slotElement {
+    width: 90px;
+    height: 110px;
+    display: inline-block;
+    background-position: center center;
+	background-size: cover;
+    float: right;
+}
+
+/* The left part of the slot, where name price and stock are */
+.slotLeft {
+    width: 100px;
+    height: 110px;
+    float: left;
+    position: relative; /* This is so I can use position absolute in the .editSlot. If written like this, this cemoes the parent div the .editSlot relates to, so when using the position: absolute, it wont place in the corner of the entire page, but the corner of the parent, namely this div :D */
+}
+
+/* All paragraphs of the slotLeft */
+.slotLeft p {
+    color: rgb(116, 70, 16);
+}
+
+/* The name of the drink-paragraph */
+.drinkName {
+    margin: 20px 0 6px 3px;
+}
+
+/* The price and stock paragraph */
+.price, .stock {
+    margin: 0 0 0 3px;
+}
+
+/* The edit button for every slot */
+.editSlot {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: deepskyblue;
+    border-radius: 1em;
+    
+}
+
+
+/*Stuff only related to the history/stats page!*/
+
+#historycontent {
+	font-size: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+
