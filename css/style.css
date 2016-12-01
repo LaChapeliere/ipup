@@ -247,14 +247,32 @@ input:checked+.slider:before {
 }
 
 
-/* The text area itself - Not currently used*/
+/* The able area itself - Not currently used*/
 
-#cart {
+/* den nuvarande vita bakgrundsfärgade området BAKOM tabellen som utgör shoppingcarten */
+#cartBackground {
+    position: relative;
+    width: 180px;
+    height: 250px;
+    background-color: white;
     border: 1px solid #333;
     border-radius: 1em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#cartcontent {
+/* Den Titel som det står "Shopping Cart" i, ligge rprecis ovanför tabellen men inuti
+den div som omsluter tabellen.*/
+#cartBackground h1 {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-bottom: 1px solid #333; 
+    background-color: deepskyblue;
+    padding-bottom: .2em;
+}
+
+/* Själva tabellen */
+#cartcontent, {
     width: 180px;
     background-color: white;
     margin-left: auto;
@@ -264,11 +282,22 @@ input:checked+.slider:before {
     border-radius: 1em;
 }
 
+/* Varje element i tabellen */
 #cartcontent th {
     padding: .2em .1em .2em;
-    border: 1px solid #333;
 }
 
+/* Varje rad i tabellen */
+#cartcontent tr {
+    border-bottom: 1px solid #333;
+}
+
+/* Total-paragrafen som ligger FAST i botten av diven #cartBackground */
+.total {
+    position: absolute;
+    bottom: 0;
+    margin-left: 60px;
+}
 
 /* The two buttons at the bottom of the sidebar */
 

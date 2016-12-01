@@ -21,8 +21,6 @@ function docLoaded(fn) {
  */
 function dragNDrop() {
     'use strict';
-    var data = { "total": 0, "rows": [] };
-    var totalCost = 0;
     var sidebar = document.getElementById("sidebar");
     console.log(sidebar);
 
@@ -61,7 +59,7 @@ function dragNDrop() {
             },
             out: function(event, ui) {
                 console.log("Now out");
-
+                
                 console.log(event);
                 console.log(ui);
                 //  $(this).css("background-color", "")
@@ -87,6 +85,7 @@ function dragNDrop() {
                 changeSidebarId(sidebar);
                 console.log(sidebar);
 
+                changeId(sidebar);
                 $(this).draggable('options').cursor = 'pointer';
                 //     $(this).draggable('proxy').css('z-index', 10);
             },
@@ -113,7 +112,6 @@ function dragNDrop() {
             },
             onDrop: function(e, source) {
                 console.log("Started onDrop");
-                //   changeSidebarId(sidebar);
                 var name = $(source).find('p:eq(0)').html();
                 //     console.log(source);
                 //     console.log(name);
@@ -130,6 +128,7 @@ function dragNDrop() {
      * @param name The name of the product
      * @param price The price of the product placed 
      */
+    /*
     function addProduct(name, price) {
         console.log("The addProduct price: " + price);
 
@@ -157,5 +156,5 @@ function dragNDrop() {
         $('#cartcontent').datagrid('loadData', data);
         // Here is needed to maybe change the reference from #total to .total in the shopping cart
         $('#total').html('Total: $' + totalCost);
-    }
+    }*/
 }
