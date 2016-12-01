@@ -38,9 +38,42 @@ function dragNDrop() {
         }
     }
 
+    $(function() {
+        console.log("Function ran");
+        $(".product").draggable({
+            revert: "valid",
+            // revert: false,
+            drag: function(event, ui) {
+                console.log("Dragging");
+
+                console.log(event);
+                console.log(ui);
+                //   $("#info").html("<font color=red>This square will go back to it`s original position, unless it`s dropped in target zone.</font> ");
+            }
+        });
+        $("#sidebar").droppable({
+            drop: function(event, ui) {
+                console.log("Dropping");
+
+                console.log(event);
+                console.log(ui);
+                //  $(this).css("background-color", "lightgreen")
+            },
+            out: function(event, ui) {
+                console.log("Now out");
+
+                console.log(event);
+                console.log(ui);
+                //  $(this).css("background-color", "")
+            }
+        });
+    });
+
+
     /**
      * This method handles the drag 'n drop functionality
      */
+    /*
     $(function() {
         $('#cartcontent').datagrid({
             singleSelect: true
@@ -90,6 +123,7 @@ function dragNDrop() {
             }
         });
     });
+    */
     /**
      * Function handles adding a product with a certain price to data array which holds information
      * on the product and price and finally loads the new row or quantity number to datagrid.  
