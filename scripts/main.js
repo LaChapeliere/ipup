@@ -26,11 +26,15 @@ function dragNDrop() {
     var sidebar = document.getElementById("sidebar");
     //  console.log(sidebar);
 
-    function changeId(el) {
-        if (el.id == "sidebar") {
-            el.setAttribute('id', 'sidebarHighlight');
+    /**
+     * Function to change the id of the sidebar
+     * @param elementToBeChanged is the element which id is changed
+     */
+    function changeSidebarId(elementToBeChanged) {
+        if (elementToBeChanged.id == "sidebar") {
+            elementToBeChanged.setAttribute('id', 'sidebarHighlight');
         } else {
-            el.className = "sidebar";
+            elementToBeChanged.className = "sidebar";
         }
     }
 
@@ -38,19 +42,16 @@ function dragNDrop() {
      * This method handles the drag 'n drop functionality
      */
     $(function() {
-        // Attempts to highlight when the draggable is over the droppable.
-
-
-
         $('#cartcontent').datagrid({
             singleSelect: true
         });
+
         $('.product').draggable({
             revert: true,
-            //     proxy: 'clone',
+
             onStartDrag: function() {
                 console.log("Started dragging");
-                changeId(sidebar);
+                //   changeSidebarId(sidebar);
                 $(this).draggable('options').cursor = 'pointer';
                 //     $(this).draggable('proxy').css('z-index', 10);
             },
@@ -63,18 +64,18 @@ function dragNDrop() {
         $('#sidebar').droppable({
             onDragEnter: function(e, source) {
                 $(source).draggable('options').cursor = 'auto';
-                //  changeId(sidebar);
+                //     changeSidebarId(sidebar);
                 console.log($(this));
 
             },
             onDragLeave: function(e, source) {
                 console.log("Started onDragLeave");
-                //    changeId(sidebar);
+                //   changeSidebarId(sidebar);
                 $(source).draggable('options').cursor = 'not-allowed';
             },
             onDrop: function(e, source) {
                 console.log("Started onDrop");
-                changeId(sidebar);
+                //   changeSidebarId(sidebar);
                 var name = $(source).find('p:eq(0)').html();
                 console.log(source);
                 console.log(name);
