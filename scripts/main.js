@@ -24,23 +24,24 @@ function dragNDrop() {
     var data = { "total": 0, "rows": [] };
     var totalCost = 0;
     var sidebar = document.getElementById("sidebar");
-    console.log(sidebar);
+    //  console.log(sidebar);
+
+    function changeId(el) {
+        if (el.id == "sidebar") {
+            el.setAttribute('id', 'sidebarHighlight');
+        } else {
+            el.className = "sidebar";
+        }
+    }
 
     /**
      * This method handles the drag 'n drop functionality
      */
     $(function() {
         // Attempts to highlight when the draggable is over the droppable.
-        /*
-        function changeId() {
-            if (sidebar.id == "sidebar") {
-                sidebar.setAttribute('id', 'sidebarHighlighted');
-            } else {
-                sidebar.className = "sidebar";
-            }
-        }
 
-*/
+
+
         $('#cartcontent').datagrid({
             singleSelect: true
         });
@@ -49,6 +50,7 @@ function dragNDrop() {
             //     proxy: 'clone',
             onStartDrag: function() {
                 console.log("Started dragging");
+                changeId(sidebar);
                 $(this).draggable('options').cursor = 'pointer';
                 //     $(this).draggable('proxy').css('z-index', 10);
             },
@@ -61,18 +63,18 @@ function dragNDrop() {
         $('#sidebar').droppable({
             onDragEnter: function(e, source) {
                 $(source).draggable('options').cursor = 'auto';
-                //   sidebar.changeId();
+                //  changeId(sidebar);
                 console.log($(this));
 
             },
             onDragLeave: function(e, source) {
                 console.log("Started onDragLeave");
-                //     sidebar.changeId();
+                //    changeId(sidebar);
                 $(source).draggable('options').cursor = 'not-allowed';
             },
             onDrop: function(e, source) {
                 console.log("Started onDrop");
-                //       sidebar.changeId();
+                changeId(sidebar);
                 var name = $(source).find('p:eq(0)').html();
                 console.log(source);
                 console.log(name);
