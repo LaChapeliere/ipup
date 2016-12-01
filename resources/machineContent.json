@@ -20,7 +20,7 @@
     {"beer_id":"207504",
      "price":"23",
      "name":"Test",
-     "category":"cocktail",
+     "category":"genericbeer",
      "amount":"10"
     },
     {"beer_id":"207504",
