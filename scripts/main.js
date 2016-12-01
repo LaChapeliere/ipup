@@ -24,7 +24,7 @@ function dragNDrop() {
     var data = { "total": 0, "rows": [] };
     var totalCost = 0;
     var sidebar = document.getElementById("sidebar");
-    //  console.log(sidebar);
+    console.log(sidebar);
 
     /**
      * Function to change the id of the sidebar
@@ -32,9 +32,9 @@ function dragNDrop() {
      */
     function changeSidebarId(elementToBeChanged) {
         if (elementToBeChanged.id == "sidebar") {
-            elementToBeChanged.setAttribute('id', 'sidebarHighlight');
+            elementToBeChanged.setAttribute('id', 'sidebarHighlighted');
         } else {
-            elementToBeChanged.className = "sidebar";
+            elementToBeChanged.id = "sidebar";
         }
     }
 
@@ -45,19 +45,24 @@ function dragNDrop() {
         $('#cartcontent').datagrid({
             singleSelect: true
         });
-
+        console.log(sidebar);
         $('.product').draggable({
             revert: true,
 
             onStartDrag: function() {
                 console.log("Started dragging");
-                //   changeSidebarId(sidebar);
+                changeSidebarId(sidebar);
+                console.log(sidebar);
+
                 $(this).draggable('options').cursor = 'pointer';
                 //     $(this).draggable('proxy').css('z-index', 10);
             },
             onStopDrag: function() {
                 console.log("Stopped dragging");
                 console.log($(this));
+                changeSidebarId(sidebar);
+                console.log(sidebar);
+
                 $(this).draggable('options').cursor = 'pointer';
             }
         });
@@ -65,7 +70,7 @@ function dragNDrop() {
             onDragEnter: function(e, source) {
                 $(source).draggable('options').cursor = 'auto';
                 //     changeSidebarId(sidebar);
-                console.log($(this));
+                //     console.log($(this));
 
             },
             onDragLeave: function(e, source) {
@@ -77,10 +82,10 @@ function dragNDrop() {
                 console.log("Started onDrop");
                 //   changeSidebarId(sidebar);
                 var name = $(source).find('p:eq(0)').html();
-                console.log(source);
-                console.log(name);
+                //     console.log(source);
+                //     console.log(name);
                 var price = $(source).find('p:eq(1)').html();
-                console.log(price);
+                //    console.log(price);
                 addProduct(name, parseFloat(price));
             }
         });
