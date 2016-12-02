@@ -22,7 +22,7 @@ function docLoaded(fn) {
 function dragNDrop() {
     'use strict';
     var sidebar = document.getElementById("sidebar");
-    var productsData = { "totalAmountOfSeparateProducts": 0, "products": [] };
+    var productsData = { "totalAmountOfDifferentProducts": 0, "products": [] };
     var totalCost = 0;
 
     /**
@@ -54,14 +54,14 @@ function dragNDrop() {
              * product already is added to the products array. If so the quantity of the 
              * product is just incremented by 1.
              */
-            for (var i = 0; i < productsData.totalAmountOfSeparateProducts; i++) {
+            for (var i = 0; i < productsData.totalAmountOfDifferentProducts; i++) {
                 var row = productsData.products[i];
                 if (row.name == name) {
                     row.quantity += 1;
                     return updatedProductsArray;
                 }
             }
-            productsData.totalAmountOfSeparateProducts += 1;
+            productsData.totalAmountOfDifferentProducts += 1;
             /**
              * Adding a new product into the array of products             
              */
@@ -72,38 +72,30 @@ function dragNDrop() {
             });
             return updatedProductsArray;
         }
-        /*
-                function writeIntoTable(productsArray) {
-                    // cache <tbody> element:
-                    var tbody = $('#tableBody');
-                    //     console.log(productsData.products.length);
-                    //  $( ".draggableProducts" ).remove();
-                    for (var i = 0; i < productsData.totalAmountOfSeparateProducts; i++) {
-                        // create an <tr> element, append it to the <tbody> and cache it as a variable:
-                        var tr = $('<tr/>').appendTo(tbody);
-                        //     console.log(tr);
-                        //    tr.addClass(draggableProducts);
-                        for (var j = 0; j < productsData.products.length; j++) {
-                            // append <td> elements to previously created <tr> element:
-                            console.log(productsData.products[j]);
-                            tr.append('<td>' + productsData.products[j] + '</td>');
-                        }
-                    }
-                    //   console.log(tr);
-                }
-        */
-        var updatedProductsArray = updateProductsArray();
-        console.log(updatedProductsArray);
-        /*     console.log(updatedProductsArray.length);
-            console.log(productsData.products);
-            console.log(productsData.products.length);
-        console.log("Total amount of separate products: " + productsData.totalAmountOfSeparateProducts);
+
+        /**
+         * Function which handles writing into shoppingcart.
+         * @param an array of product objects           
          */
-        //     writeIntoTable(updatedProductsArray);
-        // $('#cartcontent > tbody:last-child').append('<tr> </tr>');
+        function writeIntoTable(productsArray) {
+            var tbody = $('#tableBody');
+            $('#tableBody').empty();
+            for (var i = 0; i < productsArray.length; i++) {
+                var tr = $('<tr/>').appendTo(tbody);
+                var currentProduct = productsArray[i];
+                // Loops through all the own properties of the object 
+                for (var property in currentProduct) {
+                    if (currentProduct.hasOwnProperty(property)) {
+                        tr.append('<td>' + currentProduct[property] + '</td>');
+                    }
+                }
+            }
+        }
+
+        var updatedProductsArray = updateProductsArray();
+        writeIntoTable(updatedProductsArray);
         totalCost += price;
         $('#total').html('Total: $' + totalCost);
-
     }
 
     /**
