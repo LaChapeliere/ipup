@@ -54,8 +54,8 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      * Make the drink available is the consumer view by ungreying it and making it draggable
      */
     this.makeAvailable = function() {
-        
-        console.log("Make " + name + " available.")
+        display.style.opacity = 1;
+        display.style.filter = "alpha(opacity = 100)";
         available = true;
     }
     
@@ -63,8 +63,8 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      * Make the drink unavailable is the consumer view by greying it and making it non-draggable
      */
     this.makeUnavailable = function() {
-        
-        console.log("Make " + name + " unavailable.")
+        display.style.opacity = 0.4;
+        display.style.filter = "alpha(opacity = 40)";
         available = false;
     }
 }
