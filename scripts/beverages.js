@@ -72,14 +72,16 @@ function populateSlotsConsumer() {
 /**
  * Extract the category of the beverage from the information provided by the database
  * @param providedInfo
- * @return A string with the category of the beverage
+ * @return An array with a string with the category of the beverage and a boolean indicating whether or not the drink is alcoholic
  * Possible values for the category: beer | lager | stout | ale | soft | cider | white_wine | red_wine
  */
 function beverageCategory(providedInfo) {
     'use strict';
     var category = "beer",
         patterns = {red_wine: /rött vin/i, white_wine: /vitt vin/i, ale: /ale/i, stout: /stout/i, lager: /lager/i, cider: /cider/i, beer: /öl/i, soft: /alkoholfritt/i},
-        key;
+        key,
+        alcoholFreePattern = /alkoholfritt/i,
+        alcoholic = !alcoholFreePattern.test(providedInfo);
     
     for (key in patterns) {
         if (patterns.hasOwnProperty(key)) {
@@ -90,5 +92,5 @@ function beverageCategory(providedInfo) {
         }
     }
     
-    return category;
+    return [category, alcoholic];
 }
