@@ -54,9 +54,11 @@ function dragNDrop() {
             helper: "clone",
             cursor: "grab",
             start: function(event, ui) {
+                // Function call to highlight the sidebar once dragging starts
                 //    changeSidebarId(sidebar);
             },
             stop: function(event, ui) {
+                // Function call to stop highlighting of the sidebar once dragging stops
                 //    changeSidebarId(sidebar);
             }
 
@@ -77,13 +79,14 @@ function dragNDrop() {
                 var price = $(ui.draggable).find('p:eq(1)').html();
                 console.log(name);
                 console.log(price);
-                addProduct(name, parseFloat(price));
+                //      addProduct(name, parseFloat(price));
             },
             out: function(event, ui) {
                 console.log("Now dragged out");
             }
         });
     });
+    $('#cartcontent > tbody:last-child').append('<tr><td>blahblah</td></tr>');
 
     function addProduct(name, price) {
         function add() {
@@ -103,7 +106,7 @@ function dragNDrop() {
         }
         add();
         totalCost += price;
-        $('#cartcontent > tbody:last-child').append('<tr>...</tr>');
+        $('#cartcontent > tbody:last-child').append('<tr> </tr>');
         $('#total').html('Total: $' + totalCost);
     }
 
