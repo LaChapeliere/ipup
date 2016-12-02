@@ -18,6 +18,17 @@ function Slot(beer_id, name, price, amount, category, displayBlock) {
         display = displayBlock;
     
     /**
+    * Display the information for the beverage
+    */
+    this.displayInfo = function() {
+        var infoDisplay = display.getElementsByClassName("slotLeft")[0];
+        infoDisplay.getElementsByClassName("drinkName")[0].textContent = name;
+        infoDisplay.getElementsByClassName("price")[0].textContent = price;
+        infoDisplay.getElementsByClassName("stock")[0].textContent = amount;
+        this.fetchImage();
+    }
+    
+    /**
     * Fetch the image corresponding to the beverage category and set it as the display child image
     */
     this.fetchImage = function() {
@@ -30,6 +41,7 @@ function Slot(beer_id, name, price, amount, category, displayBlock) {
  */
 function populateSlotsConsumer() {
     var beveragesTable = document.getElementById("beveragesTable"),
+        api = new APIConnect,
         i,
         j,
         rows,
@@ -39,7 +51,7 @@ function populateSlotsConsumer() {
     
     console.log(beveragesTable);
     
-    $.getJSON("../resources/machineContent.json", function(machineContent) {
+    api.fetchContent( function(machineContent) {
         var beverage;
         
         //For each slot in the machine
@@ -47,9 +59,9 @@ function populateSlotsConsumer() {
         for (i = 0; i < rows.length; i++) {
             cells = rows[i].getElementsByTagName("td");
             for (j = 0; j < cells.length; j++) {
-                beverageInfo = machineContent.content[i * rows.length + j];
+                beverageInfo = machineContent[i * rows.length + j];
                 beverage = new Slot(beverageInfo.beer_id, beverageInfo.name, beverageInfo.price, beverageInfo.amount, beverageInfo.category, cells[j]);
-                beverage.fetchImage();
+                beverage.displayInfo();
             }
         }
     });
