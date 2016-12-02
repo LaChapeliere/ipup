@@ -61,7 +61,7 @@ var machineContent = [{"beer_id":"207504",
     {"beer_id":"207504",
      "price":"23",
      "name":"Test",
-     "category":"cocktail",
+     "category":"lager",
      "amount":"10"
     },
     {"beer_id":"207504",
