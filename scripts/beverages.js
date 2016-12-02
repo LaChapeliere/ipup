@@ -40,6 +40,7 @@ function Slot(beer_id, name, price, amount, category, displayBlock) {
  * Populate the table of beverages in the consumer view
  */
 function populateSlotsConsumer() {
+    'use strict';
     var beveragesTable = document.getElementById("beveragesTable"),
         api = new APIConnect,
         i,
@@ -52,7 +53,8 @@ function populateSlotsConsumer() {
     console.log(beveragesTable);
     
     api.fetchContent( function(machineContent) {
-        var beverage;
+        var beverage,
+            beverageInfo;
         
         //For each slot in the machine
         rows = beveragesTable.getElementsByTagName("tr");
@@ -65,4 +67,28 @@ function populateSlotsConsumer() {
             }
         }
     });
+}
+
+/**
+ * Extract the category of the beverage from the information provided by the database
+ * @param providedInfo
+ * @return A string with the category of the beverage
+ * Possible values for the category: beer | lager | stout | ale | soft | cider | white_wine | red_wine
+ */
+function beverageCategory(providedInfo) {
+    'use strict';
+    var category = "beer",
+        patterns = {red_wine: /rött vin/i, white_wine: /vitt vin/i, ale: /ale/i, stout: /stout/i, lager: /lager/i, cider: /cider/i, beer: /öl/i, soft: /alkoholfritt/i},
+        key;
+    
+    for (key in patterns) {
+        if (patterns.hasOwnProperty(key)) {
+            if (patterns[key].test(providedInfo)) {
+                category = key;
+                break;
+            }
+        }
+    }
+    
+    return category;
 }
