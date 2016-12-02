@@ -36,38 +36,6 @@ function dragNDrop() {
         }
     }
 
-    $(function() {
-        console.log("Function ran");
-        $(".product").draggable({
-            revert: "valid",
-            // revert: false,
-            drag: function(event, ui) {
-                console.log("Dragging");
-
-                console.log(event);
-                console.log(ui);
-                //   $("#info").html("<font color=red>This square will go back to it`s original position, unless it`s dropped in target zone.</font> ");
-            }
-        });
-        $("#sidebar").droppable({
-            drop: function(event, ui) {
-                console.log("Dropping");
-
-                console.log(event);
-                console.log(ui);
-                //  $(this).css("background-color", "lightgreen")
-            },
-            out: function(event, ui) {
-                console.log("Now out");
-
-                console.log(event);
-                console.log(ui);
-                //  $(this).css("background-color", "")
-            }
-        });
-    });
-
-
     //var sum
     // var totalPrice = $("#total")
     // $("#total").html("The sum of purchases is" + sum)
@@ -105,6 +73,12 @@ function dragNDrop() {
                 console.log(event);
 
                 //   deleteImage(ui.draggable);
+            },
+            out: function(event, ui) {
+                console.log("Now out");
+
+                console.log(event);
+                console.log(ui);
             }
         });
     });
