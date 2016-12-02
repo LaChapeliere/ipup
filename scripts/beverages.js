@@ -7,15 +7,16 @@
  * Constructor for the Slot object
  * Represents a slot in the machine, with the information necessary for its display, attached to it's corresponding html object
  */
-function Slot(beer_id, name, price, amount, category, displayBlock) {
+function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
     'use strict';
     
     var beerId = beer_id, //The id of the beverage occupying the slot
         name = name, //The screen name of the beverage
         price = price, //The price of the beverage
         amount = amount, //The amount of bottles of the beverages in the slot
-        type = category, //The type of the beverage
-        display = displayBlock;
+        type = category, //The type of the beverage,
+        alcohol = alcohol, //True if the drink contains alcohol
+        display = displayBlock; //The DOM element corresponding to the slot
     
     /**
     * Display the information for the beverage
@@ -62,7 +63,7 @@ function populateSlotsConsumer() {
             cells = rows[i].getElementsByTagName("td");
             for (j = 0; j < cells.length; j++) {
                 beverageInfo = machineContent[i * rows.length + j];
-                beverage = new Slot(beverageInfo.beer_id, beverageInfo.name, beverageInfo.price, beverageInfo.amount, beverageInfo.category, cells[j]);
+                beverage = new Slot(beverageInfo.beer_id, beverageInfo.name, beverageInfo.price, beverageInfo.amount, beverageInfo.category, beverageInfo.alcoholic, cells[j]);
                 beverage.displayInfo();
             }
         }
