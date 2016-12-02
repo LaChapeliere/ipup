@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <title>Beverage vending machine</title>
 <meta charset="utf-8" />
 <link href="../css/reset.css" rel="stylesheet" />
 <link href="../css/style.css" rel="stylesheet" />
-<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<!--<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+-->
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<!--<script type="text/javascript" src="http://www.pureexample.com/js/lib/jquery.ui.touch-punch.min.js"></script>
+-->
 <script src="../scripts/api.js"></script>
+<!--<script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+-->
 <script src="../scripts/main.js"></script>
 <script src="../scripts/api.js"></script>
 <script src="../scripts/beverages.js"></script>
 <script>
-    //  $(document).ready(function() {indexPageLoaded});
+    $(document).ready(function() {
+        dragNDrop()
+    });
     docLoaded(populateSlotsConsumer);
 </script>
 
@@ -21,7 +29,7 @@
     <div class="container">
 
         <!-- The top bar starts here-->
-        <header id="Top bar">
+        <header id="topBar">
             <dl>
                 <dt><button>All Beverages</button></dt>
                 <dt><button>Soft Drinks</button></dt>
@@ -30,7 +38,16 @@
             </dl>
         </header>
 
-        <!--THE sidebar STARTS HERE -->
+        <header id="adminTopbar">
+            <dl>
+                <dt><button>Users</button></dt>
+                <dt><button>Machine stock</button></dt>
+                <dt><button>Inventory</button></dt>
+                <dt><a href="historystats.html">History/Stats</a></dt>
+            </dl>
+        </header>
+
+        <!--THE SIDEBAR STARTS HERE -->
         <div id="sidebar">
 
             <!-- Language setting - Top of sidebar -->
@@ -39,7 +56,7 @@
                 <img src="img/england.png" style="width:40px;">
             </div>
 
-            <!-- The code for the profil picture -->
+            <!-- The code for the profile picture -->
             <div id="sidebar_header">
                 <img src="img/niklas_test_photo.jpg">
             </div>
@@ -47,17 +64,41 @@
             <!-- The debt area-->
             <div id="debt">Your current debt:</div>
 
+            <!-- Toggle button -->
+            <div id="toggle_div">
+                <p>Admin view</p>
+                <label class="switch">
+               <input type="checkbox"> 
+               <div class="slider round"></div>
+               </label>
+            </div>
+
             <!-- The Log off button-->
             <div id="sidebar_header2">
                 <a href="login_yeah.html">Log off</a>
                 <!--We need to insert something that logs the son of gun out-->
             </div>
 
-            <!-- The text area, where the shopping cart is-->
+            <!-- The table, where the shopping cart is-->
             <div id="sidebar_content">
-                <textarea id="cart" rows="17" placeholder="This is where your drinks go"></textarea>
-            </div>
+                <div id="cartBackground">
+                    <h1>Shopping Cart</h1>
+                    <table id="cartcontent">
+                        <thead>
+                            <tr>
+                                <th field="name" width=120>Name</th>
+                                <th field="quantity" width=30 align="right">Quantity</th>
+                                <th field="price" width=30 align="right">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
+                        </tbody>
+                    </table>
+                    <!--Added id = total here just temporarily so that the addProduct refers correctly. -Lauri -->
+                    <p class="total" id="total">Total: $0</p>
+                </div>
+            </div>
             <!-- Clear all / Puchase button area-->
             <div id="sidebar_footer">
                 <button>Clear all</button>
@@ -72,196 +113,176 @@
             <table id="beveragesTable">
                 <!-- Row one -->
                 <tr>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
-                            <p class="drinkName">Name</p>
-                            <p class="price">Price here</p>
+                            <p class="drinkName">Anhorsteam delight</p>
+                            <p class="price">25</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
-                            <p class="drinkName">Name</p>
-                            <p class="price">Price here</p>
+                            <p class="drinkName">Name2</p>
+                            <p class="price">30</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
                 </tr>
 
                 <!-- Row two -->
                 <tr>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
                 </tr>
 
                 <!-- Row three -->
                 <tr>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
                 </tr>
 
                 <!-- Row four -->
                 <tr>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
-                    <td>
+                    <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <button class="editSlot">Edit</button>
                         </div>
                     </td>
                 </tr>
