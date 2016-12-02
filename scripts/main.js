@@ -22,7 +22,8 @@ function docLoaded(fn) {
 function dragNDrop() {
     'use strict';
     var sidebar = document.getElementById("sidebar");
-
+    var data = { "total": 0, "rows": [] };
+    var totalCost = 0;
 
     /**
      * Function to change the id of the sidebar
@@ -71,15 +72,39 @@ function dragNDrop() {
             drop: function(event, ui) {
                 /*     console.log(ui);
                      console.log(event);*/
-
-                //   deleteImage(ui.draggable);
+                console.log(ui.draggable);
+                var name = $(ui.draggable).find('p:eq(0)').html();
+                var price = $(ui.draggable).find('p:eq(1)').html();
+                console.log(name);
+                console.log(price);
+                addProduct(name, parseFloat(price));
             },
             out: function(event, ui) {
-                console.log("Now out");
-
-                console.log(event);
-                console.log(ui);
+                console.log("Now dragged out");
             }
         });
     });
+
+    function addProduct(name, price) {
+        function add() {
+            for (var i = 0; i < data.total; i++) {
+                var row = data.rows[i];
+                if (row.name == name) {
+                    row.quantity += 1;
+                    return;
+                }
+            }
+            data.total += 1;
+            data.rows.push({
+                name: name,
+                quantity: 1,
+                price: price
+            });
+        }
+        add();
+        totalCost += price;
+        $('#cartcontent > tbody:last-child').append('<tr>...</tr>');
+        $('#total').html('Total: $' + totalCost);
+    }
+
 }
