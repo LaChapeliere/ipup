@@ -66,7 +66,7 @@ var machineContent = [{"beer_id":"207504",
     },
     {"beer_id":"207504",
      "price":"23",
-     "name":"Test",
+     "name":"Poliziano Vino Nobile di Montepulciano",
      "category":"red_wine",
      "amount":"10"
     },
