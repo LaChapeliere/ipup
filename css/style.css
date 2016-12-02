@@ -349,6 +349,13 @@ den div som omsluter tabellen.*/
     width: 230px;
 }
 
+/*This is where we implement tabular for admin and stock view*/
+
+.stock_admin{
+    background-color: red;
+    border-radius: none;
+}
+
 
 /* Right part of slot element, with picture as background */
 
