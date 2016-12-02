@@ -22,7 +22,7 @@ function docLoaded(fn) {
 function dragNDrop() {
     'use strict';
     var sidebar = document.getElementById("sidebar");
-    var data = { "total": 0, "rows": [] };
+    var productsData = { "totalAmountOfSeparateProducts": 0, "products": [] };
     var totalCost = 0;
 
     /**
@@ -79,35 +79,66 @@ function dragNDrop() {
                 var price = $(ui.draggable).find('p:eq(1)').html();
                 console.log(name);
                 console.log(price);
-                //      addProduct(name, parseFloat(price));
+                addProduct(name, parseFloat(price));
             },
             out: function(event, ui) {
-                console.log("Now dragged out");
+
             }
         });
     });
-    $('#cartcontent > tbody:last-child').append('<tr><td>blahblah</td></tr>');
 
     function addProduct(name, price) {
-        function add() {
-            for (var i = 0; i < data.total; i++) {
-                var row = data.rows[i];
+        function updateProductsArray() {
+            var updatedProductsArray = productsData.products;
+            for (var i = 0; i < productsData.totalAmountOfSeparateProducts; i++) {
+                var row = productsData.products[i];
                 if (row.name == name) {
                     row.quantity += 1;
-                    return;
+                    return updatedProductsArray;
                 }
             }
-            data.total += 1;
-            data.rows.push({
+            productsData.totalAmountOfSeparateProducts += 1;
+            productsData.products.push({
                 name: name,
                 quantity: 1,
                 price: price
             });
+            return updatedProductsArray;
         }
-        add();
+        /*
+                function writeIntoTable(productsArray) {
+                    // cache <tbody> element:
+                    var tbody = $('#tableBody');
+                    //     console.log(productsData.products.length);
+                    //  $( ".draggableProducts" ).remove();
+                    for (var i = 0; i < productsData.totalAmountOfSeparateProducts; i++) {
+                        // create an <tr> element, append it to the <tbody> and cache it as a variable:
+                        var tr = $('<tr/>').appendTo(tbody);
+                        //     console.log(tr);
+                        //    tr.addClass(draggableProducts);
+                        for (var j = 0; j < productsData.products.length; j++) {
+                            // append <td> elements to previously created <tr> element:
+                            console.log(productsData.products[j]);
+                            tr.append('<td>' + productsData.products[j] + '</td>');
+                        }
+                    }
+                    //   console.log(tr);
+                }
+        */
+        var updatedProductsArray = updateProductsArray();
+        /*     console.log(updatedProductsArray);
+             console.log(updatedProductsArray.length);
+             console.log(productsData.products);
+             console.log(productsData.products.length);
+         console.log("Total amount of separate products: " + productsData.totalAmountOfSeparateProducts);
+          */
+        //     writeIntoTable(updatedProductsArray);
+        // $('#cartcontent > tbody:last-child').append('<tr> </tr>');
         totalCost += price;
-        $('#cartcontent > tbody:last-child').append('<tr> </tr>');
         $('#total').html('Total: $' + totalCost);
+
     }
+
+
 
 }
