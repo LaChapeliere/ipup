@@ -37,59 +37,23 @@ function dragNDrop() {
         }
     }
 
-    //var sum
-    // var totalPrice = $("#total")
-    // $("#total").html("The sum of purchases is" + sum)
-    $(function() {
-
-        // There's the gallery and the trash
-        var $contents = $("#beveragesTable"),
-            $shoppingCart = $("#sidebar");
-
-        // Let the gallery items be draggable
-        $("td", $contents).draggable({
-            cancel: "a.ui-icon", // clicking an icon won't initiate dragging
-            revert: "invalid", // when not dropped, the item will revert back to its initial position
-            containment: "document",
-            helper: "clone",
-            cursor: "grab",
-            start: function(event, ui) {
-                // Function call to highlight the sidebar once dragging starts
-                //    changeSidebarId(sidebar);
-            },
-            stop: function(event, ui) {
-                // Function call to stop highlighting of the sidebar once dragging stops
-                //    changeSidebarId(sidebar);
-            }
-
-        });
-
-        // Let the trash be droppable, accepting the gallery items
-        $shoppingCart.droppable({
-            accept: ".product",
-            /*    classes: {
-                   "ui-droppable-active": "ui-state-highlight"
-               },*/
-
-            drop: function(event, ui) {
-                /*     console.log(ui);
-                     console.log(event);*/
-                console.log(ui.draggable);
-                var name = $(ui.draggable).find('p:eq(0)').html();
-                var price = $(ui.draggable).find('p:eq(1)').html();
-                console.log(name);
-                console.log(price);
-                addProduct(name, parseFloat(price));
-            },
-            out: function(event, ui) {
-
-            }
-        });
-    });
-
+    /**
+     * Function which adds a product to the shoppingcart table and adjusts the total  
+     * @param name - the name of the beverage
+     * @param price - the price of the beverage
+     */
     function addProduct(name, price) {
+        /**
+         * Function which forms an array of products which have been placed in the shoppingcart.
+         * @return An array with product objects as elements
+         */
         function updateProductsArray() {
             var updatedProductsArray = productsData.products;
+            /**
+             * Loops through the total amount of separate products and checks if a certain
+             * product already is added to the products array. If so the quantity of the 
+             * product is just incremented by 1.
+             */
             for (var i = 0; i < productsData.totalAmountOfSeparateProducts; i++) {
                 var row = productsData.products[i];
                 if (row.name == name) {
@@ -98,6 +62,9 @@ function dragNDrop() {
                 }
             }
             productsData.totalAmountOfSeparateProducts += 1;
+            /**
+             * Adding a new product into the array of products             
+             */
             productsData.products.push({
                 name: name,
                 quantity: 1,
@@ -126,12 +93,12 @@ function dragNDrop() {
                 }
         */
         var updatedProductsArray = updateProductsArray();
-        /*     console.log(updatedProductsArray);
-             console.log(updatedProductsArray.length);
-             console.log(productsData.products);
-             console.log(productsData.products.length);
-         console.log("Total amount of separate products: " + productsData.totalAmountOfSeparateProducts);
-          */
+        console.log(updatedProductsArray);
+        /*     console.log(updatedProductsArray.length);
+            console.log(productsData.products);
+            console.log(productsData.products.length);
+        console.log("Total amount of separate products: " + productsData.totalAmountOfSeparateProducts);
+         */
         //     writeIntoTable(updatedProductsArray);
         // $('#cartcontent > tbody:last-child').append('<tr> </tr>');
         totalCost += price;
@@ -139,6 +106,41 @@ function dragNDrop() {
 
     }
 
+    /**
+     * Function that does the actual dragging and dropping
+     */
+    $(function() {
+        var $contents = $("#beveragesTable"),
+            $shoppingCart = $("#sidebar");
 
+        $("td", $contents).draggable({
+            cancel: "a.ui-icon", // clicking an icon won't initiate dragging
+            revert: "invalid", // when not dropped, the item will revert back to its initial position
+            containment: "document",
+            helper: "clone",
+            cursor: "grab",
+            start: function(event, ui) {
+                // Function call to highlight the sidebar once dragging starts
+                //    changeSidebarId(sidebar);
+            },
+            stop: function(event, ui) {
+                // Function call to stop highlighting of the sidebar once dragging stops
+                //    changeSidebarId(sidebar);
+            }
 
+        });
+
+        $shoppingCart.droppable({
+            accept: ".product",
+            drop: function(event, ui) {
+                // console.log(ui.draggable);
+                var name = $(ui.draggable).find('p:eq(0)').html();
+                var price = $(ui.draggable).find('p:eq(1)').html();
+                addProduct(name, parseFloat(price));
+            },
+            out: function(event, ui) {
+                // Not sure if this is needed in the project work.
+            }
+        });
+    });
 }
