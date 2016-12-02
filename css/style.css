@@ -342,7 +342,7 @@ den div som omsluter tabellen.*/
 
 /* The specific element in the table */
 
-#content td {
+.product {
     border-radius: 1em;
     box-shadow: 0 2px 2px 1px #333;
     color: black;
@@ -352,8 +352,9 @@ den div som omsluter tabellen.*/
 /*This is where we implement tabular for admin and stock view*/
 
 .stock_admin{
-    background-color: red;
-    border-radius: none;
+    width:auto;
+    text-align-last: center
+    
 }
 
 
