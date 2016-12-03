@@ -102,11 +102,9 @@ function dragNDrop() {
      * Function that does the actual dragging and dropping
      */
     $(function() {
-        var $contents = $("#beveragesTable"),
-            $shoppingCart = $("#sidebar");
 
-        $("td", $contents).draggable({
-            cancel: "a.ui-icon", // clicking an icon won't initiate dragging
+        $(".product").draggable({
+            //     $(".availableProduct").draggable({
             revert: "invalid", // when not dropped, the item will revert back to its initial position
             containment: "document",
             helper: "clone",
@@ -122,8 +120,8 @@ function dragNDrop() {
 
         });
 
-        $shoppingCart.droppable({
-            accept: ".product",
+        $("#sidebar").droppable({
+            //      accept: ".product",
             drop: function(event, ui) {
                 // console.log(ui.draggable);
                 var name = $(ui.draggable).find('p:eq(0)').html();
