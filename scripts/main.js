@@ -36,6 +36,25 @@ function dragNDrop() {
             elementToBeChanged.id = "sidebar";
         }
     }
+    
+    /**
+     * Function which handles writing into shoppingcart.
+     * @param an array of product objects           
+     */
+    function writeIntoTable(productsArray) {
+        var tbody = $('#tableBody');
+        $('#tableBody').empty();
+        for (var i = 0; i < productsArray.length; i++) {
+            var tr = $('<tr/>').appendTo(tbody);
+            var currentProduct = productsArray[i];
+            // Loops through all the own properties of the object 
+            for (var property in currentProduct) {
+                if (currentProduct.hasOwnProperty(property)) {
+                    tr.append('<td>' + currentProduct[property] + '</td>');
+                }
+            }
+        }
+    }
 
     /**
      * Function which adds a product to the shoppingcart table and adjusts the total  
@@ -73,28 +92,19 @@ function dragNDrop() {
             return updatedProductsArray;
         }
 
-        /**
-         * Function which handles writing into shoppingcart.
-         * @param an array of product objects           
-         */
-        function writeIntoTable(productsArray) {
-            var tbody = $('#tableBody');
-            $('#tableBody').empty();
-            for (var i = 0; i < productsArray.length; i++) {
-                var tr = $('<tr/>').appendTo(tbody);
-                var currentProduct = productsArray[i];
-                // Loops through all the own properties of the object 
-                for (var property in currentProduct) {
-                    if (currentProduct.hasOwnProperty(property)) {
-                        tr.append('<td>' + currentProduct[property] + '</td>');
-                    }
-                }
-            }
-        }
-
         var updatedProductsArray = updateProductsArray();
         writeIntoTable(updatedProductsArray);
         totalCost += price;
+        $('#total').html('Total: $' + totalCost);
+    }
+    
+    /**
+     * Clear the table
+     */
+    function clearTable() {
+        productsData = { "totalAmountOfDifferentProducts": 0, "products": [] };
+        totalCost = 0;
+        writeIntoTable([]);
         $('#total').html('Total: $' + totalCost);
     }
 
@@ -129,6 +139,19 @@ function dragNDrop() {
             out: function(event, ui) {
                 // Not sure if this is needed in the project work.
             }
+        });
+    });
+    
+    /*
+     * Wire the Clear Table and Purchase button
+     */
+    $(function() {
+        $('#clearAllCart').click( function() {
+            clearTable();
+        });
+        $('#purchaseCart').click( function() {
+            console.log("ADD PURCHASE");
+            clearTable();
         });
     });
 }
