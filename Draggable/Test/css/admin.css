@@ -249,9 +249,7 @@ input:checked+.slider:before {
 
 /* The able area itself - Not currently used*/
 
-
 /* den nuvarande vita bakgrundsfärgade området BAKOM tabellen som utgör shoppingcarten */
-
 #cartBackground {
     position: relative;
     width: 180px;
@@ -263,23 +261,18 @@ input:checked+.slider:before {
     margin-right: auto;
 }
 
-
 /* Den Titel som det står "Shopping Cart" i, ligge rprecis ovanför tabellen men inuti
 den div som omsluter tabellen.*/
-
 #cartBackground h1 {
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #333; 
     background-color: deepskyblue;
     padding-bottom: .2em;
 }
 
-
 /* Själva tabellen */
-
-#cartcontent,
-{
+#cartcontent, {
     width: 180px;
     background-color: white;
     margin-left: auto;
@@ -289,29 +282,22 @@ den div som omsluter tabellen.*/
     border-radius: 1em;
 }
 
-
 /* Varje element i tabellen */
-
 #cartcontent th {
     padding: .2em .1em .2em;
 }
 
-
 /* Varje rad i tabellen */
-
 #cartcontent tr {
     border-bottom: 1px solid #333;
 }
 
-
 /* Total-paragrafen som ligger FAST i botten av diven #cartBackground */
-
 .total {
     position: absolute;
     bottom: 0;
     margin-left: 60px;
 }
-
 
 /* The two buttons at the bottom of the sidebar */
 
@@ -342,42 +328,11 @@ den div som omsluter tabellen.*/
 
 /* The specific element in the table */
 
-.product {
+#content td {
     border-radius: 1em;
     box-shadow: 0 2px 2px 1px #333;
     color: black;
     width: 230px;
-}
-
-/*This is where we implement tabular for admin and stock view*/
-
-.head_admin{
-    text-decoration: underline;
-    font-size: 30px;
-    background-color: rgb(255, 255, 255)
-}
-.stock_admin{
-    font-size: 20px;
-    width:auto;
-    text-align-last: center
-    
-}
-
-.stock_admin:nth-child(even) {
-    margin:auto%;
-    background-color: #9acef7
-    
-}
-
-.stock_admin:nth-child(odd) {
-    margin:auto;
-    background-color: rgb(196, 196, 196)
-}
-
-.stockTable{
-    border-collapse: separate;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 

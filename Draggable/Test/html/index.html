@@ -8,19 +8,17 @@
 -->
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-<!--<script type="text/javascript" src="http://www.pureexample.com/js/lib/jquery.ui.touch-punch.min.js"></script>
--->
-<script src="../scripts/api.js"></script>
-<!--<script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
--->
-<script src="../scripts/main.js"></script>
+<script src="../resources/machineContent.js"></script>
 <script src="../scripts/api.js"></script>
 <script src="../scripts/beverages.js"></script>
+<script src="../scripts/main.js"></script>
+
 <script>
+    //    docLoaded(populateSlotsConsumer);
     $(document).ready(function() {
-        dragNDrop()
+        populateSlotsConsumer();
+        dragNDrop();
     });
-    docLoaded(populateSlotsConsumer);
 </script>
 
 <!-- Wrapper for all content-->
@@ -31,9 +29,9 @@
         <!-- The top bar starts here-->
         <header id="topBar">
             <dl>
-                <dt><button>All Beverages</button></dt>
-                <dt><button>Soft Drinks</button></dt>
-                <dt><button>Alcoholic Drinks</button></dt>
+                <dt><button id="allBevButton">All Beverages</button></dt>
+                <dt><button id="softDrinksButton">Soft Drinks</button></dt>
+                <dt><button id="alcoDrinksButton">Alcoholic Drinks</button></dt>
                 <dt><a href="historystats.html">History/Stats</a></dt>
             </dl>
         </header>
@@ -91,7 +89,7 @@
                                 <th field="price" width=30 align="right">Price</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id=tableBody>
 
                         </tbody>
                     </table>
@@ -132,8 +130,8 @@
                     <td class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
-                            <p class="drinkName">Name</p>
-                            <p class="price">Price here</p>
+                            <p class="drinkName">Name3</p>
+                            <p class="price">35</p>
                             <p class="stock">Stock here</p>
                         </div>
                     </td>

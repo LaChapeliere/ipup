@@ -103,8 +103,8 @@ function dragNDrop() {
      */
     $(function() {
 
-        $(".product").draggable({
-            //     $(".availableProduct").draggable({
+        // $(".product").draggable({
+        $(".availableProduct").draggable({
             revert: "invalid", // when not dropped, the item will revert back to its initial position
             containment: "document",
             helper: "clone",

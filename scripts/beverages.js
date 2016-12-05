@@ -61,8 +61,10 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
          * Checks if the current DOM element doesn't have availableProduct class
          * and adds the class if not.                   
          */
+        console.log("Available", display);
         if (!$(display).hasClass('availableProduct')) {
             $(display).addClass('availableProduct');
+            //           $(display).addClass('ui-draggable');
         }
     }
 
@@ -79,6 +81,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
          */
         if ($(display).hasClass('availableProduct')) {
             $(display).removeClass('availableProduct');
+            //         $(display).removeClass('ui-draggable');
         }
     }
 }
@@ -115,7 +118,7 @@ function populateSlotsConsumer() {
                 // Adds a new class availableProduct to each DOM element.
                 //  console.log(i, j, $(cells[j]));
                 //    console.log($(cells[j]));
-                //       $(cells[j]).addClass('availableProduct');
+                $(cells[j]).addClass('availableProduct');
                 //  console.log($(i, j, cells[j]));
                 // console.log($(cells[j]));
                 beverageInfo = machineContent[index];

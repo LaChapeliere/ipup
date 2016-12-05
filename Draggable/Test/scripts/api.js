@@ -196,6 +196,15 @@ function APIConnect() {
         var url = constructURL({ action: 'inventory_append', username: username, password: password, beer_id: beerId, amount: amount, price: price });
         request(url, callback);
     };
+    
+    /**
+     * Method to fetch the content of the machine
+     * @note FAKE
+     * @param callback The callback function to call on the response
+     */
+    this.fetchContent = function(callback) {
+        callback(machineContent);
+    };
 }
 
 
@@ -330,5 +339,10 @@ function testAPIConnection() {
     api.updateInventory("22590", "20", "6.0", function(usr) {
         console.log("Test inventory_append");
         console.log(usr);
+    });
+    
+    //Test fetchContent
+    api.fetchContent( function(machineContent) {
+        console.log(machineContent); 
     });
 }
