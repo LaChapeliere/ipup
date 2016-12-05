@@ -57,15 +57,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
         display.style.opacity = 1;
         display.style.filter = "alpha(opacity = 100)";
         available = true;
-        /**
-         * Checks if the current DOM element doesn't have availableProduct class
-         * and adds the class if not.                   
-         */
-        console.log("Available", display);
-        if (!$(display).hasClass('availableProduct')) {
-            $(display).addClass('availableProduct');
-            //           $(display).addClass('ui-draggable');
-        }
+        $(display).draggable('enable');
     }
 
     /**
@@ -75,14 +67,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
         display.style.opacity = 0.4;
         display.style.filter = "alpha(opacity = 40)";
         available = false;
-        /**
-         *Checks if the current DOM element has availableProduct class and
-         * adds the class if not.                   
-         */
-        if ($(display).hasClass('availableProduct')) {
-            $(display).removeClass('availableProduct');
-            //         $(display).removeClass('ui-draggable');
-        }
+        $(display).draggable('disable');
     }
 }
 
@@ -115,12 +100,6 @@ function populateSlotsConsumer() {
             cells = rows[i].getElementsByTagName("td");
             for (j = 0; j < cells.length; j++) {
                 index = i * cells.length + j;
-                // Adds a new class availableProduct to each DOM element.
-                //  console.log(i, j, $(cells[j]));
-                //    console.log($(cells[j]));
-                $(cells[j]).addClass('availableProduct');
-                //  console.log($(i, j, cells[j]));
-                // console.log($(cells[j]));
                 beverageInfo = machineContent[index];
                 beverage = new Slot(beverageInfo.beer_id, beverageInfo.name, beverageInfo.price, beverageInfo.amount, beverageInfo.category, beverageInfo.alcoholic, cells[j]);
                 //Send the information to the display
