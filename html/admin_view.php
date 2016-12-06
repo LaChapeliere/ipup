@@ -71,7 +71,6 @@
         <!-- THE MAIN CONTENT STARTS HERE, I.E NOT TOP BAR OR SIDE BAR -->
 
         <!-- A table for all of the drinks to appear in-->
-        <div id="content">
             <table id="stockTable" style="width:100%">
                 <tr class ="stock_admin">
                     <th class = "head_admin">Name</th>
@@ -122,7 +121,7 @@
 
         </div>
     </div>
-</div>
+
 
 
 <body>

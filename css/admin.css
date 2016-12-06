@@ -27,3 +27,55 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 30px;
+    text-align: left;
+}
+
+
+tr:hover {background-color: #f5f5f5}
+
+
+
+
+/* imported from style.css, in trying to override */
+
+#sidebar_content {
+    margin-top: 1em;
+} /*<- this doesn't seem to do anything*/
+
+
+
+#content table {
+    border-collapse: separate;
+    border-spacing: .5em .3em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product {
+    border-radius: 1em;
+    box-shadow: 0 2px 2px 1px #333;
+    color: black;
+    width: 230px;
+}
+
+.slotElement {
+    width: 90px;
+    height: 117px;
+    display: inline-block;
+    background-position: center center;
+    background-size: cover;
+    float: right;
+}
+
+.slotLeft {
+    width: 100px;
+    height: 117px;
+    float: left;
+    position: relative;
