@@ -61,6 +61,9 @@
             <div id="sidebar_header">
                 <img src="img/niklas_test_photo.jpg">
             </div>
+            
+            <!-- Welcome message-->
+            <div id="welcome"></div>
 
             <!-- The debt area-->
             <div id="debt">Your current debt:</div>

@@ -64,6 +64,7 @@ function initUser(username, password) {
         balance = payload["assets"];
         
         //Display the balance and the first name
+        document.getElementById("welcome").textContent = "Welcome " + firstName + "!";
         updateBalanceDisplay(balance);
     });
 }
