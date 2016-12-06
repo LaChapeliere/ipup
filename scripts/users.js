@@ -35,7 +35,7 @@ function validateLogin() {
 
 function loadConsumerPage(api, usn, pwd, info) {
     //Load the main consumer page
-    window.location.assign("../html/index.html");
+    window.location.assign("../html/index.php");
 }
 
 /**
