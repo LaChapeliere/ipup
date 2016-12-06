@@ -72,10 +72,10 @@
             </div>
 
             <!-- The Log off button-->
-            <div id="sidebar_header2">
-                <a href="login_yeah.php">Log off</a>
+            <button id="log off button">
+                <a href="login_yeah.php">Logo off</a>
                 <!--We need to insert something that logs the son of gun out-->
-            </div>
+            </button>
 
             <!-- The table, where the shopping cart is-->
             <div id="sidebar_content">
