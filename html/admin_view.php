@@ -79,9 +79,9 @@
         <thead>
                 <tr class ="stock_admin">
                     <th class = "head_admin"> <a href="javascript:SortTable(0,'T');">Le Name</a></th>
-                    <th class = "head_admin"> <a href="javascript:SortTable(0,'T');">Le Price</a></th>
-                    <th class = "head_admin"> <a href="javascript:SortTable(0,'T');">Le Count</a></th>
-                    <th class = "head_admin"> <a href="javascript:SortTable(0,'T');">Le Category</a></th>
+                    <th class = "head_admin"> <a href="javascript:SortTable(1,'T');">Le Price</a></th>
+                    <th class = "head_admin"> <a href="javascript:SortTable(2,'T');">Le Count</a></th>
+                    <th class = "head_admin"> <a href="javascript:SortTable(3,'T');">Le Category</a></th>
                     
                 </tr>
         </thead>
