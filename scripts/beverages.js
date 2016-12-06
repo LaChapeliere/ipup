@@ -254,9 +254,11 @@ function dragNDrop() {
                     console.log(e);
                     console.log($(this).clone());*/
                 return $(this).clone();
+                //               return $(this).clone().height($(this).height());
             },
             cursor: "grab",
             start: function(event, ui) {
+                //  $(ui.helper).addClass("ui-draggable-helper");
                 // Function call to highlight the sidebar once dragging starts
                 //    changeSidebarId(sidebar);
             },
