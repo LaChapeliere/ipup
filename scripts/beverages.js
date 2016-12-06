@@ -260,11 +260,11 @@ function dragNDrop() {
             start: function(event, ui) {
                 //  $(ui.helper).addClass("ui-draggable-helper");
                 // Function call to highlight the sidebar once dragging starts
-                //    changeSidebarId(sidebar);
+                changeSidebarId(sidebar);
             },
             stop: function(event, ui) {
                 // Function call to stop highlighting of the sidebar once dragging stops
-                //    changeSidebarId(sidebar);
+                changeSidebarId(sidebar);
             }
 
         });
