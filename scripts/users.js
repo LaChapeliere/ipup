@@ -67,6 +67,20 @@ function initUser(username, password) {
         document.getElementById("welcome").textContent = "Welcome " + firstName + "!";
         updateBalanceDisplay(balance);
     });
+    
+    //Determine if the user is an admin by sending an admin-only query to the database
+    //@NOTE: This is an ugly method, but the credentials can only be checked by an admin...
+    api.fetchUsers( function(answer) {
+        var info = JSON.parse(answer),
+            type = info.type;
+        console.log(info);
+        if (!(type === "error")) {
+            //If the request is accepted, the user is an admin
+            //Display toggle button for admin view
+            document.getElementById("toggle_div").style.display = "initial";
+        }
+        //If the user is not an admin, do nothing
+    })
 }
 
 /*
