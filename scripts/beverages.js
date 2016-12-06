@@ -250,9 +250,9 @@ function dragNDrop() {
             revert: "invalid", // when not dropped, the item will revert back to its initial position
             containment: "document",
             helper: function(e, ui) {
-                console.log(ui);
-                console.log(e);
-                console.log($(this).clone());
+                /*    console.log(ui);
+                    console.log(e);
+                    console.log($(this).clone());*/
                 return $(this).clone();
             },
             cursor: "grab",
