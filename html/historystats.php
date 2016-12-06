@@ -14,9 +14,9 @@
 	<div class="container">
 		<header id="Top bar">
 		<dl>
-			<dt><a href="index.html">All Beverages</a></dt>
-			<dt><a href="index.html">Soft Drinks</a></dt>
-			<dt><a href="index.html">Alcoholic Drinks</a></dt>
+			<dt><a href="index.php">All Beverages</a></dt>
+			<dt><a href="index.php">Soft Drinks</a></dt>
+			<dt><a href="index.php">Alcoholic Drinks</a></dt>
 			<dt><button>History/Stats</button></dt>
 		</dl>
 		</header>
@@ -41,7 +41,7 @@
 
             <!-- The Log off button-->
             <div id="sidebar_header2">
-               <a href="login_yeah.html">Log off</a> <!--We need to insert something that logs the son of gun out-->
+               <a href="login_yeah.php">Log off</a> <!--We need to insert something that logs the son of gun out-->
             </div>
 
             <!-- The text area, where the shopping cart is-->
