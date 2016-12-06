@@ -14,9 +14,9 @@
 	<div class="container">
 		<header id="Top bar">
 		<dl>
-			<dt><a href="index.php">All Beverages</a></dt>
-			<dt><a href="index.php">Soft Drinks</a></dt>
-			<dt><a href="index.php">Alcoholic Drinks</a></dt>
+			<dt><a href="index.php?filter=all">All Beverages</a></dt>
+			<dt><a href="index.php?filter=soft">Soft Drinks</a></dt>
+			<dt><a href="index.php?filter=alco">Alcoholic Drinks</a></dt>
 			<dt><button>History/Stats</button></dt>
 		</dl>
 		</header>

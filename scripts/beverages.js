@@ -57,6 +57,9 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
         display.style.opacity = 1;
         display.style.filter = "alpha(opacity = 100)";
         available = true;
+        if (!$(display).data('ui-draggable')) {
+            $(display).draggable();
+        }
         $(display).draggable('enable');
     }
 
@@ -67,14 +70,19 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
         display.style.opacity = 0.4;
         display.style.filter = "alpha(opacity = 40)";
         available = false;
+        if (!$(display).data('ui-draggable')) {
+            $(display).draggable();
+        }
         $(display).draggable('disable');
     }
 }
 
 /**
  * Populate the table of beverages in the consumer view
+ * @param displayAlco True if the alcoholic drinks should be available
+ * @param displaySoft True if the non-acoholic drinks should be available
  */
-function populateSlotsConsumer() {
+function populateSlotsConsumer(displayAlco, displaySoft) {
     'use strict';
     var beveragesTable = document.getElementById("beveragesTable"),
         api = new APIConnect,
@@ -108,6 +116,8 @@ function populateSlotsConsumer() {
             }
         }
     });
+    console.log(displayAlco, displaySoft);
+    filterAlcoholDrinks(displayAlco, displaySoft);
 
     //Wire the filter buttons
     allBevButton.onclick = function() {
