@@ -11,11 +11,14 @@
 <script src="../resources/machineContent.js"></script>
 <script src="../scripts/api.js"></script>
 <script src="../scripts/beverages.js"></script>
+<script src="../scripts/users.js"></script>
 <script src="../scripts/main.js"></script>
 
 <script>
     //    docLoaded(populateSlotsConsumer);
     $(document).ready(function() {
+        var $_POST = <?php echo !empty($_POST)?json_encode($_POST):'null';?>;
+        initUser($_POST["username"], $_POST["password"]);
         populateSlotsConsumer();
         dragNDrop();
     });

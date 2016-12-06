@@ -1,3 +1,4 @@
+var user; //Holds the User object for the connected user
 
 function validateLogin() {
     'use strict';
@@ -24,18 +25,55 @@ function validateLogin() {
         
         //If the username/password combination does not exist
         if (type === "error") {
-            alert(payload[0].msg);
+            alert(payload.msg);
             return;
         }
         
-        //If the username/password combination is correct
-        loadConsumerPage(api, username, password, payload);
+        document.forms["loginForm"].submit();
     });
 }
 
-function loadConsumerPage(api, usn, pwd, info) {
-    //Load the main consumer page
-    window.location.assign("../html/index.php");
+/**
+ * Constructor for the user Object
+ * @param username The user's username
+ * @param password The user's password
+ */
+function initUser(username, password) {
+    var username = username, //The user's username
+        password = password, //The user's password
+        firstName, //The user's first name
+        lastName, //The user's last name
+        balance, //The amount of money availaible to the user
+        api; //An API connection to the database, set to this user
+    
+    //Set up the API connection and fetch basic info on the user
+    api = new APIConnect();
+    api.setUser(username, password);
+    api.fetchIOU( function(answer) {
+        var info = JSON.parse(answer),
+            type = info.type,
+            payload = info.payload[0];
+        
+        if (type === "error") {
+            alert(payload.msg);
+            return;
+        }
+        
+        firstName = payload["first_name"];
+        lastName = payload["last_name"];
+        balance = payload["assets"];
+        
+        //Display the balance and the first name
+        updateBalanceDisplay(balance);
+    });
+}
+
+/*
+ * Update the display of the balance to the current balance
+ * @param balance
+ */
+function updateBalanceDisplay(balance) {
+    document.getElementById("debt").textContent = "Balance: " + balance + " kr";
 }
 
 /**

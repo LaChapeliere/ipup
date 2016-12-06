@@ -13,7 +13,7 @@
       <section class="container">
         <div class="login">
           <h1>Log in by filling in the fields below</h1>
-          <form name="loginForm">
+          <form name="loginForm" method="post" action="index.php">
             <div><input class = "field" type="text" name="username" value="" placeholder="Nickname"></div>
             <div><input class = "field" type="password" name="password" value="" placeholder="Password"></div>
           </form>
