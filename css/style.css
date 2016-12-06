@@ -237,45 +237,43 @@ log off button [a] {
 log off button:hover {
     color: #1330ee;
 }
+*/
 
-
-/*
-#log off button {
+.log_off_button {
     display: inline-block;
     border-radius: 3px;
-    background-color: rgb(116, 70, 16);
+    background-color: rgb(0, 186, 21);
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     padding: 20px;
-    width: 200px;
-    transition: all 0.1s;
+    width: 7em;
     cursor: pointer;
     margin: 5px;
 }
 
-#log off button {
+.log_off_button span{
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-#log off button:after {
-  content: '»';
+.log_off_button span:after {
+  content: '«';
   position: absolute;
-  opacity: 0;
   top: 0;
-  right: -20px;
+  opacity: 1;
+  left: -18px;
   transition: 0.5s;
 }
 
-#log off button:hover span {
-  padding-right: 25px;
+.log_off_button:hover span {
+  padding-left: 20px;
 }
 
-#log off button:hover span:after {
+.log_off_button:hover span:before {
   opacity: 1;
   right: 0;
 }
