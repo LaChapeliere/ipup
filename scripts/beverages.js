@@ -170,7 +170,7 @@ function dragNDrop() {
             elementToBeChanged.id = "sidebar";
         }
     }
-    
+
     /**
      * Function which handles writing into shoppingcart.
      * @param an array of product objects           
@@ -231,7 +231,7 @@ function dragNDrop() {
         totalCost += price;
         $('#total').html('Total: $' + totalCost);
     }
-    
+
     /**
      * Clear the table
      */
@@ -249,7 +249,12 @@ function dragNDrop() {
         $(".product").draggable({
             revert: "invalid", // when not dropped, the item will revert back to its initial position
             containment: "document",
-            helper: "clone",
+            helper: function(e, ui) {
+                console.log(ui);
+                console.log(e);
+                console.log($(this).clone());
+                return $(this).clone();
+            },
             cursor: "grab",
             start: function(event, ui) {
                 // Function call to highlight the sidebar once dragging starts
@@ -275,15 +280,15 @@ function dragNDrop() {
             }
         });
     });
-    
+
     /*
      * Wire the Clear Table and Purchase button
      */
     $(function() {
-        $('#clearAllCart').click( function() {
+        $('#clearAllCart').click(function() {
             clearTable();
         });
-        $('#purchaseCart').click( function() {
+        $('#purchaseCart').click(function() {
             console.log("ADD PURCHASE");
             clearTable();
         });
