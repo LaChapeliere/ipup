@@ -111,139 +111,199 @@
             <table id="beveragesTable">
                 <!-- Row one -->
                 <tr>
-                    <td class="product">
-                        <div class="slotElement"> </div>
-                        <div class="slotLeft">
-                            <p class="drinkName">Anhorsteam delight</p>
-                            <p class="price">25</p>
-                            <p class="stock">Stock here</p>
-                        </div>
-                    </td>
-                    <td class="product">
-                        <div class="slotElement"> </div>
-                        <div class="slotLeft">
-                            <p class="drinkName">Name2</p>
-                            <p class="price">30</p>
-                            <p class="stock">Stock here</p>
-                        </div>
-                    </td>
-                    <td class="product">
-                        <div class="slotElement"> </div>
-                        <div class="slotLeft">
-                            <p class="drinkName">Name3</p>
-                            <p class="price">35</p>
-                            <p class="stock">Stock here</p>
-                        </div>
-                    </td>
-                    <td class="product">
+                    <td >
+                    <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
                         </div>
+                        </div>
                     </td>
-                    <td class="product">
+                     <td>
+                        <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                        </div>
+                        </div>
+                    </td>
+                     <td>
+                        <div class="product">
+                        <div class="slotElement"> </div>
+                        <div class="slotLeft">
+                            <p class="drinkName">Name</p>
+                            <p class="price">Price here</p>
+                            <p class="stock">Stock here</p>
+                        </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="product">
+                        <div class="slotElement"> </div>
+                        <div class="slotLeft">
+                            <p class="drinkName">Name</p>
+                            <p class="price">Price here</p>
+                            <p class="stock">Stock here</p>
+                        </div>
+                        </div>
+                    </td>
+                   <td>
+                        <div class="product">
+                        <div class="slotElement"> </div>
+                        <div class="slotLeft">
+                            <p class="drinkName">Name</p>
+                            <p class="price">Price here</p>
+                            <p class="stock">Stock here</p>
+                        </div>
                         </div>
                     </td>
                 </tr>
 
                 <!-- Row two -->
                 <tr>
-                    <td class="product">
+                     <td>
+                        <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
                         </div>
+                        </div>
                     </td>
-                    <td class="product">
+                    <td>
+                        <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
                         </div>
+                        </div>
                     </td>
-                    <td class="product">
+                     <td>
+                        <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
                         </div>
+                        </div>
                     </td>
-                    <td class="product">
+                    <td>
+                        <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
                         </div>
+                        </div>
                     </td>
-                    <td class="product">
+                   <td>
+                        <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                        </div>
                         </div>
                     </td>
                 </tr>
 
                 <!-- Row three -->
                 <tr>
-                    <td class="product">
+                     <td>
+                        <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
                         </div>
+                        </div>
                     </td>
-                    <td class="product">
+                     <td>
+                        <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
                         </div>
+                        </div>
                     </td>
-                    <td class="product">
+                   <td>
+                        <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
                         </div>
+                        </div>
                     </td>
-                    <td class="product">
+                    <td>
+                        <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
                         </div>
+                        </div>
                     </td>
-                    <td class="product">
+                    <td>
+                        <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                        </div>
                         </div>
                     </td>
                 </tr>
 
                 <!-- Row four -->
                 <tr>
-                    <td class="product">
+                     <td>
+                        <div class="product">
+                        <div class="slotElement"> </div>
+                        <div class="slotLeft">
+                            <p class="drinkName">Name</p>
+                            <p class="price">Price here</p>
+                            <p class="stock">Stock here</p>
+                        </div>
+                        </div>
+                    </td>
+                     <td>
+                        <div class="product">
+                        <div class="slotElement"> </div>
+                        <div class="slotLeft">
+                            <p class="drinkName">Name</p>
+                            <p class="price">Price here</p>
+                            <p class="stock">Stock here</p>
+                        </div>
+                        </div>
+                    </td>
+                     <td>                      
+                        <div class="product">
+                        <div class="slotElement"> </div>
+                        <div class="slotLeft">
+                            <p class="drinkName">Name</p>
+                            <p class="price">Price here</p>
+                            <p class="stock">Stock here</p>
+                        </div>
+                        </div>
+                    </td>
+                   <td>
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
@@ -251,36 +311,14 @@
                             <p class="stock">Stock here</p>
                         </div>
                     </td>
-                    <td class="product">
+                    <td>
+                        <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
                         </div>
-                    </td>
-                    <td class="product">
-                        <div class="slotElement"> </div>
-                        <div class="slotLeft">
-                            <p class="drinkName">Name</p>
-                            <p class="price">Price here</p>
-                            <p class="stock">Stock here</p>
-                        </div>
-                    </td>
-                    <td class="product">
-                        <div class="slotElement"> </div>
-                        <div class="slotLeft">
-                            <p class="drinkName">Name</p>
-                            <p class="price">Price here</p>
-                            <p class="stock">Stock here</p>
-                        </div>
-                    </td>
-                    <td class="product">
-                        <div class="slotElement"> </div>
-                        <div class="slotLeft">
-                            <p class="drinkName">Name</p>
-                            <p class="price">Price here</p>
-                            <p class="stock">Stock here</p>
                         </div>
                     </td>
                 </tr>
