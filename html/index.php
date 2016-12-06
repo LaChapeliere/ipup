@@ -32,7 +32,7 @@
                 <dt><button id="allBevButton">All Beverages</button></dt>
                 <dt><button id="softDrinksButton">Soft Drinks</button></dt>
                 <dt><button id="alcoDrinksButton">Alcoholic Drinks</button></dt>
-                <dt><a href="historystats.html">History/Stats</a></dt>
+                <dt><a href="historystats.php">History/Stats</a></dt>
             </dl>
         </header>
 
@@ -41,7 +41,7 @@
                 <dt><button>Users</button></dt>
                 <dt><button>Machine stock</button></dt>
                 <dt><button>Inventory</button></dt>
-                <dt><a href="historystats.html">History/Stats</a></dt>
+                <dt><a href="historystats.php">History/Stats</a></dt>
             </dl>
         </header>
 
@@ -73,7 +73,7 @@
 
             <!-- The Log off button-->
             <div id="sidebar_header2">
-                <a href="login_yeah.html">Log off</a>
+                <a href="login_yeah.php">Log off</a>
                 <!--We need to insert something that logs the son of gun out-->
             </div>
 
