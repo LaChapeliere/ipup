@@ -70,6 +70,52 @@ a:hover {
 }
 
 
+/* Log off button*/
+
+login_yeah.php{
+    
+}
+login_yeah.php {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: rgb(116, 70, 16);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.1s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+login_yeah.php {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+login_yeah.php:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+login_yeah.php:hover span {
+  padding-right: 25px;
+}
+
+login_yeah.php:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
 /* Basically the wrapper. contains basically everything on the webpage  */
 
 .container {
