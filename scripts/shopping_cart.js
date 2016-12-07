@@ -80,6 +80,36 @@ function writeIntoTable(productsArray) {
 }
 
 /**
+ * Purchase the drinks in the shopping cart
+ */
+function purchaseTable() {
+    var i = 0, //Loop index
+        j, //Loop index
+        singleProductsArray = [], //Transformed productData in a list of beer_id representing each single beverage
+        product; //Product object
+    
+    //Transform productData into a list of beer_id for each drink
+    for (; i < productsData.length; i++) {
+        //For each distinct beverage
+        product = productsData[i];
+        for (j = 0; j < product.quantity; j++) {
+            singleProductsArray.push(product.beer_id);
+        }
+    }
+    
+    //Send the purchase requests to the api
+    for (i = 0; i < singleProductsArray.length; i++) {
+        user.appendPurchases(product.beer_id, function (answer) {
+            if (answer.type === "error") {
+                alert("Apparently, something went wrong. Please try again.");
+                console.log(answer); //Debug in case of error
+            }
+        });
+    }
+}
+
+
+/**
  * Clear the table
  */
 function clearTable() {
@@ -90,7 +120,7 @@ function clearTable() {
     $('#total').html('Total: $' + totalCost);
 }
 
-/*
+/**
  * Wire the Clear Table and Purchase button
  */
 $(function() {
@@ -99,6 +129,7 @@ $(function() {
     });
     $('#purchaseCart').click(function() {
         console.log("ADD PURCHASE");
+        purchaseTable();
         clearTable();
     });
 });

@@ -1,4 +1,4 @@
-var user; //Holds the User object for the connected user
+var user = new APIConnect(); //Holds the User object for the connected user
 
 /*
  * Validate the username-password combination entered by the user to login
@@ -48,13 +48,11 @@ function initUser(username, password) {
         password = password, //The user's password
         firstName, //The user's first name
         lastName, //The user's last name
-        balance, //The amount of money availaible to the user
-        api; //An API connection to the database, set to this user
+        balance; //The amount of money availaible to the user
     
     //Set up the API connection and fetch basic info on the user
-    api = new APIConnect();
-    api.setUser(username, password);
-    api.fetchIOU( function(answer) {
+    user.setUser(username, password);
+    user.fetchIOU( function(answer) {
         var info = JSON.parse(answer),
             type = info.type,
             payload = info.payload[0];
@@ -75,7 +73,7 @@ function initUser(username, password) {
     
     //Determine if the user is an admin by sending an admin-only query to the database
     //@NOTE: This is an ugly method, but the credentials can only be checked by an admin...
-    api.fetchUsers( function(answer) {
+    user.fetchUsers( function(answer) {
         var info = JSON.parse(answer),
             type = info.type;
         if (!(type === "error")) {
@@ -84,7 +82,7 @@ function initUser(username, password) {
             document.getElementById("toggle_div").style.display = "initial";
         }
         //If the user is not an admin, do nothing
-    })
+    });
 }
 
 /*
