@@ -78,7 +78,6 @@ function initUser(username, password) {
     api.fetchUsers( function(answer) {
         var info = JSON.parse(answer),
             type = info.type;
-        console.log(info);
         if (!(type === "error")) {
             //If the request is accepted, the user is an admin
             //Display toggle button for admin view

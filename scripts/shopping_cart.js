@@ -17,10 +17,11 @@ var productsData = [];
 
 /**
  * Function which adds a product to the shoppingcart table and adjusts the total  
- * @param name - the name of the beverage
- * @param price - the price of the beverage
+ * @param id The beer_id of the beverage
+ * @param name The name of the beverage
+ * @param price The price of the beverage
  */
-function addProduct(name, price) {
+function addProduct(id, name, price) {
     /**
      * Function which forms an array of products which have been placed in the shoppingcart.
      * @return An array with product objects as elements
@@ -44,6 +45,7 @@ function addProduct(name, price) {
          * Adding a new product into the array of products             
          */
         productsData.push({
+            beer_id: id,
             name: name,
             quantity: 1,
             price: price
@@ -70,7 +72,7 @@ function writeIntoTable(productsArray) {
         var currentProduct = productsArray[i];
         // Loops through all the own properties of the object 
         for (var property in currentProduct) {
-            if (currentProduct.hasOwnProperty(property)) {
+            if (currentProduct.hasOwnProperty(property) && property != 'beer_id') {
                 tr.append('<td>' + currentProduct[property] + '</td>');
             }
         }

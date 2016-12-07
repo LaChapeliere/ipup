@@ -31,7 +31,6 @@
         //Get filtering parameters for drinks
         var paramsDict = {};
         window.location.search.substr(1).split("&").forEach(function(item) {paramsDict[item.split("=")[0]] = item.split("=")[1]});
-        console.log(paramsDict);
         if (paramsDict["filter"] == 'undefined') {
             paramsDict["filter"] = "all";
         }

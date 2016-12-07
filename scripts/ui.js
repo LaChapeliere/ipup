@@ -52,7 +52,11 @@ function dragNDrop() {
                 var name = $(ui.draggable).find('p:eq(0)').html();
                 var priceString = $(ui.draggable).find('p:eq(1)').html();
                 var price = priceString.split(" ")[0];
-                addProduct(name, parseFloat(price));
+                var id = availableBevIds[name]; //Fetching the id corresponding to the name
+                if (typeof id == "undefined") {
+                    id = 0;
+                }
+                addProduct(id, name, parseFloat(price));
             },
             out: function(event, ui) {
                 // Not sure if this is needed in the project work.
