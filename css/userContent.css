@@ -6,6 +6,29 @@
     width: 824px;
 }
 
+.imgDescription {
+  position: absolute;
+bottom: -15px;
+    left: 20px;
+  visibility: hidden;
+    border-radius: 2em;
+    background-color: rgb(0, 186, 21);
+    vertical-align: middle;
+    text-align: center;
+    font-size: 14px;
+        transition: 0s visibiliby;
+    padding: .3em;
+}
+
+.product:hover .imgDescription {
+  visibility: visible;
+  opacity: 2;
+    transition-delay:1s;
+        color: black;     
+        padding: .4em;
+
+
+}
 
 /* The table itself in the content section. Where all the drinks should appear */
 

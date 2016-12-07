@@ -12,6 +12,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -22,26 +23,29 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
-                    <td>
+                     <td>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
-                   <td>
+                     <td>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -56,6 +60,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -66,26 +71,29 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
-                    <td>
+                     <td>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
-                   <td>
+                     <td>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -100,6 +108,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -110,26 +119,29 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
-                    <td>
+                     <td>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
-                   <td>
+                     <td>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -143,6 +155,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -153,26 +166,29 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
-                    <td>
+                     <td>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
-                   <td>
+                     <td>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -187,6 +203,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -197,26 +214,29 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
-                    <td>
+                     <td>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
-                   <td>
+                     <td>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>

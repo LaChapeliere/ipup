@@ -134,7 +134,7 @@ input:checked+.slider:before {
 /* END OF TOGGLE*/
 
 
-/* Logg off button */
+/* LOGG OFF BUTTON-------------------------------- */
 .log_off_button {
     display: inline-block;
     border-radius: 1em;
@@ -174,16 +174,19 @@ input:checked+.slider:before {
   right: 0;
 }
 
+/* END OFF BUTTON-------------------------------- */
+
+
 /* table area div */
 #sidebar_content {
     margin-top: 1em;
 }
 
-/* den nuvarande vita bakgrundsfärgade området BAKOM tabellen som utgör shoppingcarten */
+/* The current white background which is BEHIND the table that is the shopping cart */
 #cartBackground {
     position: relative;
     width: 180px;
-    height: 250px;
+    height: 290px;
     background-color: white;
     border: 1px solid #333;
     border-radius: 1em;
@@ -192,8 +195,7 @@ input:checked+.slider:before {
 }
 
 
-/* Den Titel som det står "Shopping Cart" i, ligge rprecis ovanför tabellen men inuti
-den div som omsluter tabellen.*/
+/* The TITLE in which it says "shopping cart" in.*/
 
 #cartBackground h1 {
     border-top-left-radius: 1em;
@@ -204,7 +206,7 @@ den div som omsluter tabellen.*/
 }
 
 
-/* Själva tabellen */
+/* The table itself */
 #cartcontent,
 {
     width: 180px;
@@ -217,20 +219,20 @@ den div som omsluter tabellen.*/
 }
 
 
-/* Varje element i tabellen */
+/* Each element of the table */
 #cartcontent th {
     padding: .2em .1em .2em;
 }
 
 
-/* Varje rad i tabellen */
+/* Each row of the table */
 
 #cartcontent tr {
     border-bottom: 1px solid #333;
 }
 
 
-/* Total-paragrafen som ligger FAST i botten av diven #cartBackground */
+/* The "total" paragrapgh which is FIXED in the bottom of the "cartBackground" div */
 
 .total {
     position: absolute;
@@ -238,6 +240,7 @@ den div som omsluter tabellen.*/
     margin-left: 60px;
 }
 
+/* The div in which the buttons at the bottom of the sidebar is placed. */
 #sidebar_footer {
     display: inline-block;
 }
@@ -246,7 +249,7 @@ den div som omsluter tabellen.*/
 /* The two buttons at the bottom of the sidebar */
 
 #sidebar_footer button {
-    font-size: 16px;
+    font-size: 22px;
     border: 1px solid #333;
     border-radius: 1em;
 }
