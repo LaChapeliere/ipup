@@ -12,6 +12,8 @@
 <script src="../scripts/api.js"></script>
 <script src="../scripts/beverages.js"></script>
 <script src="../scripts/users.js"></script>
+<script src="../scripts/shopping_cart.js"></script>
+<script src="../scripts/ui.js"></script>
 <script src="../scripts/main.js"></script>
 
 <script>

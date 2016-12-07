@@ -4,9 +4,14 @@
  */
 
 /*
- * The array holding the Slots representing the beverages in the consumer view.
+ * The array holding the Slots representing the beverages in the consumer view
  */
 var beveragesSlots = [];
+
+/*
+ * A dictionnary of the distinct beverages present in the machine with name of the beverage as key and id as value
+ */
+var availableBevIds = {};
 
 /**
  * Constructor for the Slot object
@@ -113,10 +118,11 @@ function populateSlotsConsumer(displayAlco, displaySoft) {
                 //Send the information to the display
                 beverage.displayInfo();
                 beveragesSlots.push(beverage);
+                availableBevIds[beverageInfo.name] = beverageInfo.beer_id;
             }
         }
     });
-    console.log(displayAlco, displaySoft);
+    console.log(availableBevIds);
     filterAlcoholDrinks(displayAlco, displaySoft);
 
     //Wire the filter buttons
@@ -158,153 +164,6 @@ function beverageCategory(providedInfo) {
     }
 
     return [category, alcoholic];
-}
-
-/**
- * Function to execute drag 'n drop functionality
- */
-function dragNDrop() {
-    'use strict';
-    var sidebar = document.getElementById("sidebar");
-    var productsData = { "totalAmountOfDifferentProducts": 0, "products": [] };
-    var totalCost = 0;
-
-    /**
-     * Function to change the id of the sidebar
-     * @param elementToBeChanged is the element which id is changed
-     */
-    function changeSidebarId(elementToBeChanged) {
-        if (elementToBeChanged.id == "sidebar") {
-            elementToBeChanged.setAttribute('id', 'sidebarHighlighted');
-        } else {
-            elementToBeChanged.id = "sidebar";
-        }
-    }
-
-    /**
-     * Function which handles writing into shoppingcart.
-     * @param an array of product objects           
-     */
-    function writeIntoTable(productsArray) {
-        var tbody = $('#tableBody');
-        $('#tableBody').empty();
-        for (var i = 0; i < productsArray.length; i++) {
-            var tr = $('<tr/>').appendTo(tbody);
-            var currentProduct = productsArray[i];
-            // Loops through all the own properties of the object 
-            for (var property in currentProduct) {
-                if (currentProduct.hasOwnProperty(property)) {
-                    tr.append('<td>' + currentProduct[property] + '</td>');
-                }
-            }
-        }
-    }
-
-    /**
-     * Function which adds a product to the shoppingcart table and adjusts the total  
-     * @param name - the name of the beverage
-     * @param price - the price of the beverage
-     */
-    function addProduct(name, price) {
-        /**
-         * Function which forms an array of products which have been placed in the shoppingcart.
-         * @return An array with product objects as elements
-         */
-        function updateProductsArray() {
-            var updatedProductsArray = productsData.products;
-            /**
-             * Loops through the total amount of separate products and checks if a certain
-             * product already is added to the products array. If so the quantity of the 
-             * product is just incremented by 1.
-             */
-            for (var i = 0; i < productsData.totalAmountOfDifferentProducts; i++) {
-                var row = productsData.products[i];
-                if (row.name == name) {
-                    row.quantity += 1;
-                    return updatedProductsArray;
-                }
-            }
-            productsData.totalAmountOfDifferentProducts += 1;
-            /**
-             * Adding a new product into the array of products             
-             */
-            productsData.products.push({
-                name: name,
-                quantity: 1,
-                price: price
-            });
-            return updatedProductsArray;
-        }
-
-        var updatedProductsArray = updateProductsArray();
-        writeIntoTable(updatedProductsArray);
-        totalCost += price;
-        $('#total').html('Total: $' + totalCost);
-    }
-
-    /**
-     * Clear the table
-     */
-    function clearTable() {
-        productsData = { "totalAmountOfDifferentProducts": 0, "products": [] };
-        totalCost = 0;
-        writeIntoTable([]);
-        $('#total').html('Total: $' + totalCost);
-    }
-
-    /**
-     * Function that does the actual dragging and dropping
-     */
-    $(function() {
-        $(".product").draggable({
-            revert: "invalid", // when not dropped, the item will revert back to its initial position
-            containment: "document",
-            helper: function(e, ui) {
-                /*    console.log(ui);
-                    console.log(e);
-                    console.log($(this).clone());*/
-                return $(this).clone();
-                //               return $(this).clone().height($(this).height());
-            },
-            cursor: "grab",
-            start: function(event, ui) {
-                //  $(ui.helper).addClass("ui-draggable-helper");
-                // Function call to highlight the sidebar once dragging starts
-                changeSidebarId(sidebar);
-            },
-            stop: function(event, ui) {
-                // Function call to stop highlighting of the sidebar once dragging stops
-                changeSidebarId(sidebar);
-            }
-
-        });
-
-        $("#sidebar").droppable({
-            //      accept: ".product",
-            drop: function(event, ui) {
-                // console.log(ui.draggable);
-                var name = $(ui.draggable).find('p:eq(0)').html();
-                var price = $(ui.draggable).find('p:eq(1)').html();
-                addProduct(name, parseFloat(price));
-            },
-            out: function(event, ui) {
-                // Not sure if this is needed in the project work.
-            }
-        });
-    });
-
-    /*
-     * Wire the Clear Table and Purchase button
-     */
-    $(function() {
-        $('#clearAllCart').click(function() {
-            clearTable();
-        });
-        $('#purchaseCart').click(function() {
-            console.log("ADD PURCHASE");
-            clearTable();
-        });
-    });
 }
 
 /**
