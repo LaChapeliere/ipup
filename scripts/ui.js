@@ -50,7 +50,8 @@ function dragNDrop() {
             drop: function(event, ui) {
                 // console.log(ui.draggable);
                 var name = $(ui.draggable).find('p:eq(0)').html();
-                var price = $(ui.draggable).find('p:eq(1)').html();
+                var priceString = $(ui.draggable).find('p:eq(1)').html();
+                var price = priceString.split(" ")[0];
                 addProduct(name, parseFloat(price));
             },
             out: function(event, ui) {

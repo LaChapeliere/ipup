@@ -43,7 +43,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
     this.displayInfo = function() {
         var infoDisplay = display.getElementsByClassName("slotLeft")[0];
         infoDisplay.getElementsByClassName("drinkName")[0].textContent = name;
-        infoDisplay.getElementsByClassName("price")[0].textContent = price;
+        infoDisplay.getElementsByClassName("price")[0].textContent = price + " kr";
         infoDisplay.getElementsByClassName("stock")[0].textContent = amount;
         this.fetchImage();
     }
