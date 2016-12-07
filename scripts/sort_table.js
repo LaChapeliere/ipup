@@ -1,4 +1,4 @@
-<script type="text/javascript">
+
 /* 
    Willmaster Table Sort
    Version 1.1
@@ -118,4 +118,3 @@ y = parseInt(y);
 if( y < 100 ) { y = parseInt(y) + 2000; }
 return "" + String(y) + "" + String(m) + "" + String(d) + "";
 } // function GetDateSortingKey()
-</script>
