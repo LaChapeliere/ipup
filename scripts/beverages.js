@@ -84,6 +84,17 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
         }
         $(display).draggable('disable');
     }
+    
+    /**
+     * Update the quantity of a beverage
+     * @param newQuantity The new quantity of beverage in this slot
+     */
+    this.updateSlotQuantity = function(newQuantity) {
+        var infoDisplay = display.getElementsByClassName("slotLeft")[0];
+        amount = newQuantity;
+        infoDisplay.getElementsByClassName("stock")[0].textContent = "";
+        infoDisplay.getElementsByClassName("stock")[0].textContent = amount;
+    }
 }
 
 /**

@@ -106,6 +106,14 @@ function purchaseTable() {
             }
         });
     }
+    
+    //Update user debt
+    updateBalanceDisplay();
+    
+    //Update machine content and slot displays for each distinct beverage
+    for (i = 0; i < productsData.length; i++) {
+        updateMachineContentQuantities(productsData[i].beer_id, productsData[i].quantity);
+    }
 }
 
 

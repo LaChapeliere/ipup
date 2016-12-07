@@ -68,7 +68,7 @@ function initUser(username, password) {
         
         //Display the balance and the first name
         document.getElementById("welcome").textContent = "Welcome " + firstName + "!";
-        updateBalanceDisplay(balance);
+        document.getElementById("debt").textContent = "Balance: " + balance + " kr";
     });
     
     //Determine if the user is an admin by sending an admin-only query to the database
@@ -87,10 +87,22 @@ function initUser(username, password) {
 
 /*
  * Update the display of the balance to the current balance
- * @param balance
  */
-function updateBalanceDisplay(balance) {
-    document.getElementById("debt").textContent = "Balance: " + balance + " kr";
+function updateBalanceDisplay() {
+    user.fetchIOU( function(answer) {
+        var info = JSON.parse(answer),
+            type = info.type,
+            payload = info.payload[0];
+        
+        if (type === "error") {
+            alert(payload.msg);
+            return;
+        }
+        
+        balance = payload["assets"];
+
+        updateBalanceDisplay(balance);
+    });
 }
 
 /**
