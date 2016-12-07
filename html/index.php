@@ -52,19 +52,11 @@
                 <dt><button id="allBevButton">All Beverages</button></dt>
                 <dt><button id="softDrinksButton">Soft Drinks</button></dt>
                 <dt><button id="alcoDrinksButton">Alcoholic Drinks</button></dt>
-                <dt><a href="historystats.php">History/Stats</a></dt>
+                <dt><a href="historystats.php" id = "topBarA">History/Stats</a></dt>
             </dl>
         </header>
 
-        <header id="adminTopbar">
-            <dl>
-                <dt><button>Users</button></dt>
-                <dt><button>Machine stock</button></dt>
-                <dt><button>Inventory</button></dt>
-                <dt><a href="historystats.php">History/Stats</a></dt>
-            </dl>
-        </header>
-
+        
         <!--THE SIDEBAR STARTS HERE -->
         <div id="sidebar">
 

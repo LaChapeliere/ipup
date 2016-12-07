@@ -23,13 +23,6 @@ html {
     background-color: rgb(116, 70, 16);
 }
 
-#adminTopbar {
-    position: static;
-    padding: 1.5em 1em .7em;
-    background-color: rgb(116, 70, 16);
-    display: none;
-}
-
 
 /* The list in which the top bar button are placed */
 
@@ -48,8 +41,7 @@ header dt {
 
 /* The top bar buttons and links */
 
-header button,
-a {
+button, #topBarA {
     font-size: 30px;
     color: black;
     font-family: Dosis, sans-serif;
@@ -351,6 +343,10 @@ den div som omsluter tabellen.*/
     margin-left: 60px;
 }
 
+#sidebar_footer {
+    display: inline-block;
+}
+
 
 /* The two buttons at the bottom of the sidebar */
 
@@ -359,6 +355,7 @@ den div som omsluter tabellen.*/
     border: 1px solid #333;
     border-radius: 1em;
     background-color: #2196F3;
+    display: inline-block;
 }
 
 
