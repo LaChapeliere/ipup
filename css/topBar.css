@@ -1,0 +1,45 @@
+/* The div in which the top bar is, */
+
+#topBar {
+    width: auto;
+    position: static;
+    padding: 1.5em 1em .7em;
+    background-color: rgb(116, 70, 16);
+}
+
+
+/* The list in which the top bar button are placed */
+
+header dl {
+    text-align: center;
+}
+
+
+/* Each element in the list */
+
+header dt {
+    display: inline;        
+}
+
+
+/* The top bar buttons and links */
+
+button, #topBarA {
+    font-size: 30px;
+    color: black;
+    font-family: Dosis, sans-serif;
+    /* Just to have something to work with, otherwise links and non-links gor different fonts*/
+    border: 1px solid #333;
+    border-radius: 1em;
+    padding: .1em .3em .1em;
+    background-color: #2196F3;
+    text-decoration: none;
+}
+
+
+/* Hovering over over both the top bar buttons and the top bar links */
+
+header button:hover,
+a:hover {
+    color: #1330ee;
+}

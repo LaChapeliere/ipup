@@ -1,0 +1,88 @@
+/* THE CONTENT DIV. THE PART THAT IS NOT SIDEBAR OR TOPBAR */
+
+#content {
+    position: relative;
+    height: 510px;
+    width: 824px;
+}
+
+
+/* The table itself in the content section. Where all the drinks should appear */
+
+#beveragesTable {
+    width: auto;
+    border-collapse: separate;
+    border-spacing: .5em .3em;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: scroll;
+}
+
+
+/* The specific element in the table */
+
+
+.product, .ui-draggable {
+    border-radius: 1em;
+    box-shadow: 0 2px 2px 1px #333;
+    color: black;
+    width: 190px;
+}
+
+
+
+/* Right part of slot element, with picture as background */
+
+.slotElement {
+    width: 90px;
+    height: 117px;
+    display: inline-block;
+    background-position: center center;
+    background-size: cover;
+    float: right;
+}
+
+
+/* The left part of the slot, where name price and stock are */
+
+.slotLeft {
+    width: 100px;
+    height: 117px;
+    float: left;
+    position: relative;
+    /* This is so I can use position absolute in the .editSlot. If written like this, this cemoes the parent div the .editSlot relates to, so when using the position: absolute, it wont place in the corner of the entire page, but the corner of the parent, namely this div :D */
+}
+
+
+/* All paragraphs of the slotLeft */
+
+.slotLeft p {
+    color: rgb(116, 70, 16);
+}
+
+
+/* The name of the drink-paragraph */
+
+.drinkName {
+    margin: 17px 0 8px 3px;
+    font-size: 18px;
+}
+
+
+/* The price and stock paragraph */
+
+.price,
+.stock {
+    margin: 0 0 0 3px;
+}
+
+
+/* The edit button for every slot */
+
+.editSlot {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: deepskyblue;
+    border-radius: 1em;
+}
