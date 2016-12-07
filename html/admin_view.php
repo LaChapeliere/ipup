@@ -73,9 +73,8 @@
         <!-- THE MAIN CONTENT STARTS HERE, I.E NOT TOP BAR OR SIDE BAR -->
 
         <!-- A table for all of the drinks to appear in-->
-            
-        
-        <table id="stockTable" style="width:100%">
+
+        <table id="stockTableHead" style="width:100%">
         <thead>
                 <tr class ="stock_admin">
                     <th class = "head_admin"> <a href="javascript:SortTable(0,'T');">Le Name</a></th>
@@ -85,6 +84,13 @@
                     
                 </tr>
         </thead>
+        </table>
+        
+        
+        <div id="tableDiv"> 
+        <table id="stockTable" style="width:100%">
+ 
+         
         <tbody>      
                 <tr class ="stock_admin">
                     
@@ -203,7 +209,7 @@
                 <tr class ="stock_admin">
                     
                             <td class="name_entry">Name</td>
-                            <td class="price_entry">88839</td>
+                            <td class="price_entry">So expensive</td>
                             <td class="stock_entry">Stock here</td>
                             <td class="category_entry">Category here</td>
                    
@@ -213,7 +219,7 @@
                     
                             <td class="name_entry">Name</td>
                             <td class="price_entry">Price here</td>
-                            <td class="stock_entry">StOIHSAIUDHIre</td>
+                            <td class="stock_entry">It's over 9000!</td>
                             <td class="category_entry">Category here</td>
                    
                 </tr>
@@ -232,7 +238,7 @@
                             <td class="name_entry">Name</td>
                             <td class="price_entry">Price here</td>
                             <td class="stock_entry">Stock here</td>
-                            <td class="category_entry">FATGEMONY</td>
+                            <td class="category_entry">Unicorn Blood</td>
                    
                 </tr>
                 
@@ -284,10 +290,10 @@
                 
             </tbody>      
             </table>
-        </div>
+            </div>
 
         </div>
-
+</div>
 
 
 <body>
