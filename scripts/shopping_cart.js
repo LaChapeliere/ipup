@@ -51,6 +51,7 @@ function addProduct(name, price) {
         return updatedProductsArray;
     }
 
+    //Add the product to the list and modify the table
     var updatedProductsArray = updateProductsArray();
     writeIntoTable(updatedProductsArray);
     totalCost += price;

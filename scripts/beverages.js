@@ -59,9 +59,11 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      * Make the drink available is the consumer view by ungreying it and making it draggable
      */
     this.makeAvailable = function() {
+        available = true;
+        //Changing aspect
         display.style.opacity = 1;
         display.style.filter = "alpha(opacity = 100)";
-        available = true;
+        //Making the slot draggable
         if (!$(display).data('ui-draggable')) {
             $(display).draggable();
         }
@@ -72,9 +74,11 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      * Make the drink unavailable is the consumer view by greying it and making it non-draggable
      */
     this.makeUnavailable = function() {
+        available = false;
+        //Changing aspect
         display.style.opacity = 0.4;
         display.style.filter = "alpha(opacity = 40)";
-        available = false;
+        //Making slot non-draggable
         if (!$(display).data('ui-draggable')) {
             $(display).draggable();
         }
@@ -95,11 +99,10 @@ function populateSlotsConsumer(displayAlco, displaySoft) {
         j, //Loop index
         rows, //Rows of beveragesTable
         cells, //Cells of the beveragesTable
-        i = 0,
-        displayBlock,
-        allBevButton = document.getElementById("allBevButton"),
-        alcoholOnlyButton = document.getElementById("alcoDrinksButton"),
-        softOnlyButton = document.getElementById("softDrinksButton");
+        displayBlock, //DOM-element in which to display the slot info
+        allBevButton = document.getElementById("allBevButton"), //Filter button to make all drinks available
+        alcoholOnlyButton = document.getElementById("alcoDrinksButton"), //Filter button to make only alcoholic drinks available
+        softOnlyButton = document.getElementById("softDrinksButton"); //Filter button to make only soft available
 
     //Fetch the content and create a Slot object to hold it
     api.fetchContent(function(machineContent) {
@@ -118,11 +121,12 @@ function populateSlotsConsumer(displayAlco, displaySoft) {
                 //Send the information to the display
                 beverage.displayInfo();
                 beveragesSlots.push(beverage);
+                //Add the beverage in the dictionnary of available distinct drinks
                 availableBevIds[beverageInfo.name] = beverageInfo.beer_id;
             }
         }
     });
-    console.log(availableBevIds);
+    //Initial filter of drinks
     filterAlcoholDrinks(displayAlco, displaySoft);
 
     //Wire the filter buttons

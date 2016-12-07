@@ -1,5 +1,8 @@
 var user; //Holds the User object for the connected user
 
+/*
+ * Validate the username-password combination entered by the user to login
+ */
 function validateLogin() {
     'use strict';
     
@@ -16,6 +19,7 @@ function validateLogin() {
         return false;
     }
 
+    //Checking the combination in the database
     api = new APIConnect();
     api.setUser(username, password);
     api.fetchIOU( function(answer) {
@@ -29,6 +33,7 @@ function validateLogin() {
             return;
         }
         
+        //Submit the login credential form if no error
         document.forms["loginForm"].submit();
     });
 }
