@@ -36,6 +36,13 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
     this.isAlcoholic = function() {
         return alcohol;
     }
+    
+    /**
+     * @return true is amount is 0
+     */
+    this.isEmpty = function() {
+        return amount==0;
+    }
 
     /**
      * Display the information for the beverage
@@ -92,8 +99,19 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
     this.updateSlotQuantity = function(newQuantity) {
         var infoDisplay = display.getElementsByClassName("slotLeft")[0];
         amount = newQuantity;
-        infoDisplay.getElementsByClassName("stock")[0].textContent = "";
         infoDisplay.getElementsByClassName("stock")[0].textContent = amount;
+        
+        //If the slot becomes empty
+        if (this.isEmpty()) {
+            this.makeUnavailable();
+        }
+    }
+    
+    /**
+     * Wire the slot display to react to a double click and be added to the cart
+     */
+    display.ondblclick = function () {
+        addProduct(beerId, name, price);
     }
 }
 
@@ -193,6 +211,12 @@ function filterAlcoholDrinks(displayAlco, displaySoft) {
     //For each beverage
     for (; i < beveragesSlots.length; i++) {
         slot = beveragesSlots[i];
+        //If the slot is empty
+        if (slot.isEmpty()) {
+            slot.makeUnavailable();
+            continue;
+        }
+        
         //If the beverage is alcoholic
         if (slot.isAlcoholic()) {
             if (displayAlco) {
