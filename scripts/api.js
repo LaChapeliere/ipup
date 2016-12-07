@@ -41,6 +41,7 @@ function APIConnect() {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url);
         xhr.onreadystatechange = function() {
+            //The function is only called if the page was successfully loaded
             if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                 callback(this.responseText);
             }

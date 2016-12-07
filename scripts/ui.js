@@ -7,6 +7,7 @@ function dragNDrop() {
 
     /**
      * Function to change the id of the sidebar
+     * @use To highlight the sidebar when dragging an object
      * @param elementToBeChanged is the element which id is changed
      */
     function changeSidebarId(elementToBeChanged) {

@@ -89,12 +89,12 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
  */
 function populateSlotsConsumer(displayAlco, displaySoft) {
     'use strict';
-    var beveragesTable = document.getElementById("beveragesTable"),
-        api = new APIConnect,
-        i,
-        j,
-        rows,
-        cells,
+    var beveragesTable = document.getElementById("beveragesTable"), //The table to populate with the drinks
+        api = new APIConnect, //The api connection to get the machine content
+        i, //Loop index
+        j, //Loop index
+        rows, //Rows of beveragesTable
+        cells, //Cells of the beveragesTable
         i = 0,
         displayBlock,
         allBevButton = document.getElementById("allBevButton"),
