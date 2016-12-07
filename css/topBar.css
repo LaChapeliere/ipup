@@ -1,5 +1,5 @@
-/* The div in which the top bar is, */
 
+/* The div in which the top bar is, */
 #topBar {
     width: auto;
     position: static;
@@ -7,23 +7,17 @@
     background-color: rgb(116, 70, 16);
 }
 
-
 /* The list in which the top bar button are placed */
-
 header dl {
     text-align: center;
 }
 
-
 /* Each element in the list */
-
 header dt {
     display: inline;        
 }
 
-
 /* The top bar buttons and links */
-
 button, #topBarA {
     font-size: 30px;
     color: black;
@@ -36,9 +30,7 @@ button, #topBarA {
     text-decoration: none;
 }
 
-
 /* Hovering over over both the top bar buttons and the top bar links */
-
 header button:hover,
 a:hover {
     color: #1330ee;

@@ -1,5 +1,5 @@
-/* The entire sidebar --------------------------------------------------------------- */
 
+/* The entire sidebar --------------------------------------------------------------- */
 #sidebar {
     position: absolute;
     top: 0;
@@ -12,31 +12,23 @@
     margin: 0 auto;
 }
 
-
 /* All divs in the sidebar */
-
 #sidebar div {
     font-size: 20px;
 }
 
-
 /* The language div in the sidebar*/
-
 #language {
     margin-top: .2em;
 }
 
-
 /* The language buttons in the sidebar */
-
 #language img {
     width: 50px;
     display: inline-block;
 }
 
-
 /* The picture in the sidebar */
-
 #sidebar_header,
 img {
     display: inline-block;
@@ -47,13 +39,12 @@ img {
     border-radius: 5em;
 }
 
+/* The div in which the debt is specified*/
 #debt {
     margin-top: 1em;
 }
 
-
 /* THE TOGGLE!!! - The switch - the box around the slider */
-
 #toggle_div,
 p {
     font-size: 16px;
@@ -73,14 +64,12 @@ p {
 
 
 /* Hide default HTML checkbox */
-
 .switch input {
     display: none;
 }
 
 
 /* The slider */
-
 .slider {
     position: absolute;
     cursor: pointer;
@@ -121,7 +110,6 @@ input:checked+.slider:before {
 
 
 /* Rounded sliders */
-
 .slider.round {
     border-radius: 34px;
 }
@@ -129,8 +117,6 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-
-
 /* END OF TOGGLE*/
 
 
@@ -149,6 +135,7 @@ input:checked+.slider:before {
     margin: 5px;
 }
 
+/* Add comment - Markus */
 .log_off_button span{
   cursor: pointer;
   display: inline-block;
@@ -156,6 +143,7 @@ input:checked+.slider:before {
   transition: 0.5s;
 }
 
+/* Add comment - Markus */
 .log_off_button span:after {
   content: '«';
   position: absolute;
@@ -165,10 +153,12 @@ input:checked+.slider:before {
   transition: 0.5s;
 }
 
+/* Add comment - Markus */
 .log_off_button:hover span {
   padding-left: 20px;
 }
 
+/* Add comment - Markus */
 .log_off_button:hover span:before {
   opacity: 1;
   right: 0;
@@ -194,9 +184,7 @@ input:checked+.slider:before {
     margin-right: auto;
 }
 
-
 /* The TITLE in which it says "shopping cart" in.*/
-
 #cartBackground h1 {
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
@@ -205,10 +193,8 @@ input:checked+.slider:before {
     padding-bottom: .2em;
 }
 
-
 /* The table itself */
-#cartcontent,
-{
+#cartcontent {
     width: 180px;
     background-color: white;
     margin-left: auto;
@@ -218,22 +204,17 @@ input:checked+.slider:before {
     border-radius: 1em;
 }
 
-
 /* Each element of the table */
 #cartcontent th {
     padding: .2em .1em .2em;
 }
 
-
 /* Each row of the table */
-
 #cartcontent tr {
     border-bottom: 1px solid #333;
 }
 
-
 /* The "total" paragrapgh which is FIXED in the bottom of the "cartBackground" div */
-
 .total {
     position: absolute;
     bottom: 0;
@@ -245,9 +226,7 @@ input:checked+.slider:before {
     display: inline-block;
 }
 
-
 /* The two buttons at the bottom of the sidebar */
-
 #sidebar_footer button {
     font-size: 22px;
     border: 1px solid #333;

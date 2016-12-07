@@ -6,6 +6,8 @@
     width: 824px;
 }
 
+/* Just a "discpription" of each slot element that pops up afteron one second
+of hovering ------ DOUBLE CLICK OR DRAG TO ADD TO CART ------- */
 .imgDescription {
   position: absolute;
 bottom: -15px;
@@ -31,7 +33,6 @@ bottom: -15px;
 }
 
 /* The table itself in the content section. Where all the drinks should appear */
-
 #beveragesTable {
     width: auto;
     border-collapse: separate;
@@ -43,8 +44,6 @@ bottom: -15px;
 
 
 /* The specific element in the table */
-
-
 .product, .ui-draggable {
     border-radius: 1em;
     box-shadow: 0 2px 2px 1px #333;
@@ -55,7 +54,6 @@ bottom: -15px;
 
 
 /* Right part of slot element, with picture as background */
-
 .slotElement {
     width: 90px;
     height: 117px;
@@ -67,7 +65,6 @@ bottom: -15px;
 
 
 /* The left part of the slot, where name price and stock are */
-
 .slotLeft {
     width: 100px;
     height: 117px;
@@ -85,7 +82,6 @@ bottom: -15px;
 
 
 /* The name of the drink-paragraph */
-
 .drinkName {
     margin: 17px 0 8px 3px;
     font-size: 18px;
@@ -93,15 +89,12 @@ bottom: -15px;
 
 
 /* The price and stock paragraph */
-
-.price,
-.stock {
+.price, .stock {
     margin: 0 0 0 3px;
 }
 
 
 /* The edit button for every slot */
-
 .editSlot {
     position: absolute;
     right: 0;
