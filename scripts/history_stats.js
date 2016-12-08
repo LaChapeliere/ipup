@@ -18,7 +18,7 @@ function getHistory() {
             paymentsHistory = []; //The list of payments made by the user, formated for populateHistory
 
         if (type === "error") {
-            alert(payload.msg);
+            alert(info.payload[0].msg);
             return;
         }
         
@@ -38,18 +38,18 @@ function getHistory() {
             purchasesHistory = []; //The list of purchases made by the user, formated for populateHistory
 
         if (type === "error") {
-            alert(payload.msg);
+            alert(info.payload[0].msg);
             return;
         }
         
         //If the list of purchases was correctly retrieved
         purchases = info.payload;
         for (; i < purchases.length; i++) {
-            purchasesHistory.push({subject: purchases[i].namn, timestamp: purchases[i].timestamp, amount: -purchases[i].price});
+            purchasesHistory.push({subject: purchases[i].namn, timestamp: purchases[i].timestamp, amount: -purchases[i].price, beer_id: purchases[i].beer_id});
         }
         populateHistory(purchasesHistory);
         
-        populateFavorites();
+        populateFavorites(purchasesHistory);
     });
     
     
@@ -57,9 +57,52 @@ function getHistory() {
 
 /**
  * Populate the favorite drinks
+ * @param history The history of purchases for the user
  */
-function populateFavorites() {
-    console.log("fav");
+function populateFavorites(history) {
+    var i = 0, //Loop index
+        drinkCounts = {}, //A dictionnary to count occurences of each drink in the history
+        favoriteBeerId; //The beer_id for the user's favorite  
+    
+    //Determine favorite drink
+    for (; i < history.length; i++) {
+        if (typeof drinkCounts[history[i].beer_id] != "undefined") {
+            drinkCounts[history[i].beer_id] += 1;
+        }
+        else {
+            drinkCounts[history[i].beer_id] = 1;
+        }
+    }
+    favoriteBeerId = Object.keys(drinkCounts)[0];
+    Object.keys(drinkCounts).forEach(function(key){
+        favoriteBeerId = (drinkCounts[key] > drinkCounts[favoriteBeerId]) ? +key : favoriteBeerId;
+    });
+    //Get info for favorite drink and display it
+    user.fetchBeerData(favoriteBeerId, function(answer) {
+        var info = JSON.parse(answer),
+            type = info.type,
+            description = info.payload[0],
+            category; //The category and alcohol status info for the beverage
+
+        if (type === "error") {
+            alert(info.payload[0].msg);
+            return;
+        }
+        //Display info
+        $("#favorite_drink .drinkName").text(description.namn);
+        category = beverageCategory(description.varugrupp);
+        $("#favorite_drink .slotElement").css("background-image", 'url("./../resources/img/' + category[0] + '.png")');
+        $("#favorite_drink .slotElement").title = category[0].replace("_", " "); //Information pop-up + voice-over
+        
+    });
+    //Get price and display it
+    history.forEach( function(purchase) {
+        if (purchase.beer_id == favoriteBeerId) {
+            $("#favorite_drink .price").text(-purchase.amount);
+        }
+    });
+    
+    //Determine
 }
 
 /**
@@ -112,10 +155,10 @@ function sortHistory() {
         var A = $(a).children('td').eq(3).text().toUpperCase();
         var B = $(b).children('td').eq(3).text().toUpperCase();
         if(A < B) {
-            return -1;
+            return 1;
         }
         if(A > B) {
-            return 1;
+            return -1;
         }
         return 0;
     });

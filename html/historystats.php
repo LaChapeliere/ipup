@@ -15,6 +15,7 @@
     <script src="../scripts/users.js"></script>
     <script src="../scripts/ui.js"></script>
     <script src="../scripts/sort_table.js"></script>
+    <script src="../scripts/beverages.js"></script>
     <script src="../scripts/history_stats.js"></script>
 	<script src="../scripts/main.js"></script>
     <script>
