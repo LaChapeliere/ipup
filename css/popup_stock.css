@@ -2,7 +2,7 @@
 
 
 .box {
-  width: 40%;
+  width: 30%;
   margin: 0 auto;
   background: rgba(255,255,255,0.2);
   padding: 35px;
@@ -13,22 +13,6 @@
 }
 
 
-/*just to make the button visible and beautiful.. mainly for testing. */
-.button {
-  font-size: 1em;
-  padding: 10px;
-  color: #fff;
-  border: 2px solid #06D85F;
-  border-radius: 20px/50px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-}
-
-/*just to make the button visible and beautiful.. mainly for testing. */
-.button:hover {
-  background: #06D85F;
-}
 
 
 
@@ -53,14 +37,17 @@
 /*This edits the popup meny */
 .popup {
   margin: 10em auto;
-  padding: 2em;
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 1em;
   background: #8e6a09;
   border-radius: 5px;
-  width: 30%;
+  width: 15%;
+  min-width: 15em;;
   position: relative;
   transition: all 5s ease-in-out;
   text-align: center;
-  display:;
 }
 
 /*This edits the text in the top of the popup */
@@ -70,8 +57,15 @@
   font-family: Tahoma, Arial, sans-serif;
 }
 
+.popup h3 {
+    font-size: 16px;
+    color:  #333;
+}
+
+
+
 /*This edits the exit-cross in the top */
-.popup .close {
+.popup #closeCross {
   position: absolute;
   top: 0.2em;
   right: 0.5em;
@@ -83,7 +77,7 @@
 }
 
 /*This highlights the exit-cross when hovered over */
-.popup .close:hover {
+.popup #closeCross:hover {
   color: #06D85F;
 }
 
@@ -101,3 +95,86 @@
     width: 70%;
   }
 }
+
+
+
+
+/* THE TOGGLE!!! - The switch - the box around the slider */
+#toggle_div, p {
+    font-size: 20px;
+    color: bold #333;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 34px;
+    padding: 0.5;
+}
+
+
+/* Hide default HTML checkbox */
+.switch input {
+    display: none;
+}
+
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #E8E1CB;
+    box-shadow: 4px 4px 5px #000000;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    align-content: center;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(27, 157, 22);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+
+
+input:checked+.slider {
+    background-color: ##E8E1CB;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(2.8em);
+    -ms-transform: translateX(2.8em);
+    transform: translateX(2.8em);
+    background-color: rgb(167, 39, 39);
+    content: "";
+}
+
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 1em;  /* was 34px before */
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+/* END OF TOGGLE*/

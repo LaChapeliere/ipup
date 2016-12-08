@@ -42,6 +42,10 @@ td,th {
     padding: .4em;
 }
 
+th{
+    cursor: pointer;
+}
+
 
 
 /*this decides how big the area of the table is*/

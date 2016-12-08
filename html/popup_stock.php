@@ -11,29 +11,24 @@
 
  <div id="popupStockEdit" class="overlay">
 	<div class="popup">
-		<h2>Here you are</h2>
-		<a class="close" href="#">&times;</a>
+        <form>
+		<h2>Edit Beverage Info</h2>
+		<a class="close" id="closeCross" href="#">&times;</a>
 		<div class="popupContent">
             
             
             <!-- Input fields for the beverages -->
             
-            <input type="bevInput" id="bevName" placeholder="Beverage Name">
-            <input type="text" id="bevQuantity" placeholder="Quantity">
-            <input type="text" id="bevPrice" placeholder="Price">
-            
-            
-            <!-- Toggle button for alcohol/non alcohol -->
-            <div id="toggle_div">
-                <p>Admin view</p>
-                <label class="switch">
-               <input type="checkbox"> 
-               <div class="slider round"></div>
-               </label>
-            </div>
-            
+            Beverage name:<br>
+            <div class="inputDiv"><input type="text" id="bevName" placeholder="Beverage Name"></div><br>
+            Quantity in stock:<br>
+            <div class="inputDiv"><input type="number" id="bevQuantity" placeholder="Quantity"></div><br>
+            Price of beverage<br>
+            <div class="inputDiv"><input type="text" id="bevPrice" placeholder="Price"></div><br>
             
             <!-- Beverage typ selection meny-->
+            Beverage type:
+            <div>
             <select id="bevType" name="bvt">
                 <option disabled selected value> -- select a beverage -- </option>
                 <option>Soft Drink</option>
@@ -45,7 +40,26 @@
                 <option>Red Wine</option>
                 <option>Cider</option>
             </select>
-
+            </div>
+            
+            <!-- Toggle button for alcohol/non alcohol -->
+            Alcoholic?<br>
+            <div id="toggle_div">
+                <label class="switch">
+               <input type="checkbox"> 
+               <div class="slider round"></div>
+               </label>
+            </div><br>
+            
+            
+            <!-- buttons for Save, Reset and Cancel -->
+            
+            <div>
+            <input type="submit" value="Save">
+            <input type="reset">
+            <button id="Cancel"><a class="close" href="#">Cancel</a></button>
+            </div>
 		</div>
+            </form>
 	</div>
 </div> 

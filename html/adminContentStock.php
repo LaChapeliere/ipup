@@ -15,8 +15,8 @@
         <thead>
                 <tr class ="stock_admin">
                     <th class = "head_admin"> <a href="javascript:SortTable(0,'T');">Le Name</a></th>
-                    <th class = "head_admin"> <a href="javascript:SortTable(1,'T');">Le Price</a></th>
-                    <th class = "head_admin"> <a href="javascript:SortTable(2,'T');">Le Count</a></th>
+                    <th class = "head_admin"> <a href="javascript:SortTable(1,'N');">Le Price</a></th>
+                    <th class = "head_admin"> <a href="javascript:SortTable(2,'N');">Le Count</a></th>
                     
                 </tr>
         </thead>
