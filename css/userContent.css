@@ -55,7 +55,7 @@ bottom: -15px;
 }
 
 .product.ui-draggable {
-    
+box-shadow: 0 0 0 0 #333;
 }
 
 
