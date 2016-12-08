@@ -102,7 +102,9 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      * Wire the slot display to react to a double click and be added to the cart
      */
     display.ondblclick = function() {
-        addProduct(beerId, name, price);
+        if (available) {
+            addProduct(beerId, name, price);
+        }
     }
 }
 
