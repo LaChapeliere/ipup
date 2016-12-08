@@ -183,7 +183,7 @@ function populateSlotsConsumer(displayAlco, displaySoft) {
 
 /**
  * Extract the category of the beverage from the information provided by the database
- * @param providedInfo
+ * @param providedInfo The drink category string
  * @return An array with a string with the category of the beverage and a boolean indicating whether or not the drink is alcoholic
  * Possible values for the category: beer | lager | stout | ale | soft | cider | white_wine | red_wine
  */

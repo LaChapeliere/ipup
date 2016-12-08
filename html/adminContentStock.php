@@ -36,8 +36,8 @@
                             <td class="price_entry">Rice here</td>
                             <td class="stock_entry">Stock here</td>
                             <td class="category_entry">Category here</td>
-                   </a>
-                            </div>
+                        </a>
+                    </div>
                 </tr>
             
             <div id="popupStockEdit" class="overlay">
