@@ -5,7 +5,7 @@
             <table id="beveragesTable">
                 <!-- Row one -->
                 <tr>
-                     <td>
+                     <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -16,7 +16,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                     <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -27,7 +27,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                    <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -38,7 +38,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                    <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -53,7 +53,7 @@
 
                 <!-- Row two -->
                 <tr>
-                     <td>
+                     <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -64,7 +64,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                     <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -75,7 +75,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                     <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -86,7 +86,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                     <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -101,7 +101,7 @@
 
                 <!-- Row three -->
                 <tr>
-                     <td>
+                     <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -112,7 +112,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                     <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -123,7 +123,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                      <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -134,7 +134,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                      <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -148,7 +148,7 @@
                 </tr>
                 <!--  Row 4 -->
                 <tr>
-                     <td>
+                      <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -159,7 +159,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                      <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -170,7 +170,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                     <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -181,7 +181,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                     <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -196,7 +196,7 @@
                 
                 <!-- Row 5 -->
                 <tr>
-                     <td>
+                     <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -207,7 +207,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                    <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -218,7 +218,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                     <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -229,7 +229,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                    <td class= slotClass>
                         <div class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
