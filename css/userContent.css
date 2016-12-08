@@ -47,7 +47,7 @@ of hovering ------ DOUBLE CLICK OR DRAG TO ADD TO CART ------- */
 /* The specific element in the table */
 .product, .ui-draggable {
     border-radius: 1em;
-    box-shadow: 0 2px 2px 1px #333;
+    box-shadow: 4px 4px 5px #000000;
     color: black;
     width: 190px;
 }

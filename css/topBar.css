@@ -14,7 +14,7 @@ header dl {
 
 /* Each element in the list */
 header dt {
-    display: inline;        
+    display: inline;
 }
 
 /* The top bar buttons and links */
@@ -29,6 +29,7 @@ header dt {
     background-color: #E8E1CB;
     color: rgb(0, 132, 0);
     text-decoration: none;
+    box-shadow: 4px 4px 5px #000000;
 }
 
 /* Decoration of the currently selected tab button */
