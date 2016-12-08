@@ -18,7 +18,7 @@ header dt {
 }
 
 /* The top bar buttons and links */
-button, #topBarA {
+#historyStatsButton, #allBevButton, #softDrinksButton, #alcoDrinksButton {
     font-size: 30px;
     color: black;
     font-family: Dosis, sans-serif;
