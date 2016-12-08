@@ -92,9 +92,10 @@ function initUser(username, password) {
 function updateBalanceDisplay() {
     'use strict';
     user.fetchIOU(function(answer) {
-        var info = JSON.parse(answer),
-            type = info.type,
-            payload = info.payload[0];
+        var info = JSON.parse(answer), //Result from fetchIOU
+            type = info.type, //Type of the answer
+            payload = info.payload[0], //Payload of the answer
+            balance; //New balance of the user
         
         if (type === "error") {
             alert(payload.msg);
@@ -102,7 +103,6 @@ function updateBalanceDisplay() {
         }
 
         balance = payload["assets"];
-        console.log(balance);
 
         document.getElementById("debt").textContent = "Balance: " + balance + " kr";
     });
