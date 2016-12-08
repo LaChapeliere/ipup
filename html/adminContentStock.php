@@ -31,6 +31,7 @@
                             <td class="name_entry">Fame</td>
                             <td class="price_entry">Rice here</td>
                             <td class="stock_entry">Stock here</td>
+
                    
                  </tr>
 <tr class ="stock_admin">

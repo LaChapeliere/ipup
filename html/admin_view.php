@@ -19,14 +19,25 @@
 -->
 <script src="../scripts/main.js"></script>
 <script src="../scripts/sort_table.js"></script>
+<script src="../scripts/users.js"></script>
 <script src="../scripts/beverages.js"></script>
+<script src="../scripts/inventory.js"></script>
 <script>
     $(document).ready(function() {
-        dragNDrop()
+        //Get the username and password from login page
+        var $_POST = <?php echo !empty($_POST)?json_encode($_POST):'null';?>;
+        if ($_POST === null || typeof $_POST['username'] == 'undefined') {
+            //If the page is accessed directly, for debug purposes
+            $_POST = {};
+            $_POST["username"] = "ervtod";
+            $_POST["password"] = "ervtod";
+        }
+        
+        //Initialize page
+        initUser($_POST["username"], $_POST["password"]);
+        populateInventory();
     });
-    docLoaded(populateSlotsConsumer);
 </script>
-
 
 <!-- Wrapper for all content-->
 
