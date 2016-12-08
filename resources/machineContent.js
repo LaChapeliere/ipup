@@ -65,7 +65,7 @@ var machineContent = [{
     {
         "beer_id": "1",
         "price": 23,
-        "name": "Test",
+        "name": "Test1",
         "category": "beer",
         "amount": 10,
         "alcoholic": true
@@ -73,7 +73,7 @@ var machineContent = [{
     {
         "beer_id": "2",
         "price": 23,
-        "name": "Test",
+        "name": "Test2",
         "category": "cider",
         "amount": 10,
         "alcoholic": true
@@ -81,7 +81,7 @@ var machineContent = [{
     {
         "beer_id": "3",
         "price": 23,
-        "name": "Test",
+        "name": "Test3",
         "category": "lager",
         "amount": 10,
         "alcoholic": true
@@ -97,7 +97,7 @@ var machineContent = [{
     {
         "beer_id": "4",
         "price": 23,
-        "name": "Test",
+        "name": "Test4",
         "category": "soft",
         "amount": 10,
         "alcoholic": false
@@ -105,7 +105,7 @@ var machineContent = [{
     {
         "beer_id": "5",
         "price": 23,
-        "name": "Test",
+        "name": "Test5",
         "category": "soft",
         "amount": 10,
         "alcoholic": false
@@ -113,7 +113,7 @@ var machineContent = [{
     {
         "beer_id": "6",
         "price": 23,
-        "name": "Test",
+        "name": "Test6",
         "category": "beer",
         "amount": 10,
         "alcoholic": true
@@ -129,7 +129,7 @@ var machineContent = [{
     {
         "beer_id": "7",
         "price": "23",
-        "name": "Test",
+        "name": "Test7",
         "category": "ale",
         "amount": 10,
         "alcoholic": true
@@ -137,7 +137,7 @@ var machineContent = [{
     {
         "beer_id": "8",
         "price": 23,
-        "name": "Test",
+        "name": "Test8",
         "category": "stout",
         "amount": 10,
         "alcoholic": true
@@ -145,7 +145,7 @@ var machineContent = [{
     {
         "beer_id": "9",
         "price": 23,
-        "name": "Test",
+        "name": "Test9",
         "category": "beer",
         "amount": "0",
         "alcoholic": true
@@ -153,7 +153,7 @@ var machineContent = [{
     {
         "beer_id": "10",
         "price": 23,
-        "name": "Test",
+        "name": "Test10",
         "category": "ale",
         "amount": 10,
         "alcoholic": true
@@ -171,6 +171,8 @@ function updateMachineContentQuantities(beerId, modifyer) {
 
     for (; i < machineContent.length; i++) {
         if (machineContent[i].beer_id === beerId) {
+            console.log(machineContent[i].beer_id);
+            console.log(beerId);
             machineContent[i].amount -= modifyer;
             beveragesSlots[i].updateSlotQuantity(machineContent[i].amount);
             return;
