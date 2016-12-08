@@ -54,6 +54,9 @@ function addProduct(id, name, price) {
         });
         return updatedProductsArray;
     }
+    
+    //Update quantity in machine content and slot display
+    updateMachineContentQuantities(id, 1);
 
     //Add the product to the list and modify the table
     var updatedProductsArray = updateProductsArray();
@@ -119,20 +122,24 @@ function purchaseTable() {
             }
             
             purchased += 1;
-            //Update display and machine content when all purchases have been done
+            //Update display when all purchases have been done
             if (purchased === singleProductsArray.length) {
                 //Update user debt
                 updateBalanceDisplay();
-
-                //Update machine content and slot displays for each distinct beverage
-                for (i = 0; i < productsData.length; i++) {
-                    updateMachineContentQuantities(productsData[i].beer_id, productsData[i].quantity);
-                }
             }
         });
     }
 }
 
+/**
+ * Undo the purchases from the shopping cart in machineContent and the display
+ */
+function resetContentAndDisplay() {
+    //Update machine content and slot displays for each distinct beverage
+    for (i = 0; i < productsData.length; i++) {
+        updateMachineContentQuantities(productsData[i].beer_id, -productsData[i].quantity);
+    }
+}
 
 /**
  * Clear the table
@@ -152,6 +159,7 @@ function clearTable() {
 $(function() {
     'use strict';
     $('#clearAllCart').click(function() {
+        resetContentAndDisplay();
         clearTable();
     });
     $('#purchaseCart').click(function() {

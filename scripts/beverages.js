@@ -107,6 +107,9 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
         if (this.isEmpty()) {
             this.makeUnavailable();
         }
+        else {
+            this.makeAvailable();
+        }
     }
 
     /**
