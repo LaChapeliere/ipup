@@ -82,23 +82,20 @@ th{
 */
 
 /* the two following are for editing the search bar*/ 
-
-#search {
+#searchBar {
     border: 1px solid grey;
     margin-bottom: 0.2em;
     padding: 1.1em 3px;
-    width: 17em;
-    -webkit-transition: width 0.8s; /* for Safari */
-    transition: width 0.8s; /* for other browsers*/
+    width: 19em;
+    -webkit-transition: width 1s; /* for Safari */
+    transition: width 1s; /* for other browsers*/
 }
 
-#search:hover {
-    width: 34em;
+#searchBar:hover {
+    width: 25em;
     color: aqua
     
 }
-
-
 
 
 /*this is for the popup*/

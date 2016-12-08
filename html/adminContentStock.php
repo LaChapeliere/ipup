@@ -4,7 +4,7 @@
             
             
             
-            <input type="search" class="light-table-filter" data-table="stock-table" placeholder="Type to search">
+            <input id="searchBar" type="search" class="light-table-filter" data-table="stock-table" placeholder="Type to search">
      
             <div id="tableDiv"> 
            
