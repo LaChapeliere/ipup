@@ -26,15 +26,11 @@ function dragNDrop() {
             revert: "invalid", // when not dropped, the item will revert back to its initial position
             containment: "document",
             helper: function(e, ui) {
-                /*    console.log(ui);
-                    console.log(e);
-                    console.log($(this).clone());*/
+                /* console.log($(this).clone());*/
                 return $(this).clone();
-                //               return $(this).clone().height($(this).height());
             },
             cursor: "grab",
             start: function(event, ui) {
-                //  $(ui.helper).addClass("ui-draggable-helper");
                 // Function call to highlight the sidebar once dragging starts
                 changeSidebarId(sidebar);
             },
@@ -48,7 +44,6 @@ function dragNDrop() {
         $("#sidebar").droppable({
             //      accept: ".product",
             drop: function(event, ui) {
-                // console.log(ui.draggable);
                 var name = $(ui.draggable).find('p:eq(0)').html();
                 var priceString = $(ui.draggable).find('p:eq(1)').html();
                 var price = priceString.split(" ")[0];
