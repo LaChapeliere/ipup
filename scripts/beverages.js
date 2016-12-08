@@ -60,6 +60,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      */
     this.fetchImage = function() {
         display.getElementsByClassName("slotElement")[0].style.backgroundImage = 'url("./../resources/img/' + category + '.png")';
+        display.getElementsByClassName("slotElement")[0].title = category.replace("_", " "); //Information pop-up + voice-over
     }
 
     /**

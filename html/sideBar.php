@@ -3,13 +3,13 @@
 
             <!-- Language setting - Top of sidebar -->
             <div id="language">
-                <img src="img/sweden.png" style="width:40px;">
-                <img src="img/england.png" style="width:40px;">
+                <img src="../resources/img/sweden.png" style="width:40px;" alt="Svenska">
+                <img src="../resources/img/england.png" style="width:40px;" alt="English">
             </div>
 
             <!-- The code for the profile picture -->
             <div id="sidebar_header">
-                <img src="img/niklas_test_photo.jpg">
+                <img src="../resources/img/niklas_test_photo.jpg">
             </div>
             
             <!-- Welcome message-->
