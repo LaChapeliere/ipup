@@ -46,11 +46,9 @@ img {
 }
 
 /* THE TOGGLE!!! - The switch - the box around the slider */
-#toggle_div,
-p {
+#toggle_div, p {
     font-size: 20px;
     color: white;
-    font-weight: bold;
     margin-top: 1em;
     
 }
@@ -198,7 +196,6 @@ input:checked+.slider:before {
     background-color: #E8E1CB;
     padding-bottom: .2em;
     color: rgb(0, 132,0);
-    font-weight: bold;
 }
 
 /* The table itself */
@@ -219,7 +216,6 @@ input:checked+.slider:before {
 /* Each element of the table */
 #cartcontent th {
     text-align: center;
-    font-weight: bold;
     color: black;
 }
 
