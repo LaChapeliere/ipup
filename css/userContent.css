@@ -6,8 +6,10 @@
     width: 824px;
 }
 
+
 /* Just a "discpription" of each slot element that pops up afteron one second
 of hovering ------ DOUBLE CLICK OR DRAG TO ADD TO CART ------- */
+
 .imgDescription {
     position: absolute;
     bottom: -3em;
@@ -25,14 +27,14 @@ of hovering ------ DOUBLE CLICK OR DRAG TO ADD TO CART ------- */
 
 .product:hover .imgDescription {
     visibility: visible;
-    transition-delay:1s;
-    color: white;     
+    transition-delay: 1s;
+    color: white;
     padding: .4em;
-
-
 }
 
+
 /* The table itself in the content section. Where all the drinks should appear */
+
 #beveragesTable {
     width: auto;
     border-collapse: separate;
@@ -45,21 +47,26 @@ of hovering ------ DOUBLE CLICK OR DRAG TO ADD TO CART ------- */
 
 
 /* The specific element in the table */
-.product, .ui-draggable {
+
+.product,
+.ui-draggable,
+.slotClass {
     border-radius: 1em;
     box-shadow: 4px 4px 5px #000000;
     color: black;
     width: 190px;
 }
 
+
 /* To remove hideous shaded line above each element - Is created by the JS somehow.  */
+
 .product.ui-draggable {
-box-shadow: 0 0 0 0 #333;
+    box-shadow: 0 0 0 0 #333;
 }
 
 
-
 /* Right part of slot element, with picture as background */
+
 .slotElement {
     width: 90px;
     height: 117px;
@@ -71,11 +78,12 @@ box-shadow: 0 0 0 0 #333;
 
 
 /* The left part of the slot, where name price and stock are */
+
 .slotLeft {
     width: 100px;
     height: 117px;
     float: left;
-    color: rgb(0,132,0);
+    color: rgb(0, 132, 0);
     text-align: center;
     position: relative;
     /* This is so I can use position absolute in the .editSlot. If written like this, this becomes the parent div the .editSlot relates to, so when using the position: absolute, it wont place in the corner of the entire page, but the corner of the parent, namely this div :D */
@@ -90,6 +98,7 @@ box-shadow: 0 0 0 0 #333;
 
 
 /* The name of the drink-paragraph */
+
 .drinkName {
     margin: 17px 0 8px 3px;
     font-size: 18px;
@@ -97,17 +106,20 @@ box-shadow: 0 0 0 0 #333;
 
 
 /* The price and stock paragraph */
-.price, .stock {
-    margin: 0; 
+
+.price,
+.stock {
+    margin: 0;
     font-size: 16px;
 }
 
 
 /* The edit button for every slot */
+
 .editSlot {
     position: absolute;
     right: 0;
     bottom: 0;
-    background-color: rgb(0,132,0);
+    background-color: rgb(0, 132, 0);
     border-radius: 1em;
 }
