@@ -198,14 +198,14 @@ input:checked+.slider:before {
     position: absolute;
     width: 180px;
     max-height: 230px;
+    display: block;
     overflow: scroll;
     table-layout: fixed;
     background-color: white;
     margin-left: auto;
     margin-right: auto;
     margin-top: .5em;
-    border: 1px solid #333;
-    border-radius: 1em;
+    border-bottom: 1px solid #888;
 }
 
 /* Each element of the table */
@@ -219,15 +219,10 @@ input:checked+.slider:before {
     border-bottom: 1px solid #333;
 }
 
-#tableBody {
-    height: 240px;
-    overflow: scroll;
-}
-
 /* The "total" paragrapgh which is FIXED in the bottom of the "cartBackground" div */
 .total {
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
     margin-left: 3.5em;
 }
 
@@ -242,7 +237,6 @@ input:checked+.slider:before {
     border: 1px solid #333;
     border-radius: 1em;
     background-color: #2196F3;
-    display: inline;
 }
 
 /* Clearall button */
