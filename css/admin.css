@@ -1,18 +1,15 @@
 /*This is where we implement tabular for admin and stock view*/
 
 
-.head_admin {
-    text-decoration: underline;
+.head_admin, a {
+    text-decoration: none;
     font-size: 30px;
     text-align: center;
     background-color: #4CAF50;
-    color: white;
-    width: auto;
 }
 
 .stock_admin {
     font-size: 20px;
-    width: auto;
     text-align: center;
     background-color: #f8d200;
 
@@ -38,33 +35,40 @@ tr:hover {background-color: rgba(255, 177, 0, 0.81)}
 
 
 
-
+/*This controls the table-cells, giving them padding and borders*/
 td,th {
     border: 1px solid #ddd;
     border-top: 1px solid #ddd;
     padding: .4em;
 }
 
-#stockTableHead{
-    font-size: 4000px;
-}
 
+
+/*this decides how big the area of the table is*/
 #tableDiv{
-    overflow-y: auto; 
+    
     height:19.745em;
     border-bottom:1px solid grey;
+    width: 100%;
+    overflow-y: auto;
 }
 
-tableDiv td, tableDiv th{
-    border-color: rgb(49, 255, 0);
-    border: 1px solid;  
-    width:50%;
+
+
+#adminContent {
+    position: relative;
 }
 
-/*this is from testing DELETE*/
+
+
+#stockTable {
+    width: 100%;
+    
+}
+
 /*
 .stockTable {
     width: 150px;
     height: 150px;
     overflow: scroll;
-}*/
+*/
