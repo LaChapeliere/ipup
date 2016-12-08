@@ -30,6 +30,11 @@ header dt {
     text-decoration: none;
 }
 
+/* Decoration of the currently selected tab button */
+#historyStatsButton.selected, #allBevButton.selected, #softDrinksButton.selected, #alcoDrinksButton.selected {
+    background-color: #56f98e;
+}
+
 /* Hovering over over both the top bar buttons and the top bar links */
 header button:hover,
 a:hover {

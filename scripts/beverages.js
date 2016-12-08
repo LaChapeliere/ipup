@@ -235,4 +235,23 @@ function filterAlcoholDrinks(displayAlco, displaySoft) {
             slot.makeUnavailable();
         }
     }
+    
+    //Highlight the selected filtering button
+    if (displayAlco) {
+        if (displaySoft) {
+            document.getElementById("allBevButton").className = "selected";
+            document.getElementById("alcoDrinksButton").className = "";
+            document.getElementById("softDrinksButton").className = "";
+        }
+        else {
+            document.getElementById("allBevButton").className = "";
+            document.getElementById("alcoDrinksButton").className = "selected";
+            document.getElementById("softDrinksButton").className = "";
+        }
+    }
+    else {
+        document.getElementById("allBevButton").className = "";
+        document.getElementById("alcoDrinksButton").className = "";
+        document.getElementById("softDrinksButton").className = "selected";
+    }
 }
