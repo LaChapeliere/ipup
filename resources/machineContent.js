@@ -171,8 +171,6 @@ function updateMachineContentQuantities(beerId, modifyer) {
 
     for (; i < machineContent.length; i++) {
         if (machineContent[i].beer_id === beerId) {
-            console.log(machineContent[i].beer_id);
-            console.log(beerId);
             machineContent[i].amount -= modifyer;
             beveragesSlots[i].updateSlotQuantity(machineContent[i].amount);
             return;
