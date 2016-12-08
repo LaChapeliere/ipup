@@ -75,8 +75,9 @@ box-shadow: 0 0 0 0 #333;
     width: 100px;
     height: 117px;
     float: left;
-    position: relative;
     color: rgb(0,132,0);
+    text-align: center;
+    position: relative;
     /* This is so I can use position absolute in the .editSlot. If written like this, this becomes the parent div the .editSlot relates to, so when using the position: absolute, it wont place in the corner of the entire page, but the corner of the parent, namely this div :D */
 }
 
@@ -97,7 +98,7 @@ box-shadow: 0 0 0 0 #333;
 
 /* The price and stock paragraph */
 .price, .stock {
-    margin: 0 0 0 .7em;
+    margin: 0; 
     font-size: 16px;
 }
 
