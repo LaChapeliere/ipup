@@ -87,6 +87,7 @@ function purchaseTable() {
         j, //Loop index
         singleProductsArray = [], //Transformed productData in a list of beer_id representing each single beverage
         product; //Product object
+        purchased = 0;
     
     //Transform productData into a list of beer_id for each drink
     for (; i < productsData.length; i++) {
@@ -104,16 +105,21 @@ function purchaseTable() {
                 alert("Apparently, something went wrong. Please try again.");
                 console.log(answer); //Debug in case of error
             }
+            
+            purchased += 1;
+            //Update display and machine content when all purchases have been done
+            if (purchased === singleProductsArray.length) {
+                //Update user debt
+                updateBalanceDisplay();
+
+                //Update machine content and slot displays for each distinct beverage
+                for (i = 0; i < productsData.length; i++) {
+                    updateMachineContentQuantities(productsData[i].beer_id, productsData[i].quantity);
+                }
+            }
         });
     }
     
-    //Update user debt
-    updateBalanceDisplay();
-    
-    //Update machine content and slot displays for each distinct beverage
-    for (i = 0; i < productsData.length; i++) {
-        updateMachineContentQuantities(productsData[i].beer_id, productsData[i].quantity);
-    }
 }
 
 

@@ -89,19 +89,22 @@ function initUser(username, password) {
  * Update the display of the balance to the current balance
  */
 function updateBalanceDisplay() {
+    console.log("update");
+    
     user.fetchIOU( function(answer) {
         var info = JSON.parse(answer),
             type = info.type,
             payload = info.payload[0];
-        
+        console.log(payload);
         if (type === "error") {
             alert(payload.msg);
             return;
         }
         
         balance = payload["assets"];
+        console.log(balance);
 
-        updateBalanceDisplay(balance);
+        document.getElementById("debt").textContent = "Balance: " + balance + " kr";
     });
 }
 
