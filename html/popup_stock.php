@@ -18,7 +18,7 @@
             
             <!-- Input fields for the beverages -->
             
-            <input type="text" id="bevName" placeholder="Beverage Name">
+            <input type="bevInput" id="bevName" placeholder="Beverage Name">
             <input type="text" id="bevQuantity" placeholder="Quantity">
             <input type="text" id="bevPrice" placeholder="Price">
             

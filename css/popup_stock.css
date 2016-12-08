@@ -49,36 +49,47 @@
   opacity: 1;
 }
 
+
+/*This edits the popup meny */
 .popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: #fff;
+  margin: 10em auto;
+  padding: 2em;
+  background: #8e6a09;
   border-radius: 5px;
   width: 30%;
   position: relative;
   transition: all 5s ease-in-out;
+  text-align: center;
+  display:;
 }
 
+/*This edits the text in the top of the popup */
 .popup h2 {
   margin-top: 0;
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
 }
+
+/*This edits the exit-cross in the top */
 .popup .close {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 0.2em;
+  right: 0.5em;
   transition: all 200ms;
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
   color: #333;
 }
+
+/*This highlights the exit-cross when hovered over */
 .popup .close:hover {
   color: #06D85F;
 }
+
+
 .popup .content {
-  max-height: 30%;
+  max-height: 100%;
   overflow: auto;
 }
 
