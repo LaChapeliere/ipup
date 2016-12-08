@@ -36,6 +36,7 @@
         //Initialize page
         initUser($_POST["username"], $_POST["password"]);
         populateInventory();
+        tableFilter.init();
     });
 </script>
 
