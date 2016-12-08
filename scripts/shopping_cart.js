@@ -59,7 +59,7 @@ function addProduct(id, name, price) {
     var updatedProductsArray = updateProductsArray();
     writeIntoTable(updatedProductsArray);
     totalCost += price;
-    $('#total').html('Total: ' + totalCost + ' kr');
+    displayTotal();
 }
 
 /**
@@ -80,6 +80,14 @@ function writeIntoTable(productsArray) {
             }
         }
     }
+}
+
+/**
+ * Display the total cost with max one decimal
+ */
+function displayTotal() {
+    totalCost = +totalCost.toFixed(1);
+    $('#total').html('Total: ' + totalCost + ' kr');
 }
 
 /**
@@ -135,7 +143,7 @@ function clearTable() {
     numberDistinctDrinks = 0;
     totalCost = 0;
     writeIntoTable([]);
-    $('#total').html('Total: ' + totalCost + ' kr');
+    displayTotal();
 }
 
 /**
@@ -147,7 +155,6 @@ $(function() {
         clearTable();
     });
     $('#purchaseCart').click(function() {
-        console.log("ADD PURCHASE");
         purchaseTable();
         clearTable();
     });
