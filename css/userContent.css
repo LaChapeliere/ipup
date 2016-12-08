@@ -54,6 +54,10 @@ bottom: -15px;
     width: 190px;
 }
 
+.product.ui-draggable {
+    
+}
+
 
 
 /* Right part of slot element, with picture as background */
