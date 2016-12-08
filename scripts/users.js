@@ -1,3 +1,8 @@
+/**
+ * @author      Emma Barme
+ * @version     0.1
+ */
+
 var user = new APIConnect(); //Holds the User object for the connected user
 
 /*

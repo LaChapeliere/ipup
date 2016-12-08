@@ -6,10 +6,10 @@
             <table id="beveragesTable">
             <thead>
                 <tr class ="stock_admin">
-                    <th>My Favorite</th>
-                    <th>Company Favorite</th>
-                    <th>Most Previous Purschase</th>
-                    <th>Mikelebike's Butt</th>   
+                    <th>My favorite</th>
+                    <th>My last purchase</th> 
+                    <th>Company favorite</th>
+                    <th>Bartender's pick</th> 
                 </tr>
             </thead>
                 <!-- Row one -->
@@ -65,42 +65,15 @@
      <h1>History</h1>
      
      <div id="history">
-            <table id="beveragesTable">
-      <tr class ="stock_admin">
-                    
-                            <td class="name_entry">What?</td>
-                            <td class="price_entry">When?</td>
-                            <td class="stock_entry">How Much?</td>
-                            <td class="category_entry">Current Balance</td>
-                   
-                </tr>
-                
-                <tr class ="stock_admin">
-                    
-                            <td class="name_entry">What?</td>
-                            <td class="price_entry">When?</td>
-                            <td class="stock_entry">How Much?</td>
-                            <td class="category_entry">Current Balance</td>
-                   
-                </tr>
-                
-                <tr class ="stock_admin">
-                    
-                            <td class="name_entry">What?</td>
-                            <td class="price_entry">When?</td>
-                            <td class="stock_entry">How Much?</td>
-                            <td class="category_entry">Current Balance</td>
-                   
-                </tr>
-                
-                <tr class ="stock_admin">
-                    
-                            <td class="name_entry">What?</td>
-                            <td class="price_entry">When?</td>
-                            <td class="stock_entry">How Much?</td>
-                            <td class="category_entry">Current Balance</td>
-                   
-                </tr>
+            <table id="historyTable">
+                <tbody>
+                    <tr class ="historyRow">
+                        <td class="subject_entry">What?</td>
+                        <td class="time_entry">When?</td>
+                        <td class="amount_entry">How Much?</td>
+                        <td class="balance_entry">Current Balance</td>
+                   </tr>
+                </tbody>
          </table>
      </div>
 </tr>

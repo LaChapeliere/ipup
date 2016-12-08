@@ -9,7 +9,32 @@
 	<link href="../css/sideBar.css" rel="stylesheet" />
     <link href="../css/historystats.css" rel="stylesheet" />
 	<!-- <script src="../scripts/api.js"></script> -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="../scripts/api.js"></script>
+    <script src="../scripts/users.js"></script>
+    <script src="../scripts/ui.js"></script>
+    <script src="../scripts/sort_table.js"></script>
+    <script src="../scripts/history_stats.js"></script>
 	<script src="../scripts/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            //Get the username and password
+            var $_POST = <?php echo !empty($_POST)?json_encode($_POST):'null';?>;
+            if ($_POST === null || typeof $_POST['username'] == 'undefined') {
+                //If the page is accessed directly, for debug purposes
+                $_POST = {};
+                $_POST["username"] = "ervtod";
+                $_POST["password"] = "ervtod";
+            }
+
+            //Initialize page
+            initUser($_POST["username"], $_POST["password"]);
+            getHistory();
+            dragNDrop();
+        });
+    </script>
+    
     
 <div id="wrapper">
    

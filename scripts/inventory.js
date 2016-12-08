@@ -4,7 +4,7 @@
 function populateInventory() {
     //Removing all rows but the header and the first data row -to be able to add new rows to the tbody
     $('#adminTableBody tr').not(':first').remove();
-    var html = '', //The html string to build the teble rows
+    var html = '', //The html string to build the table rows
         inventory; //The data
     
     //Fetch the data from the API
