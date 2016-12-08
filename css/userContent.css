@@ -14,10 +14,12 @@ bottom: -15px;
     left: 20px;
   visibility: hidden;
     border-radius: 2em;
-    background-color: rgb(0, 186, 21);
+    background-color: rgb(0, 132, 0);
     vertical-align: middle;
     text-align: center;
     font-size: 14px;
+    
+    
         transition: 0s visibiliby;
     padding: .3em;
 }
@@ -26,7 +28,7 @@ bottom: -15px;
   visibility: visible;
   opacity: 2;
     transition-delay:1s;
-        color: black;     
+        color: white;     
         padding: .4em;
 
 
@@ -40,6 +42,7 @@ bottom: -15px;
     margin-left: auto;
     margin-right: auto;
     overflow: scroll;
+    background-color: #E8E1CB;
 }
 
 
@@ -70,6 +73,7 @@ bottom: -15px;
     height: 117px;
     float: left;
     position: relative;
+    color: rgb(0,132,0);
     /* This is so I can use position absolute in the .editSlot. If written like this, this cemoes the parent div the .editSlot relates to, so when using the position: absolute, it wont place in the corner of the entire page, but the corner of the parent, namely this div :D */
 }
 
@@ -99,6 +103,6 @@ bottom: -15px;
     position: absolute;
     right: 0;
     bottom: 0;
-    background-color: deepskyblue;
+    background-color: rgb(0,132,0);
     border-radius: 1em;
 }
