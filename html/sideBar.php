@@ -9,7 +9,7 @@
 
             <!-- The code for the profile picture -->
             <div id="sidebar_header">
-                <img src="../resources/img/niklas_test_photo.jpg">
+                <img id="profile_pic" src="../resources/img/placeholder.png">
             </div>
             
             <!-- Welcome message-->

@@ -84,6 +84,10 @@ function initUser(username, password) {
         }
         //If the user is not an admin, do nothing
     });
+    
+    //Display profile pic
+    //@NOTE: For now always placeholder
+    //$(#profile_pic).attr("src",profilePic);
 }
 
 /*
