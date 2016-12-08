@@ -22,6 +22,7 @@ var productsData = [];
  * @param price The price of the beverage
  */
 function addProduct(id, name, price) {
+    'use strict';
     /**
      * Function which forms an array of products which have been placed in the shoppingcart.
      * @return An array with product objects as elements
@@ -33,6 +34,7 @@ function addProduct(id, name, price) {
          * product already is added to the products array. If so the quantity of the 
          * product is just incremented by 1.
          */
+        // @ to-do: check id instead of name 
         for (var i = 0; i < numberDistinctDrinks; i++) {
             var row = productsData[i];
             if (row.name == name) {
@@ -65,6 +67,7 @@ function addProduct(id, name, price) {
  * @param an array of product objects           
  */
 function writeIntoTable(productsArray) {
+    'use strict';
     var tbody = $('#tableBody');
     $('#tableBody').empty();
     for (var i = 0; i < productsArray.length; i++) {
@@ -83,11 +86,12 @@ function writeIntoTable(productsArray) {
  * Purchase the drinks in the shopping cart
  */
 function purchaseTable() {
+    'use strict';
     var i = 0, //Loop index
         j, //Loop index
         singleProductsArray = [], //Transformed productData in a list of beer_id representing each single beverage
         product; //Product object
-    
+
     //Transform productData into a list of beer_id for each drink
     for (; i < productsData.length; i++) {
         //For each distinct beverage
@@ -96,20 +100,20 @@ function purchaseTable() {
             singleProductsArray.push(product.beer_id);
         }
     }
-    
+
     //Send the purchase requests to the api
     for (i = 0; i < singleProductsArray.length; i++) {
-        user.appendPurchases(product.beer_id, function (answer) {
+        user.appendPurchases(product.beer_id, function(answer) {
             if (answer.type === "error") {
                 alert("Apparently, something went wrong. Please try again.");
                 console.log(answer); //Debug in case of error
             }
         });
     }
-    
+
     //Update user debt
     updateBalanceDisplay();
-    
+
     //Update machine content and slot displays for each distinct beverage
     for (i = 0; i < productsData.length; i++) {
         updateMachineContentQuantities(productsData[i].beer_id, productsData[i].quantity);
@@ -121,6 +125,7 @@ function purchaseTable() {
  * Clear the table
  */
 function clearTable() {
+    'use strict';
     productsData = [];
     numberDistinctDrinks = 0;
     totalCost = 0;
@@ -132,6 +137,7 @@ function clearTable() {
  * Wire the Clear Table and Purchase button
  */
 $(function() {
+    'use strict';
     $('#clearAllCart').click(function() {
         clearTable();
     });
