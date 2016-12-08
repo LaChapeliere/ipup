@@ -53,6 +53,11 @@ td,th {
     overflow-y: auto;
 }
 
+#adminTableBody {
+    display: block;
+    height: auto;
+    overflow: scroll;
+}
 
 
 
