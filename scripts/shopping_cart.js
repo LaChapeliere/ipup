@@ -59,7 +59,7 @@ function addProduct(id, name, price) {
     var updatedProductsArray = updateProductsArray();
     writeIntoTable(updatedProductsArray);
     totalCost += price;
-    $('#total').html('Total: $' + totalCost);
+    $('#total').html('Total: ' + totalCost + ' kr');
 }
 
 /**
@@ -130,7 +130,7 @@ function clearTable() {
     numberDistinctDrinks = 0;
     totalCost = 0;
     writeIntoTable([]);
-    $('#total').html('Total: $' + totalCost);
+    $('#total').html('Total: ' + totalCost + ' kr');
 }
 
 /**
