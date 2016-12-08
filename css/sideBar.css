@@ -115,7 +115,7 @@ input:checked+.slider:before {
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 34px;
+    border-radius: 1em;  /* was 34px before */
 }
 
 .slider.round:before {
@@ -134,10 +134,10 @@ input:checked+.slider:before {
     color: #FFFFFF;
     text-align: center;
     font-size: 20px;
-    padding: 20px;
+    padding: 1em;
     width: 7em;
     cursor: pointer;
-    margin: 5px;
+    margin: .5em;
 }
 
 /* Add comment - Markus */
@@ -209,7 +209,7 @@ input:checked+.slider:before {
     background-color: white;
     margin-left: auto;
     margin-right: auto;
-    margin-top: .5em;
+    margin-top: .2em;
     border-bottom: 1px solid #888;
 }
 
