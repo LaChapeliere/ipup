@@ -68,15 +68,8 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      */
     this.makeAvailable = function() {
         available = true;
-        //Changing aspect
-        display.style.opacity = 1;
-        //        console.log(display);
-        display.style.filter = "alpha(opacity = 100)";
-        //Making the slot draggable
-        if (!$(display).data('ui-draggable')) {
-            $(display).draggable();
-        }
-        $(display).draggable('enable');
+        $(display).fadeTo(0, 1);
+        $($(display).find("div")[0]).draggable().draggable('enable');
     }
 
     /**
@@ -84,15 +77,8 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      */
     this.makeUnavailable = function() {
         available = false;
-        //Changing aspect
-        display.style.opacity = 0.4;
-        display.style.filter = "alpha(opacity = 40)";
-        console.log(display);
-        //Making slot non-draggable
-        if (!$(display).data('ui-draggable')) {
-            $(display).draggable();
-        }
-        $(display).draggable('disable');
+        $(display).fadeTo(0, 0.4);
+        $($(display).find("div")[0]).draggable().draggable('disable');
     }
 
     /**
@@ -107,8 +93,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
         //If the slot becomes empty
         if (this.isEmpty()) {
             this.makeUnavailable();
-        }
-        else {
+        } else {
             this.makeAvailable();
         }
     }
@@ -150,14 +135,14 @@ function populateSlotsConsumer(displayAlco, displaySoft) {
         for (i = 0; i < rows.length; i++) {
             cells = rows[i].getElementsByTagName("td");
             //  cells = rows[i].getElementsByClassName("product");
-            console.log(cells);
+            //  console.log(cells);
             for (j = 0; j < cells.length; j++) {
                 index = i * cells.length + j;
                 beverageInfo = machineContent[index];
                 beverage = new Slot(beverageInfo.beer_id, beverageInfo.name, beverageInfo.price, beverageInfo.amount, beverageInfo.category, beverageInfo.alcoholic, cells[j]);
                 //Send the information to the display
                 beverage.displayInfo();
-                console.log(beverage);
+                //    console.log(beverage);
                 beveragesSlots.push(beverage);
                 //Add the beverage in the dictionnary of available distinct drinks
                 availableBevIds[beverageInfo.name] = beverageInfo.beer_id;
@@ -244,21 +229,19 @@ function filterAlcoholDrinks(displayAlco, displaySoft) {
             slot.makeUnavailable();
         }
     }
-    
+
     //Highlight the selected filtering button
     if (displayAlco) {
         if (displaySoft) {
             document.getElementById("allBevButton").className = "selected";
             document.getElementById("alcoDrinksButton").className = "";
             document.getElementById("softDrinksButton").className = "";
-        }
-        else {
+        } else {
             document.getElementById("allBevButton").className = "";
             document.getElementById("alcoDrinksButton").className = "selected";
             document.getElementById("softDrinksButton").className = "";
         }
-    }
-    else {
+    } else {
         document.getElementById("allBevButton").className = "";
         document.getElementById("alcoDrinksButton").className = "";
         document.getElementById("softDrinksButton").className = "selected";
