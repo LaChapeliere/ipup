@@ -99,7 +99,7 @@ img {
 }
 
 input:checked+.slider {
-    background-color: #FFFFFF;
+    background-color: #E8E1CB;
 }
 
 input:focus+.slider {
