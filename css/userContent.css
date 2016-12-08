@@ -2,32 +2,32 @@
 
 #content {
     position: relative;
-    height: 510px;
+    height: 768px;
     width: 824px;
 }
 
 /* Just a "discpription" of each slot element that pops up afteron one second
 of hovering ------ DOUBLE CLICK OR DRAG TO ADD TO CART ------- */
 .imgDescription {
-  position: absolute;
-bottom: -15px;
-    left: 20px;
-  visibility: hidden;
+    position: absolute;
+    bottom: -3em;
+    left: 2em;
+    visibility: hidden;
     border-radius: 2em;
-    background-color: rgb(0, 186, 21);
+    box-shadow: 0 2.5px 2.5px 1.5px #333;
+    background-color: rgb(0, 132, 0);
     vertical-align: middle;
     text-align: center;
     font-size: 14px;
-        transition: 0s visibiliby;
+    transition: 0s visibiliby;
     padding: .3em;
 }
 
 .product:hover .imgDescription {
-  visibility: visible;
-  opacity: 2;
+    visibility: visible;
     transition-delay:1s;
-        color: black;     
-        padding: .4em;
+    color: white;     
+    padding: .4em;
 
 
 }
@@ -40,6 +40,7 @@ bottom: -15px;
     margin-left: auto;
     margin-right: auto;
     overflow: scroll;
+    background-color: #E8E1CB;
 }
 
 
@@ -49,6 +50,11 @@ bottom: -15px;
     box-shadow: 0 2px 2px 1px #333;
     color: black;
     width: 190px;
+}
+
+/* To remove hideous shaded line above each element - Is created by the JS somehow.  */
+.product.ui-draggable {
+box-shadow: 0 0 0 0 #333;
 }
 
 
@@ -70,7 +76,8 @@ bottom: -15px;
     height: 117px;
     float: left;
     position: relative;
-    /* This is so I can use position absolute in the .editSlot. If written like this, this cemoes the parent div the .editSlot relates to, so when using the position: absolute, it wont place in the corner of the entire page, but the corner of the parent, namely this div :D */
+    color: rgb(0,132,0);
+    /* This is so I can use position absolute in the .editSlot. If written like this, this becomes the parent div the .editSlot relates to, so when using the position: absolute, it wont place in the corner of the entire page, but the corner of the parent, namely this div :D */
 }
 
 
@@ -90,7 +97,8 @@ bottom: -15px;
 
 /* The price and stock paragraph */
 .price, .stock {
-    margin: 0 0 0 3px;
+    margin: 0 0 0 .7em;
+    font-size: 16px;
 }
 
 
@@ -99,6 +107,6 @@ bottom: -15px;
     position: absolute;
     right: 0;
     bottom: 0;
-    background-color: deepskyblue;
+    background-color: rgb(0,132,0);
     border-radius: 1em;
 }

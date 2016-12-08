@@ -40,9 +40,9 @@
                     <table id="cartcontent">
                         <thead>
                             <tr>
-                                <th field="name" width=120>Name</th>
-                                <th field="quantity" width=30 align="right">Quantity</th>
-                                <th field="price" width=30 align="right">Price</th>
+                                <th field="name" width=110>Name</th>
+                                <th field="quantity" width=20>#</th>
+                                <th field="price" width=49>Price</th>
                             </tr>
                         </thead>
                         <tbody id=tableBody>
@@ -50,7 +50,7 @@
                         </tbody>
                     </table>
                     <!--Added id = total here just temporarily so that the addProduct refers correctly. -Lauri -->
-                    <p class="total" id="total">Total: $0</p>
+                    <p class="total" id="total">Total: 0 kr</p>
                 </div>
             </div>
             <!-- Clear all / Puchase button area-->

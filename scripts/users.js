@@ -5,7 +5,7 @@ var user = new APIConnect(); //Holds the User object for the connected user
  */
 function validateLogin() {
     'use strict';
-    
+
     //Basic validation of input
     var username = document.forms["loginForm"]["username"].value,
         password = document.forms["loginForm"]["password"].value,
@@ -22,17 +22,17 @@ function validateLogin() {
     //Checking the combination in the database
     api = new APIConnect();
     api.setUser(username, password);
-    api.fetchIOU( function(answer) {
+    api.fetchIOU(function(answer) {
         var info = JSON.parse(answer),
             type = info.type,
             payload = info.payload[0];
-        
+
         //If the username/password combination does not exist
         if (type === "error") {
             alert(payload.msg);
             return;
         }
-        
+
         //Submit the login credential form if no error
         document.forms["loginForm"].submit();
     });
@@ -44,36 +44,37 @@ function validateLogin() {
  * @param password The user's password
  */
 function initUser(username, password) {
+    'use strict';
     var username = username, //The user's username
         password = password, //The user's password
         firstName, //The user's first name
         lastName, //The user's last name
         balance; //The amount of money availaible to the user
-    
+
     //Set up the API connection and fetch basic info on the user
     user.setUser(username, password);
-    user.fetchIOU( function(answer) {
+    user.fetchIOU(function(answer) {
         var info = JSON.parse(answer),
             type = info.type,
             payload = info.payload[0];
-        
+
         if (type === "error") {
             alert(payload.msg);
             return;
         }
-        
+
         firstName = payload["first_name"];
         lastName = payload["last_name"];
         balance = payload["assets"];
-        
+
         //Display the balance and the first name
         document.getElementById("welcome").textContent = "Welcome " + firstName + "!";
         document.getElementById("debt").textContent = "Balance: " + balance + " kr";
     });
-    
+
     //Determine if the user is an admin by sending an admin-only query to the database
     //@NOTE: This is an ugly method, but the credentials can only be checked by an admin...
-    user.fetchUsers( function(answer) {
+    user.fetchUsers(function(answer) {
         var info = JSON.parse(answer),
             type = info.type;
         if (!(type === "error")) {
@@ -89,18 +90,17 @@ function initUser(username, password) {
  * Update the display of the balance to the current balance
  */
 function updateBalanceDisplay() {
-    console.log("update");
-    
-    user.fetchIOU( function(answer) {
+    'use strict';
+    user.fetchIOU(function(answer) {
         var info = JSON.parse(answer),
             type = info.type,
             payload = info.payload[0];
-        console.log(payload);
+        
         if (type === "error") {
             alert(payload.msg);
             return;
         }
-        
+
         balance = payload["assets"];
         console.log(balance);
 
@@ -121,10 +121,11 @@ function updateBalanceDisplay() {
  * @return An error string, empty if the function completed without error
  */
 function addUser(api, newUsername, newPassword, firstName, lastName, email, phone) {
-    apiAnswer = api.editUser(newUsername, newPassword, firstName, lastName, email, phone, function (answer) {
+    'use strict';
+    apiAnswer = api.editUser(newUsername, newPassword, firstName, lastName, email, phone, function(answer) {
         return answer;
     })
-    
+
     if (apiAnswer.type == "error") {
         return apiAnswer.payload[0].msg;
     }
@@ -145,10 +146,11 @@ function addUser(api, newUsername, newPassword, firstName, lastName, email, phon
  * @return An error string, empty if the function completed without error
  */
 function addUser(api, targetUsername, newPassword, firstName, lastName, email, phone) {
-    apiAnswer = api.editUser(targetUsername, newPassword, firstName, lastName, email, phone, function (answer) {
+    'use strict';
+    apiAnswer = api.editUser(targetUsername, newPassword, firstName, lastName, email, phone, function(answer) {
         return answer;
     })
-    
+
     if (apiAnswer.type == "error") {
         return apiAnswer.payload[0].msg;
     }

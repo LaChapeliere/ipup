@@ -36,12 +36,12 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
     this.isAlcoholic = function() {
         return alcohol;
     }
-    
+
     /**
      * @return true is amount is 0
      */
     this.isEmpty = function() {
-        return amount==0;
+        return amount == 0;
     }
 
     /**
@@ -69,6 +69,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
         available = true;
         //Changing aspect
         display.style.opacity = 1;
+        //        console.log(display);
         display.style.filter = "alpha(opacity = 100)";
         //Making the slot draggable
         if (!$(display).data('ui-draggable')) {
@@ -85,13 +86,14 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
         //Changing aspect
         display.style.opacity = 0.4;
         display.style.filter = "alpha(opacity = 40)";
+        console.log(display);
         //Making slot non-draggable
         if (!$(display).data('ui-draggable')) {
             $(display).draggable();
         }
         $(display).draggable('disable');
     }
-    
+
     /**
      * Update the quantity of a beverage
      * @param newQuantity The new quantity of beverage in this slot
@@ -100,17 +102,17 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
         var infoDisplay = display.getElementsByClassName("slotLeft")[0];
         amount = newQuantity;
         infoDisplay.getElementsByClassName("stock")[0].textContent = amount;
-        
+
         //If the slot becomes empty
         if (this.isEmpty()) {
             this.makeUnavailable();
         }
     }
-    
+
     /**
      * Wire the slot display to react to a double click and be added to the cart
      */
-    display.ondblclick = function () {
+    display.ondblclick = function() {
         addProduct(beerId, name, price);
     }
 }
@@ -143,12 +145,15 @@ function populateSlotsConsumer(displayAlco, displaySoft) {
         rows = beveragesTable.getElementsByTagName("tr");
         for (i = 0; i < rows.length; i++) {
             cells = rows[i].getElementsByTagName("td");
+            //  cells = rows[i].getElementsByClassName("product");
+            console.log(cells);
             for (j = 0; j < cells.length; j++) {
                 index = i * cells.length + j;
                 beverageInfo = machineContent[index];
                 beverage = new Slot(beverageInfo.beer_id, beverageInfo.name, beverageInfo.price, beverageInfo.amount, beverageInfo.category, beverageInfo.alcoholic, cells[j]);
                 //Send the information to the display
                 beverage.displayInfo();
+                console.log(beverage);
                 beveragesSlots.push(beverage);
                 //Add the beverage in the dictionnary of available distinct drinks
                 availableBevIds[beverageInfo.name] = beverageInfo.beer_id;
@@ -216,7 +221,7 @@ function filterAlcoholDrinks(displayAlco, displaySoft) {
             slot.makeUnavailable();
             continue;
         }
-        
+
         //If the beverage is alcoholic
         if (slot.isAlcoholic()) {
             if (displayAlco) {
