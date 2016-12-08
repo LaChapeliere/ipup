@@ -25,7 +25,10 @@
     
     
             
-        <tbody id="adminTableBody">      
+        <tbody id="adminTableBody">   
+            
+            
+            
                 <tr class ="stock_admin">
                     <div class="box">
                         <a class="button" href=#popupStockEdit>
