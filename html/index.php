@@ -41,7 +41,6 @@
         initUser($_POST["username"], $_POST["password"]);
         populateSlotsConsumer(paramsDict["filter"] !== "soft", paramsDict["filter"] !== "alco");
         dragNDrop();
-        switchView()
     });
 </script>
 

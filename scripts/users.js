@@ -86,6 +86,7 @@ function initUser(username, password) {
             //If the request is accepted, the user is an admin
             //Display toggle button for admin view
             document.getElementById("toggle_div").style.display = "initial";
+            switchView();
         }
         //If the user is not an admin, do nothing
     });

@@ -19,6 +19,7 @@
 -->
 <script src="../scripts/main.js"></script>
 <script src="../scripts/sort_table.js"></script>
+<script src="../scripts/ui.js"></script>
 <script src="../scripts/users.js"></script>
 <script src="../scripts/beverages.js"></script>
 <script src="../scripts/inventory.js"></script>
@@ -37,7 +38,7 @@
         initUser($_POST["username"], $_POST["password"]);
         populateInventory();
         tableFilter.init();
-        switchView();
+        $('#toggle_div :checkbox').prop('checked', true);
     });
 
      

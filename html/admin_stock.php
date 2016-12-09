@@ -3,7 +3,7 @@
 <title>Beverage vending machine</title>
 <meta charset="utf-8" />
 <link href="../css/reset.css" rel="stylesheet" />
-<link href="../css/sideBar.css" rel="stylesheet" />
+<link href="../css/sidebar.css" rel="stylesheet" />
 <link href="../css/topBar.css" rel="stylesheet" />
 <link href="../css/wrapper.css" rel="stylesheet" />
 
@@ -19,6 +19,7 @@
 -->
 <script src="../scripts/main.js"></script>
 <script src="../scripts/sort_table.js"></script>
+<script src="../scripts/ui.js"></script>
 <script src="../scripts/users.js"></script>
 <script src="../scripts/beverages.js"></script>
 <script src="../scripts/inventory.js"></script>
@@ -37,6 +38,7 @@
         initUser($_POST["username"], $_POST["password"]);
         populateInventory();
         tableFilter.init();
+        $('#toggle_div :checkbox').prop('checked', true);
     });
 </script>
 
