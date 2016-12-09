@@ -1,8 +1,6 @@
 <!-- History Stats Content -->
-
+<tr>
 <div id="histContent">
-
- <tr>
      <h1>Stats</h1>
      <div id="stats">
             <table id="beveragesTable">
@@ -68,17 +66,14 @@
      
      <div id="history">
             <table id="historyTable">
-                <tbody>
                     <tr class ="historyRow">
-                        <td class="subject_entry">What?</td>
-                        <td class="time_entry">When?</td>
-                        <td class="amount_entry">How Much?</td>
-                        <td class="balance_entry">Current Balance</td>
-                   </tr>
-                </tbody>
+                        <th class="subject_entry">What</th>
+                        <th class="time_entry">When</th>
+                        <th class="amount_entry">Amount</th>
+                        <th class="balance_entry">Balance</th>
+                </tr>
          </table>
      </div>
-</tr>
-
                 
 </div>
+</tr>

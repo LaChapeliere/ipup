@@ -1,25 +1,31 @@
 /*History Stats Css*/
 
+#histContent{
+    background-color: #E8E1CB;
+}
+
 h1{
-    color: red;
+    text-align: center;
+    color: rgb(0, 132, 0);
+    font-weight: bold;
+    text-decoration: underline;
 }
 
-time_entry{
-    color: red;
-}
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
 
-th, td {
+th {
     padding: 8px;
+    font-size: 25px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    font-weight:bold;
+    color: rgb(116, 70, 16);
+    border-bottom: 1px solid rgb(116, 70, 16);
+    border-collapse: collapse;
+    width: 50%;
 }
 
-
-#historyTable{
-    background-color: beige;
+td{
+    color: red;
+    width: 50%;
+    border-bottom: 1px solid rgb(116, 70, 16);
 }
