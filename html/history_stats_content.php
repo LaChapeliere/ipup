@@ -1,7 +1,7 @@
 <!-- History Stats Content -->
 <tr>
 <div id="histContent">
-     <h1>Stats</h1>
+
      <div id="stats">
             <table id="beveragesTable">
             <thead>
@@ -61,9 +61,7 @@
                 </tr>
          </table>
      </div>
-    
-     <h1>History</h1>
-    
+ 
     <table>
         <tr>
                         <th class="subject_entry">What</th>
