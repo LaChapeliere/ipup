@@ -47,7 +47,7 @@
 <div id="wrapper">
     <div class="container">
         <?php include "topBar.php";?>
-        <?php include "sideBar.php";?>
+        <?php include "adminSideBar.php";?>
         <?php include "adminContentUsers.php";?>
  
 </div>
