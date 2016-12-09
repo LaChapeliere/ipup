@@ -95,6 +95,21 @@ function initUser(username, password) {
     //$(#profile_pic).attr("src",profilePic);
 }
 
+/**
+ * Send the credentials via POST to a new page
+ * @param The url of the new page
+ */
+function linkFormSubmit(url) {
+    var myform = '<form id="temporary_form" action="' + url + '" method="POST">', //A temporary form to POST
+        credentials = user.getUser(); //The credentials to send
+    
+    myform += '<input name=username value="' + credentials[0] + '"/>';
+    myform += '<input name=password value="' + credentials[1] + '"/>';
+    myform += '</form>';
+    $(myform).appendTo('body').submit();
+    $('#temporary_form').remove();
+}
+
 /*
  * Update the display of the balance to the current balance
  */

@@ -156,15 +156,12 @@ function populateSlotsConsumer(displayAlco, displaySoft) {
 
     //Wire the filter buttons
     allBevButton.onclick = function() {
-        console.log("All");
         filterAlcoholDrinks(true, true);
     };
     softOnlyButton.onclick = function() {
-        console.log("Soft only");
         filterAlcoholDrinks(false, true);
     };
     alcoholOnlyButton.onclick = function() {
-        console.log("Alco only");
         filterAlcoholDrinks(true, false);
     };
 }

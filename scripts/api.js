@@ -65,6 +65,14 @@ function APIConnect() {
         username = un;
         password = pw;
     };
+    
+    /**
+     * Method to get the username and password
+     * @return An array with the username and the password
+     */
+    this.getUser = function() {
+        return [username, password];
+    };
 
 
     /**
