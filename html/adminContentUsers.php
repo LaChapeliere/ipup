@@ -27,7 +27,7 @@
     
     
 <div id="tableDiv">
-    <table id="sortableTable" class="user-table table">    
+    <table id="sortableTable" class="users-table table">    
         <tbody id="adminUserTableBody">           
             <tr class ="users_admin">
                 <td class="user_name">Markus ForestMoe</td>

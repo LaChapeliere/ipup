@@ -22,13 +22,13 @@
 /* the following two rules make odd and even entries in different colours. Comment: they don't work with hover, and overrides it.*/
 
 
-.stock_admin:nth-child(even) {
+.stock_admin:nth-child(even), .users_admin:nth-child(even) {
     margin: auto%;
     color: rgb(0, 132,0);
     
 }
 
-.stock_admin:nth-child(odd) {
+.stock_admin:nth-child(odd), .users_admin:nth-child(odd) {
     margin: auto;
     background-color: #E8E1CB;
     color: rgb(0, 132,0);
@@ -65,7 +65,7 @@ th{
 }
 
 /*Add Beverage button */
-#addBeverageButton{
+#addBeverageButton, #addUserButton{
     font-size: 20px;
     border: 1px solid #333;
     border-radius: 1em;
@@ -82,14 +82,11 @@ th{
     box-shadow: 2px 2px 2px #000000;
 }
 
-<<<<<<< HEAD:css/adminContent.css
-=======
+
 #addBeverage, #addUser, #searchBar {
     display: inline;
 }
 
-
->>>>>>> origin/master:css/adminContentStock.css
 #adminContent {
     position: relative;
 }
