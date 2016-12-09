@@ -54,7 +54,8 @@
 
 
 <body>
-
+<!-- The popup for editing beverages -->
+<?php include "popup_stock.php";?>
 </body>
 
 </html>
