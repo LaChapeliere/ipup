@@ -64,7 +64,7 @@ function switchView() {
     'use strict';
     $('#toggle_div :checkbox').on('change', function(event) {
         if (this.checked) {
-            document.location = './admin_view.php';
+            document.location = './admin_stock.php';
         } else {
             document.location = './index.php';
         }
