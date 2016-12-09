@@ -10,7 +10,6 @@
         <div id="buttonDiv">
             <a class="close" href="#"><button id="no"> Cancel</button></a>
             <button id="yes" onclick="linkFormSubmit('historystats.php');">Continue</button>
-        
         </div>
 	</div>
 </div> 
