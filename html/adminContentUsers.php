@@ -18,7 +18,7 @@
             <th class = "head_admin"> <a href="javascript:SortTable(0,'T');">Le Name</a></th>
             <th class = "head_admin"> <a href="javascript:SortTable(1,'N');">Debt</a></th>
             <th class = "head_admin"> <a href="javascript:SortTable(2,'T');">User ID</a></th>
-            <th class = "head_admin"> <a href="javascript:SortTable(2,'T');">Is admin</a></th>
+            <th class = "head_admin"> <a href="javascript:SortTable(3,'T');">Is admin</a></th>
                     
         </tr>
     </thead>
@@ -27,85 +27,169 @@
     
     
 <div id="tableDiv">
-    <table id="userTable" class="user-table table">    
+    <table id="stockTable" class="user-table table">    
         <tbody id="adminUserTableBody">           
             <tr class ="stock_admin">
                 <td class="user_name">Markus ForestMoe</td>
                 <td class="user_debt">-9000</td>
-                <td class="user_ID">-9000</td>
+                <td class="user_ID">maFOMO</td>
                 <td class="user_admin_owers">False</td>
             </tr>
             <tr class ="stock_admin">
-                <td class="user_name">Markus</td>
-                <td class="user_karma">Really bad. I mean so, so bad!!</td>
-                <td class="user_debt">-9000</td>
-                <td class="user_popularity">mr popular</td>
-            </tr>
-            <tr class ="stock_admin">
-                <td class="user_name">Mike</td>
-                <td class="user_karma">The universe loves me</td>
+                <td class="user_name">MikeBikebike</td>
                 <td class="user_debt">700</td>
-                <td class="user_popularity">mr douche</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">True</td>
             </tr>
             <tr class ="stock_admin">
-                <td class="user_name">Markus</td>
-                <td class="user_karma">Really bad. I mean so, so bad!!</td>
+                <td class="user_name">Markus ForestMoe</td>
                 <td class="user_debt">-9000</td>
-                <td class="user_popularity">mr popular</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
             </tr>
             <tr class ="stock_admin">
-                <td class="user_name">Markus</td>
-                <td class="user_karma">Really bad. I mean so, so bad!!</td>
+                <td class="user_name">Markus ForestMoe</td>
                 <td class="user_debt">-9000</td>
-                <td class="user_popularity">mr popular</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
             </tr>
             <tr class ="stock_admin">
-                <td class="user_name">Markus</td>
-                <td class="user_karma">Really bad. I mean so, so bad!!</td>
+                <td class="user_name">Markus ForestMoe</td>
                 <td class="user_debt">-9000</td>
-                <td class="user_popularity">mr popular</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
             </tr>
             <tr class ="stock_admin">
-                <td class="user_name">Markus</td>
-                <td class="user_karma">Really bad. I mean so, so bad!!</td>
+                <td class="user_name">Markus ForestMoe</td>
                 <td class="user_debt">-9000</td>
-                <td class="user_popularity">mr popular</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
             </tr>
             <tr class ="stock_admin">
-                <td class="user_name">Markus</td>
-                <td class="user_karma">Really bad. I mean so, so bad!!</td>
+                <td class="user_name">Markus ForestMoe</td>
                 <td class="user_debt">-9000</td>
-                <td class="user_popularity">mr popular</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
             </tr>
             <tr class ="stock_admin">
-                <td class="user_name">Markus</td>
-                <td class="user_karma">Really bad. I mean so, so bad!!</td>
+                <td class="user_name">Markus ForestMoe</td>
                 <td class="user_debt">-9000</td>
-                <td class="user_popularity">mr popular</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
             </tr>
             <tr class ="stock_admin">
-                <td class="user_name">Markus</td>
-                <td class="user_karma">Really bad. I mean so, so bad!!</td>
+                <td class="user_name">Markus ForestMoe</td>
                 <td class="user_debt">-9000</td>
-                <td class="user_popularity">mr popular</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
             </tr>
             <tr class ="stock_admin">
-                <td class="user_name">Markus</td>
-                <td class="user_karma">Really bad. I mean so, so bad!!</td>
+                <td class="user_name">Markus ForestMoe</td>
                 <td class="user_debt">-9000</td>
-                <td class="user_popularity">mr popular</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
             </tr>
             <tr class ="stock_admin">
-                <td class="user_name">Markus</td>
-                <td class="user_karma">Really bad. I mean so, so bad!!</td>
+                <td class="user_name">Markus ForestMoe</td>
                 <td class="user_debt">-9000</td>
-                <td class="user_popularity">mr popular</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
             </tr>
             <tr class ="stock_admin">
-                <td class="user_name">Markus</td>
-                <td class="user_karma">Really bad. I mean so, so bad!!</td>
+                <td class="user_name">Markus ForestMoe</td>
                 <td class="user_debt">-9000</td>
-                <td class="user_popularity">mr popular</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
+            </tr>
+            <tr class ="stock_admin">
+                <td class="user_name">Markus ForestMoe</td>
+                <td class="user_debt">-9000</td>
+                <td class="user_ID">maFOMO</td>
+                <td class="user_admin_owers">False</td>
             </tr>
             
         </tbody>      
