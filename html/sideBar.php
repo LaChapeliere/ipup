@@ -29,7 +29,7 @@
 
             <!-- The Log off button-->
             <div class="logout">
-                <button class ="log_off_button" style="vertical-align:middle" onclick="validateLogin()"><span> Log Off</span></button>
+                <button class ="log_off_button" style="vertical-align:middle" onclick="window.location.assign('login_yeah.php')"><span> Log Off</span></button>
             </div>
                 
 
