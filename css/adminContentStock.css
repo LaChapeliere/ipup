@@ -60,7 +60,9 @@ th{
     
 }
 
-
+#addBeverage,#searchBar {
+    display: inline;
+}
 
 
 
