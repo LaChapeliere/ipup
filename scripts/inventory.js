@@ -69,28 +69,72 @@ function openEditPopup(name, price, count, beer_id) {
         beer_id = Math.floor((Math.random() * 1000) + 10000);
     }
     else {
-        //Display current info
-        $("#bevName").attr("placeholder", name);
-        $("#bevQuantity").attr("placeholder", count);
-        $("#bevPrice").attr("placeholder", price + " kr");
-
-        //Fetch category info
-        user.fetchBeerData(beer_id, function(answer) {
-            var info = JSON.parse(answer),
-                type = info.type,
-                categoriesName = {soft: "Soft Drink", lager: "Lager", stout: "Stout", ale: "Ale", beer: "Beer", white_wine: "White Wine", red_wine: "Red Wine", cider: "Cider"}, //Dictionnary of names of the categories
-                category; //The category info for the drink
-
-            if (type === "error") {
-                alert("Something went wrong. Cannot find the category of the beverage.")
-            }
-
-            //If the beer data has been correctly retrieved
-            category = beverageCategory(info.payload[0].varugrupp);
-            $("#bevType").val(categoriesName[category[0]]);
-            $("#toggle_div").checked = categoriesName[category[1]];
-        })
+        displayInfoBevEdit(name, price, count, beer_id);
     }
+}
+
+/*
+ * Display info on the selected drink in the pop-up
+ * @param name The name of the drink
+ * @param price The price of the drink
+ * @param count The amount fo drinks
+ * @param beer_id The id of the drink
+ */
+function displayInfoBevEdit(name, price, count, beer_id) {
+    //Display current info
+    $("#bevName").attr("placeholder", name);
+    $("#bevQuantity").attr("placeholder", count);
+    $("#bevPrice").attr("placeholder", price + " kr");
+    $("#bevId").attr("placeholder", beer_id);
+
+    //Fetch category info
+    user.fetchBeerData(beer_id, function(answer) {
+        var info = JSON.parse(answer),
+            type = info.type,
+            categoriesName = {soft: "Soft Drink", lager: "Lager", stout: "Stout", ale: "Ale", beer: "Beer", white_wine: "White Wine", red_wine: "Red Wine", cider: "Cider"}, //Dictionnary of names of the categories
+            category; //The category info for the drink
+
+        if (type === "error") {
+            alert("Something went wrong. Cannot find the category of the beverage.")
+        }
+
+        //If the beer data has been correctly retrieved
+        category = beverageCategory(info.payload[0].varugrupp);
+        $("#bevType").val(categoriesName[category[0]]);
+        $("#toggle_div").checked = categoriesName[category[1]];
+    })
+}
+
+/**
+ * Close the edit popup without modifications
+ */
+function closeEditPopup() {
+    //Hide pop-up
+    $(".overlay").css({"opacity": 0, "visibility": 'hidden'});
+}
+
+/*
+ * Send the modifications for the selected drink to the API
+ */
+function saveEditBev() {
+    var price = document.getElementById("bevPrice").value, //The entered price
+        count = document.getElementById("bevQuantity").value, //The entered quantity
+        beer_id = document.getElementById("bevId").placeholder;
+
+    if (price.length <= 0) {
+        price = document.getElementById("bevPrice").placeholder;
+    }
+    if (count.length <= 0) {
+        count = document.getElementById("bevQuantity").placeholder;
+    }
+    
+    //Send info to API
+    //Only sending the info currently required by the API, for example cannot change the name
+    user.updateInventory(beer_id, count, price, function() {});
+        
+    closeEditPopup();
+    //Reload the table
+    populateHistory();
 }
 
 /*

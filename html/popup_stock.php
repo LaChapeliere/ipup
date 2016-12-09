@@ -13,10 +13,9 @@
 	<div class="popup">
         <form>
 		<h2>Edit Beverage Info</h2>
-		<a class="close" id="closeCross" href="#">&times;</a>
 		<div class="popupContent">
             
-            
+            <button type="button" id="closeCross" onclick="closeEditPopup()">&times;</button>
             <!-- Input fields for the beverages -->
             
             Beverage name:<br>
@@ -25,6 +24,8 @@
             <div class="inputDiv"><input type="number" id="bevQuantity" placeholder="Quantity"></div><br>
             Price of beverage<br>
             <div class="inputDiv"><input type="text" id="bevPrice" placeholder="Price"></div><br>
+            
+            <div class="inputDiv"><input type="text" id="bevId" placeholder="Id" hidden></div><br>
             
             <!-- Beverage typ selection meny-->
             Beverage type:
@@ -55,11 +56,11 @@
             <!-- buttons for Save, Reset and Cancel -->
             
             <div>
-            <input type="submit" value="Save">
-            <input type="reset">
-            <button id="Cancel"><a class="close" href="#">Cancel</a></button>
+                <button type="button" id="save" onclick="saveEditBev()">Save</button>
+                <input type="reset">
+                <button type="button" id="cancel" onclick="closeEditPopup()">Cancel</button>
             </div>
 		</div>
-            </form>
+    </form>
 	</div>
 </div> 
