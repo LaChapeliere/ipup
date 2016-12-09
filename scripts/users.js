@@ -134,6 +134,63 @@ function updateBalanceDisplay() {
 }
 
 /**
+ * Populate the users table with data from the api
+ */
+function populateUsers() {
+    //Removing all rows but the header and the first data row -to be able to add new rows to the tbody
+    $('#adminUserTableBody tr').not(':first').remove();
+    var html = '', //The html string to build the table rows
+        users; //The data
+    
+    //Fetch the data from the API
+    user.fetchUsers(function(answer) {
+        var info = JSON.parse(answer),
+            type = info.type;
+        
+        if (type === "error") {
+            alert(info.payload[0].msg);
+            return;
+        }
+        
+        //If the inventory was correctly retrieved
+        users = info.payload;
+        //For each drink
+        for (var i = 0; i < users.length; i++) {
+            //If no name ignore the user
+            if (users[i].username.length === 0) {
+                continue;
+            }
+            //Build the html
+            html += "<tr class ='users_admin'><div class='box'>" +
+                    "<td class='user_name'>" + users[i].first_name + " " + users[i].last_name + "</td>" +
+                    "<td class='user_debt'>" + (Math.floor(Math.random() * 2000) - 800) + "</td>" + //For now displaying a random balance since iou_get_all doesn't not update
+                    "<td class='user_ID'>" + users[i].user_id + "</td>" +
+                    "<td class='user_admin_owers'>" + (users[i].credentials == 0 ? "Yes" : "No")  + "</td>" +
+                    "<td class='username' hidden>" + users[i].username + "</td>" +
+                    "</a></div></tr>";
+        }
+
+        //Feed the html to the table
+        $('#adminUserTableBody tr').first().after(html);
+        //Remove first -fake- row
+        $('#adminUserTableBody tr:first').remove();
+        
+        
+        //Make the rows clickable
+        /*
+        $('#adminTableBody tr').each( function(row) {
+            var name = $(this).find('.name_entry')[0].innerHTML, //The name of the clicked row
+                price = $(this).find('.price_entry')[0].innerHTML, //The price of the clicked row
+                count = $(this).find('.stock_entry')[0].innerHTML, //The amount of the clicked row
+                beer_id = $(this).find('.id_entry')[0].innerHTML; //The beer_id of the clicked row
+            $(this).on("click", function() {openEditPopup(name, price, count, beer_id)});
+            
+        })*/
+    });
+}
+
+
+/**
  * Add a user to the database
  * @param api The api connection to the database. The connected user must be an admin.
  * @param newUsername The username of the new user

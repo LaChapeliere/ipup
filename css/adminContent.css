@@ -9,7 +9,7 @@
     
 }
 
-.stock_admin {
+.stock_admin, .users_admin {
     font-size: 20px;
     text-align: center;
     background-color: #f8d200;
@@ -63,8 +63,6 @@ th{
 #addBeverage, #addUser, #searchBar {
     display: inline;
 }
-
-
 
 
 #adminContent {

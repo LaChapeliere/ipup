@@ -26,7 +26,7 @@
     
     
 <div id="tableDiv">
-    <table id="stockTable" class="stock-table table">    
+    <table id="sortableTable" class="stock-table table">    
         <tbody id="adminTableBody">           
             <tr class ="stock_admin">
                 <td class="name_entry">Dragon Blood</td>

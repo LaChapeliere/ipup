@@ -27,7 +27,7 @@ function populateInventory() {
             }
             
             //Build the html
-            html += "<tr class ='stock_admin'><div class='box'><a class='button' href=#popupStockEdit>" + 
+            html += "<tr class ='stock_admin'><div class='box'>" + 
                     "<td class='name_entry'>" + inventory[i].namn + "</td>" +
                     "<td class='price_entry'>" + inventory[i].price + "</td>" +
                     "<td class='stock_entry'>" + inventory[i].count + "</td>" +
@@ -46,7 +46,7 @@ function populateInventory() {
             var name = $(this).find('.name_entry')[0].innerHTML, //The name of the clicked row
                 price = $(this).find('.price_entry')[0].innerHTML, //The price of the clicked row
                 count = $(this).find('.stock_entry')[0].innerHTML, //The amount of the clicked row
-                beer_id = $(this).find('.id_entry')[0].innerHTML; //The beer_id of the clicked row*/
+                beer_id = $(this).find('.id_entry')[0].innerHTML; //The beer_id of the clicked row
             $(this).on("click", function() {openEditPopup(name, price, count, beer_id)});
             
         })

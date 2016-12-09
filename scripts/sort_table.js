@@ -20,9 +20,9 @@
    notice appears on all copies. 
 */
 //
-// One placed to customize - The id value of the table tag.
+// One place to customize - The id value of the table tag.
 
-var TableIDvalue = "stockTable";
+var TableIDvalue = "sortableTable";
 
 //
 //////////////////////////////////////
