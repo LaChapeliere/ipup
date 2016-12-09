@@ -64,10 +64,10 @@
  
     <table>
         <tr>
-                        <th class="subject_entry">What</th>
-                        <th class="time_entry">When</th>
-                        <th class="amount_entry">Amount</th>
-                        <th class="balance_entry">Balance</th>
+                        <th id="tableHeaderNames" class="subject_entry">What</th>
+                        <th id="tableHeaderNames" class="time_entry">When</th>
+                        <th id="tableHeaderNames" class="amount_entry">Amount</th>
+                        <th id="tableHeaderNames" class="balance_entry">Balance</th>
                 </tr>
     </table>
     
