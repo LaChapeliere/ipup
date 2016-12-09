@@ -7,5 +7,6 @@
                 <dt>
                     <button id="historyStatsButton" type="button" onclick="linkFormSubmit('historystats.php');">History/Stats</button>
                 </dt>
+
             </dl>
         </header>
