@@ -31,6 +31,7 @@ function populateInventory() {
                     "<td class='name_entry'>" + inventory[i].namn + "</td>" +
                     "<td class='price_entry'>" + inventory[i].price + "</td>" +
                     "<td class='stock_entry'>" + inventory[i].count + "</td>" +
+                    "<td class='id_entry' hidden>" + inventory[i].beer_id + "</td>" +
                     "</a></div></tr>";
         }
 
@@ -38,7 +39,30 @@ function populateInventory() {
         $('#adminTableBody tr').first().after(html);
         //Remove first -fake- row
         $('#adminTableBody tr:first').remove();
+        
+        //Make the rows clickable
+        
+        $('#adminTableBody tr').each( function(row) {
+            var name = $(this).find('.name_entry')[0].innerHTML, //The name of the clicked row
+                price = $(this).find('.price_entry')[0].innerHTML, //The price of the clicked row
+                count = $(this).find('.stock_entry')[0].innerHTML, //The amount of the clicked row
+                beer_id = $(this).find('.id_entry')[0].innerHTML; //The beer_id of the clicked row*/
+            $(this).on("click", function() {openEditPopup(name, price, count, beer_id)});
+            
+        })
     });
+}
+
+/*
+ * Open pop-up to edit drink
+ * @param name The name of the drink
+ * @param price The price of the drink
+ * @param count The amount fo drinks
+ * @param beer_id The id of the drink
+ */
+function openEditPopup(name, price, count, beer_id) {
+    console.log("Test");
+    var popup = window.open("popup_stock.php", "_blank", 'height=200,width=150');
 }
 
 /*
