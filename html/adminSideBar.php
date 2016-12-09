@@ -15,9 +15,6 @@
             <!-- Welcome message-->
             <div id="welcome"></div>
 
-            <!-- The debt area-->
-            <div id="debt">Your current debt:</div>
-
             <!-- Toggle button -->
             <div id="toggle_div">
                 <p>Admin view</p>
