@@ -60,7 +60,7 @@ th{
     
 }
 
-#addBeverage,#searchBar {
+#addBeverage, #addUser, #searchBar {
     display: inline;
 }
 
@@ -73,7 +73,7 @@ th{
 
 
 
-#stockTable, #stockTableHead {
+#stockTable, #stockTableHead,#userTable, #UserTableHead {
     width: 100%;
     table-layout: fixed;
   border-collapse: collapse;
