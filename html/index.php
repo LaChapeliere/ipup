@@ -30,7 +30,6 @@
             $_POST["username"] = "ervtod";
             $_POST["password"] = "ervtod";
         }
-        
         //Get filtering parameters for drinks
         var paramsDict = {};
         window.location.search.substr(1).split("&").forEach(function(item) {paramsDict[item.split("=")[0]] = item.split("=")[1]});
@@ -42,6 +41,7 @@
         initUser($_POST["username"], $_POST["password"]);
         populateSlotsConsumer(paramsDict["filter"] !== "soft", paramsDict["filter"] !== "alco");
         dragNDrop();
+        switchView()
     });
 </script>
 

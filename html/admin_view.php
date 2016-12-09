@@ -37,7 +37,10 @@
         initUser($_POST["username"], $_POST["password"]);
         populateInventory();
         tableFilter.init();
+        switchView();
     });
+
+     
 </script>
 
 <!-- Wrapper for all content-->

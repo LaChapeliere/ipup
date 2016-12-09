@@ -30,3 +30,15 @@ function timestampToDate(timestamp) {
         date = new Date(parseInt(dateSplit[0]), parseInt(dateSplit[1]), parseInt(dateSplit[2]), parseInt(timeSplit[0]), parseInt(timeSplit[1]), parseInt(timeSplit[2]), 0); //The Date object
     return date;
 }
+
+
+function switchView() {
+    'use strict';
+    $('#toggle_div :checkbox').on('change', function(event) {
+        if (this.checked) {
+            document.location = './admin_view.php';
+        } else {
+            document.location = './index.php';
+        }
+    });
+}
