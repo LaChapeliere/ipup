@@ -54,7 +54,7 @@ function addProduct(id, name, price) {
         });
         return updatedProductsArray;
     }
-    
+
     //Update quantity in machine content and slot display
     updateMachineContentQuantities(id, 1);
 
@@ -103,7 +103,7 @@ function purchaseTable() {
         singleProductsArray = [], //Transformed productData in a list of beer_id representing each single beverage
         product, //Product object
         purchased = 0;
-    
+
     //Transform productData into a list of beer_id for each drink
     for (; i < productsData.length; i++) {
         //For each distinct beverage
@@ -120,7 +120,7 @@ function purchaseTable() {
                 alert("Apparently, something went wrong. Please try again.");
                 console.log(answer); //Debug in case of error
             }
-            
+
             purchased += 1;
             //Update display when all purchases have been done
             if (purchased === singleProductsArray.length) {
@@ -166,4 +166,20 @@ $(function() {
         purchaseTable();
         clearTable();
     });
+    $('#historyStatsButton').click(function() {
+        if (shoppingcartIsEmpty()) {
+            document.location = './historystats.php';
+        } else {
+            window.open('../html/customerContentPopup.php');
+        }
+    });
 });
+
+function shoppingcartIsEmpty() {
+    'use strict';
+    if (productsData.length == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}

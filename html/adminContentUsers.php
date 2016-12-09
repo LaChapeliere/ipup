@@ -14,11 +14,11 @@
         
 <table id="userTableHead">
     <thead>
-        <tr class ="users_admin">
-            <th class = "head_admin"> <a href="javascript:SortTable(0,'T');">Le Name</a></th>
+        <tr class ="stock_admin">
+            <th class = "head_admin"> <a href="javascript:SortTable(0,'T');">Name</a></th>
             <th class = "head_admin"> <a href="javascript:SortTable(1,'N');">Debt</a></th>
             <th class = "head_admin"> <a href="javascript:SortTable(2,'T');">User ID</a></th>
-            <th class = "head_admin"> <a href="javascript:SortTable(3,'T');">Is admin</a></th>
+            <th class = "head_admin"> <a href="javascript:SortTable(3,'T');">Is Admin</a></th>
                     
         </tr>
     </thead>

@@ -1,51 +1,56 @@
 /*This is where we implement tabular for admin and stock view*/
 
+#buttonToolbar{
+    background-color: rgb(116, 70, 16);
+}
 
 .head_admin, a {
     text-decoration: none;
     font-size: 30px;
-    text-align: center;
-    background-color: #4CAF50;
-    
+    text-align: left;
+    background-color: rgb(0, 132,0);
+    color: #E8E1CB;
+  
 }
 
 .stock_admin, .users_admin {
     font-size: 20px;
-    text-align: center;
-    background-color: #f8d200;
-    
-
+    text-align: left;
 }
 
 
 /* the following two rules make odd and even entries in different colours. Comment: they don't work with hover, and overrides it.*/
-/*
+
+
 .stock_admin:nth-child(even) {
     margin: auto%;
-    background-color: #9acef7
+    color: rgb(0, 132,0);
+    
 }
 
 .stock_admin:nth-child(odd) {
     margin: auto;
-    background-color: rgb(196, 196, 196)
+    background-color: #E8E1CB;
+    color: rgb(0, 132,0);
 }
 
-*/
+
 
 /* This makes entries in the table light up when hovered */
-tr:hover {background-color: rgba(255, 177, 0, 0.81)}
+/*tr:hover {background-color: rgba(255, 177, 0, 0.81)}
 
 
 
 /*This controls the table-cells, giving them padding and borders*/
-td,th {
-    border: 1px solid #ddd;
-    border-top: 1px solid #ddd;
+
+td{
+    border: 1px solid rgb(116, 70, 16);
     padding: .4em;
 }
 
 th{
     cursor: pointer;
+    padding: .4em;
 }
 
 
@@ -54,17 +59,37 @@ th{
 #tableDiv{
     
     height:19.745em;
-    border-bottom:1px solid grey;
     width: 100%;
     overflow-y: auto;
     
 }
 
+/*Add Beverage button */
+#addBeverageButton{
+    font-size: 20px;
+    border: 1px solid #333;
+    border-radius: 1em;
+    box-shadow: 4px 4px 5px #000000;
+    background-color: rgb(0, 132,0);
+    color: white;
+    margin-left: .2em;
+}
+
+/*Search bar*/
+#searchBar{
+    border-radius: 3em;
+    border: 1px solid #333;
+    box-shadow: 2px 2px 2px #000000;
+}
+
+<<<<<<< HEAD:css/adminContent.css
+=======
 #addBeverage, #addUser, #searchBar {
     display: inline;
 }
 
 
+>>>>>>> origin/master:css/adminContentStock.css
 #adminContent {
     position: relative;
 }
@@ -74,7 +99,7 @@ th{
 #stockTable, #stockTableHead,#userTable, #UserTableHead {
     width: 100%;
     table-layout: fixed;
-  border-collapse: collapse;
+    border-collapse: collapse;
 }
 
 
@@ -88,7 +113,7 @@ th{
 
 /* the two following are for editing the search bar*/ 
 #searchBar {
-    border: 1px solid grey;
+    border: 1px solid rgb(116, 70, 16);
     margin-bottom: 0.2em;
     padding: 1.1em 3px;
     width: 19em;
