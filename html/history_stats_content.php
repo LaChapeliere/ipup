@@ -1,5 +1,7 @@
 <!-- History Stats Content -->
 
+<div id="histContent">
+
  <tr>
      <h1>Stats</h1>
      <div id="stats">
@@ -79,4 +81,4 @@
 </tr>
 
                 
-    
+</div>
