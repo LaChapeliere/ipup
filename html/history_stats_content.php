@@ -63,14 +63,20 @@
      </div>
     
      <h1>History</h1>
-     
-     <div id="history">
-            <table id="historyTable">
-                    <tr class ="historyRow">
+    
+    <table>
+        <tr>
                         <th class="subject_entry">What</th>
                         <th class="time_entry">When</th>
                         <th class="amount_entry">Amount</th>
                         <th class="balance_entry">Balance</th>
+                </tr>
+    </table>
+    
+     <div id="history">
+            <table id="historyTable">
+                <tr  id = "historyRow">
+                
                 </tr>
          </table>
      </div>
