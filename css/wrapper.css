@@ -20,3 +20,11 @@ html {
 }
 
 /* THE ABOVE THREE RULES APPLY TO ALL PAGES, ALL THE TIME! */
+@media screen and (max-width: 1024px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}

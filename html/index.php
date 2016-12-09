@@ -52,6 +52,8 @@
         <?php include "topBar.php";?>
         <?php include "sideBar.php";?>
         <?php include "userContent.php";?>
+        <?php include "customerContentPopup.php";?>
+        
 
     </div>
 </div>
