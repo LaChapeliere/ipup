@@ -30,10 +30,10 @@
     <table id="userTable" class="user-table table">    
         <tbody id="adminUserTableBody">           
             <tr class ="stock_admin">
-                <td class="user_name">Markus</td>
-                <td class="user_karma">Really bad. I mean so, so bad!!</td>
+                <td class="user_name">Markus ForestMoe</td>
                 <td class="user_debt">-9000</td>
-                <td class="user_popularity">mr popular</td>
+                <td class="user_ID">-9000</td>
+                <td class="user_admin_owers">False</td>
             </tr>
             <tr class ="stock_admin">
                 <td class="user_name">Markus</td>
