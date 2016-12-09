@@ -19,7 +19,7 @@
 /*controls how the popupStockEdit window is hidden when not activated*/
 .overlay {
   position: fixed;
-  top: 0;
+  top: -130px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -27,6 +27,7 @@
   transition: opacity 300ms;
   visibility: hidden;
   opacity: 0;
+  z-index: 1;
 }
 .overlay:target {
   visibility: visible;
@@ -44,7 +45,7 @@
   background: #8e6a09;
   border-radius: 5px;
   width: 15%;
-  min-width: 15em;;
+  min-width: 15em;
   position: relative;
   transition: all 5s ease-in-out;
   text-align: center;

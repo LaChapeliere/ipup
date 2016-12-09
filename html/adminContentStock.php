@@ -2,7 +2,7 @@
 
 <div id="buttonToolbar">            
     <div id="addBeverage">
-        <button id="addBeverageButton">Add New Beverage</button>   
+        <button id="addBeverageButton" onclick="openEditPopup('', 0, 0, -1)">Add New Beverage</button>   
     </div>
                     
 

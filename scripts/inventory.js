@@ -61,8 +61,36 @@ function populateInventory() {
  * @param beer_id The id of the drink
  */
 function openEditPopup(name, price, count, beer_id) {
-    console.log("Test");
-    var popup = window.open("popup_stock.php", "_blank", 'height=200,width=150');
+    //Display pop-up
+    $(".overlay").css({"visibility": "visible", "opacity": 1});
+    
+    //If new drink create a new random beer_id
+    if (beer_id === -1) {
+        beer_id = Math.floor((Math.random() * 1000) + 10000);
+    }
+    else {
+        //Display current info
+        $("#bevName").attr("placeholder", name);
+        $("#bevQuantity").attr("placeholder", count);
+        $("#bevPrice").attr("placeholder", price + " kr");
+
+        //Fetch category info
+        user.fetchBeerData(beer_id, function(answer) {
+            var info = JSON.parse(answer),
+                type = info.type,
+                categoriesName = {soft: "Soft Drink", lager: "Lager", stout: "Stout", ale: "Ale", beer: "Beer", white_wine: "White Wine", red_wine: "Red Wine", cider: "Cider"}, //Dictionnary of names of the categories
+                category; //The category info for the drink
+
+            if (type === "error") {
+                alert("Something went wrong. Cannot find the category of the beverage.")
+            }
+
+            //If the beer data has been correctly retrieved
+            category = beverageCategory(info.payload[0].varugrupp);
+            $("#bevType").val(categoriesName[category[0]]);
+            $("#toggle_div").checked = categoriesName[category[1]];
+        })
+    }
 }
 
 /*
