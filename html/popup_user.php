@@ -20,17 +20,19 @@
             <button type="button" id="closeCross" onclick="closeEditPopup()">&times;</button>
             
             <!-- Input fields for the user -->
-            
-            <h3>User Name</h3>
-            <div class="inputDiv"><input type="text" id="userName" placeholder="Name"></div>
+            <h3>Username</h3>
+            <div class="inputDiv"><input type="text" id="username" placeholder="Username"></div>
+            <h3>Name</h3>
+            <div class="inputDiv"><input type="text" id="name" placeholder="Name"></div>
             <h3>Balance</h3>
             <div class="inputDiv"><input type="number" id="userBalance" placeholder="Amount"></div>
-            <h3>User ID</h3>
-            <div class="inputDiv"><input type="text" id="userID" placeholder="ID"></div>
             <h3>Password</h3>
             <div class="inputDiv"><input type="password" id="userPassword" placeholder="Password"></div>
             
-            <!-- Beverage typ selection meny-->
+            <h3>Email address</h3>
+            <div class="inputDiv"><input type="email" id="userEmail" placeholder="Email address"></div>
+            <h3>Phone number</h3>
+            <div class="inputDiv"><input type="tel" id="userPhone" placeholder="Phone number"></div>
             
             <!-- Toggle button for Admin or NOT -->
             
@@ -46,7 +48,7 @@
             <!-- buttons for Save, Reset and Cancel -->
             
             <div>
-                <button type="button" id="save" onclick="saveEditBev()">Save</button>
+                <button type="button" id="save" onclick="saveEditUser()">Save</button>
                 <button type="button" id="cancel" onclick="closeEditPopup()">Cancel</button>
             </div>
 		</div>

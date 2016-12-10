@@ -47,7 +47,7 @@ function populateInventory() {
                 price = $(this).find('.price_entry')[0].innerHTML, //The price of the clicked row
                 count = $(this).find('.stock_entry')[0].innerHTML, //The amount of the clicked row
                 beer_id = $(this).find('.id_entry')[0].innerHTML; //The beer_id of the clicked row
-            $(this).on("click", function() {openEditPopup(name, price, count, beer_id)});
+            $(this).on("click", function() {openEditBevPopup(name, price, count, beer_id)});
             
         })
     });
@@ -60,7 +60,7 @@ function populateInventory() {
  * @param count The amount fo drinks
  * @param beer_id The id of the drink
  */
-function openEditPopup(name, price, count, beer_id) {
+function openEditBevPopup(name, price, count, beer_id) {
     //Display pop-up
     $(".overlay").css({"visibility": "visible", "opacity": 1});
     

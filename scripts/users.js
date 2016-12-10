@@ -164,11 +164,10 @@ function populateUsers() {
             }
             //Build the html
             html += "<tr class ='users_admin'><div class='box'>" +
+                    "<td class='user_username'>" + users[i].username + "</td>" +
                     "<td class='user_name'>" + users[i].first_name + " " + users[i].last_name + "</td>" +
                     "<td class='user_debt'>" + (Math.floor(Math.random() * 2000) - 800) + "</td>" + //For now displaying a random balance since iou_get_all doesn't not update
-                    "<td class='user_ID'>" + users[i].user_id + "</td>" +
                     "<td class='user_admin_owers'>" + (users[i].credentials == 0 ? "Yes" : "No")  + "</td>" +
-                    "<td class='username' hidden>" + users[i].username + "</td>" +
                     "</a></div></tr>";
         }
 
@@ -179,23 +178,110 @@ function populateUsers() {
         
         
         //Make the rows clickable
-        /*
-        $('#adminTableBody tr').each( function(row) {
-            var name = $(this).find('.name_entry')[0].innerHTML, //The name of the clicked row
-                price = $(this).find('.price_entry')[0].innerHTML, //The price of the clicked row
-                count = $(this).find('.stock_entry')[0].innerHTML, //The amount of the clicked row
-                beer_id = $(this).find('.id_entry')[0].innerHTML; //The beer_id of the clicked row
-            $(this).on("click", function() {openEditPopup(name, price, count, beer_id)});
+        $('#adminUserTableBody tr').each( function(row) {
+            var username = $(this).find('.user_username')[0].innerHTML, //The username of the clicked row
+                name = $(this).find('.user_name')[0].innerHTML, //The name of the clicked row
+                debt = $(this).find('.user_debt')[0].innerHTML, //The debt of the clicked row
+                admin = $(this).find('.user_admin_owers')[0].innerHTML; //The admin power of the clicked row
+            $(this).on("click", function() {openEditUserPopup(name, debt, username, admin)});
             
-        })*/
+        })
     });
 }
 
+/*
+ * Open pop-up to edit user
+ * @param name The name of the user
+ * @param debt The debt of the debt
+ * @param username The username of the user, false if create new user
+ * @param admin "Yes" if admin, "No" if not
+ */
+function openEditUserPopup(name, debt, username, admin) {
+    //Display pop-up
+    $(".overlay").css({"visibility": "visible", "opacity": 1});
+
+    displayInfoUserEdit(name, debt, username, admin);
+}
+
+/*
+ * Display info on the selected user in the pop-up
+ * @param name The name of the user
+ * @param debt The debt of the debt
+ * @param username The username of the user, false if create new user
+ * @param admin "Yes" if admin, "No" if not
+ */
+function displayInfoUserEdit(name, debt, username, admin) {
+    //Display current info
+    $("#username").attr("placeholder", username);
+    $("#name").attr("placeholder", name);
+    $("#userBalance").attr("placeholder", debt + " kr");
+    $("#toggle_div").checked = (admin === "Yes");
+
+    //Fetch user info - Fake
+    $("#userEmail").attr("placeholder", name + "@it.uu.se");
+    $("#userPhone").attr("placeholder", "00 46 771 793 336");
+    
+    //Lock username field if existing user
+    if (username !== "") {
+        $("#username").prop("readonly", true);
+    }
+}
+
+/**
+ * Close the edit popup without modifications
+ * See inventory.js - closeEditPopup
+ */
+
+/*
+ * Send the modifications for the selected drink to the API
+ */
+function saveEditUser() {
+    var debt = document.getElementById("userBalance").value, //The entered debt
+        name = document.getElementById("name").value, //The entered name
+        username = document.getElementById("username").value, //The entered username
+        password = document.getElementById("userPassword").value, //The entered password
+        email = document.getElementById("userEmail").value, //The entered email
+        phone = document.getElementById("userPhone").value; //The entered phone number
+
+    //If no modification
+    if (username.length <= 0) {
+        username = document.getElementById("username").placeholder;
+    }
+    if (password.length <= 0) {
+        //If no password had been entered, keep the same one
+        password = user.getUser[1];
+    }
+    if (debt.length <= 0) {
+        debt = document.getElementById("userBalance").placeholder.split(" ")[0];
+    }
+    if (name.length <= 0) {
+        name = document.getElementById("name").placeholder;
+    }
+    if (phone.length <= 0) {
+        phone = document.getElementById("userPhone").placeholder;
+    }
+    if (email.length <= 0) {
+        email = document.getElementById("userEmail").placeholder;
+    }
+    
+    //Force name to be of form first name - last name
+    if (name.split(" ").length < 2) {
+        name = name + " " + name;
+    }
+    
+    //Send info to API
+    //Only sending the info currently required by the API, for example cannot change the name
+    addUser(user, username, password, name.split(" ")[0], name.split(" ")[1], email, phone);
+        
+    closeEditPopup();
+    //Reload the table
+    populateUsers();
+}
 
 /**
  * Add a user to the database
  * @param api The api connection to the database. The connected user must be an admin.
- * @param newUsername The username of the new user
+ * @param newUsername The username of the new user or the username of the target user
  * @param newPassword The password of the new user
  * @param firstName The new user first name
  * @param lastName The new user last name in the database
@@ -206,37 +292,5 @@ function populateUsers() {
  */
 function addUser(api, newUsername, newPassword, firstName, lastName, email, phone) {
     'use strict';
-    apiAnswer = api.editUser(newUsername, newPassword, firstName, lastName, email, phone, function(answer) {
-        return answer;
-    })
-
-    if (apiAnswer.type == "error") {
-        return apiAnswer.payload[0].msg;
-    }
-    return "";
-}
-
-/**
- * Edit a user info in the database
- * @param api The api connection to the database. The connected user must be an admin.
- * @param targetUsername The username of the user to modify
- * @param newPassword The new password of the user
- * @param firstName The new user first name
- * @param lastName The new user last name in the database
- * @param email The new user's email
- * @param phone The new user's phone
- * @TODO Add safeguard if the connected user is not an admin.
- * @TODO Add safeguard is user to be modified do no exist
- * @return An error string, empty if the function completed without error
- */
-function addUser(api, targetUsername, newPassword, firstName, lastName, email, phone) {
-    'use strict';
-    apiAnswer = api.editUser(targetUsername, newPassword, firstName, lastName, email, phone, function(answer) {
-        return answer;
-    })
-
-    if (apiAnswer.type == "error") {
-        return apiAnswer.payload[0].msg;
-    }
-    return "";
+    api.editUser(newUsername, newPassword, firstName, lastName, email, phone, function() {});
 }
