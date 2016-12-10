@@ -5,7 +5,7 @@
 <link href="../css/reset.css" rel="stylesheet" />
 <link href="../css/wrapper.css" rel="stylesheet" />
 <link href="../css/userContent.css" rel="stylesheet" />    
-<link href="../css/popup_machine.css" rel="stylesheet" /> 
+<link href="../css/popup_machine_list.css" rel="stylesheet" /> 
               
 <div class="box">
     <a class="button" href=#popupUserEdit>Click me!</a>
@@ -28,6 +28,15 @@
     
             <h3>Choose beverage before clicking Select</h3>
             
+            <!-- Table for beverages -->
+            <table id="stockTableHead">
+                <thead>
+                    <tr class ="stock_admin">
+                        <th class = "head_admin"> Name</th>
+                        <th class = "head_admin">Price</th>
+                     </tr>
+                </thead>
+            </table>
             
             
             <!-- buttons for Save, Reset and Cancel -->

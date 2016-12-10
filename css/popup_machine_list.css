@@ -61,6 +61,13 @@
   font-size: 20px;
 }
 
+.popup h3 {
+    font-size: 20px;
+    color:  #E8E1CB;
+    font-weight: bold;
+    margin: 1em;    
+}
+
 
 /*This edits the exit-cross in the top */
 .popup #closeCross {
