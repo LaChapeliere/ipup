@@ -101,7 +101,7 @@
 
 
 /* THE TOGGLE!!! - The switch - the box around the slider */
-#toggle_div, p {
+#popup_toggle, p {
     font-size: 20px;
     color: bold #333;
     margin-top: 0.4em;

@@ -43,7 +43,7 @@
             
             <!-- Toggle button for alcohol/non alcohol -->
             Alcoholic?<br>
-            <div id="toggle_div">
+            <div id="popup_toggle">
                 <label class="switch">
                <input type="checkbox"> 
                <div class="slider round"></div>
