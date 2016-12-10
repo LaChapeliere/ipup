@@ -71,6 +71,10 @@ function switchView() {
     });
 }
 
+/**
+ * Wire the History/Stats button
+ * Adds a href link when the shopping cart has items and removes it when not 
+ */
 $(function() {
     'use strict';
     $('#historyStatsButton').click(function() {

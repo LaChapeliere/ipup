@@ -168,6 +168,11 @@ $(function() {
     });
 });
 
+/**
+ * Checks if the shopping cart is empty
+ * @returns true if shopping cart is empty
+ * @returns false if shopping cart has items
+ */
 function shoppingcartIsEmpty() {
     'use strict';
     if (productsData.length == 0) {
