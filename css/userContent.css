@@ -25,7 +25,7 @@ of hovering ------ DOUBLE CLICK OR DRAG TO ADD TO CART ------- */
     padding: .3em;
 }
 
-.product:hover .imgDescription {
+.product:hover:not(.ui-draggable-disabled) .imgDescription {
     visibility: visible;
     transition-delay: 1s;
     color: white;
