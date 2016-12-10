@@ -27,7 +27,7 @@ var machineContent = [{
         "price": 21.90,
         "name": "Paulaner Oktoberfest",
         "category": "beer",
-        "amount": 1,
+        "amount": 2,
         "alcoholic": true
     },
     {
@@ -147,7 +147,7 @@ var machineContent = [{
         "price": 23,
         "name": "Test9",
         "category": "beer",
-        "amount": "0",
+        "amount": 0,
         "alcoholic": true
     },
     {
