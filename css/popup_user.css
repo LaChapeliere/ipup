@@ -189,8 +189,10 @@ input:checked+.slider:before {
 /*Buttons in bottom*/
 
 
-#save, #reset, #cancel {
-    margin: .5em;
+#save, 
+#reset, 
+#cancel {
+    margin: .1em;
     font-size: 25px;
     font-weight: bold;
     color: rgb(0,132,0);
