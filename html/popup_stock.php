@@ -1,11 +1,9 @@
 <link href="../css/popup_stock.css" rel="stylesheet" />            
-              
+<!--            
                     <div class="box">
-                        
                         <a class="button" href=#popupStockEdit>Click me!</a>
                     </div>
-                
-
+-->
 
 
 
