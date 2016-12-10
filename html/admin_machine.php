@@ -37,7 +37,6 @@
         //Initialize page
         initUser($_POST["username"], $_POST["password"]);
         populateSlotsConsumer(false, false);
-        tableFilter.init();
         $("#machineContentButton").attr('class', 'selected');
         $('#toggle_div :checkbox').prop('checked', true);
     });
@@ -59,6 +58,7 @@
 <body>
 
 <!-- The popups for editing machine content -->
+    <?php include "popup_machine.php";?>
 </body>
 
 </html>

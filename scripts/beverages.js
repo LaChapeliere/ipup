@@ -27,7 +27,8 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
         type = category, //The type of the beverage,
         alcohol = alcohol, //True if the drink contains alcohol
         display = displayBlock, //The DOM element corresponding to the slot
-        available = true; //Whether the drink is currently available or filtered out 
+        available = true, //Whether the drink is currently available or filtered out
+        admin = false;
 
     /**
      * Getter of alcohol
@@ -35,6 +36,13 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      */
     this.isAlcoholic = function() {
         return alcohol;
+    }
+    
+    /**
+     * Set admin to true
+     */
+    this.adminView = function() {
+        admin = true;
     }
 
     /**
@@ -102,8 +110,11 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      * Wire the slot display to react to a double click and be added to the cart
      */
     display.ondblclick = function() {
-        if (available) {
+        if (!admin && available) {
             addProduct(beerId, name, price);
+        }
+        else if (admin) {
+            openEditContentPopup(beerId, name, price);
         }
     }
 }
@@ -144,6 +155,7 @@ function populateSlotsConsumer(displayAlco, displaySoft) {
                 beverage = new Slot(beverageInfo.beer_id, beverageInfo.name, beverageInfo.price, beverageInfo.amount, beverageInfo.category, beverageInfo.alcoholic, cells[j]);
                 //Send the information to the display
                 beverage.displayInfo();
+                beverage.adminView();
                 //    console.log(beverage);
                 beveragesSlots.push(beverage);
                 //Add the beverage in the dictionnary of available distinct drinks
@@ -151,6 +163,7 @@ function populateSlotsConsumer(displayAlco, displaySoft) {
             }
         }
     });
+    
     //Initial filter of drinks if consumer view
     if (displayAlco || displaySoft) {
         filterAlcoholDrinks(displayAlco, displaySoft);
