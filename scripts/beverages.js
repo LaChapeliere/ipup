@@ -87,7 +87,6 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      */
     this.updateSlotQuantity = function(newQuantity) {
         var infoDisplay = display.getElementsByClassName("slotLeft")[0];
-        console.log(display);
         amount = newQuantity;
         infoDisplay.getElementsByClassName("stock")[0].textContent = amount;
 
@@ -104,7 +103,6 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      */
     display.ondblclick = function() {
         if (available) {
-            console.log(beerId);
             addProduct(beerId, name, price);
         }
     }
