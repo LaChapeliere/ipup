@@ -1,46 +1,41 @@
 <!-- Pop Up Edit Machine Content PHP -->
 
-<link href="../css/popup_user.css" rel="stylesheet" />            
+<link href="../css/reset.css" rel="stylesheet" />
+<link href="../css/wrapper.css" rel="stylesheet" />
+<link href="../css/userContent.css" rel="stylesheet" />    
+<link href="../css/popup_machine.css" rel="stylesheet" /> 
               
-                    <div class="box">
-                        
-                        <a class="button" href=#popupUserEdit>Click me!</a>
-                    </div>
+<div class="box">
+    <a class="button" href=#popupUserEdit>Click me!</a>
+</div>
                 
-
-
-
 
  <div id="popupUserEdit" class="overlay">
 	<div class="popup">
         <form>
-		<h2>Edit User Info</h2>
+		<h2>Edit Machine Content</h2>
 		<div class="popupContent">
             
             <button type="button" id="closeCross" onclick="closeEditPopup()">&times;</button>
             
+            <!-- Clicked Item presented-->
+            <td>
+                <div id="favorite_drink" class="product">
+                    <div class="slotElement"> </div>
+                        <div class="slotLeft">
+                            <p class="drinkName">Name</p>
+                            <p class="price">Price here</p>
+                            <p class="stock">Stock here</p>
+                            <p class ="imgDescription">Click to Edit</p><br>
+                        </div>
+                </div>
+            </td>
+
             <!-- Input fields for the user -->
             
-            <h3>User Name</h3>
-            <div class="inputDiv"><input type="text" id="userName" placeholder="Name"></div>
-            <h3>Balance</h3>
-            <div class="inputDiv"><input type="number" id="userBalance" placeholder="Amount"></div>
-            <h3>User ID</h3>
-            <div class="inputDiv"><input type="text" id="userID" placeholder="ID"></div>
-            <h3>Password</h3>
-            <div class="inputDiv"><input type="password" id="userPassword" placeholder="Password"></div>
-            
-            <!-- Beverage typ selection meny-->
-            
-            <!-- Toggle button for Admin or NOT -->
-            
-            <h3>Admin Powers</h3>
-            <div id="toggle_div">
-                <label class="switch">
-               <input type="checkbox"> 
-               <div class="slider round"></div>
-               </label>
-            </div><br>
+    
+            <h3>Quantity</h3>
+            <div class="inputDiv"><input type="number" id="quantity" placeholder="Amount"></div>
             
             
             <!-- buttons for Save, Reset and Cancel -->
