@@ -6,7 +6,7 @@
 <link href="../css/sidebar.css" rel="stylesheet" />
 <link href="../css/topBar.css" rel="stylesheet" />
 <link href="../css/wrapper.css" rel="stylesheet" />
-
+<link href="../css/userContent.css" rel="stylesheet" />
 <link href="../css/adminContent.css" rel="stylesheet" /> <!--Overriding-->
 <!--<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 -->
@@ -18,7 +18,7 @@
 <!--<script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
 -->
 <script src="../scripts/main.js"></script>
-<script src="../scripts/sort_table.js"></script>
+<script src="../resources/machineContent.js"></script>
 <script src="../scripts/ui.js"></script>
 <script src="../scripts/users.js"></script>
 <script src="../scripts/beverages.js"></script>
@@ -36,7 +36,7 @@
         
         //Initialize page
         initUser($_POST["username"], $_POST["password"]);
-        populateInventory();
+        populateSlotsConsumer(false, false);
         tableFilter.init();
         $("#machineContentButton").attr('class', 'selected');
         $('#toggle_div :checkbox').prop('checked', true);

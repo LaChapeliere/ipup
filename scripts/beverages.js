@@ -151,19 +151,21 @@ function populateSlotsConsumer(displayAlco, displaySoft) {
             }
         }
     });
-    //Initial filter of drinks
-    filterAlcoholDrinks(displayAlco, displaySoft);
+    //Initial filter of drinks if consumer view
+    if (displayAlco || displaySoft) {
+        filterAlcoholDrinks(displayAlco, displaySoft);
 
-    //Wire the filter buttons
-    allBevButton.onclick = function() {
-        filterAlcoholDrinks(true, true);
-    };
-    softOnlyButton.onclick = function() {
-        filterAlcoholDrinks(false, true);
-    };
-    alcoholOnlyButton.onclick = function() {
-        filterAlcoholDrinks(true, false);
-    };
+        //Wire the filter buttons
+        allBevButton.onclick = function() {
+            filterAlcoholDrinks(true, true);
+        };
+        softOnlyButton.onclick = function() {
+            filterAlcoholDrinks(false, true);
+        };
+        alcoholOnlyButton.onclick = function() {
+            filterAlcoholDrinks(true, false);
+        };
+    }
 }
 
 /**
