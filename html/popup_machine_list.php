@@ -1,18 +1,9 @@
 <!-- Pop Up Edit Machine Second Page PHP -->
 
-<!-- Pop Up Edit Machine Content PHP -->
-
-<link href="../css/reset.css" rel="stylesheet" />
-<link href="../css/wrapper.css" rel="stylesheet" />
-<link href="../css/userContent.css" rel="stylesheet" />    
+<!-- Pop Up Edit Machine Content PHP -->    
 <link href="../css/popup_machine_list.css" rel="stylesheet" /> 
-              
-<div class="box">
-    <a class="button" href=#popupUserEdit>Click me!</a>
-</div>
-                
 
- <div id="popupUserEdit" class="overlay">
+ <div id="popupUserEdit" class="overlay_bis">
 	<div class="popup">
         <form>
 		<div class="popupContent">

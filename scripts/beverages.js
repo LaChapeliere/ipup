@@ -114,7 +114,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
             addProduct(beerId, name, price);
         }
         else if (admin) {
-            openEditContentPopup(beerId, name, price);
+            openEditContentPopup(beerId, name, price, amount);
         }
     }
 }

@@ -189,38 +189,62 @@ function updateMachineContentQuantities(beerId, modifyer) {
  * Open pop-up to edit machine content slot
  * @param beerId The id of the drink
  * @param name The name of the drink
- * @param debt The price of the drink
- * @param admin "Yes" if admin, "No" if not
+ * @param price The price of the drink
+ * @param amount The quantity of drink in the machine
  */
-function openEditContentPopup(beerId, name, price) {
+function openEditContentPopup(beerId, name, price, amount) {
     //Display pop-up
     $(".overlay").css({"visibility": "visible", "opacity": 1});
 
-    //displayInfoUserEdit(name, debt, username, admin);
+    displayInfoContentEdit(beerId, name, price, amount);
+    /*
+    $("#edited_drink").on("click", function() {
+        openEditContentListPopup();
+    });
+    */
+}
+                     
+/*
+ * Open list to edit beverage
+ * @param beerId The id of the drink
+ * @param name The name of the drink
+ * @param price The price of the drink
+ * @param amount The quantity of drink in the machine
+ */
+function openEditContentListPopup() {
+    //Display pop-up
+    $(".overlay_bis").css({"visibility": "visible", "opacity": 1});
 }
 
 /*
  * Display info on the selected user in the pop-up
- * @param name The name of the user
- * @param debt The debt of the debt
- * @param username The username of the user, false if create new user
- * @param admin "Yes" if admin, "No" if not
+ * @param beerId The id of the drink
+ * @param name The name of the drink
+ * @param price The price of the drink
  */
-function displayInfoUserEdit(name, debt, username, admin) {
+function displayInfoContentEdit(beerId, name, price, amount) {
     //Display current info
-    $("#username").attr("placeholder", username);
-    $("#name").attr("placeholder", name);
-    $("#userBalance").attr("placeholder", debt + " kr");
-    $("#toggle_div").checked = (admin === "Yes");
-
-    //Fetch user info - Fake
-    $("#userEmail").attr("placeholder", name + "@it.uu.se");
-    $("#userPhone").attr("placeholder", "00 46 771 793 336");
+    $("#edited_drink .drinkName").text(name);
+    $("#edited_drink .price").text(price + " kr");
+    $("#edited_drink .stock").text(amount);
+    $("#edited_drink .drinkId").text(beerId);
     
-    //Lock username field if existing user
-    if (username !== "") {
-        $("#username").prop("readonly", true);
-    }
+    //Fetch category info
+    user.fetchBeerData(beerId, function(answer) {
+        var info = JSON.parse(answer),
+            type = info.type,
+            categoriesName = {soft: "Soft Drink", lager: "Lager", stout: "Stout", ale: "Ale", beer: "Beer", white_wine: "White Wine", red_wine: "Red Wine", cider: "Cider"}, //Dictionnary of names of the categories
+            category; //The category info for the drink
+
+        if (type === "error") {
+            alert("Something went wrong. Cannot find the category of the beverage.")
+        }
+
+        //If the beer data has been correctly retrieved
+        category = beverageCategory(info.payload[0].varugrupp);
+        $("#edited_drink .slotElement").css("background-image", 'url("./../resources/img/' + category[0] + '.png")');
+        $("#edited_drink .slotElement").prop('title', category[0].replace("_", " ")); //Information pop-up + voice-over
+    })
 }
 
 /**
@@ -228,48 +252,26 @@ function displayInfoUserEdit(name, debt, username, admin) {
  * See inventory.js - closeEditPopup
  */
 
+
+/**
+ * Close the list edit popup without modifications
+ */
+function closeEditPopup() {
+    //Hide pop-up
+    $(".overlay_bis").css({"opacity": 0, "visibility": 'hidden'});
+}
+
 /*
  * Send the modifications for the selected drink to the API
  */
-function saveEditUser() {
-    var debt = document.getElementById("userBalance").value, //The entered debt
-        name = document.getElementById("name").value, //The entered name
-        username = document.getElementById("username").value, //The entered username
-        password = document.getElementById("userPassword").value, //The entered password
-        email = document.getElementById("userEmail").value, //The entered email
-        phone = document.getElementById("userPhone").value; //The entered phone number
-
-    //If no modification
-    if (username.length <= 0) {
-        username = document.getElementById("username").placeholder;
-    }
-    if (password.length <= 0) {
-        //If no password had been entered, keep the same one
-        password = user.getUser[1];
-    }
-    if (debt.length <= 0) {
-        debt = document.getElementById("userBalance").placeholder.split(" ")[0];
-    }
-    if (name.length <= 0) {
-        name = document.getElementById("name").placeholder;
-    }
-    if (phone.length <= 0) {
-        phone = document.getElementById("userPhone").placeholder;
-    }
-    if (email.length <= 0) {
-        email = document.getElementById("userEmail").placeholder;
-    }
+function saveEditContent() {
+    var beerId = $("#edited_drink .drinkId").text(); //The id to modify
+        modifyer = $("#quantity").val(); //The entered modifyer to the quantity
     
-    //Force name to be of form first name - last name
-    if (name.split(" ").length < 2) {
-        name = name + " " + name;
-    }
-    
-    //Send info to API
-    //Only sending the info currently required by the API, for example cannot change the name
-    addUser(user, username, password, name.split(" ")[0], name.split(" ")[1], email, phone);
+    //Send info to machine content
+    updateMachineContentQuantities(beerId, -modifyer);
         
     closeEditPopup();
     //Reload the table
-    populateUsers();
+    populateSlotsConsumer(false, false);
 }

@@ -1,12 +1,6 @@
 <!-- Pop Up Edit User PHP -->
 
 <link href="../css/popup_user.css" rel="stylesheet" />            
-              
-                    <div class="box">
-                        
-                        <a class="button" href=#popupUserEdit>Click me!</a>
-                    </div>
-                
 
 
 

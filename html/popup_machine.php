@@ -1,13 +1,6 @@
 <!-- Pop Up Edit Machine Content PHP -->
-
-<link href="../css/reset.css" rel="stylesheet" />
-<link href="../css/wrapper.css" rel="stylesheet" />
-<link href="../css/userContent.css" rel="stylesheet" />    
+   
 <link href="../css/popup_machine.css" rel="stylesheet" /> 
-              
-<div class="box">
-    <a class="button" href=#popupUserEdit>Click me!</a>
-</div>
                 
 
  <div id="popupUserEdit" class="overlay">
@@ -20,9 +13,10 @@
             
             <!-- Clicked Item presented-->
             <td>
-                <div id="favorite_drink" class="product">
+                <div id="edited_drink" class="product">
                     <div class="slotElement"> </div>
                         <div class="slotLeft">
+                            <p class="drinkId" hidden>Id</p>
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
@@ -34,14 +28,14 @@
             <!-- Input fields for the user -->
             
     
-            <h3>Quantity</h3>
+            <h3>Add/Remove</h3>
             <div class="inputDiv"><input type="number" id="quantity" placeholder="Amount"></div>
             
             
             <!-- buttons for Save, Reset and Cancel -->
             
             <div>
-                <button type="button" id="save" onclick="saveEditBev()">Save</button>
+                <button type="button" id="save" onclick="saveEditContent()">Save</button>
                 <button type="button" id="cancel" onclick="closeEditPopup()">Cancel</button>
             </div>
 		</div>

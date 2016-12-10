@@ -19,7 +19,7 @@
 }
 
 /*controls how the popupStockEdit window is hidden when not activated*/
-.overlay {
+.overlay_bis {
   position: fixed;
   top: -130px;
   bottom: 0;
@@ -31,7 +31,7 @@
   opacity: 0;
   z-index: 1;
 }
-.overlay:target {
+.overlay_bis:target {
   visibility: visible;
   opacity: 1;
 }

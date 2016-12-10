@@ -59,6 +59,7 @@
 
 <!-- The popups for editing machine content -->
     <?php include "popup_machine.php";?>
+    <?php include "popup_machine_list.php";?>
 </body>
 
 </html>
