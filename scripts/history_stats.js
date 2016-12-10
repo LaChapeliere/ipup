@@ -14,13 +14,13 @@ var beveragesSlots = [];
  * A dictionnary of the distinct beverages available from history page with name of the beverage as key and id as value
  */
 var availableBevIds = {};
-    
+
 /**
  * Fetch the purchases and payments of the user and populate the page
  */
 function getHistory() {
-    
-    user.fetchPayments( function(answer) {
+
+    user.fetchPayments(function(answer) {
         var info = JSON.parse(answer),
             type = info.type,
             i = 0, //Loop index
@@ -31,38 +31,37 @@ function getHistory() {
             alert(info.payload[0].msg);
             return;
         }
-        
+
         //If the list of payments was correctly retrieved
         payments = info.payload;
         for (; i < payments.length; i++) {
-            paymentsHistory.push({subject: "Payment", timestamp: payments[i].timestamp, amount: payments[i].amount});
+            paymentsHistory.push({ subject: "Payment", timestamp: payments[i].timestamp, amount: payments[i].amount });
         }
         populateHistory(paymentsHistory);
     });
-    
-    user.fetchPurchases( function(answer) {
+
+    user.fetchPurchases(function(answer) {
         var info = JSON.parse(answer),
             type = info.type,
             i = 0, //Loop index
             purchases, //The list of purchases made by the user
             purchasesHistory = []; //The list of purchases made by the user, formated for populateHistory
-
         if (type === "error") {
             alert(info.payload[0].msg);
             return;
         }
-        
+
         //If the list of purchases was correctly retrieved
         purchases = info.payload;
         for (; i < purchases.length; i++) {
-            purchasesHistory.push({subject: purchases[i].namn, timestamp: purchases[i].timestamp, amount: -purchases[i].price, beer_id: purchases[i].beer_id});
+            purchasesHistory.push({ subject: purchases[i].namn, timestamp: purchases[i].timestamp, amount: -purchases[i].price, beer_id: purchases[i].beer_id });
         }
         populateHistory(purchasesHistory);
-        
+
         populateFavorites(purchasesHistory);
     });
-    
-    
+
+
 }
 
 /**
@@ -80,27 +79,26 @@ function populateFavorites(history) {
         favCompanyBeerId, //The beer_id for the user's favorite
         recoPrice, //The price for the user's favorite
         recoBeerId; //The beer_id for the user's favorite
-    
+
     //Determine favorite drink
     for (; i < history.length; i++) {
         if (typeof drinkCounts[history[i].beer_id] != "undefined") {
             drinkCounts[history[i].beer_id] += 1;
-        }
-        else {
+        } else {
             drinkCounts[history[i].beer_id] = 1;
         }
     }
     favoriteBeerId = Object.keys(drinkCounts)[0];
-    Object.keys(drinkCounts).forEach(function(key){
+    Object.keys(drinkCounts).forEach(function(key) {
         favoriteBeerId = (drinkCounts[key] > drinkCounts[favoriteBeerId]) ? +key : favoriteBeerId;
     });
     //Get price
-    history.forEach( function(purchase) {
+    history.forEach(function(purchase) {
         if (purchase.beer_id == favoriteBeerId) {
             favoritePrice = -purchase.amount;
         }
     });
-    
+
     //Get info for favorite drink and display it
     user.fetchBeerData(favoriteBeerId, function(answer) {
         var info = JSON.parse(answer),
@@ -113,11 +111,11 @@ function populateFavorites(history) {
             alert(info.payload[0].msg);
             return;
         }
-        
+
         //Create beverage slot
         category = beverageCategory(description.varugrupp);
         category[0].replace("_", " ");
-        bevSlot = new Slot(favoriteBeerId, description.namn, favoritePrice, 0, category[0], category[1], document.getElementById("favorite_drink"));
+        bevSlot = new Slot(favoriteBeerId, description.namn, favoritePrice, 0, category[0], category[1], document.getElementById("favorite_drink_td"));
         //Send the information to the display
         bevSlot.displayInfo();
         if (bevSlot.isEmpty()) {
@@ -126,7 +124,7 @@ function populateFavorites(history) {
         //Add the beverage in the dictionnary of available distinct drinks
         availableBevIds[description.namn] = favoriteBeerId;
     });
-    
+
     //Determine last purchase
     lastBeerId = history[0].beer_id;
     lastPrice = -history[0].amount;
@@ -142,11 +140,11 @@ function populateFavorites(history) {
             alert(info.payload[0].msg);
             return;
         }
-        
+
         //Create beverage slot
         category = beverageCategory(description.varugrupp);
         category[0].replace("_", " ");
-        bevSlot = new Slot(lastBeerId, description.namn, lastPrice, 0, category[0], category[1], document.getElementById("last_purchase"));
+        bevSlot = new Slot(lastBeerId, description.namn, lastPrice, 0, category[0], category[1], document.getElementById("last_purchase_td"));
         //Send the information to the display
         bevSlot.displayInfo();
         if (bevSlot.isEmpty()) {
@@ -155,8 +153,8 @@ function populateFavorites(history) {
         //Add the beverage in the dictionnary of available distinct drinks
         availableBevIds[description.namn] = lastBeerId;
     });
-    
-    
+
+
     //Fake company favorite
     favCompanyBeerId = history[Math.max(history.length - 8, 0)].beer_id;
     favCompanyPrice = -history[Math.max(history.length - 8, 0)].amount;
@@ -172,11 +170,11 @@ function populateFavorites(history) {
             alert(info.payload[0].msg);
             return;
         }
-        
+
         //Create beverage slot
         category = beverageCategory(description.varugrupp);
         category[0].replace("_", " ");
-        bevSlot = new Slot(favCompanyBeerId, description.namn, favCompanyPrice, 0, category[0], category[1], document.getElementById("company_favorite"));
+        bevSlot = new Slot(favCompanyBeerId, description.namn, favCompanyPrice, 0, category[0], category[1], document.getElementById("company_favorite_td"));
         //Send the information to the display
         bevSlot.displayInfo();
         if (bevSlot.isEmpty()) {
@@ -185,7 +183,7 @@ function populateFavorites(history) {
         //Add the beverage in the dictionnary of available distinct drinks
         availableBevIds[description.namn] = favCompanyBeerId;
     });
-    
+
     //Fake recommendation
     recoBeerId = machineContent[3].beer_id;
     recoPrice = machineContent[3].price;
@@ -201,11 +199,11 @@ function populateFavorites(history) {
             alert(info.payload[0].msg);
             return;
         }
-        
+
         //Create beverage slot
         category = beverageCategory(description.varugrupp);
         category[0].replace("_", " ");
-        bevSlot = new Slot(recoBeerId, description.namn, recoPrice, machineContent[3].amount, category[0], category[1], document.getElementById("recommendation"));
+        bevSlot = new Slot(recoBeerId, description.namn, recoPrice, machineContent[3].amount, category[0], category[1], document.getElementById("recommendation_td"));
         //Send the information to the display
         bevSlot.displayInfo();
         if (bevSlot.isEmpty()) {
@@ -226,27 +224,26 @@ function populateHistory(history) {
     var i = 0, //Loop index
         html = '', //The html string to build the table rows
         date; //Date formatting object
-    
+
     for (; i < history.length; i++) {
         //Build the html
-        html += "<tr class ='historyRow'><div class='box'><a class='button' href=#popupStockEdit>" + 
-                "<td class='subject_entry'>" + history[i].subject + "</td>" +
-                "<td class='time_entry'>" + history[i].timestamp + "</td>" +
-                "<td class='amount_entry'>" + history[i].amount + "</td>" +
-                "<td class='balance_entry'>" + 0 + "</td>" +
-                "</a></div></tr>";
+        html += "<tr class ='historyRow'><div class='box'><a class='button' href=#popupStockEdit>" +
+            "<td class='subject_entry'>" + history[i].subject + "</td>" +
+            "<td class='time_entry'>" + history[i].timestamp + "</td>" +
+            "<td class='amount_entry'>" + history[i].amount + "</td>" +
+            "<td class='balance_entry'>" + 0 + "</td>" +
+            "</a></div></tr>";
     }
 
     //Feed the html to the table
     $('#historyTable tr').first().after(html);
-    
+
     if (purchasesAndPayments == true) {
         sortHistory();
-    }
-    else {
+    } else {
         purchasesAndPayments = true;
     }
-    
+
 }
 
 /**
@@ -255,30 +252,30 @@ function populateHistory(history) {
 function sortHistory() {
     var balance = 0, //User balance according to history,
         rows = $('#historyTable tbody tr:not(:first-child)').get(); //Get the unsorted rows in the table
-    
+
     //Sort rows by date
     $.each(rows, function() {
         var $this = $(this),
-         timestamp = this.cells[1].textContent,
-         date = timestampToDate(timestamp); //Get date from timestamp
+            timestamp = this.cells[1].textContent,
+            date = timestampToDate(timestamp); //Get date from timestamp
         $this.data('_ts', date.getTime()); //Get "absolute" time
         this.cells[3].textContent = date.getTime();
-    }).sort(function (a, b) { //Compare rows
+    }).sort(function(a, b) { //Compare rows
         var A = $(a).children('td').eq(3).text().toUpperCase();
         var B = $(b).children('td').eq(3).text().toUpperCase();
-        if(A < B) {
+        if (A < B) {
             return 1;
         }
-        if(A > B) {
+        if (A > B) {
             return -1;
         }
         return 0;
     });
-    
+
     $.each(rows, function(index, row) { //Reorder rows
         $('#historyTable').children('tbody').append(row);
     });
-    
+
     //Add balance column
     $.each(rows, function(index, row) { //Reorder rows
         balance += parseInt(row.cells[2].textContent);

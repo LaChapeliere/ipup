@@ -14,7 +14,7 @@
             </thead>
                 <!-- Row one -->
                 <tr>
-                     <td>
+                     <td id="favorite_drink_td">
                         <div id="favorite_drink" class="product">
                             <div class="slotElement"> </div>
                                 <div class="slotLeft">
@@ -25,7 +25,7 @@
                                 </div>
                         </div>
                     </td>
-                     <td>
+                     <td id="last_purchase_td">
                         <div id="last_purchase" class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -36,7 +36,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                     <td id="company_favorite_td">
                         <div id="company_favorite" class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
@@ -47,7 +47,7 @@
                         </div>
                         </div>
                     </td>
-                     <td>
+                     <td id="recommendation_td">
                         <div id="recommendation" class="product">
                         <div class="slotElement"> </div>
                         <div class="slotLeft">
