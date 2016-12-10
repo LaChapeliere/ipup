@@ -70,3 +70,15 @@ function switchView() {
         }
     });
 }
+
+$(function() {
+    'use strict';
+    $('#historyStatsButton').click(function() {
+        if (shoppingcartIsEmpty()) {
+            $("#historyStatsButton").removeAttr("href");
+            document.location = './historystats.php';
+        } else {
+            $("#historyStatsButton").attr('href', '#customerContentPopup');
+        }
+    });
+});

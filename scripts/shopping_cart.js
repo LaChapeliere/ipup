@@ -166,13 +166,6 @@ $(function() {
         purchaseTable();
         clearTable();
     });
-    /*    $('#historyStatsButton').click(function() {
-            if (shoppingcartIsEmpty()) {
-                document.location = './historystats.php';
-            } else {
-                window.open('../html/customerContentPopup.php');
-            }
-        });*/
 });
 
 function shoppingcartIsEmpty() {
