@@ -26,7 +26,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Click to Edit</p><br>
+                            <p class ="imgDescription">Click to Edit</p>
                         </div>
                 </div>
             </td>
