@@ -64,13 +64,12 @@ function switchView() {
     'use strict';
     $('#toggle_div :checkbox').on('change', function(event) {
         if (this.checked) {
-            document.location = './admin_stock.php';
+            linkFormSubmit('./admin_machine.php');
         } else {
-            document.location = './index.php';
+            linkFormSubmit('./index.php');
         }
     });
 }
-
 /**
  * Wire the History/Stats button
  * Adds a href link when the shopping cart has items and removes it when not 

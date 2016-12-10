@@ -38,6 +38,10 @@
         initUser($_POST["username"], $_POST["password"]);
         populateInventory();
         tableFilter.init();
+<<<<<<< HEAD
+        $("#machineContentButton").attr('class', 'selected');
+=======
+>>>>>>> working on admin_machine
         $('#toggle_div :checkbox').prop('checked', true);
     });
 </script>
@@ -56,8 +60,8 @@
 
 
 <body>
-<!-- The popups for editing machine content -->
 
+<!-- The popups for editing machine content -->
 </body>
 
 </html>

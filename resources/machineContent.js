@@ -27,7 +27,7 @@ var machineContent = [{
         "price": 21.90,
         "name": "Paulaner Oktoberfest",
         "category": "beer",
-        "amount": 1,
+        "amount": 2,
         "alcoholic": true
     },
     {
@@ -147,7 +147,7 @@ var machineContent = [{
         "price": 23,
         "name": "Test9",
         "category": "beer",
-        "amount": "0",
+        "amount": 0,
         "alcoholic": true
     },
     {
@@ -168,11 +168,16 @@ var machineContent = [{
  */
 function updateMachineContentQuantities(beerId, modifyer) {
     var i = 0; //Loop index
-
     for (; i < machineContent.length; i++) {
         if (machineContent[i].beer_id === beerId) {
             machineContent[i].amount -= modifyer;
-            beveragesSlots[i].updateSlotQuantity(machineContent[i].amount);
+            if (beveragesSlots.length > 1) {
+                beveragesSlots[i].updateSlotQuantity(machineContent[i].amount);
+            }
+            //Shortcut for fake history view
+            else {
+                beveragesSlots[0].updateSlotQuantity(machineContent[i].amount);
+            }
             return;
         }
     }

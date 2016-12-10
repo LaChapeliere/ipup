@@ -38,6 +38,7 @@
         initUser($_POST["username"], $_POST["password"]);
         populateInventory();
         tableFilter.init();
+        $("#stockButton").attr('class', 'selected');
         $('#toggle_div :checkbox').prop('checked', true);
     });
 </script>

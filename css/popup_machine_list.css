@@ -1,4 +1,7 @@
-/*Pop Up Edit User CSS*/
+/*Pop Up Edit Machine Second Page CSS*/
+
+
+/*Pop Up Machine Content CSS*/
 
 
 @import "https://fonts.googleapis.com/css?family=Pacifico|Dosis";
@@ -54,18 +57,16 @@
 
 /*This edits the text in the top of the popup */
 .popup h2 {
-  margin-top: 0;
   color: #E8E1CB;
-  font-size: 27px;
+  font-size: 20px;
 }
 
 .popup h3 {
-    margin-bottom: 0em;
     font-size: 20px;
     color:  #E8E1CB;
     font-weight: bold;
+    margin: 1em;    
 }
-
 
 
 /*This edits the exit-cross in the top */
@@ -104,11 +105,27 @@
   }
 }
 
+/*First element that has been clicked*/
+
+.product{
+    margin: auto;
+    width: 43%; /*For some reason, this magic number works...*/
+}
+
+.slotElement{
+    background-color: #E8E1CB;
+    text-align: left;
+}
+
+.slotLeft {
+    background-color: #E8E1CB;
+}
+
 
 /* THE TOGGLE!!! - The switch - the box around the slider */
-#toggle_div, p {
+#toggle_div {
     font-size: 20px;
-    color: bold #333;
+    color: bold #ffffff;
     margin-top: 0.4em;
     margin-bottom: 0.4em;
     
@@ -189,15 +206,13 @@ input:checked+.slider:before {
 /*Buttons in bottom*/
 
 
-#save, 
-#reset, 
+#save,  
 #cancel {
-    margin: .1em;
+    margin: .5em;
     font-size: 25px;
     font-weight: bold;
     color: rgb(0,132,0);
     font-family: Dosis, sans-serif;
-    /* Just to have something to work with, otherwise links and non-links gor different fonts*/
     border: 1px solid #E8E1CB;
     border-radius: 1em;
     padding: .1em .3em .1em;
