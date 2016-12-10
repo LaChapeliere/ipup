@@ -4,6 +4,16 @@
  */
 
 var purchasesAndPayments = false; //False on first access of the function, true afterwards
+
+/*
+ * Empty array to shortcut updates, adding only the recommended drink to it
+ */
+var beveragesSlots = [];
+
+/*
+ * A dictionnary of the distinct beverages available from history page with name of the beverage as key and id as value
+ */
+var availableBevIds = {};
     
 /**
  * Fetch the purchases and payments of the user and populate the page
@@ -62,7 +72,14 @@ function getHistory() {
 function populateFavorites(history) {
     var i = 0, //Loop index
         drinkCounts = {}, //A dictionnary to count occurences of each drink in the history
-        favoriteBeerId; //The beer_id for the user's favorite  
+        favoritePrice, //The price for the user's favorite
+        favoriteBeerId, //The beer_id for the user's favorite
+        lastPrice, //The price for the user's favorite
+        lastBeerId, //The beer_id for the user's favorite
+        favCompanyPrice, //The price for the user's favorite
+        favCompanyBeerId, //The beer_id for the user's favorite
+        recoPrice, //The price for the user's favorite
+        recoBeerId; //The beer_id for the user's favorite
     
     //Determine favorite drink
     for (; i < history.length; i++) {
@@ -77,32 +94,127 @@ function populateFavorites(history) {
     Object.keys(drinkCounts).forEach(function(key){
         favoriteBeerId = (drinkCounts[key] > drinkCounts[favoriteBeerId]) ? +key : favoriteBeerId;
     });
+    //Get price
+    history.forEach( function(purchase) {
+        if (purchase.beer_id == favoriteBeerId) {
+            favoritePrice = -purchase.amount;
+        }
+    });
+    
     //Get info for favorite drink and display it
     user.fetchBeerData(favoriteBeerId, function(answer) {
         var info = JSON.parse(answer),
             type = info.type,
             description = info.payload[0],
+            bevSlot, //The beverage slot
             category; //The category and alcohol status info for the beverage
 
         if (type === "error") {
             alert(info.payload[0].msg);
             return;
         }
-        //Display info
-        $("#favorite_drink .drinkName").text(description.namn);
-        category = beverageCategory(description.varugrupp);
-        $("#favorite_drink .slotElement").css("background-image", 'url("./../resources/img/' + category[0] + '.png")');
-        $("#favorite_drink .slotElement").title = category[0].replace("_", " "); //Information pop-up + voice-over
         
-    });
-    //Get price and display it
-    history.forEach( function(purchase) {
-        if (purchase.beer_id == favoriteBeerId) {
-            $("#favorite_drink .price").text(-purchase.amount);
+        //Create beverage slot
+        category = beverageCategory(description.varugrupp);
+        category[0].replace("_", " ");
+        bevSlot = new Slot(favoriteBeerId, description.namn, favoritePrice, 0, category[0], category[1], document.getElementById("favorite_drink"));
+        //Send the information to the display
+        bevSlot.displayInfo();
+        if (bevSlot.isEmpty()) {
+            bevSlot.makeUnavailable();
         }
+        //Add the beverage in the dictionnary of available distinct drinks
+        availableBevIds[description.namn] = favoriteBeerId;
     });
     
-    //Determine
+    //Determine last purchase
+    lastBeerId = history[0].beer_id;
+    lastPrice = -history[0].amount;
+    //Get info for last drink and display it
+    user.fetchBeerData(lastBeerId, function(answer) {
+        var info = JSON.parse(answer),
+            type = info.type,
+            description = info.payload[0],
+            bevSlot, //The beverage slot
+            category; //The category and alcohol status info for the beverage
+
+        if (type === "error") {
+            alert(info.payload[0].msg);
+            return;
+        }
+        
+        //Create beverage slot
+        category = beverageCategory(description.varugrupp);
+        category[0].replace("_", " ");
+        bevSlot = new Slot(lastBeerId, description.namn, lastPrice, 0, category[0], category[1], document.getElementById("last_purchase"));
+        //Send the information to the display
+        bevSlot.displayInfo();
+        if (bevSlot.isEmpty()) {
+            bevSlot.makeUnavailable();
+        }
+        //Add the beverage in the dictionnary of available distinct drinks
+        availableBevIds[description.namn] = lastBeerId;
+    });
+    
+    
+    //Fake company favorite
+    favCompanyBeerId = history[Math.max(history.length - 8, 0)].beer_id;
+    favCompanyPrice = -history[Math.max(history.length - 8, 0)].amount;
+    //Get info for last drink and display it
+    user.fetchBeerData(favCompanyBeerId, function(answer) {
+        var info = JSON.parse(answer),
+            type = info.type,
+            description = info.payload[0],
+            bevSlot, //The beverage slot
+            category; //The category and alcohol status info for the beverage
+
+        if (type === "error") {
+            alert(info.payload[0].msg);
+            return;
+        }
+        
+        //Create beverage slot
+        category = beverageCategory(description.varugrupp);
+        category[0].replace("_", " ");
+        bevSlot = new Slot(favCompanyBeerId, description.namn, favCompanyPrice, 0, category[0], category[1], document.getElementById("company_favorite"));
+        //Send the information to the display
+        bevSlot.displayInfo();
+        if (bevSlot.isEmpty()) {
+            bevSlot.makeUnavailable();
+        }
+        //Add the beverage in the dictionnary of available distinct drinks
+        availableBevIds[description.namn] = favCompanyBeerId;
+    });
+    
+    //Fake recommendation
+    recoBeerId = machineContent[3].beer_id;
+    recoPrice = machineContent[3].price;
+    //Get info for last drink and display it
+    user.fetchBeerData(recoBeerId, function(answer) {
+        var info = JSON.parse(answer),
+            type = info.type,
+            description = info.payload[0],
+            bevSlot, //The beverage slot
+            category; //The category and alcohol status info for the beverage
+
+        if (type === "error") {
+            alert(info.payload[0].msg);
+            return;
+        }
+        
+        //Create beverage slot
+        category = beverageCategory(description.varugrupp);
+        category[0].replace("_", " ");
+        bevSlot = new Slot(recoBeerId, description.namn, recoPrice, machineContent[3].amount, category[0], category[1], document.getElementById("recommendation"));
+        //Send the information to the display
+        bevSlot.displayInfo();
+        if (bevSlot.isEmpty()) {
+            bevSlot.makeUnavailable();
+        }
+        beveragesSlots.push(bevSlot);
+        //Add the beverage in the dictionnary of available distinct drinks
+        availableBevIds[description.namn] = recoBeerId;
+    });
 }
 
 /**

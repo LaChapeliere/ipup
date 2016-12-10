@@ -168,11 +168,16 @@ var machineContent = [{
  */
 function updateMachineContentQuantities(beerId, modifyer) {
     var i = 0; //Loop index
-
     for (; i < machineContent.length; i++) {
         if (machineContent[i].beer_id === beerId) {
             machineContent[i].amount -= modifyer;
-            beveragesSlots[i].updateSlotQuantity(machineContent[i].amount);
+            if (beveragesSlots.length > 1) {
+                beveragesSlots[i].updateSlotQuantity(machineContent[i].amount);
+            }
+            //Shortcut for fake history view
+            else {
+                beveragesSlots[0].updateSlotQuantity(machineContent[i].amount);
+            }
             return;
         }
     }
