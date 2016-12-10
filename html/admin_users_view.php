@@ -38,6 +38,7 @@
         initUser($_POST["username"], $_POST["password"]);
         populateUsers();
         tableFilter.init();
+        $("#usersButton").attr('class', 'selected');
         $('#toggle_div :checkbox').prop('checked', true);
     });
 </script>

@@ -74,7 +74,9 @@ function initUser(username, password) {
 
         //Display the balance and the first name
         document.getElementById("welcome").textContent = "Welcome " + firstName + "!";
-        document.getElementById("debt").textContent = "Balance: " + balance + " kr";
+        if (document.getElementById("debt") != null) {
+            document.getElementById("debt").textContent = "Balance: " + balance + " kr";
+        }
     });
 
     //Determine if the user is an admin by sending an admin-only query to the database

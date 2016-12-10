@@ -38,7 +38,7 @@
         initUser($_POST["username"], $_POST["password"]);
         populateInventory();
         tableFilter.init();
-        $("#stockButton").attr('class', 'selected');
+        $("#machineContentButton").attr('class', 'selected');
         $('#toggle_div :checkbox').prop('checked', true);
     });
 </script>
@@ -49,7 +49,7 @@
     <div class="container">
         <?php include "adminTopBar.php";?>
         <?php include "adminSideBar.php";?>
-        <?php include "adminContentStock.php";?>
+        <?php include "adminContentMachine.php";?>
  
 </div>
     
@@ -58,7 +58,6 @@
 
 <body>
 <!-- The popup for editing beverages -->
-<?php include "popup_stock.php";?>
 </body>
 
 </html>
