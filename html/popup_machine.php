@@ -28,8 +28,8 @@
             <!-- Input fields for the user -->
             
     
-            <h3>Add/Remove</h3>
-            <div class="inputDiv"><input type="number" id="quantity" placeholder="Amount"></div>
+            <h3>Update the amount in the machine</h3>
+            <div class="inputDiv"><input type="number" id="quantity" placeholder="Amount" min="0" max="10"></div>
             
             
             <!-- buttons for Save, Reset and Cancel -->

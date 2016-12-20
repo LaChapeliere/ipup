@@ -228,6 +228,7 @@ function displayInfoContentEdit(beerId, name, price, amount) {
     $("#edited_drink .price").text(price + " kr");
     $("#edited_drink .stock").text(amount);
     $("#edited_drink .drinkId").text(beerId);
+    $("#quantity").val(amount);
     
     //Fetch category info
     user.fetchBeerData(beerId, function(answer) {
