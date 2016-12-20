@@ -273,5 +273,5 @@ function saveEditContent() {
         
     closeEditPopup();
     //Reload the table
-    populateSlotsConsumer(false, false);
+    populateSlotsConsumer(false, false, true);
 }

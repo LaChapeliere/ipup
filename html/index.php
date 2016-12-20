@@ -20,7 +20,6 @@
 <script src="../scripts/main.js"></script>
 
 <script>
-    //    docLoaded(populateSlotsConsumer);
     $(document).ready(function() {
         //Get the username and password from login page
         var $_POST = <?php echo !empty($_POST)?json_encode($_POST):'null';?>;
@@ -39,7 +38,7 @@
         
         //Initialize page
         initUser($_POST["username"], $_POST["password"]);
-        populateSlotsConsumer(paramsDict["filter"] !== "soft", paramsDict["filter"] !== "alco");
+        populateSlotsConsumer(paramsDict["filter"] !== "soft", paramsDict["filter"] !== "alco", false);
         dragNDrop();
     });
 </script>

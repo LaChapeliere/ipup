@@ -36,7 +36,7 @@
         
         //Initialize page
         initUser($_POST["username"], $_POST["password"]);
-        populateSlotsConsumer(false, false);
+        populateSlotsConsumer(false, false, true);
         $("#machineContentButton").attr('class', 'selected');
         $('#toggle_div :checkbox').prop('checked', true);
     });

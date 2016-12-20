@@ -123,8 +123,9 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
  * Populate the table of beverages in the consumer view
  * @param displayAlco True if the alcoholic drinks should be available
  * @param displaySoft True if the non-acoholic drinks should be available
+ * @param adminView True if the function is populating an admin table
  */
-function populateSlotsConsumer(displayAlco, displaySoft) {
+function populateSlotsConsumer(displayAlco, displaySoft, adminView) {
     'use strict';
     var beveragesTable = document.getElementById("beveragesTable"), //The table to populate with the drinks
         api = new APIConnect, //The api connection to get the machine content
@@ -155,7 +156,9 @@ function populateSlotsConsumer(displayAlco, displaySoft) {
                 beverage = new Slot(beverageInfo.beer_id, beverageInfo.name, beverageInfo.price, beverageInfo.amount, beverageInfo.category, beverageInfo.alcoholic, cells[j]);
                 //Send the information to the display
                 beverage.displayInfo();
-                beverage.adminView();
+                if (adminView){
+                    beverage.adminView();
+                }
                 //    console.log(beverage);
                 beveragesSlots.push(beverage);
                 //Add the beverage in the dictionnary of available distinct drinks
