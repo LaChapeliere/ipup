@@ -6,9 +6,8 @@
 <link href="../css/sidebar.css" rel="stylesheet" />
 <link href="../css/topBar.css" rel="stylesheet" />
 <link href="../css/wrapper.css" rel="stylesheet" />
-<link href="../css/logoff_toggle.css" rel="stylesheet" />
-
-<link href="../css/adminContent.css" rel="stylesheet" /> <!--Overriding-->
+<link href="../css/adminContent.css" rel="stylesheet" />
+<link href="../css/logoff_toggle.css" rel="stylesheet" /><!--Overriding-->
 <!--<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 -->
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
