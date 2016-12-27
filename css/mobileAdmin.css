@@ -70,7 +70,7 @@ body {
 .log_off_button {
     display: inline-block;
     border-radius: 1em;
-    background-color: rgb(116, 70, 16);
+    background-color: rgb(132,0,0);
     box-shadow: 4px 4px 5px #000000;
     border: none;
     color: #FFFFFF;
@@ -82,7 +82,6 @@ body {
     margin-top: -2em;
 }
 
-/* Add comment - Markus */
 .log_off_button span{
   cursor: pointer;
   display: inline-block;
@@ -90,7 +89,7 @@ body {
   transition: 0.5s;
 }
 
-/* Add comment - Markus */
+/* After clicked log off button */
 .log_off_button span:after {
   content: '«';
   position: absolute;
@@ -100,12 +99,12 @@ body {
   transition: 0.5s;
 }
 
-/* Add comment - Markus */
+/* When hovering over log off button */
 .log_off_button:hover span {
   padding-left: 20px;
 }
 
-/* Add comment - Markus */
+/* Before hovering on log off button */
 .log_off_button:hover span:before {
   opacity: 1;
   right: 0;

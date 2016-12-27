@@ -9,6 +9,7 @@
 	<link href="../css/sideBar.css" rel="stylesheet" />
     <link href="../css/userContent.css" rel="stylesheet" />
     <link href="../css/historystats.css" rel="stylesheet" />
+    <link href="../css/logoff_toggle.css" rel="stylesheet" />
     
 	<!-- <script src="../scripts/api.js"></script> -->
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
