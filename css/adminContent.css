@@ -81,7 +81,7 @@ th{
     border-collapse: collapse;
 }
 
-/* the two following are for editing the search bar*/ 
+/* the following are for editing the search bar*/ 
 #searchBar {
     border: 1px solid rgb(116, 70, 16);
     margin-bottom: 0.2em;
@@ -90,12 +90,6 @@ th{
     -webkit-transition: width 1s; /* for Safari */
     transition: width 1s; /* for other browsers*/
 }
-
-#searchBar:hover {
-    width: 25em;   
-}
-
-
 
 #buttonToolbar{
     background-color: rgb(116, 70, 16);

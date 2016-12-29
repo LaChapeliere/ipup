@@ -18,10 +18,11 @@
             <!-- Toggle button -->
             <div id="toggle_div">
                 <p>Admin view</p>
+                <!-- Rounded switch -->
                 <label class="switch">
-               <input type="checkbox"> 
-               <div class="slider round"></div>
-               </label>
+                  <input type="checkbox">
+                  <div class="slider round"></div>
+                </label>
             </div>
 
             <!-- The Log off button-->

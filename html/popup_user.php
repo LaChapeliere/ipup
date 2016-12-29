@@ -32,10 +32,11 @@
             
             <h3>Admin Powers</h3>
             <div id="popup_toggle">
+                <!-- Rounded switch -->
                 <label class="switch">
-               <input type="checkbox"> 
-               <div class="slider round"></div>
-               </label>
+                  <input type="checkbox">
+                  <div class="slider round"></div>
+                </label>
             </div><br>
             
             
