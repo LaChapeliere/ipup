@@ -81,6 +81,13 @@ th{
     border-collapse: collapse;
 }
 
+/*This edits the length of the table and table header FOR ADMIN MACHINE CONTENT*/
+#content {
+    height: 21.75em;/*magical number*/
+    width: 100%;
+    overflow-y: auto;
+}
+
 /* the following are for editing the search bar*/ 
 #searchBar {
     border: 1px solid rgb(116, 70, 16);
