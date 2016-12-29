@@ -37,7 +37,7 @@
                   <input type="checkbox">
                   <div class="slider round"></div>
                 </label>
-            </div><br>
+            </div>
             
             
             <!-- buttons for Save, Reset and Cancel -->

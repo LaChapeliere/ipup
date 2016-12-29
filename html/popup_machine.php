@@ -1,6 +1,7 @@
 <!-- Pop Up Edit Machine Content PHP -->
    
 <link href="../css/popup_machine.css" rel="stylesheet" /> 
+<link href="../css/logoff_toggle.css" rel="stylesheet" />
                 
 
  <div id="popupUserEdit" class="overlay">
@@ -24,13 +25,12 @@
                         </div>
                 </div>
             </td>
-
             <!-- Input fields for the user -->
             
-    
+            
             <h3>Update the amount in the machine</h3>
             <div class="inputDiv"><input type="number" id="quantity" placeholder="Amount" min="0" max="10"></div>
-            
+            <br>
             
             <!-- buttons for Save, Reset and Cancel -->
             
