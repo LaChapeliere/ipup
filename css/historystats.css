@@ -26,7 +26,7 @@ td{
 }
 
 #history{ 
-    height: 14.12em; /*Brut forsce magical number*/
+    height: 14.45em; /*Brut forsce magical number*/
     border-bottom:1px solid rgb(116, 70, 16);
     width: 100%;
     overflow-y: auto;

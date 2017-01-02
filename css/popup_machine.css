@@ -63,7 +63,7 @@
     font-size: 20px;
     color:  #E8E1CB;
     font-weight: bold;
-    margin: 1em;    
+    margin: 1em;  
 }
 
 
@@ -107,7 +107,7 @@
 /*First element that has been clicked*/
 
 .product{
-    margin: auto;
+    margin: .1em;
     width: 43%; /*For some reason, this magic number works...*/
 }
 
@@ -118,6 +118,7 @@
 
 .slotLeft {
     background-color: #E8E1CB;
+    margin: auto;
 }
 
 /*Buttons in bottom*/

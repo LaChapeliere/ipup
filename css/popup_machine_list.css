@@ -66,9 +66,8 @@
     font-size: 20px;
     color:  #E8E1CB;
     font-weight: bold;
-    margin: 1em;    
+    margin: 1em;  
 }
-
 
 /*This edits the exit-cross in the top */
 .popup #closeCross {
@@ -116,6 +115,7 @@
 .slotElement{
     background-color: #E8E1CB;
     text-align: left;
+    
 }
 
 .slotLeft {

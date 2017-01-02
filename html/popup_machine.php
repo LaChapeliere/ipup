@@ -27,7 +27,6 @@
             </td>
             <!-- Input fields for the user -->
             
-            
             <h3>Update the amount in the machine</h3>
             <div class="inputDiv"><input type="number" id="quantity" placeholder="Amount" min="0" max="10"></div>
             <br>
