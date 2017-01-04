@@ -11,7 +11,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -22,7 +22,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -33,7 +33,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -44,7 +44,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -59,7 +59,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -70,7 +70,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -81,7 +81,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -92,7 +92,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -107,7 +107,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -118,7 +118,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -129,7 +129,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -140,7 +140,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -154,7 +154,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -165,7 +165,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -176,7 +176,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -187,7 +187,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -202,7 +202,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -213,7 +213,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -224,7 +224,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>
@@ -235,7 +235,7 @@
                         <div class="slotLeft">
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p><p class="stock_left">left</p>
+                            <p class="stock">Stock here</p>
                             <p class ="imgDescription">Double-click to Edit</p>
                         </div>
                         </div>

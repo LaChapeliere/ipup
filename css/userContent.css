@@ -112,9 +112,3 @@ of hovering ------ DOUBLE CLICK OR DRAG TO ADD TO CART ------- */
     margin: 0;
     font-size: 16px;
 }
-
-/* The adding word "left" indicating that #amount is left in stock */
-.stock_left{
-    font-size: 8px;
-    text-decoration: overline;
-}
