@@ -16,11 +16,11 @@ function validateLogin() {
         password = document.forms["loginForm"]["password"].value,
         api;
     if (username == "") {
-        alert("Please specify a username.");
+        loginError("Please specify a username.");
         return false;
     }
     if (password == "") {
-        alert("Please specify a password.");
+        loginError("Please specify a password.");
         return false;
     }
 
@@ -34,7 +34,7 @@ function validateLogin() {
 
         //If the username/password combination does not exist
         if (type === "error") {
-            alert(payload.msg);
+            loginError(payload.msg);
             return;
         }
 
@@ -96,6 +96,24 @@ function initUser(username, password) {
     //Display profile pic
     //@NOTE: For now always placeholder
     //$(#profile_pic).attr("src",profilePic);
+}
+
+
+/**
+ * Display an error dialog when bad credentials for login
+ * @param msg The login error
+ */
+function loginError(msg) {
+    $(".overlay").css({"visibility": "visible", "opacity": 1});
+    $("#errorMessage").text(msg);
+}
+
+/**
+ * Close the error pop-up
+ * NOTE It would be good to check that the user has entered a message and contact info if the "Message admin" button was clicked
+ */
+function closeLoginError() {
+    $(".overlay").css({"opacity": 0, "visibility": 'hidden'});
 }
 
 /**

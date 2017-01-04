@@ -10,10 +10,10 @@
 		<h2>Login Error</h2>
 		<div class="popupContent">
             
-            <button type="button" id="closeCross" onclick="closeEditPopup()">&times;</button>
+            <button type="button" id="closeCross" onclick="closeLoginError()">&times;</button>
             
             <!-- Text presented for the user -->
-            <h3>Hello! Incorrect username or password has been entered. Please try again or contact an admin.</h3><br>
+            <h3 id="errorMessage">Hello! Incorrect username or password has been entered. Please try again or contact an admin.</h3><br>
             
             <h3>Message to Admin</h3>
             <div class="inputDiv"><input type="text" id="messageText" placeholder="Hi, I have an issue..."></div>
@@ -25,8 +25,8 @@
             <!-- buttons for Save, Reset and Cancel -->
             
             <div>
-                <button type="button" id="tryAgain" onclick="closeEditPopup()">Try Again</button>
-                <button type="button" id="message" onclick="closeEditPopup()">Message Admin</button>
+                <button type="button" id="tryAgain" onclick="closeLoginError()">Try Again</button>
+                <button type="button" id="message" onclick="closeLoginError()">Message Admin</button>
             </div>
 		</div>
     </form>

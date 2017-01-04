@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="../scripts/api.js"></script>
     <script src="../scripts/users.js"></script>
     <head>
@@ -19,6 +21,7 @@
           </form>
           <button class="button" style="vertical-align:middle" onclick="validateLogin()"><span>Log In </span></button>
         </div>
+        <?php include "login_error.php";?>
       </section>
     </body>
 </html>

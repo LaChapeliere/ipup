@@ -14,8 +14,8 @@
   text-align: center;
 }
 
-/*controls how the popupStockEdit window is hidden when not activated, to see the window independently the text commented out under is needed to be so*/
-/*
+/*controls how the popupStockEdit window is hidden when not activated*/
+
 .overlay {
   position: fixed;
   top: -130px;
@@ -32,7 +32,6 @@
   visibility: visible;
   opacity: 1;
 }
-*/
 
 /*This edits the popup meny */
 
