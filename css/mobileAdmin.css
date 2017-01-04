@@ -13,23 +13,49 @@
 }
 
 .nav-item {
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: auto;
+    font-size: 135%;
 }
 
 #profile_pic {
-    height: 17%;
-    border-radius: 2em;
+    height: 14%;
+    border-radius: 2em; 
+    margin-bottom: 5%;
 }
+
+.SUM{
+    border-radius: 1em;
+    border: none;
+    padding: 1em;
+    color: white;
+    font-size: 100%;
+    background-color: rgb(116, 70, 16);
+    box-shadow: 4px 4px 5px #000000;
+}
+
 .site-wrap {
     min-width: 100%;
     min-height: 100%;
     background-color: #E8E1CB;
     position: relative;
+    overflow:hidden;
     top: 0;
     bottom: 100%;
     left: 0;
     z-index: 1;
+}
+
+.test {
+    background-color: rgb(116, 70, 16);
+    position: absolute;
+    color: black;
+    height: 90%;
+    width: 86%;
+    top: 7%;
+    left: 7%;
+    right: 7%;
+    bottom: 3%
 }
 
 .nav-trigger {
@@ -110,3 +136,59 @@ body {
   right: 0;
 }
 /* END OF LOG OFF BUTTON-------------------------------- */
+
+/* --------- För testdelen i html:en --------- */ 
+
+
+#addBeverageButton, #searchBar{
+    border-radius: 1em;
+    border: none;
+    box-shadow: 4px 4px 5px #000000;
+    color: white;
+    font-size: .8em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    padding: 1em;
+}
+
+#addBeverageButton {
+    background-color: rgb(0, 132, 0);
+}
+
+.table {
+    color: black
+    height: 100%;
+    width: 100%;
+        
+}
+
+.head_admin a {
+    text-decoration: none;
+}
+
+.table thead, tbody {
+    width: 100%;
+    display: block;
+}
+
+.table tbody{
+    overflow: auto;
+    height: 55%;
+}
+
+.table th, td {
+    width: 100%;
+    padding: .4em;
+}
+
+.stock_admin:nth-child(even), .users_admin:nth-child(even) {
+    margin: auto%;
+    background-color: white;
+}
+
+.stock_admin:nth-child(odd), .users_admin:nth-child(odd) {
+    margin: auto;
+    background-color: #E8E1CB;
+}
