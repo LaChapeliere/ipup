@@ -20,7 +20,7 @@
                             <p class="drinkId" hidden>Id</p>
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
-                            <p class="stock">Stock here</p>
+                            <p class="stock">Stock here</p><p class="stock_left">left</p>
                             <p class ="imgDescription">Click to Edit</p>
                         </div>
                 </div>

@@ -50,7 +50,7 @@
   width: 15%;
   min-width: 15em;
   position: relative;
-  transition: all 1s ease-in-out;
+  /*transition: opacity 300ms;*/ /*Take the transition away to disable phantom images */
   text-align: center;
   font-family: Dosis, sans-serif; 
 }
