@@ -37,7 +37,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
     this.isAlcoholic = function() {
         return alcohol;
     }
-    
+
     /**
      * Set admin to true
      */
@@ -112,8 +112,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
     display.ondblclick = function() {
         if (!admin && available) {
             addProduct(beerId, name, price);
-        }
-        else if (admin) {
+        } else if (admin) {
             openEditContentPopup(beerId, name, price, amount);
         }
     }
@@ -156,7 +155,7 @@ function populateSlotsConsumer(displayAlco, displaySoft, adminView) {
                 beverage = new Slot(beverageInfo.beer_id, beverageInfo.name, beverageInfo.price, beverageInfo.amount, beverageInfo.category, beverageInfo.alcoholic, cells[j]);
                 //Send the information to the display
                 beverage.displayInfo();
-                if (adminView){
+                if (adminView) {
                     beverage.adminView();
                 }
                 //    console.log(beverage);
@@ -166,7 +165,7 @@ function populateSlotsConsumer(displayAlco, displaySoft, adminView) {
             }
         }
     });
-    
+
     //Initial filter of drinks if consumer view
     if (displayAlco || displaySoft) {
         filterAlcoholDrinks(displayAlco, displaySoft);
@@ -250,17 +249,37 @@ function filterAlcoholDrinks(displayAlco, displaySoft) {
     //Highlight the selected filtering button
     if (displayAlco) {
         if (displaySoft) {
-            document.getElementById("allBevButton").className = "selected";
-            document.getElementById("alcoDrinksButton").className = "";
-            document.getElementById("softDrinksButton").className = "";
+            /*
+            @TODO 
+            Make the filtering buttons have a new class called lang which is used
+            for internationalization        
+            */
+            $("allBevButton").addClass("selected lang");
+            $("alcoDrinksButton").removeClass("selected")
+                .addClass("lang");
+            $("softDrinksButton").removeClass("selected")
+                .addClass("lang");
+            /*    document.getElementById("allBevButton").className = "selected";
+                document.getElementById("alcoDrinksButton").className = "";
+                document.getElementById("softDrinksButton").className = "";*/
         } else {
-            document.getElementById("allBevButton").className = "";
-            document.getElementById("alcoDrinksButton").className = "selected";
-            document.getElementById("softDrinksButton").className = "";
+            $("allBevButton").removeClass("selected")
+                .addClass("lang");
+            $("alcoDrinksButton").addClass("selected lang");
+            $("softDrinksButton").removeClass("selected")
+                .addClass("lang");
+            /*    document.getElementById("allBevButton").className = "";
+                document.getElementById("alcoDrinksButton").className = "selected";
+                document.getElementById("softDrinksButton").className = "";*/
         }
     } else {
-        document.getElementById("allBevButton").className = "";
-        document.getElementById("alcoDrinksButton").className = "";
-        document.getElementById("softDrinksButton").className = "selected";
+        $("allBevButton").removeClass("selected")
+            .addClass("lang");
+        $("alcoDrinksButton").removeClass("selected")
+            .addClass("lang");
+        $("softDrinksButton").addClass("selected lang");
+        /*  document.getElementById("allBevButton").className = "";
+          document.getElementById("alcoDrinksButton").className = "";
+          document.getElementById("softDrinksButton").className = "selected";*/
     }
 }

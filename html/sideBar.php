@@ -3,8 +3,12 @@
 
             <!-- Language setting - Top of sidebar -->
             <div id="language">
+                <input type="image" src="../resources/img/sweden.png" class="translate" style="width:40px;" id="swe" alt="Svenska"/>
+                <input type="image" src="../resources/img/england.png" class="translate" style="width:40px;" id="en" alt="English"/>
+             <!--   <button class="translate" id="en">English</button>
+                <button class="translate" id="swe">Swedish</button>
                 <img src="../resources/img/sweden.png" style="width:40px;" alt="Svenska">
-                <img src="../resources/img/england.png" style="width:40px;" alt="English">
+                <img src="../resources/img/england.png" style="width:40px;" alt="English">-->
             </div>
 
             <!-- The code for the profile picture -->

@@ -13,6 +13,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="../resources/machineContent.js"></script>
+<script src="../resources/arrLang.js"></script>
 <script src="../scripts/api.js"></script>
 <script src="../scripts/beverages.js"></script>
 <script src="../scripts/users.js"></script>
@@ -41,6 +42,21 @@
         initUser($_POST["username"], $_POST["password"]);
         populateSlotsConsumer(paramsDict["filter"] !== "soft", paramsDict["filter"] !== "alco", false);
         dragNDrop();
+
+         $(function() {
+             console.log($('.lang'));
+                $('.translate').click(function() {
+                    var lang = $(this).attr('id');
+                    console.log($(this));
+                //     console.log($('.lang'));
+                    $('.lang').each(function(index, element) {
+                        console.log(element);
+                        console.log($(this));
+                        $(this).text(arrLang[lang][$(this).attr('key')]);
+                    });
+                });
+            });
+
     });
 </script>
 
