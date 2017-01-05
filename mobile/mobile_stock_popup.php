@@ -1,11 +1,4 @@
-<link href="../css/popup_stock.css" rel="stylesheet" />            
-<!--            
-                    <div class="box">
-                        <a class="button" href=#popupStockEdit>Click me!</a>
-                    </div>
--->
-
- <div id="popupStockEdit" class="overlay">
+<div id="popupStockEdit" class="overlay">
 	<div class="popup">
         <form>
 		<h2>Edit Beverage Info</h2>
@@ -25,7 +18,7 @@
             
             <!-- Beverage typ selection meny-->
             <h3>Beverage type</h3>
-            <div>
+            <div class="inputDiv">
             <select id="bevType" name="bvt">
                 <option disabled selected value> -- select a beverage -- </option>
                 <option>Soft Drink</option>

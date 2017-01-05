@@ -81,6 +81,42 @@
                 <td class="price_entry">It's over 9000!</td>
                 <td class="stock_entry">Such many, very wow..</td>
             </tr>
+                                          <tr class ="stock_admin">
+                <td class="name_entry">Dragon Blood</td>
+                <td class="price_entry">It's over 9000!</td>
+                <td class="stock_entry">Such many, very wow..</td>
+            </tr>
+                                      <tr class ="stock_admin">
+                <td class="name_entry">Dragon Blood</td>
+                <td class="price_entry">It's over 9000!</td>
+                <td class="stock_entry">Such many, very wow..</td>
+            </tr>
+                                          <tr class ="stock_admin">
+                <td class="name_entry">Dragon Blood</td>
+                <td class="price_entry">It's over 9000!</td>
+                <td class="stock_entry">Such many, very wow..</td>
+            </tr>
+                                          <tr class ="stock_admin">
+                <td class="name_entry">Dragon Blood</td>
+                <td class="price_entry">It's over 9000!</td>
+                <td class="stock_entry">Such many, very wow..</td>
+            </tr>
+                                          <tr class ="stock_admin">
+                <td class="name_entry">Dragon Blood</td>
+                <td class="price_entry">It's over 9000!</td>
+                <td class="stock_entry">Such many, very wow..</td>
+            </tr>
+                                          <tr class ="stock_admin">
+                <td class="name_entry">Dragon Blood</td>
+                <td class="price_entry">It's over 9000!</td>
+                <td class="stock_entry">Such many, very wow..</td>
+            </tr>
+                                          <tr class ="stock_admin">
+                <td class="name_entry">Dragon Blood</td>
+                <td class="price_entry">It's over 9000!</td>
+                <td class="stock_entry">Such many, very wow..</td>
+            </tr>
+                
         </tbody>     
 </table>
         

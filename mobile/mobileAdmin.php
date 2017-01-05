@@ -1,6 +1,6 @@
 <link href="../css/mobileAdmin.css" rel="stylesheet" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <ul class="navigation">
     <li> <img id="profile_pic" class="nav-item" src="../resources/img/placeholder.png">
@@ -26,7 +26,7 @@
         
                     <!-- TEST AREA  -->
       
-                <?php include "mobile_stock.php";?>
+                <?php include "mobile_stock_popup.php";?>
 
 
                  <!-- END OF TEST AREA  -->

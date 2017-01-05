@@ -158,9 +158,10 @@ body {
 }
 
 .table {
-    color: black
-    height: 100%;
+    position: relative;
+    color: black;
     width: 100%; 
+    height: 86%;
 }
 
 .head_admin a {
@@ -172,13 +173,15 @@ body {
 }
 
 .table tbody{
-    height: 39%;
+    position: absolute;
+    height: 94%;
     overflow: auto;
 }
 
 .table th, td {
-    width: 70%;
-    padding: .4em;
+    width: 100%;
+    padding-left: .4em;
+    padding-right: .4em;
 }
 
 .stock_admin:nth-child(even), .users_admin:nth-child(even) {
@@ -192,3 +195,22 @@ body {
 }
 
 /* --------- The end of mobile_stock.php css --------- */ 
+
+/* --------- The start of mobile_stock_popus.php css --------- */ 
+
+.overlay {
+    background-color: cadetblue;
+}
+
+#popup h1, h2, h3, .inputDiv {
+    text-align: center;
+}
+
+
+/* --------- The start of mobile_stock_popus.php css --------- */ 
+
+
+
+
+
+

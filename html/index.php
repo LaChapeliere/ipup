@@ -20,7 +20,7 @@
 <script src="../scripts/shopping_cart.js"></script>
 <script src="../scripts/ui.js"></script>
 <script src="../scripts/main.js"></script>
-
+    
 <script>
     $(document).ready(function() {
         //Get the username and password from login page
