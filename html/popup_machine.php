@@ -1,8 +1,6 @@
 <!-- Pop Up Edit Machine Content PHP -->
    
-<link href="../css/popup_machine.css" rel="stylesheet" /> 
-<link href="../css/logoff_toggle.css" rel="stylesheet" />
-                
+               
 
  <div id="popupUserEdit" class="overlay">
 	<div class="popup">

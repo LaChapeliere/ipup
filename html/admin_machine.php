@@ -3,12 +3,14 @@
 <title>Beverage vending machine</title>
 <meta charset="utf-8" />
 <link href="../css/reset.css" rel="stylesheet" />
-<link href="../css/sidebar.css" rel="stylesheet" />
-<link href="../css/topBar.css" rel="stylesheet" />
 <link href="../css/wrapper.css" rel="stylesheet" />
+<link href="../css/topBar.css" rel="stylesheet" />
+<link href="../css/sidebar.css" rel="stylesheet" />
 <link href="../css/userContent.css" rel="stylesheet" />
 <link href="../css/adminContent.css" rel="stylesheet" />
 <link href="../css/logoff_toggle.css" rel="stylesheet" />
+<link href="../css/popup_machine.css" rel="stylesheet" />
+<link href="../css/popup_machine_list.css" rel="stylesheet" /> 
 <!--Overriding-->
 <!--<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 -->
@@ -51,7 +53,9 @@
         <?php include "adminTopBar.php";?>
         <?php include "adminSideBar.php";?>
         <?php include "adminContentMachine.php";?>
- 
+        <!-- The popups for editing machine content -->
+        <?php include "popup_machine.php";?>
+        <?php include "popup_machine_list.php";?>
 </div>
     
 </div>
@@ -59,9 +63,6 @@
 
 <body>
 
-<!-- The popups for editing machine content -->
-    <?php include "popup_machine.php";?>
-    <?php include "popup_machine_list.php";?>
 </body>
 
 </html>

@@ -106,17 +106,17 @@
 
 /*First element that has been clicked*/
 
-.product{
+popupUserEdit.product{
     margin: .1em;
     width: 43%; /*For some reason, this magic number works...*/
 }
 
-.slotElement{
+popupUserEdit.slotElement{
     background-color: #E8E1CB;
     text-align: left;
 }
 
-.slotLeft {
+popupUserEdit.slotLeft {
     background-color: #E8E1CB;
     margin: auto;
 }
