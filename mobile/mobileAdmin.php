@@ -25,8 +25,10 @@
     <!-- Here we include seperate php, depending on which button is pressed etc.. -->
         
                     <!-- TEST AREA  -->
-      
-                <?php include "mobile_stock_popup.php";?>
+
+                <?php include "mobile_users.php";?>
+                
+
 
 
                  <!-- END OF TEST AREA  -->
