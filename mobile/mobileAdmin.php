@@ -34,8 +34,6 @@
                 <?php include "mobile_stock.php";?>
 
 
-
-
                  <!-- END OF TEST AREA  -->
         
 </div>

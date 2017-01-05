@@ -140,7 +140,7 @@ body {
 /* --------- Start of the css for the mobile_stock.php --------- */ 
 
 
-#addBeverageButton, #searchBar{
+#addBeverageButton, #searchBar, #addUserButton {
     border-radius: 1em;
     border: none;
     box-shadow: 4px 4px 5px #000000;
@@ -152,7 +152,7 @@ body {
     padding: 1em;
 }
 
-#addBeverageButton {
+#addBeverageButton, #addUserButton {
     background-color: rgb(0, 132, 0);
     color: white;
 }
@@ -184,14 +184,22 @@ body {
     padding-right: .4em;
 }
 
-.stock_admin:nth-child(even), .users_admin:nth-child(even) {
+
+td {
     margin: auto%;
+    padding-bottom: .5em;
+    padding-top: .5em;
+    
+}
+
+.stock_admin:nth-child(even), .users_admin:nth-child(even) {
     background-color: white;
+    
 }
 
 .stock_admin:nth-child(odd), .users_admin:nth-child(odd) {
-    margin: auto;
     background-color: #E8E1CB;
+    
 }
 
 /* --------- The end of mobile_stock.php css --------- */ 
