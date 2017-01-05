@@ -1,4 +1,8 @@
 <link href="../css/mobileAdmin.css" rel="stylesheet" />
+<link href="../css/mobile_toggle.css" rel="stylesheet" />
+
+<script src="../scripts/inventory.js"></script>
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,14 +25,20 @@
 <label for="nav-trigger"></label>
 
 <div class="site-wrap">
+
     <div class="content">
     <!-- Here we include seperate php, depending on which button is pressed etc.. -->
         
                     <!-- TEST AREA  -->
-      
-                <?php include "mobile_stock_popup.php";?>
+
+                <?php include "mobile_stock.php";?>
+
+
 
 
                  <!-- END OF TEST AREA  -->
         
+</div>
+                <?php include "mobile_stock_popup.php";?>
+
 </div>

@@ -3,8 +3,7 @@
         <form>
 		<h2>Edit Beverage Info</h2>
 		<div class="popupContent">
-            
-            <button type="button" id="closeCross" onclick="closeEditPopup()">&times;</button>
+ 
             <!-- Input fields for the beverages -->
             
             <h3>Beverage name</h3>
@@ -34,7 +33,7 @@
             
             <!-- Toggle button for alcohol/non alcohol -->
             <h3>Alcoholic?</h3>
-            <div id="popup_toggle">
+            <div id="popup_toggle" class="inputDiv">
                 <!-- Rounded switch -->
                 <label class="switch">
                   <input type="checkbox">
@@ -45,7 +44,7 @@
             
             <!-- buttons for Save, Reset and Cancel -->
             
-            <div>
+            <div class="inputDiv">
                 <button type="button" id="save" onclick="saveEditBev()">Save</button>
                 <button input type="reset" id="reset" >Reset</button>
                 <button type="button" id="cancel" onclick="closeEditPopup()">Cancel</button>
