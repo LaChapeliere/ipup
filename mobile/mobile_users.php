@@ -1,7 +1,9 @@
   
 
         <div class="buttonToolbar">
-            <button id="addUserButton" onclick="openEditBevPopup('', 0, 0, -1)">Add New User</button>   
+            <div id="addUser">
+        <button id="addUserButton" onclick="openEditUserPopup('', 0, '', 3)">Add New User</button>   
+    </div>  
             
              <input id="searchBar" type="search" class="light-table-filter" data-table="stock-table" placeholder="Type to Search">
             
