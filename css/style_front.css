@@ -1,30 +1,40 @@
 @import "https://fonts.googleapis.com/css?family=Pacifico|Dosis";
 
+@media screen and (max-width: 450px){
+    
+    body{
+        font-size: 15px;
+    }
+}
+
 html {
     background-image: linear-gradient(270deg, rgb(116, 70, 16) 0%, rgb(116, 70, 16) 100%);
     -webkit-font-smoothing: antialiased;
-    padding: 4em 4em 4em 4em;
 }
 
 body {
-    border-radius: 70px;
-    padding: 70px 0;
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    border-radius: 5em;
+    padding: 4em;
     text-align: center;
     background: #e8e1cb;
     color: #434343;
     font-family: Dosis, sans-serif;
     font-size: 20px;
-    line-height: 1.5;
-    margin: 0 auto;
-    height: 768px;
-    width: 1024px;  
+    margin: auto;
+    height: 70%;
+    width: 70%;  
     box-shadow: 1px 1px 100px #000000;
     
 }
 
 .field{
     border-radius: 6px;
-    padding: 10px;;
+    padding: 10px;
     margin: 0 auto;
     margin-bottom: 10px;
     background: #ffffff;
@@ -45,11 +55,11 @@ body {
     color: #FFFFFF;
     text-align: center;
     font-size: 30px;
-    padding: 20px;
+    padding: .5em;
     width: 200px;
     transition: all 0.1s;
     cursor: pointer;
-    margin: 30px;
+    margin: .5em;
 }
 
 .button span {

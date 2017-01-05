@@ -11,7 +11,7 @@
     </head>
 
     <body>
-    <img src="../resources/img/logo.gif" alt="Jamaica Inn" style="width:400px;">
+    <img src="../resources/img/logo.gif" alt="Jamaica Inn" style="width:45%;">
       <section class="container">
         <div class="login">
           <h1>Log in by filling in the fields below</h1>
