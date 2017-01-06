@@ -80,9 +80,9 @@ function initUser(username, password) {
         balance = payload["assets"];
 
         //Display the balance and the first name
-        document.getElementById("welcome").textContent = "Welcome " + firstName + "!";
+        document.getElementById("welcome").textContent = firstName + "!";
         if (document.getElementById("debt") != null) {
-            document.getElementById("debt").textContent = "Balance: " + balance + " kr";
+            document.getElementById("debt").textContent = balance + " kr";
         }
     });
 
@@ -99,7 +99,7 @@ function initUser(username, password) {
         }
         //If the user is not an admin, do nothing
     });
-    
+
     //Display profile pic
     //@NOTE: For now always placeholder
     //$(#profile_pic).attr("src",profilePic);
@@ -111,7 +111,7 @@ function initUser(username, password) {
  * @param msg The login error
  */
 function loginError(msg) {
-    $(".overlay").css({"visibility": "visible", "opacity": 1});
+    $(".overlay").css({ "visibility": "visible", "opacity": 1 });
     $("#errorMessage").text(msg);
 }
 
@@ -120,7 +120,7 @@ function loginError(msg) {
  * NOTE It would be good to check that the user has entered a message and contact info if the "Message admin" button was clicked
  */
 function closeLoginError() {
-    $(".overlay").css({"opacity": 0, "visibility": 'hidden'});
+    $(".overlay").css({ "opacity": 0, "visibility": 'hidden' });
 }
 
 /**
@@ -130,7 +130,7 @@ function closeLoginError() {
 function linkFormSubmit(url) {
     var myform = '<form id="temporary_form" action="' + url + '" method="POST">', //A temporary form to POST
         credentials = user.getUser(); //The credentials to send
-    
+
     myform += '<input name=username value="' + credentials[0] + '"/>';
     myform += '<input name=password value="' + credentials[1] + '"/>';
     myform += '</form>';
@@ -148,7 +148,7 @@ function updateBalanceDisplay() {
             type = info.type, //Type of the answer
             payload = info.payload[0], //Payload of the answer
             balance; //New balance of the user
-        
+
         if (type === "error") {
             alert(payload.msg);
             return;
@@ -168,17 +168,17 @@ function populateUsers() {
     $('#adminUserTableBody tr').not(':first').remove();
     var html = '', //The html string to build the table rows
         users; //The data
-    
+
     //Fetch the data from the API
     user.fetchUsers(function(answer) {
         var info = JSON.parse(answer),
             type = info.type;
-        
+
         if (type === "error") {
             alert(info.payload[0].msg);
             return;
         }
-        
+
         //If the inventory was correctly retrieved
         users = info.payload;
         //For each drink
@@ -189,27 +189,27 @@ function populateUsers() {
             }
             //Build the html
             html += "<tr class ='users_admin'><div class='box'>" +
-                    "<td class='user_username'>" + users[i].username + "</td>" +
-                    "<td class='user_name'>" + users[i].first_name + " " + users[i].last_name + "</td>" +
-                    "<td class='user_debt'>" + (Math.floor(Math.random() * 2000) - 800) + "</td>" + //For now displaying a random balance since iou_get_all doesn't not update
-                    "<td class='user_admin_owers'>" + (users[i].credentials == 0 ? "Yes" : "No")  + "</td>" +
-                    "</a></div></tr>";
+                "<td class='user_username'>" + users[i].username + "</td>" +
+                "<td class='user_name'>" + users[i].first_name + " " + users[i].last_name + "</td>" +
+                "<td class='user_debt'>" + (Math.floor(Math.random() * 2000) - 800) + "</td>" + //For now displaying a random balance since iou_get_all doesn't not update
+                "<td class='user_admin_owers'>" + (users[i].credentials == 0 ? "Yes" : "No") + "</td>" +
+                "</a></div></tr>";
         }
 
         //Feed the html to the table
         $('#adminUserTableBody tr').first().after(html);
         //Remove first -fake- row
         $('#adminUserTableBody tr:first').remove();
-        
-        
+
+
         //Make the rows clickable
-        $('#adminUserTableBody tr').each( function(row) {
+        $('#adminUserTableBody tr').each(function(row) {
             var username = $(this).find('.user_username')[0].innerHTML, //The username of the clicked row
                 name = $(this).find('.user_name')[0].innerHTML, //The name of the clicked row
                 debt = $(this).find('.user_debt')[0].innerHTML, //The debt of the clicked row
                 admin = $(this).find('.user_admin_owers')[0].innerHTML; //The admin power of the clicked row
-            $(this).on("click", function() {openEditUserPopup(name, debt, username, admin)});
-            
+            $(this).on("click", function() { openEditUserPopup(name, debt, username, admin) });
+
         })
     });
 }
@@ -223,7 +223,7 @@ function populateUsers() {
  */
 function openEditUserPopup(name, debt, username, admin) {
     //Display pop-up
-    $(".overlay").css({"visibility": "visible", "opacity": 1});
+    $(".overlay").css({ "visibility": "visible", "opacity": 1 });
 
     displayInfoUserEdit(name, debt, username, admin);
 }
@@ -245,7 +245,7 @@ function displayInfoUserEdit(name, debt, username, admin) {
     //Fetch user info - Fake
     $("#userEmail").attr("placeholder", name + "@it.uu.se");
     $("#userPhone").attr("placeholder", "00 46 771 793 336");
-    
+
     //Lock username field if existing user
     if (username !== "") {
         $("#username").prop("readonly", true);
@@ -288,16 +288,16 @@ function saveEditUser() {
     if (email.length <= 0) {
         email = document.getElementById("userEmail").placeholder;
     }
-    
+
     //Force name to be of form first name - last name
     if (name.split(" ").length < 2) {
         name = name + " " + name;
     }
-    
+
     //Send info to API
     //Only sending the info currently required by the API, for example cannot change the name
     addUser(user, username, password, name.split(" ")[0], name.split(" ")[1], email, phone);
-        
+
     closeEditPopup();
     //Reload the table
     populateUsers();

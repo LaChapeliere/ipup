@@ -2,7 +2,7 @@
 
 <div id="buttonToolbar">            
     <div id="addBeverage">
-        <button id="addBeverageButton" onclick="openEditBevPopup('', 0, 0, -1)">Add New Beverage</button>   
+        <button class="lang" key="add_new_beverage" id="addBeverageButton" onclick="openEditBevPopup('', 0, 0, -1)">Add New Beverage</button>   
     </div>
     <input id="searchBar" type="search" class="light-table-filter" data-table="stock-table" placeholder="Type to Search">
 </div>
@@ -13,9 +13,9 @@
 <table id="stockTableHead">
     <thead>
         <tr class ="stock_admin">
-            <th class = "head_admin"> <a href="javascript:SortTable(0,'T');">Name</a></th>
-            <th class = "head_admin"> <a href="javascript:SortTable(1,'N');">Price</a></th>
-            <th class = "head_admin"> <a href="javascript:SortTable(2,'N');">Count</a></th>
+            <th class = "head_admin lang" key="name"> <a href="javascript:SortTable(0,'T');">Name</a></th>
+            <th class = "head_admin lang" key="price"> <a href="javascript:SortTable(1,'N');">Price</a></th>
+            <th class = "head_admin lang" key="amount"> <a href="javascript:SortTable(2,'N');">Amount</a></th>
                     
         </tr>
     </thead>

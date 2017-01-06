@@ -59,7 +59,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
         var infoDisplay = display.getElementsByClassName("slotLeft")[0];
         infoDisplay.getElementsByClassName("drinkName")[0].textContent = name;
         infoDisplay.getElementsByClassName("price")[0].textContent = price + " kr";
-        infoDisplay.getElementsByClassName("stock")[0].textContent = amount + " left";
+        infoDisplay.getElementsByClassName("stock")[0].textContent = "# " + amount;
         this.fetchImage();
     }
 
@@ -96,7 +96,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
     this.updateSlotQuantity = function(newQuantity) {
         var infoDisplay = display.getElementsByClassName("slotLeft")[0];
         amount = newQuantity;
-        infoDisplay.getElementsByClassName("stock")[0].textContent = amount;
+        infoDisplay.getElementsByClassName("stock")[0].textContent = "# " + amount;
 
         //If the slot becomes empty
         if (this.isEmpty()) {

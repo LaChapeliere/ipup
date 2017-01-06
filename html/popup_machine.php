@@ -5,7 +5,7 @@
  <div id="popupUserEdit" class="overlay">
 	<div class="popup">
         <form>
-		<h2>Edit Machine Content</h2>
+		<h2 class="lang" key="edit_machine_content">Edit Machine Content</h2>
 		<div class="popupContent">
             
             <button type="button" id="closeCross" onclick="closeEditPopup()">&times;</button>

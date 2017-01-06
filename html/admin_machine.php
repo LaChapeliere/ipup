@@ -18,6 +18,7 @@
 <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <!--<script type="text/javascript" src="http://www.pureexample.com/js/lib/jquery.ui.touch-punch.min.js"></script>
 -->
+<script src="../resources/arrLang.js"></script>
 <script src="../scripts/api.js"></script>
 <!--<script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
 -->
@@ -41,8 +42,18 @@
         //Initialize page
         initUser($_POST["username"], $_POST["password"]);
         populateSlotsConsumer(false, false, true);
-        $("#machineContentButton").attr('class', 'selected');
+        $("#machineContentButton").addClass('selected lang');
         $('#toggle_div :checkbox').prop('checked', true);
+
+        $(function() {
+                $('.translate').click(function() {
+                    var lang = $(this).attr('id');
+                    $('.lang').each(function(index, element) {
+                        $(this).text(arrLang[lang][$(this).attr('key')]);
+                    });
+                });
+            });
+
     });
 </script>
 

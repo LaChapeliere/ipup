@@ -14,6 +14,7 @@
 	<!-- <script src="../scripts/api.js"></script> -->
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="../resources/arrLang.js"></script>
     <script src="../scripts/api.js"></script>
     <script src="../scripts/users.js"></script>
     <script src="../scripts/shopping_cart.js"></script>
@@ -39,6 +40,16 @@
             initUser($_POST["username"], $_POST["password"]);
             getHistory();
             dragNDrop();
+
+     $(function() {
+                $('.translate').click(function() {
+                    var lang = $(this).attr('id');
+                    $('.lang').each(function(index, element) {
+                        $(this).text(arrLang[lang][$(this).attr('key')]);
+                    });
+                });
+            });
+
         });
     </script>
     

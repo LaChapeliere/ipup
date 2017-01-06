@@ -12,7 +12,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -23,7 +23,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -34,7 +34,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -45,7 +45,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -60,7 +60,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -71,7 +71,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -82,7 +82,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -93,7 +93,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -108,7 +108,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -119,7 +119,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -130,7 +130,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -141,7 +141,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -155,7 +155,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -166,7 +166,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -177,7 +177,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -188,7 +188,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -203,7 +203,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -214,7 +214,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -225,7 +225,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -236,7 +236,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
