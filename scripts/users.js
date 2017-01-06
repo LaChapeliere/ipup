@@ -37,6 +37,13 @@ function validateLogin() {
             loginError(payload.msg);
             return;
         }
+        
+        //If mobile -should also check credentials- change form destination
+        console.log($("body").css("font-size"));
+        if ($("body").css("font-size") == "15px") {
+            document.forms["loginForm"].action = "../mobile/mobileAdmin.php";
+        }
+        
 
         //Submit the login credential form if no error
         document.forms["loginForm"].submit();
