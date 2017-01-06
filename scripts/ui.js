@@ -85,3 +85,20 @@ $(function() {
         }
     });
 });
+
+/**
+ * Wire the navigation of the mobile version
+ */
+function mobileNav() {
+    $("#mobileStockNav").onclick() = function() {
+        $(".content").html("<?php include 'mobile_stock.php';?>");
+    }
+    
+    $("#mobileUsersNav").onclick() = function() {
+        $(".content").html("<?php include 'mobile_users.php';?>");
+    }
+    
+    $("#mobileMachineNav").onclick() = function() {
+        $(".content").html("<?php include 'mobile_machine.php';?>");
+    }
+}
