@@ -67,7 +67,7 @@
                         <th id="tableHeaderNames" class="subject_entry lang" key="what">What</th>
                         <th id="tableHeaderNames" class="time_entry lang" key="when">When</th>
                         <th id="tableHeaderNames" class="amount_entry lang" key="amount">Amount</th>
-                        <th id="tableHeaderNames" class="balance_entry lang" key="balance_history_stats">Balance</th>
+                        <th id="tableHeaderNames" class="balance_entry lang" key="balance">Balance</th>
                 </tr>
     </table>
     

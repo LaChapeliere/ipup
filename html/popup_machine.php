@@ -25,15 +25,15 @@
             </td>
             <!-- Input fields for the user -->
             
-            <h3>Update the amount in the machine</h3>
+            <h3 class="lang" key="update_amount_in_machine">Update the amount in the machine</h3>
             <div class="inputDiv"><input type="number" id="quantity" placeholder="Amount" min="0" max="10"></div>
             <br>
             
             <!-- buttons for Save, Reset and Cancel -->
             
             <div>
-                <button type="button" id="save" onclick="saveEditContent()">Save</button>
-                <button type="button" id="cancel" onclick="closeEditPopup()">Cancel</button>
+                <button type="button" id="save" onclick="saveEditContent()" class="lang" key="save">Save</button>
+                <button type="button" id="cancel" onclick="closeEditPopup()" class="lang" key="cancel">Cancel</button>
             </div>
 		</div>
     </form>

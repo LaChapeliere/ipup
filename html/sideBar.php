@@ -25,7 +25,7 @@
  
             <!-- The debt area-->
            
-            <div class="lang" id="balance" key="balance">Balance:</div>
+            <div class="lang" id="balance" key="balance_colon">Balance:</div>
             <div id="debt"></div>
  
             <!-- Toggle button -->
