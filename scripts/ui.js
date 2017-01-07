@@ -75,6 +75,7 @@ function mobileNav() {
         $.get('mobile_users.php', function(data) {
             $(".content").html(data);
         });
+        populateUsers();
     });
 
     $("#mobileMachineNav").click(function() {
