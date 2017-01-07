@@ -6,10 +6,12 @@
 <script src="../scripts/api.js"></script>
 <script src="../scripts/main.js"></script>
 <script src="../resources/machineContent.js"></script>
-<script src="../scripts/ui.js"></script>
 <script src="../scripts/users.js"></script>
+<script src="../scripts/ui.js"></script>
 <script src="../scripts/beverages.js"></script>
 <script src="../scripts/inventory.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
     $(document).ready(function() {
@@ -23,8 +25,9 @@
         }
         
         //Initialize page
-        initUser($_POST["username"], $_POST["password"]);
-
+        initUserMobile($_POST["username"], $_POST["password"]);
+        mobileNav();
+/*
          $(function() {
              console.log($('.lang'));
                 $('.translate').click(function() {
@@ -37,12 +40,10 @@
                         $(this).text(arrLang[lang][$(this).attr('key')]);
                     });
                 });
-            });
+            });*/
 
     });
 </script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <ul class="navigation">
     <li> <img id="profile_pic" class="nav-item" src="../resources/img/placeholder.png">
