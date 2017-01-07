@@ -10,6 +10,7 @@
 <script src="../scripts/ui.js"></script>
 <script src="../scripts/beverages.js"></script>
 <script src="../scripts/inventory.js"></script>
+<script src="../scripts/sort_table.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,6 +28,8 @@
         //Initialize page
         initUserMobile($_POST["username"], $_POST["password"]);
         mobileNav();
+        populateInventory();
+        tableFilter.init();
 /*
          $(function() {
              console.log($('.lang'));

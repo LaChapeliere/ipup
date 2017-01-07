@@ -68,6 +68,7 @@ function mobileNav() {
         $.get('mobile_stock.php', function(data) {
             $(".content").html(data);
         });
+        populateInventory();
     });
 
     $("#mobileUsersNav").click(function() {

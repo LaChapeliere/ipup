@@ -7,7 +7,7 @@
             
         </div>
         
-        <table class="table">
+        <table id="sortableTable" class="stock-table table">
             <thead>
                 <tr class ="stock_admin">
                     <th class = "head_admin"> <a href="javascript:SortTable(0,'T');">Name</a></th>
