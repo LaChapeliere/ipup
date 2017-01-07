@@ -3,12 +3,10 @@
 
             <!-- Language setting - Top of sidebar -->
             <div id="language">
-                <input type="image" src="../resources/img/sweden.png" class="translate" style="width:40px;" id="swe" alt="Svenska"/>
-                <input type="image" src="../resources/img/england.png" class="translate" style="width:40px;" id="en" alt="English"/>
-             <!--   <button class="translate" id="en">English</button>
-                <button class="translate" id="swe">Swedish</button>
-                <img src="../resources/img/sweden.png" style="width:40px;" alt="Svenska">
-                <img src="../resources/img/england.png" style="width:40px;" alt="English">-->
+            <?php $search_en= http_build_query(array_merge($_GET, array('lang'=>'en')));?>
+            <?php $search_swe= http_build_query(array_merge($_GET, array('lang'=>'swe')));?>
+            <a href="index.php?<?php echo $search_swe?>"><input type="image" src="../resources/img/sweden.png" class="translate" style="width:40px;" id="swe" alt="Svenska"/></a>
+            <a href="index.php?<?php echo $search_en?>"><input type="image" src="../resources/img/england.png" class="translate" style="width:40px;" id="en" alt="English"/></a>
             </div>
 
             <!-- The code for the profile picture -->

@@ -57,6 +57,9 @@ var arrLang = {
         'cider': 'Cider',
         'alcoholic': 'Alcoholic?',
         'reset': 'Reset',
+        'confirmation_non_empty_cart': 'Sure you want to continue?',
+        'warning_non_empty_cart': 'Your cart is not empty! Leaving this page will unfortunately empty the cart.',
+        'continue': 'Continue',
         '': '',
     },
     'swe': {
@@ -118,5 +121,8 @@ var arrLang = {
         'cider': 'Cider',
         'alcoholic': 'Alkoholhaltigt?',
         'reset': 'Nollställ',
+        'confirmation_non_empty_cart': 'Är du säker att du vill fortsätta?',
+        'warning_non_empty_cart': 'Din kundvagn är inte tom! Om du lämnar denna sida töms kundvagnen.',
+        'continue': 'Fortsätt',
     }
 };

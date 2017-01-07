@@ -24,26 +24,32 @@
 <script>
     $(document).ready(function() {
         //Get the username and password from login page
-        var $_POST = <?php echo !empty($_POST)?json_encode($_POST):'null';?>;
+        var $_POST = <?php echo !empty($_POST)?json_encode($_POST):'null'; ?>;
         if ($_POST === null || typeof $_POST['username'] == 'undefined') {
             //If the page is accessed directly, for debug purposes
             $_POST = {};
             $_POST["username"] = "ervtod";
             $_POST["password"] = "ervtod";
         }
-        //Get filtering parameters for drinks
+        //Get filtering parameters for drinks and language parameter
         var paramsDict = {};
         window.location.search.substr(1).split("&").forEach(function(item) {paramsDict[item.split("=")[0]] = item.split("=")[1]});
         if (paramsDict["filter"] == 'undefined') {
             paramsDict["filter"] = "all";
         }
-        
+        if (paramsDict["lang"] == 'undefined') {
+            paramsDict["lang"] = "en";
+        }
+
+        console.log(paramsDict);
         //Initialize page
         initUser($_POST["username"], $_POST["password"]);
         populateSlotsConsumer(paramsDict["filter"] !== "soft", paramsDict["filter"] !== "alco", false);
         dragNDrop();
 
-        changeLanguage();
+        
+       // var currentLang = changeLanguage();      
+        changeLanguage(paramsDict["lang"]);      
 
     });
 </script>
