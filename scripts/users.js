@@ -40,7 +40,7 @@ function validateLogin() {
         
         //If mobile -should also check credentials- change form destination
         console.log($("body").css("font-size"));
-        if ($("body").css("font-size") == "15px") {
+        if ($("body").css("font-size") == "20px") {
             document.forms["loginForm"].action = "../mobile/mobileAdmin.php";
         }
         
@@ -103,6 +103,47 @@ function initUser(username, password) {
     //Display profile pic
     //@NOTE: For now always placeholder
     //$(#profile_pic).attr("src",profilePic);
+}
+
+/**
+ * Alternative constructor for the user Object
+ * Used for the mobile version
+ * @param username The user's username
+ * @param password The user's password
+ */
+function initUserMobile(username, password) {
+    'use strict';
+    var username = username, //The user's username
+        password = password, //The user's password
+        firstName, //The user's first name
+        lastName; //The user's last name
+
+    //Set up the API connection and fetch basic info on the user
+    user.setUser(username, password);
+    user.fetchIOU(function(answer) {
+        var info = JSON.parse(answer),
+            type = info.type,
+            payload = info.payload[0];
+
+        if (type === "error") {
+            alert(payload.msg);
+            return;
+        }
+
+        firstName = payload["first_name"];
+        lastName = payload["last_name"];
+    });
+
+    //Determine if the user is an admin by sending an admin-only query to the database
+    //@NOTE: This is an ugly method, but the credentials can only be checked by an admin...
+    user.fetchUsers(function(answer) {
+        var info = JSON.parse(answer),
+            type = info.type;
+        if (type === "error") {
+            //If the user is not an admin, go back to login
+            window.location.assign('../html/login_yeah.php');
+        }
+    });
 }
 
 

@@ -60,6 +60,29 @@ function dragNDrop() {
     });
 }
 
+/**
+ * Wire the navigation of the mobile version
+ */
+function mobileNav() {
+    $("#mobileStockNav").click(function() {
+        $.get('mobile_stock.php', function(data) {
+            $(".content").html(data);
+        });
+    });
+
+    $("#mobileUsersNav").click(function() {
+        $.get('mobile_users.php', function(data) {
+            $(".content").html(data);
+        });
+    });
+
+    $("#mobileMachineNav").click(function() {
+        $.get('mobile_machine.php', function(data) {
+            $(".content").html(data);
+        });
+    });
+}
+
 function switchView() {
     'use strict';
     $('#toggle_div :checkbox').on('change', function(event) {
@@ -70,6 +93,7 @@ function switchView() {
         }
     });
 }
+
 /**
  * Wire the History/Stats button
  * Adds a href link when the shopping cart has items and removes it when not 
@@ -87,6 +111,7 @@ $(function() {
 });
 
 /*function changeLanguage() {
+function changeLanguage() {
     'use strict';
     $('.translate').click(function() {
         var lang = $(this).attr('id');
