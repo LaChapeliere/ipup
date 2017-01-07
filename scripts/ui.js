@@ -126,6 +126,7 @@ function changeLanguage() {
 
 /**
  * Changes the language of the interface.
+ * @param lang is the language to be translated to. 
  */
 function changeLanguage(lang) {
     'use strict';
