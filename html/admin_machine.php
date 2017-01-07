@@ -45,14 +45,7 @@
         $("#machineContentButton").addClass('selected lang');
         $('#toggle_div :checkbox').prop('checked', true);
 
-        $(function() {
-                $('.translate').click(function() {
-                    var lang = $(this).attr('id');
-                    $('.lang').each(function(index, element) {
-                        $(this).text(arrLang[lang][$(this).attr('key')]);
-                    });
-                });
-            });
+        changeLanguage();
 
     });
 </script>
