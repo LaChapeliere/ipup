@@ -123,6 +123,9 @@ function changeLanguage() {
     });
 }*/
 
+/**
+ * Changes the language of the interface.
+ */
 function changeLanguage(lang) {
     'use strict';
     $('.lang').each(function(index, element) {

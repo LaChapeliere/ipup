@@ -75,7 +75,7 @@ var arrLang = {
         'name': 'Namn',
         'price': 'Pris',
         'total': 'Summa:',
-        'clear_all': 'Tömma',
+        'clear_all': 'Töm',
         'purchase': 'Köp',
         'double_click': 'Dubbelklicka eller dra för att lägga till i kundvagnen',
         'my_favorite': 'Min favorit',
