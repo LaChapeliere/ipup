@@ -59,8 +59,8 @@
                         </tbody>
                     </table>
                     <!--Added id = total here just temporarily so that the addProduct refers correctly. -Lauri -->
-                    <p class="total lang" key="total">Total:</p>
-                     <p class="total" id="total"></p>
+                   <!-- <p class="total lang" key="total">Total:</p>-->
+                     <p class="total" id="total">=></p>
                 </div>
             </div>
             <!-- Clear all / Puchase button area-->

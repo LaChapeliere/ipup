@@ -90,7 +90,7 @@ function writeIntoTable(productsArray) {
  */
 function displayTotal() {
     totalCost = +totalCost.toFixed(1);
-    $('#total').html(totalCost + ' kr');
+    $('#total').html('=> ' + totalCost + ' kr');
 }
 
 /**
