@@ -6,10 +6,10 @@
             <table id="beveragesTable">
             <thead>
                 <tr class ="stock_admin">
-                    <th>My favorite</th>
-                    <th>My last purchase</th> 
-                    <th>Company favorite</th>
-                    <th>Bartender's pick</th> 
+                    <th class ="lang" key="my_favorite">My favorite</th>
+                    <th class ="lang" key="my_last_purchase">My last purchase</th> 
+                    <th class ="lang" key="company_favorite">Company favorite</th>
+                    <th class ="lang" key="bartender_pick">Bartender's pick</th> 
                 </tr>
             </thead>
                 <!-- Row one -->
@@ -21,7 +21,7 @@
                                     <p class="drinkName">Name</p>
                                     <p class="price">Price here</p>
                                     <p class="stock">Stock here</p>
-                                    <p class ="imgDescription">Double-click or drag to add to cart</p>
+                                    <p  class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                                 </div>
                         </div>
                     </td>
@@ -32,7 +32,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -43,7 +43,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -54,7 +54,7 @@
                             <p class="drinkName">Name</p>
                             <p class="price">Price here</p>
                             <p class="stock">Stock here</p>
-                            <p class ="imgDescription">Double-click or drag to add to cart</p>
+                            <p class ="imgDescription lang" key="double_click">Double-click or drag to add to cart</p>
                         </div>
                         </div>
                     </td>
@@ -64,10 +64,10 @@
  
     <table>
         <tr>
-                        <th id="tableHeaderNames" class="subject_entry">What</th>
-                        <th id="tableHeaderNames" class="time_entry">When</th>
-                        <th id="tableHeaderNames" class="amount_entry">Amount</th>
-                        <th id="tableHeaderNames" class="balance_entry">Balance</th>
+                        <th id="tableHeaderNames" class="subject_entry lang" key="what">What</th>
+                        <th id="tableHeaderNames" class="time_entry lang" key="when">When</th>
+                        <th id="tableHeaderNames" class="amount_entry lang" key="amount">Amount</th>
+                        <th id="tableHeaderNames" class="balance_entry lang" key="balance">Balance</th>
                 </tr>
     </table>
     

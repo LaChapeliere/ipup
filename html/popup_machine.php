@@ -5,7 +5,7 @@
  <div id="popupUserEdit" class="overlay">
 	<div class="popup">
         <form>
-		<h2>Edit Machine Content</h2>
+		<h2 class="lang" key="edit_machine_content">Edit Machine Content</h2>
 		<div class="popupContent">
             
             <button type="button" id="closeCross" onclick="closeEditPopup()">&times;</button>
@@ -25,15 +25,15 @@
             </td>
             <!-- Input fields for the user -->
             
-            <h3>Update the amount in the machine</h3>
+            <h3 class="lang" key="update_amount_in_machine">Update the amount in the machine</h3>
             <div class="inputDiv"><input type="number" id="quantity" placeholder="Amount" min="0" max="10"></div>
             <br>
             
             <!-- buttons for Save, Reset and Cancel -->
             
             <div>
-                <button type="button" id="save" onclick="saveEditContent()">Save</button>
-                <button type="button" id="cancel" onclick="closeEditPopup()">Cancel</button>
+                <button type="button" id="save" onclick="saveEditContent()" class="lang" key="save">Save</button>
+                <button type="button" id="cancel" onclick="closeEditPopup()" class="lang" key="cancel">Cancel</button>
             </div>
 		</div>
     </form>

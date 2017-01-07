@@ -2,7 +2,7 @@
 
 <div id="buttonToolbar">            
     <div id="addUser">
-        <button id="addUserButton" onclick="openEditUserPopup('', 0, '', 3)">Add New User</button>   
+        <button id="addUserButton" onclick="openEditUserPopup('', 0, '', 3)" class = "lang" key="add_new_user">Add New User</button>   
     </div>
                     
 
@@ -15,10 +15,10 @@
 <table id="userTableHead">
     <thead>
         <tr class ="stock_admin">
-            <th class = "head_admin"> <a href="javascript:SortTable(0,'T');">Username</a></th>
-            <th class = "head_admin"> <a href="javascript:SortTable(1,'N');">Name</a></th>
-            <th class = "head_admin"> <a href="javascript:SortTable(2,'T');">Debt</a></th>
-            <th class = "head_admin"> <a href="javascript:SortTable(3,'T');">Is Admin</a></th>
+            <th class = "head_admin lang" key="username"> <a href="javascript:SortTable(0,'T');">Username</a></th>
+            <th class = "head_admin lang" key="name"> <a href="javascript:SortTable(1,'N');">Name</a></th>
+            <th class = "head_admin lang" key="debt"> <a href="javascript:SortTable(2,'T');">Debt</a></th>
+            <th class = "head_admin lang" key="admin_question"> <a href="javascript:SortTable(3,'T');">Is Admin?</a></th>
                     
         </tr>
     </thead>

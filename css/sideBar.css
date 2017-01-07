@@ -1,5 +1,5 @@
-
 /* The entire sidebar --------------------------------------------------------------- */
+
 #sidebar {
     position: absolute;
     top: 0;
@@ -13,23 +13,31 @@
     color: white;
 }
 
+
 /* All divs in the sidebar */
+
 #sidebar div {
     font-size: 20px;
 }
 
+
 /* The language div in the sidebar*/
+
 #language {
     margin-top: .2em;
 }
 
+
 /* The language buttons in the sidebar */
+
 #language img {
     width: 50px;
     display: inline-block;
 }
 
+
 /* The picture in the sidebar */
+
 #sidebar_header,
 img {
     display: inline-block;
@@ -40,18 +48,26 @@ img {
     border-radius: 5em;
 }
 
+
 /* The div in which the debt is specified*/
+
+
+/*
 #debt {
     margin-top: 1em;
 }
+*/
 
 
 /* table area div */
+
 #sidebar_content {
     margin-top: 1em;
 }
 
+
 /* The current white background which is BEHIND the table that is the shopping cart */
+
 #cartBackground {
     position: relative;
     width: 180px;
@@ -63,17 +79,21 @@ img {
     margin-right: auto;
 }
 
+
 /* The TITLE in which it says "shopping cart" in.*/
+
 #cartBackground h1 {
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
     border-bottom: 1px solid #333;
     background-color: #E8E1CB;
     padding-bottom: .2em;
-    color: rgb(0, 132,0);
+    color: rgb(0, 132, 0);
 }
 
+
 /* The table itself */
+
 #cartcontent {
     position: absolute;
     width: 180px;
@@ -88,19 +108,25 @@ img {
     border-bottom: 1px solid #888;
 }
 
+
 /* Each element of the table */
+
 #cartcontent th {
     text-align: center;
     color: black;
 }
 
+
 /* Each row of the table */
+
 #cartcontent tr {
     border-bottom: 1px solid #333;
     color: black;
 }
 
+
 /* The "total" paragrapgh which is FIXED in the bottom of the "cartBackground" div */
+
 .total {
     font-size: 17px;
     position: absolute;
@@ -109,12 +135,16 @@ img {
     color: black;
 }
 
+
 /* The div in which the buttons at the bottom of the sidebar is placed. */
+
 #sidebar_footer {
     display: inline-block;
 }
 
+
 /* The two buttons at the bottom of the sidebar */
+
 #sidebar_footer button {
     font-size: 20px;
     border: 1px solid #333;
@@ -123,19 +153,25 @@ img {
     color: white;
 }
 
+
 /* Clearall button */
+
 #clearAllCart {
-    float:left;
+    float: left;
     background-color: #F03A47;
 }
 
+
 /* Puchase button */
+
 #purchaseCart {
     float: right;
-    background-color: rgb(0, 132,0);
+    background-color: rgb(0, 132, 0);
 }
 
+
 /* The ID the sidebar gets when something is beeing dragged. */
+
 #sidebarHighlighted {
     position: absolute;
     top: 0;
@@ -143,8 +179,37 @@ img {
     left: 0;
     width: 200px;
     height: 768px;
-    background-color: rgb(0,132,0);
+    background-color: rgb(0, 132, 0);
     text-align: center;
     margin: 0 auto;
     font-size: 20px;
+}
+
+
+/*.welcome {
+    float: left;
+}
+
+#welcome_block {
+    margin: auto;
+    width: 50%;
+      margin-left: auto;
+    margin-right: auto;
+
+
+}
+*/
+
+
+/* Add space above the balance text. */
+
+#balance {
+    margin-top: 1em;
+}
+
+
+/* Add space above the admin view text. */
+
+#admin_view_text {
+    margin-top: 1em;
 }

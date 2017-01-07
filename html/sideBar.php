@@ -17,14 +17,20 @@
             </div>
             
             <!-- Welcome message-->
-            <div id="welcome"></div>
-
+            <div id = "welcome_block">
+                <div class= "welcome lang" key="welcome">Welcome</div>
+                <div class= "welcome" id="welcome"></div>
+            </div>
+         
+ 
             <!-- The debt area-->
-            <div id="debt">Your current debt:</div>
-
+           
+            <div class="lang" id="balance" key="balance_colon">Balance:</div>
+            <div id="debt"></div>
+ 
             <!-- Toggle button -->
             <div id="toggle_div">
-                <p>Admin view</p>
+                <p class="lang" id="admin_view_text" key="admin_view">Admin view</p>
                 <!-- Rounded switch -->
                 <label class="switch">
                   <input type="checkbox">
@@ -34,20 +40,20 @@
 
             <!-- The Log off button-->
             <div class="logout">
-                <button class ="log_off_button" style="vertical-align:middle" onclick="window.location.assign('login_yeah.php')"><span> Log Off</span></button>
+                <button class ="log_off_button lang" style="vertical-align:middle" key="log_off" onclick="window.location.assign('login_yeah.php')"><span> Log Off</span></button>
             </div>
                 
 
             <!-- The table, where the shopping cart is-->
             <div id="sidebar_content">
                 <div id="cartBackground">
-                    <h1>Shopping Cart</h1>
+                    <h1 class="lang" key="shopping_cart">Shopping Cart</h1>
                     <table id="cartcontent">
                         <thead>
                             <tr>
-                                <th field="name" width=110>Name</th>
+                                <th field="name" width=110 class="lang" key="name">Name</th>
                                 <th field="quantity" width=20>#</th>
-                                <th field="price" width=49>Price</th>
+                                <th field="price" width=49 class="lang" key="price">Price</th>
                             </tr>
                         </thead>
                         <tbody id=tableBody>
@@ -55,12 +61,13 @@
                         </tbody>
                     </table>
                     <!--Added id = total here just temporarily so that the addProduct refers correctly. -Lauri -->
-                    <p class="total" id="total">Total: 0 kr</p>
+                    <p class="total lang" key="total">Total:</p>
+                     <p class="total" id="total"></p>
                 </div>
             </div>
             <!-- Clear all / Puchase button area-->
             <div id="sidebar_footer">
-                <button id="clearAllCart">Clear all</button>
-                <button id="purchaseCart">Purchase</button>
+                <button id="clearAllCart" class="lang" key="clear_all">Clear all</button>
+                <button id="purchaseCart" class="lang" key="purchase">Purchase</button>
             </div>
         </div>

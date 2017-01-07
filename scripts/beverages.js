@@ -59,7 +59,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
         var infoDisplay = display.getElementsByClassName("slotLeft")[0];
         infoDisplay.getElementsByClassName("drinkName")[0].textContent = name;
         infoDisplay.getElementsByClassName("price")[0].textContent = price + " kr";
-        infoDisplay.getElementsByClassName("stock")[0].textContent = amount + " left";
+        infoDisplay.getElementsByClassName("stock")[0].textContent = "# " + amount;
         this.fetchImage();
     }
 
@@ -96,7 +96,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
     this.updateSlotQuantity = function(newQuantity) {
         var infoDisplay = display.getElementsByClassName("slotLeft")[0];
         amount = newQuantity;
-        infoDisplay.getElementsByClassName("stock")[0].textContent = amount;
+        infoDisplay.getElementsByClassName("stock")[0].textContent = "# " + amount;
 
         //If the slot becomes empty
         if (this.isEmpty()) {
@@ -249,37 +249,25 @@ function filterAlcoholDrinks(displayAlco, displaySoft) {
     //Highlight the selected filtering button
     if (displayAlco) {
         if (displaySoft) {
-            /*
-            @TODO 
-            Make the filtering buttons have a new class called lang which is used
-            for internationalization        
-            */
-            $("allBevButton").addClass("selected lang");
-            $("alcoDrinksButton").removeClass("selected")
-                .addClass("lang");
-            $("softDrinksButton").removeClass("selected")
-                .addClass("lang");
-            /*    document.getElementById("allBevButton").className = "selected";
-                document.getElementById("alcoDrinksButton").className = "";
-                document.getElementById("softDrinksButton").className = "";*/
+            document.getElementById("allBevButton").classList.add("selected", "lang");
+            document.getElementById("alcoDrinksButton").classList.add("lang");
+            document.getElementById("alcoDrinksButton").classList.remove("selected");
+            document.getElementById("softDrinksButton").classList.add("lang");
+            document.getElementById("softDrinksButton").classList.remove("selected");
+
         } else {
-            $("allBevButton").removeClass("selected")
-                .addClass("lang");
-            $("alcoDrinksButton").addClass("selected lang");
-            $("softDrinksButton").removeClass("selected")
-                .addClass("lang");
-            /*    document.getElementById("allBevButton").className = "";
-                document.getElementById("alcoDrinksButton").className = "selected";
-                document.getElementById("softDrinksButton").className = "";*/
+            document.getElementById("allBevButton").classList.add("lang");
+            document.getElementById("allBevButton").classList.remove("selected");
+            document.getElementById("alcoDrinksButton").classList.add("selected", "lang");
+            document.getElementById("softDrinksButton").classList.add("lang");
+            document.getElementById("softDrinksButton").classList.remove("selected");
         }
     } else {
-        $("allBevButton").removeClass("selected")
-            .addClass("lang");
-        $("alcoDrinksButton").removeClass("selected")
-            .addClass("lang");
-        $("softDrinksButton").addClass("selected lang");
-        /*  document.getElementById("allBevButton").className = "";
-          document.getElementById("alcoDrinksButton").className = "";
-          document.getElementById("softDrinksButton").className = "selected";*/
+        document.getElementById("allBevButton").classList.add("lang");
+        document.getElementById("allBevButton").classList.remove("selected");
+        document.getElementById("alcoDrinksButton").classList.add("lang");
+        document.getElementById("alcoDrinksButton").classList.remove("selected");
+        document.getElementById("softDrinksButton").classList.add("selected", "lang");
+
     }
 }

@@ -43,19 +43,7 @@
         populateSlotsConsumer(paramsDict["filter"] !== "soft", paramsDict["filter"] !== "alco", false);
         dragNDrop();
 
-         $(function() {
-             console.log($('.lang'));
-                $('.translate').click(function() {
-                    var lang = $(this).attr('id');
-                    console.log($(this));
-                //     console.log($('.lang'));
-                    $('.lang').each(function(index, element) {
-                        console.log(element);
-                        console.log($(this));
-                        $(this).text(arrLang[lang][$(this).attr('key')]);
-                    });
-                });
-            });
+        changeLanguage();
 
     });
 </script>

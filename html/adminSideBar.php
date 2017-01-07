@@ -19,7 +19,7 @@
 
             <!-- Toggle button -->
             <div id="toggle_div">
-                <p>Admin view</p>
+                <p class="lang" id="admin_view_text" key="admin_view">Admin view</p>
                 <!-- Rounded switch -->
                 <label class="switch">
                   <input type="checkbox">
@@ -29,7 +29,7 @@
 
             <!-- The Log off button-->
             <div class="logout">
-                <button class ="log_off_button" style="vertical-align:middle" onclick="window.location.assign('login_yeah.php')"><span> Log Off</span></button>
+                <button class ="log_off_button lang" style="vertical-align:middle" key="log_off" onclick="window.location.assign('login_yeah.php')"><span> Log Off</span></button>
             </div>
                 
 
