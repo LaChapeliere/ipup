@@ -68,6 +68,9 @@ function mobileNav() {
         $.get('mobile_stock.php', function(data) {
             $(".content").html(data);
         });
+        $.get('mobile_stock_popup.php', function(data) {
+            $(".popup-content").html(data);
+        });
         populateInventory();
     });
 
@@ -75,12 +78,18 @@ function mobileNav() {
         $.get('mobile_users.php', function(data) {
             $(".content").html(data);
         });
+        $.get('mobile_users_popup.php', function(data) {
+            $(".popup-content").html(data);
+        });
         populateUsers();
     });
 
     $("#mobileMachineNav").click(function() {
         $.get('mobile_machine.php', function(data) {
             $(".content").html(data);
+        });
+        $.get('mobile_machine_popup.php', function(data) {
+            $(".popup-content").html(data);
         });
     });
 }

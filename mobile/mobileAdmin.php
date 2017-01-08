@@ -79,6 +79,8 @@
                  <!-- END OF TEST AREA  -->
         
 </div>
-                <?php include "mobile_stock_popup.php";?>
+    <div class="popup-content">
+        <?php include "mobile_stock_popup.php";?>
+    </div>
 
 </div>

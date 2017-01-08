@@ -111,6 +111,9 @@ function displayInfoBevEdit(name, price, count, beer_id) {
 function closeEditPopup() {
     //Hide pop-up
     $(".overlay").css({"opacity": 0, "visibility": 'hidden'});
+    $('#editForm').each (function(){
+        this.val("");
+    });
 }
 
 /*
@@ -134,6 +137,6 @@ function saveEditBev() {
         
     closeEditPopup();
     //Reload the table
-    populateHistory();
+    populateInventory();
 }
 
