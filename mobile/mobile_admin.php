@@ -30,21 +30,6 @@
         mobileNav();
         populateInventory();
         tableFilter.init();
-        /*
-                 $(function() {
-                     console.log($('.lang'));
-                        $('.translate').click(function() {
-                            var lang = $(this).attr('id');
-                            console.log($(this));
-                        //     console.log($('.lang'));
-                            $('.lang').each(function(index, element) {
-                                console.log(element);
-                                console.log($(this));
-                                $(this).text(arrLang[lang][$(this).attr('key')]);
-                            });
-                        });
-                    });*/
-
     });
 </script>
 

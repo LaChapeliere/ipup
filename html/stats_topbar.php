@@ -1,5 +1,6 @@
 <header id="topBar">
      <?php 
+     // Function to handle the change of language 
             function addLanguage(){
               $currentLanguage="";
                  if(!empty($_GET)){
