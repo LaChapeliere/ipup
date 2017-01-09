@@ -40,7 +40,8 @@
         getHistory();
         dragNDrop();
 
-        changeLanguage();
+        var paramsDict = checkParameters();      
+        changeLanguage(paramsDict["lang"]);
 
     });
 </script>
