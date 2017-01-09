@@ -16,7 +16,7 @@
                 return substr($s1, 0, strpos($s1, $s2)); 
                 }
             ?>
-                    <?php 
+        <?php 
             function makeBeginningURL($preProcessedURL){
                 $processedURL = $preProcessedURL;
                  if(empty($_GET)){
@@ -27,7 +27,8 @@
                 }
                 return $processedURL; 
             }
-
+            // This function is not used but was meant to attempt to fix the accumulation of query strings when switching from history_stats.php 
+            // to  consumer_main.php and changing the language.
              function makeEndURL($begURL){
                 $endURL = "";
                 if(empty($_GET) && substr($begURL,-1)!=="?"){
@@ -44,8 +45,8 @@
                 }
                 return $endURL; 
             }
-            ;?>
-
+        ;?>
+    <!-- The buttons for changing languages -->
                         <a href="<?php echo makeBeginningURL(selfURL()).$search_swe?>">
                             <input type="image" src="../resources/img/sweden.png" class="translate" style="width:40px;" id="swe" alt="Svenska" />
                         </a>
@@ -104,8 +105,6 @@
 
                 </tbody>
             </table>
-            <!--Added id = total here just temporarily so that the addProduct refers correctly. -Lauri -->
-            <!-- <p class="total lang" key="total">Total:</p>-->
             <p class="total" id="total">=></p>
         </div>
     </div>
