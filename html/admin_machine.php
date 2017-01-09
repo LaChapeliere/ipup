@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <link href="../css/reset.css" rel="stylesheet" />
 <link href="../css/wrapper.css" rel="stylesheet" />
-<link href="../css/topBar.css" rel="stylesheet" />
+<link href="../css/topbar.css" rel="stylesheet" />
 <link href="../css/sidebar.css" rel="stylesheet" />
-<link href="../css/userContent.css" rel="stylesheet" />
-<link href="../css/adminContent.css" rel="stylesheet" />
+<link href="../css/user_content.css" rel="stylesheet" />
+<link href="../css/admin_content.css" rel="stylesheet" />
 <link href="../css/logoff_toggle.css" rel="stylesheet" />
 <link href="../css/popup_machine.css" rel="stylesheet" />
 <link href="../css/popup_machine_list.css" rel="stylesheet" />
@@ -16,7 +16,7 @@
 <script src="../resources/arrLang.js"></script>
 <script src="../scripts/api.js"></script>
 <script src="../scripts/main.js"></script>
-<script src="../resources/machineContent.js"></script>
+<script src="../resources/machine_content.js"></script>
 <script src="../scripts/ui.js"></script>
 <script src="../scripts/users.js"></script>
 <script src="../scripts/beverages.js"></script>
@@ -37,7 +37,7 @@
         populateSlotsConsumer(false, false, true);
         $("#machineContentButton").addClass('selected lang');
         $('#toggle_div :checkbox').prop('checked', true);
-       
+
         changeJSLanguage();
 
     });
@@ -47,9 +47,9 @@
 
 <div id="wrapper">
     <div class="container">
-        <?php include "adminTopBar.php";?>
-            <?php include "adminSideBar.php";?>
-                <?php include "adminContentMachine.php";?>
+        <?php include "admin_topbar.php";?>
+            <?php include "admin_sidebar.php";?>
+                <?php include "admin_content_machine.php";?>
                     <!-- The popups for editing machine content -->
                     <?php include "popup_machine.php";?>
                         <?php include "popup_machine_list.php";?>

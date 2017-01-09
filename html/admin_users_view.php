@@ -4,11 +4,11 @@
 <meta charset="utf-8" />
 <link href="../css/reset.css" rel="stylesheet" />
 <link href="../css/sidebar.css" rel="stylesheet" />
-<link href="../css/topBar.css" rel="stylesheet" />
+<link href="../css/topbar.css" rel="stylesheet" />
 <link href="../css/wrapper.css" rel="stylesheet" />
 <link href="../css/logoff_toggle.css" rel="stylesheet" />
 
-<link href="../css/adminContent.css" rel="stylesheet" />
+<link href="../css/admin_content.css" rel="stylesheet" />
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="../resources/arrLang.js"></script>
@@ -46,9 +46,9 @@
 
 <div id="wrapper">
     <div class="container">
-        <?php include "adminTopBar.php";?>
-            <?php include "adminSideBar.php";?>
-                <?php include "adminContentUsers.php";?>
+        <?php include "admin_topbar.php";?>
+            <?php include "admin_sidebar.php";?>
+                <?php include "admin_content_users.php";?>
 
     </div>
 

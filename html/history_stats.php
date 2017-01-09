@@ -5,10 +5,10 @@
 <meta charset="utf-8" />
 <link href="../css/reset.css" rel="stylesheet" />
 <link href="../css/wrapper.css" rel="stylesheet" />
-<link href="../css/topBar.css" rel="stylesheet" />
-<link href="../css/sideBar.css" rel="stylesheet" />
-<link href="../css/userContent.css" rel="stylesheet" />
-<link href="../css/historystats.css" rel="stylesheet" />
+<link href="../css/topbar.css" rel="stylesheet" />
+<link href="../css/sidebar.css" rel="stylesheet" />
+<link href="../css/user_content.css" rel="stylesheet" />
+<link href="../css/history_stats.css" rel="stylesheet" />
 <link href="../css/logoff_toggle.css" rel="stylesheet" />
 
 <!-- <script src="../scripts/api.js"></script> -->
@@ -21,7 +21,7 @@
 <script src="../scripts/ui.js"></script>
 <script src="../scripts/sort_table.js"></script>
 <script src="../scripts/beverages.js"></script>
-<script src="../resources/machineContent.js"></script>
+<script src="../resources/machine_content.js"></script>
 <script src="../scripts/main.js"></script>
 <script src="../scripts/history_stats.js"></script>
 <script>
@@ -50,8 +50,8 @@
 
     <div class="container">
 
-        <?php include "statsTopbar.php";?>
-            <?php include "sideBar.php";?>
+        <?php include "stats_topbar.php";?>
+            <?php include "sidebar.php";?>
                 <?php include "history_stats_content.php";?>
 
 

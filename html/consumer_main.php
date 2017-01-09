@@ -4,15 +4,15 @@
 <meta charset="utf-8" />
 <link href="../css/reset.css" rel="stylesheet" />
 <link href="../css/wrapper.css" rel="stylesheet" />
-<link href="../css/topBar.css" rel="stylesheet" />
-<link href="../css/sideBar.css" rel="stylesheet" />
-<link href="../css/userContent.css" rel="stylesheet" />
+<link href="../css/topbar.css" rel="stylesheet" />
+<link href="../css/sidebar.css" rel="stylesheet" />
+<link href="../css/user_content.css" rel="stylesheet" />
 <link href="../css/logoff_toggle.css" rel="stylesheet" />
 <!--<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 -->
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-<script src="../resources/machineContent.js"></script>
+<script src="../resources/machine_content.js"></script>
 <script src="../resources/arrLang.js"></script>
 <script src="../scripts/api.js"></script>
 <script src="../scripts/beverages.js"></script>
@@ -32,7 +32,7 @@
             $_POST["password"] = "ervtod";
         }
         //Get filtering parameters for drinks and language parameter
-       var paramsDict = checkParameters();
+        var paramsDict = checkParameters();
 
         console.log(paramsDict);
         //Initialize page
@@ -51,10 +51,10 @@
 
 <div id="wrapper">
     <div class="container">
-        <?php include "topBar.php";?>
-            <?php include "sideBar.php";?>
-                <?php include "userContent.php";?>
-                    <?php include "customerContentPopup.php";?>
+        <?php include "topbar.php";?>
+            <?php include "sidebar.php";?>
+                <?php include "user_content.php";?>
+                    <?php include "customer_content_popup.php";?>
 
 
     </div>

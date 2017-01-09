@@ -17,4 +17,4 @@
     </dl>
 </header>
 
-<!-- onclick="linkFormSubmit('historystats.php');" -->
+<!-- onclick="linkFormSubmit('history_stats.php');" -->

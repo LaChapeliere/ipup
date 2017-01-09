@@ -1,4 +1,4 @@
-<link href="../css/customerContentPopup.css" rel="stylesheet" />
+<link href="../css/customer_content_popup.css" rel="stylesheet" />
 
 
 
@@ -12,7 +12,7 @@
             <a class="close lang" href="#">
                 <button id="no" key="cancel">Cancel</button>
             </a>
-            <button id="yes" onclick="linkFormSubmit('historystats.php');" class="lang" key="continue">Continue</button>
+            <button id="yes" onclick="linkFormSubmit('history_stats.php');" class="lang" key="continue">Continue</button>
         </div>
     </div>
 </div>

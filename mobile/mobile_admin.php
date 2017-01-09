@@ -1,11 +1,11 @@
-<link href="../css/mobileAdmin.css" rel="stylesheet" />
+<link href="../css/mobile_admin.css" rel="stylesheet" />
 <link href="../css/mobile_toggle.css" rel="stylesheet" />
 
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="../scripts/api.js"></script>
 <script src="../scripts/main.js"></script>
-<script src="../resources/machineContent.js"></script>
+<script src="../resources/machine_content.js"></script>
 <script src="../scripts/users.js"></script>
 <script src="../scripts/ui.js"></script>
 <script src="../scripts/beverages.js"></script>
