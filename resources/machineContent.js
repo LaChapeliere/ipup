@@ -231,6 +231,7 @@ function openEditContentListPopup() {
 function displayInfoContentEdit(beerId, name, price, amount) {
     //Display current info
     $("#edited_drink .drinkName").text(name);
+    $("#bevName").text(name); //Mobile version
     $("#edited_drink .price").text(price + " kr");
     $("#edited_drink .stock").text(amount);
     $("#edited_drink .drinkId").text(beerId);

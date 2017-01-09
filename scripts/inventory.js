@@ -105,7 +105,7 @@ function populateMachineMobile() {
                 count = $(this).find('.machine_stock_entry')[0].innerHTML, //The amount of the clicked row
                 beer_id = $(this).find('.machine_id_entry')[0].innerHTML; //The beer_id of the clicked row
             $(this).on("click", function () {
-                openEditBevPopup(name, price, count, beer_id)
+                openEditContentPopup(name, price, count, beer_id)
             });
 
         })
