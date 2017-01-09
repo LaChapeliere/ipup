@@ -29,7 +29,7 @@
 
     <!-- The Log off button-->
     <div class="logout">
-        <button class="log_off_button lang" style="vertical-align:middle" key="log_off" onclick="window.location.assign('login_yeah.php')"><span> Log Off</span></button>
+        <button class="log_off_button lang" style="vertical-align:middle" key="log_off" onclick="window.location.assign('index.php')"><span> Log Off</span></button>
     </div>
 
 

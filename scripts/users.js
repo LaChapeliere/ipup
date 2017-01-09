@@ -141,7 +141,7 @@ function initUserMobile(username, password) {
             type = info.type;
         if (type === "error") {
             //If the user is not an admin, go back to login
-            window.location.assign('../html/login_yeah.php');
+            window.location.assign('../html/index.php');
         }
     });
 }

@@ -3,9 +3,9 @@
 
     <!-- Language setting - Top of sidebar -->
     <div id="language">
-            <?php $search_en= http_build_query(array_merge($_GET, array('lang'=>'eng')));?>
+        <?php $search_en= http_build_query(array_merge($_GET, array('lang'=>'eng')));?>
             <?php $search_swe= http_build_query(array_merge($_GET, array('lang'=>'swe')));?>
-            <?php 
+                <?php 
             function selfURL() { 
                 $s = empty($_SERVER["HTTPS"]) ? '' : ($_SERVER["HTTPS"] == "on") ? "s" : ""; 
                 $protocol = strleft(strtolower($_SERVER["SERVER_PROTOCOL"]), "/").$s; 
@@ -16,7 +16,7 @@
                 return substr($s1, 0, strpos($s1, $s2)); 
                 }
             ?>
-            <?php 
+                    <?php 
             function makeBeginningURL($preProcessedURL){
                 $processedURL = $preProcessedURL;
               // Removing query string 
@@ -46,9 +46,13 @@
                 return $endURL; 
             }
             ;?>
-               
-            <a href="<?php echo makeBeginningURL(selfURL()).$search_swe?>"><input type="image" src="../resources/img/sweden.png" class="translate" style="width:40px;" id="swe" alt="Svenska"/></a>
-            <a href="<?php echo makeBeginningURL(selfURL()).$search_en?>"><input type="image" src="../resources/img/england.png" class="translate" style="width:40px;" id="en" alt="English"/></a>
+
+                        <a href="<?php echo makeBeginningURL(selfURL()).$search_swe?>">
+                            <input type="image" src="../resources/img/sweden.png" class="translate" style="width:40px;" id="swe" alt="Svenska" />
+                        </a>
+                        <a href="<?php echo makeBeginningURL(selfURL()).$search_en?>">
+                            <input type="image" src="../resources/img/england.png" class="translate" style="width:40px;" id="en" alt="English" />
+                        </a>
 
     </div>
 
@@ -81,7 +85,7 @@
 
     <!-- The Log off button-->
     <div class="logout">
-        <button class="log_off_button lang" style="vertical-align:middle" key="log_off" onclick="window.location.assign('login_yeah.php')"><span> Log Off</span></button>
+        <button class="log_off_button lang" style="vertical-align:middle" key="log_off" onclick="window.location.assign('index.php')"><span> Log Off</span></button>
     </div>
 
 

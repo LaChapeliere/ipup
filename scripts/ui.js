@@ -101,7 +101,7 @@ function switchView() {
         if (this.checked) {
             linkFormSubmit('./admin_machine.php');
         } else {
-            linkFormSubmit('./index.php');
+            linkFormSubmit('./consumer_main.php');
         }
     });
 }

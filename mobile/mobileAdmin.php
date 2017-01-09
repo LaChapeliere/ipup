@@ -53,7 +53,7 @@
     </li>
     <li class="nav-item">
         <div class="logout">
-            <button class="log_off_button" onclick="window.location.assign('../html/login_yeah.php')">
+            <button class="log_off_button" onclick="window.location.assign('../html/index.php')">
                 <span> Log Off</span>
             </button>
         </div>
