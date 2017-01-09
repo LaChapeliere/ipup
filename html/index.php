@@ -34,14 +34,11 @@
         //Get filtering parameters for drinks and language parameter
        var paramsDict = checkParameters();
 
-        console.log(paramsDict);
         //Initialize page
         initUser($_POST["username"], $_POST["password"]);
         populateSlotsConsumer(paramsDict["filter"] !== "soft", paramsDict["filter"] !== "alco", false);
         dragNDrop();
 
-
-        // var currentLang = changeLanguage();      
         changeLanguage(paramsDict["lang"]);
 
     });

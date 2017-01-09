@@ -9,17 +9,10 @@
 <link href="../css/logoff_toggle.css" rel="stylesheet" />
 
 <link href="../css/adminContent.css" rel="stylesheet" />
-<!--Overriding-->
-<!--<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
--->
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-<!--<script type="text/javascript" src="http://www.pureexample.com/js/lib/jquery.ui.touch-punch.min.js"></script>
--->
 <script src="../resources/arrLang.js"></script>
 <script src="../scripts/api.js"></script>
-<!--<script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
--->
 <script src="../scripts/main.js"></script>
 <script src="../scripts/sort_table.js"></script>
 <script src="../scripts/ui.js"></script>
@@ -44,7 +37,7 @@
         $("#usersButton").addClass('selected lang');
         $('#toggle_div :checkbox').prop('checked', true);
 
-        changeLanguage();
+        changeJSLanguage();
 
     });
 </script>

@@ -44,7 +44,7 @@
         $("#stockButton").addClass('selected lang');
         $('#toggle_div :checkbox').prop('checked', true);
 
-        changeLanguage();
+        changeJSLanguage();
 
     });
 </script>
