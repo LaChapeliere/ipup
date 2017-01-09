@@ -4,7 +4,7 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    top:0;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
@@ -20,11 +20,11 @@
 
 #profile_pic {
     height: 14%;
-    border-radius: 2em; 
+    border-radius: 2em;
     margin-bottom: 5%;
 }
 
-.SUM{
+.SUM {
     border-radius: 1em;
     border: none;
     padding: 1em;
@@ -38,9 +38,9 @@
     min-width: 100%;
     min-height: 100%;
     background-color: #E8E1CB;
-    box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
     top: 0;
     bottom: 100%;
     left: 0;
@@ -84,7 +84,8 @@ label[for="nav-trigger"] {
     left: 12em;
 }
 
-.nav-trigger + label, .site-wrap {
+.nav-trigger + label,
+.site-wrap {
     transition: left 0.4s;
 }
 
@@ -92,11 +93,13 @@ body {
     overflow-x: hidden;
 }
 
+
 /* LOGG OFF BUTTON-------------------------------- */
+
 .log_off_button {
     display: inline-block;
     border-radius: 1em;
-    background-color: rgb(132,0,0);
+    background-color: rgb(132, 0, 0);
     box-shadow: 4px 4px 5px #000000;
     border: none;
     color: #FFFFFF;
@@ -108,39 +111,49 @@ body {
     margin-top: -2em;
 }
 
-.log_off_button span{
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+.log_off_button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
 }
+
 
 /* After clicked log off button */
+
 .log_off_button span:after {
-  content: '«';
-  position: absolute;
-  top: 0;
-  opacity: 1;
-  left: -18px;
-  transition: 0.5s;
+    content: '«';
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    left: -18px;
+    transition: 0.5s;
 }
+
 
 /* When hovering over log off button */
+
 .log_off_button:hover span {
-  padding-left: 20px;
+    padding-left: 20px;
 }
+
 
 /* Before hovering on log off button */
+
 .log_off_button:hover span:before {
-  opacity: 1;
-  right: 0;
+    opacity: 1;
+    right: 0;
 }
+
+
 /* END OF LOG OFF BUTTON-------------------------------- */
 
-/* --------- Start of the css for the mobile_stock.php --------- */ 
 
+/* --------- Start of the css for the mobile_stock.php --------- */
 
-#addBeverageButton, #searchBar, #addUserButton {
+#addBeverageButton,
+#searchBar,
+#addUserButton {
     border-radius: 1em;
     border: none;
     box-shadow: 4px 4px 5px #000000;
@@ -152,7 +165,8 @@ body {
     padding: 1em;
 }
 
-#addBeverageButton, #addUserButton {
+#addBeverageButton,
+#addUserButton {
     background-color: rgb(0, 132, 0);
     color: white;
 }
@@ -160,7 +174,7 @@ body {
 .table {
     position: relative;
     color: black;
-    width: 100%; 
+    width: 100%;
     height: 86%;
 }
 
@@ -168,67 +182,74 @@ body {
     text-decoration: none;
 }
 
-.table thead, tbody {
+.table thead,
+tbody {
     display: block;
 }
 
-.table tbody{
+.table tbody {
     position: absolute;
     height: 94%;
     overflow: auto;
 }
 
-.table th, td {
+.table th,
+td {
     width: 100%;
     padding-left: .4em;
     padding-right: .4em;
 }
 
-
 td {
     margin: auto%;
     padding-bottom: .5em;
     padding-top: .5em;
-    
 }
 
-.stock_admin:nth-child(even), .users_admin:nth-child(even) {
+.stock_admin:nth-child(even),
+.users_admin:nth-child(even) {
     background-color: white;
-    
 }
 
-.stock_admin:nth-child(odd), .users_admin:nth-child(odd) {
+.stock_admin:nth-child(odd),
+.users_admin:nth-child(odd) {
     background-color: #E8E1CB;
-    
 }
 
-/* --------- The end of mobile_stock.php css --------- */ 
 
-/* --------- The start of mobile_stock_popus.php css --------- */ 
+/* --------- The end of mobile_stock.php css --------- */
+
+
+/* --------- The start of mobile_stock_popus.php css --------- */
+
 
 /*controls how the popupStockEdit window is hidden when not activated*/
-.overlay {
 
+.overlay {
     background-color: darkcyan;
     position: absolute;
     left: 5%;
     right: 5%;
     bottom: 5%;
     top: 7%;
-  /*transition: opacity 300ms;*/ /*Take the transition away to disable phantom images */
-  visibility: hidden;
-  opacity: 1;
-  transition: all 1s ease-in-out;
-  z-index: 6;
+    /*transition: opacity 300ms;*/
+    /*Take the transition away to disable phantom images */
+    visibility: hidden;
+    opacity: 1;
+    transition: all 1s ease-in-out;
+    z-index: 6;
     border-radius: 1em;
 }
 
 .overlay:target {
-  visibility: visible;
-  opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
 
-#popup h1, h2, h3, .inputDiv {
+#popup h1,
+h2,
+h3,
+.inputDiv {
     text-align: center;
 }
 
@@ -236,7 +257,9 @@ td {
     border-radius: .3em;
 }
 
-#save, #cancel, #reset{
+#save,
+#cancel,
+#reset {
     margin: .1em;
     font-size: 20px;
     font-weight: bold;
@@ -263,12 +286,4 @@ td {
 }
 
 
-
-
-/* --------- The end of mobile_stock_popus.php css --------- */ 
-
-
-
-
-
-
+/* --------- The end of mobile_stock_popus.php css --------- */

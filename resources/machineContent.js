@@ -194,7 +194,10 @@ function updateMachineContentQuantities(beerId, modifyer) {
  */
 function openEditContentPopup(beerId, name, price, amount) {
     //Display pop-up
-    $(".overlay").css({"visibility": "visible", "opacity": 1});
+    $(".overlay").css({
+        "visibility": "visible",
+        "opacity": 1
+    });
 
     displayInfoContentEdit(beerId, name, price, amount);
     /*
@@ -203,7 +206,7 @@ function openEditContentPopup(beerId, name, price, amount) {
     });
     */
 }
-                     
+
 /*
  * Open list to edit beverage
  * @param beerId The id of the drink
@@ -213,7 +216,10 @@ function openEditContentPopup(beerId, name, price, amount) {
  */
 function openEditContentListPopup() {
     //Display pop-up
-    $(".overlay_bis").css({"visibility": "visible", "opacity": 1});
+    $(".overlay_bis").css({
+        "visibility": "visible",
+        "opacity": 1
+    });
 }
 
 /*
@@ -229,12 +235,21 @@ function displayInfoContentEdit(beerId, name, price, amount) {
     $("#edited_drink .stock").text(amount);
     $("#edited_drink .drinkId").text(beerId);
     $("#quantity").val(amount);
-    
+
     //Fetch category info
-    user.fetchBeerData(beerId, function(answer) {
+    user.fetchBeerData(beerId, function (answer) {
         var info = JSON.parse(answer),
             type = info.type,
-            categoriesName = {soft: "Soft Drink", lager: "Lager", stout: "Stout", ale: "Ale", beer: "Beer", white_wine: "White Wine", red_wine: "Red Wine", cider: "Cider"}, //Dictionnary of names of the categories
+            categoriesName = {
+                soft: "Soft Drink",
+                lager: "Lager",
+                stout: "Stout",
+                ale: "Ale",
+                beer: "Beer",
+                white_wine: "White Wine",
+                red_wine: "Red Wine",
+                cider: "Cider"
+            }, //Dictionnary of names of the categories
             category; //The category info for the drink
 
         if (type === "error") {
@@ -259,7 +274,10 @@ function displayInfoContentEdit(beerId, name, price, amount) {
  */
 function closeEditPopup() {
     //Hide pop-up
-    $(".overlay_bis").css({"opacity": 0, "visibility": 'hidden'});
+    $(".overlay_bis").css({
+        "opacity": 0,
+        "visibility": 'hidden'
+    });
 }
 
 /*
@@ -267,11 +285,11 @@ function closeEditPopup() {
  */
 function saveEditContent() {
     var beerId = $("#edited_drink .drinkId").text(); //The id to modify
-        modifyer = $("#quantity").val(); //The entered modifyer to the quantity
-    
+    modifyer = $("#quantity").val(); //The entered modifyer to the quantity
+
     //Send info to machine content
     updateMachineContentQuantities(beerId, -modifyer);
-        
+
     closeEditPopup();
     //Reload the table
     populateSlotsConsumer(false, false, true);

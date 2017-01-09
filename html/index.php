@@ -20,9 +20,9 @@
 <script src="../scripts/shopping_cart.js"></script>
 <script src="../scripts/ui.js"></script>
 <script src="../scripts/main.js"></script>
-    
+
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         //Get the username and password from login page
         var $_POST = <?php echo !empty($_POST)?json_encode($_POST):'null'; ?>;
         if ($_POST === null || typeof $_POST['username'] == 'undefined') {
@@ -33,7 +33,9 @@
         }
         //Get filtering parameters for drinks and language parameter
         var paramsDict = {};
-        window.location.search.substr(1).split("&").forEach(function(item) {paramsDict[item.split("=")[0]] = item.split("=")[1]});
+        window.location.search.substr(1).split("&").forEach(function (item) {
+            paramsDict[item.split("=")[0]] = item.split("=")[1]
+        });
         if (paramsDict["filter"] == 'undefined') {
             paramsDict["filter"] = "all";
         }
@@ -47,9 +49,9 @@
         populateSlotsConsumer(paramsDict["filter"] !== "soft", paramsDict["filter"] !== "alco", false);
         dragNDrop();
 
-        
-       // var currentLang = changeLanguage();      
-        changeLanguage(paramsDict["lang"]);      
+
+        // var currentLang = changeLanguage();      
+        changeLanguage(paramsDict["lang"]);
 
     });
 </script>
@@ -59,13 +61,15 @@
 <div id="wrapper">
     <div class="container">
         <?php include "topBar.php";?>
-        <?php include "sideBar.php";?>
-        <?php include "userContent.php";?>
-        <?php include "customerContentPopup.php";?>
-        
+            <?php include "sideBar.php";?>
+                <?php include "userContent.php";?>
+                    <?php include "customerContentPopup.php";?>
+
 
     </div>
 </div>
+
 <body>
 </body>
+
 </html>

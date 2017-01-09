@@ -1,24 +1,28 @@
 @import url("reset.css");
 @import "https://fonts.googleapis.com/css?family=Pacifico|Dosis";
-
 html {
     font-size: 30px;
 }
 
+
 /* The wrapper wraps EVERYTHING */
+
 #wrapper {
     margin-left: auto;
     margin-right: auto;
     width: 1024px;
     height: 768px;
-    font-family: Dosis, sans-serif;   
+    font-family: Dosis, sans-serif;
 }
 
+
 /* Contains everything that we edit on the page. */
+
 .container {
     position: relative;
     padding: 0 0 0 200px;
 }
+
 
 /* THE ABOVE THREE RULES APPLY TO ALL PAGES, ALL THE TIME! */
 
@@ -43,13 +47,14 @@ header dl {
 /* Each element in the list */
 
 header dt {
-    display: inline;        
+    display: inline;
 }
 
 
 /* The top bar buttons and links */
 
-button, #topBarA {
+button,
+#topBarA {
     font-size: 30px;
     color: black;
     font-family: Dosis, sans-serif;
@@ -69,6 +74,7 @@ a:hover {
     color: #1330ee;
 }
 
+
 /* The entire sidebar --------------------------------------------------------------- */
 
 #sidebar {
@@ -83,11 +89,13 @@ a:hover {
     margin: 0 auto;
 }
 
+
 /* All divs in the sidebar */
 
 #sidebar div {
     font-size: 20px;
 }
+
 
 /* The language div in the sidebar*/
 
@@ -122,11 +130,14 @@ img {
 
 
 /* table area div */
+
 #sidebar_content {
     margin-top: 1em;
 }
 
+
 /* den nuvarande vita bakgrundsfärgade området BAKOM tabellen som utgör shoppingcarten */
+
 #cartBackground {
     position: relative;
     width: 180px;
@@ -152,6 +163,7 @@ den div som omsluter tabellen.*/
 
 
 /* Själva tabellen */
+
 #cartcontent,
 {
     width: 180px;
@@ -165,6 +177,7 @@ den div som omsluter tabellen.*/
 
 
 /* Varje element i tabellen */
+
 #cartcontent th {
     padding: .2em .1em .2em;
 }
@@ -198,15 +211,20 @@ den div som omsluter tabellen.*/
     border-radius: 1em;
 }
 
+
 /* Clearall button */
+
 #clearAllCart {
-    float:left;
+    float: left;
 }
 
+
 /* Puchase button */
+
 #purchaseCart {
     float: right;
 }
+
 
 /* END OF SIDEBAR -------------------------------------------------------------------- */
 
@@ -234,14 +252,13 @@ den div som omsluter tabellen.*/
 
 /* The specific element in the table */
 
-
-.product, .ui-draggable {
+.product,
+.ui-draggable {
     border-radius: 1em;
     box-shadow: 0 2px 2px 1px #333;
     color: black;
     width: 190px;
 }
-
 
 
 /* Right part of slot element, with picture as background */
@@ -310,7 +327,9 @@ den div som omsluter tabellen.*/
     text-align: center;
 }
 
+
 /* CSS for the sidebar for when an element is being draged */
+
 #sidebarHighlighted {
     position: absolute;
     top: 0;
@@ -323,4 +342,3 @@ den div som omsluter tabellen.*/
     margin: 0 auto;
     font-size: 20px;
 }
-

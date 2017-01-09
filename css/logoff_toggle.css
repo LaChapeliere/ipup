@@ -1,6 +1,8 @@
 /* this css is for the log off button AND toggle button overriding all scripts */
 
+
 /* Logg off button */
+
 .log_off_button {
     display: inline-block;
     border-radius: 1em;
@@ -16,95 +18,101 @@
     box-shadow: 4px 4px 5px #000000;
 }
 
-.log_off_button span{
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
+.log_off_button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
 }
 
 .log_off_button span:after {
-  content: '«';
-  position: absolute;
-  top: 0;
-  opacity: 1;
-  left: -18px;
-  transition: 0.5s;
+    content: '«';
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    left: -18px;
+    transition: 0.5s;
 }
 
 .log_off_button:hover span {
-  padding-left: 20px;
+    padding-left: 20px;
 }
 
 .log_off_button:hover span:before {
-  opacity: 1;
-  right: 0;
+    opacity: 1;
+    right: 0;
 }
+
 
 /* END of Log off Button */
 
+
 /* THE TOGGLE!!! - The switch - the box around the slider */
+
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 }
 
-.switch input {display:none;}
+.switch input {
+    display: none;
+}
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #F03A47;
-  -webkit-transition: .4s;
-  transition: .4s;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #F03A47;
+    -webkit-transition: .4s;
+    transition: .4s;
     box-shadow: 4px 4px 5px #000000;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #E8E1CB;
-  -webkit-transition: .4s;
-  transition: .4s;
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #E8E1CB;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: rgb(0,132,0);
+    background-color: rgb(0, 132, 0);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px rgb(132,132,0);
+    box-shadow: 0 0 1px rgb(132, 132, 0);
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
 
+
 /* Rounded sliders */
+
 .slider.round {
-  border-radius: 34px;
+    border-radius: 34px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
 #toggle_div {
     display: none;
 }
+
+
 /* END OF TOGGLE*/
-
-
-

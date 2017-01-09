@@ -115,7 +115,7 @@ function purchaseTable() {
 
     //Send the purchase requests to the api
     for (i = 0; i < singleProductsArray.length; i++) {
-        user.appendPurchases(product.beer_id, function(answer) {
+        user.appendPurchases(product.beer_id, function (answer) {
             if (answer.type === "error") {
                 alert("Apparently, something went wrong. Please try again.");
                 console.log(answer); //Debug in case of error
@@ -156,13 +156,13 @@ function clearTable() {
 /**
  * Wire the Clear Table and Purchase button
  */
-$(function() {
+$(function () {
     'use strict';
-    $('#clearAllCart').click(function() {
+    $('#clearAllCart').click(function () {
         resetContentAndDisplay();
         clearTable();
     });
-    $('#purchaseCart').click(function() {
+    $('#purchaseCart').click(function () {
         purchaseTable();
         clearTable();
     });

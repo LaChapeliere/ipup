@@ -10,7 +10,7 @@
 <link href="../css/adminContent.css" rel="stylesheet" />
 <link href="../css/logoff_toggle.css" rel="stylesheet" />
 <link href="../css/popup_machine.css" rel="stylesheet" />
-<link href="../css/popup_machine_list.css" rel="stylesheet" /> 
+<link href="../css/popup_machine_list.css" rel="stylesheet" />
 <!--Overriding-->
 <!--<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 -->
@@ -29,7 +29,7 @@
 <script src="../scripts/beverages.js"></script>
 <script src="../scripts/inventory.js"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         //Get the username and password from login page
         var $_POST = <?php echo !empty($_POST)?json_encode($_POST):'null';?>;
         if ($_POST === null || typeof $_POST['username'] == 'undefined') {
@@ -38,7 +38,7 @@
             $_POST["username"] = "ervtod";
             $_POST["password"] = "ervtod";
         }
-        
+
         //Initialize page
         initUser($_POST["username"], $_POST["password"]);
         populateSlotsConsumer(false, false, true);
@@ -55,13 +55,13 @@
 <div id="wrapper">
     <div class="container">
         <?php include "adminTopBar.php";?>
-        <?php include "adminSideBar.php";?>
-        <?php include "adminContentMachine.php";?>
-        <!-- The popups for editing machine content -->
-        <?php include "popup_machine.php";?>
-        <?php include "popup_machine_list.php";?>
-</div>
-    
+            <?php include "adminSideBar.php";?>
+                <?php include "adminContentMachine.php";?>
+                    <!-- The popups for editing machine content -->
+                    <?php include "popup_machine.php";?>
+                        <?php include "popup_machine_list.php";?>
+    </div>
+
 </div>
 
 

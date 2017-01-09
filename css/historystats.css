@@ -1,33 +1,33 @@
 /*History Stats Css*/
 
-#histContent{
+#histContent {
     background-color: #E8E1CB;
 }
 
-
-#beveragesTable, #tableHeaderNames {
+#beveragesTable,
+#tableHeaderNames {
     padding: 8px;
     padding-top: 50px;
     font-size: 20px;
     text-align: left;
-    font-weight:bold;
+    font-weight: bold;
     color: rgb(116, 70, 16);
     border-bottom: 1px solid rgb(116, 70, 16);
     border-collapse: collapse;
     width: 50%;
 }
 
-td{
+td {
     color: rgb(116, 70, 16);
     width: 40%;
     font-size: 20px;
     border-bottom: 1px solid rgb(116, 70, 16);
-    
 }
 
-#history{ 
-    height: 14.45em; /*Brut forsce magical number*/
-    border-bottom:1px solid rgb(116, 70, 16);
+#history {
+    height: 14.45em;
+    /*Brut forsce magical number*/
+    border-bottom: 1px solid rgb(116, 70, 16);
     width: 100%;
     overflow-y: auto;
 }

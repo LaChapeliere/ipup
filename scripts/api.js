@@ -40,7 +40,7 @@ function APIConnect() {
     function request(url, callback) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url);
-        xhr.onreadystatechange = function() {
+        xhr.onreadystatechange = function () {
             //The function is only called if the page was successfully loaded
             if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                 callback(this.responseText);
@@ -61,16 +61,16 @@ function APIConnect() {
      * @param un The new username
      * @param pw The new password
      */
-    this.setUser = function(un, pw) {
+    this.setUser = function (un, pw) {
         username = un;
         password = pw;
     };
-    
+
     /**
      * Method to get the username and password
      * @return An array with the username and the password
      */
-    this.getUser = function() {
+    this.getUser = function () {
         return [username, password];
     };
 
@@ -79,8 +79,12 @@ function APIConnect() {
      * Method to fetch the inventory from the database -admin-
      * @param callback The callback function to call on the response
      */
-    this.fetchInventory = function(callback) {
-        var url = constructURL({ action: 'inventory_get', username: username, password: password });
+    this.fetchInventory = function (callback) {
+        var url = constructURL({
+            action: 'inventory_get',
+            username: username,
+            password: password
+        });
         request(url, callback);
     };
 
@@ -88,8 +92,12 @@ function APIConnect() {
      * Method to fetch the history of purchases for the current user from the database
      * @param callback The callback function to call on the response
      */
-    this.fetchPurchases = function(callback) {
-        var url = constructURL({ action: 'purchases_get', username: username, password: password });
+    this.fetchPurchases = function (callback) {
+        var url = constructURL({
+            action: 'purchases_get',
+            username: username,
+            password: password
+        });
         request(url, callback);
     };
 
@@ -97,8 +105,12 @@ function APIConnect() {
      * Method to fetch the history of purchases for all users from the database -admin-
      * @param callback The callback function to call on the response
      */
-    this.fetchPurchasesAll = function(callback) {
-        var url = constructURL({ action: 'purchases_get_all', username: username, password: password });
+    this.fetchPurchasesAll = function (callback) {
+        var url = constructURL({
+            action: 'purchases_get_all',
+            username: username,
+            password: password
+        });
         request(url, callback);
     };
 
@@ -107,8 +119,13 @@ function APIConnect() {
      * @param beerId The id of the purchased beer
      * @param callback The callback function to call on the response
      */
-    this.appendPurchases = function(beerId, callback) {
-        var url = constructURL({ action: 'purchases_append', username: username, password: password, beer_id: beerId });
+    this.appendPurchases = function (beerId, callback) {
+        var url = constructURL({
+            action: 'purchases_append',
+            username: username,
+            password: password,
+            beer_id: beerId
+        });
         request(url, callback);
     };
 
@@ -116,8 +133,12 @@ function APIConnect() {
      * Method to fetch the history of payments for the current user from the database
      * @param callback The callback function to call on the response
      */
-    this.fetchPayments = function(callback) {
-        var url = constructURL({ action: 'payments_get', username: username, password: password });
+    this.fetchPayments = function (callback) {
+        var url = constructURL({
+            action: 'payments_get',
+            username: username,
+            password: password
+        });
         request(url, callback);
     };
 
@@ -125,8 +146,12 @@ function APIConnect() {
      * Method to fetch the history of payments for all users from the database -admin-
      * @param callback The callback function to call on the response
      */
-    this.fetchPaymentsAll = function(callback) {
-        var url = constructURL({ action: 'payments_get_all', username: username, password: password });
+    this.fetchPaymentsAll = function (callback) {
+        var url = constructURL({
+            action: 'payments_get_all',
+            username: username,
+            password: password
+        });
         request(url, callback);
     };
 
@@ -137,8 +162,14 @@ function APIConnect() {
      * @param user_id The user id to add the payment to
      * @param callback The callback function to call on the response
      */
-    this.appendPayments = function(amount, userId, callback) {
-        var url = constructURL({ action: 'payments_append', username: username, password: password, amount: amount, user_id: userId });
+    this.appendPayments = function (amount, userId, callback) {
+        var url = constructURL({
+            action: 'payments_append',
+            username: username,
+            password: password,
+            amount: amount,
+            user_id: userId
+        });
         request(url, callback);
     };
 
@@ -146,8 +177,12 @@ function APIConnect() {
      * Method to fetch the basic information for the current user from the database
      * @param callback The callback function to call on the response
      */
-    this.fetchIOU = function(callback) {
-        var url = constructURL({ action: 'iou_get', username: username, password: password });
+    this.fetchIOU = function (callback) {
+        var url = constructURL({
+            action: 'iou_get',
+            username: username,
+            password: password
+        });
         request(url, callback);
     };
 
@@ -155,8 +190,12 @@ function APIConnect() {
      * Method to fetch the basic information for all users from the database -admin-
      * @param callback The callback function to call on the response
      */
-    this.fetchIOUall = function(callback) {
-        var url = constructURL({ action: 'iou_get_all', username: username, password: password });
+    this.fetchIOUall = function (callback) {
+        var url = constructURL({
+            action: 'iou_get_all',
+            username: username,
+            password: password
+        });
         request(url, callback);
     };
 
@@ -165,8 +204,13 @@ function APIConnect() {
      * @param beerId The id of the specified beer
      * @param callback The callback function to call on the response
      */
-    this.fetchBeerData = function(beerId, callback) {
-        var url = constructURL({ action: 'beer_data_get', username: username, password: password, beer_id: beerId });
+    this.fetchBeerData = function (beerId, callback) {
+        var url = constructURL({
+            action: 'beer_data_get',
+            username: username,
+            password: password,
+            beer_id: beerId
+        });
         request(url, callback);
     };
 
@@ -180,8 +224,18 @@ function APIConnect() {
      * @param phone The new user's phone
      * @param callback The callback function to call on the response
      */
-    this.editUser = function(targetUsername, newPassword, firstName, lastName, email, phone, callback) {
-        var url = constructURL({ action: 'user_edit', username: username, password: password, new_username: targetUsername, new_password: newPassword, first_name: firstName, last_name: lastName, email: email, phone: phone });
+    this.editUser = function (targetUsername, newPassword, firstName, lastName, email, phone, callback) {
+        var url = constructURL({
+            action: 'user_edit',
+            username: username,
+            password: password,
+            new_username: targetUsername,
+            new_password: newPassword,
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            phone: phone
+        });
         request(url, callback);
     };
 
@@ -189,8 +243,12 @@ function APIConnect() {
      * Method to fetch the users from the database and all their information from the database -admin-
      * @param callback The callback function to call on the response
      */
-    this.fetchUsers = function(callback) {
-        var url = constructURL({ action: 'user_get_all', username: username, password: password });
+    this.fetchUsers = function (callback) {
+        var url = constructURL({
+            action: 'user_get_all',
+            username: username,
+            password: password
+        });
         request(url, callback);
     };
 
@@ -201,17 +259,24 @@ function APIConnect() {
      * @param price The new price of the beer
      * @param callback The callback function to call on the response
      */
-    this.updateInventory = function(beerId, amount, price, callback) {
-        var url = constructURL({ action: 'inventory_append', username: username, password: password, beer_id: beerId, amount: amount, price: price });
+    this.updateInventory = function (beerId, amount, price, callback) {
+        var url = constructURL({
+            action: 'inventory_append',
+            username: username,
+            password: password,
+            beer_id: beerId,
+            amount: amount,
+            price: price
+        });
         request(url, callback);
     };
-    
+
     /**
      * Method to fetch the content of the machine
      * @note FAKE
      * @param callback The callback function to call on the response
      */
-    this.fetchContent = function(callback) {
+    this.fetchContent = function (callback) {
         callback(machineContent);
     };
 }
@@ -228,71 +293,71 @@ function testAPIConnection() {
 
     //Test inventory_get
     api.setUser('jorass', 'jorass');
-    api.fetchInventory(function(usr) {
+    api.fetchInventory(function (usr) {
         console.log("Test inventory");
         console.log(usr);
     });
 
     //Test purchases_get
     api.setUser('jorass', 'jorass');
-    api.fetchPurchases(function(usr) {
+    api.fetchPurchases(function (usr) {
         console.log("Test purchases_get admin");
         console.log(usr);
     });
     api.setUser('edraug', 'edraug');
-    api.fetchPurchases(function(usr) {
+    api.fetchPurchases(function (usr) {
         console.log("Test purchases_get user");
         console.log(usr);
     });
 
     //Test purchases_get_all
     api.setUser('jorass', 'jorass');
-    api.fetchPurchasesAll(function(usr) {
+    api.fetchPurchasesAll(function (usr) {
         console.log("Test purchases_get_all");
         console.log(usr);
     });
 
     //Test purchases_append
     api.setUser('jorass', 'jorass');
-    api.appendPurchases("207504", function(usr) {
+    api.appendPurchases("207504", function (usr) {
         console.log("Test purchases_append admin");
         console.log(usr);
     });
     api.setUser('edraug', 'edraug');
-    api.appendPurchases("207504", function(usr) {
+    api.appendPurchases("207504", function (usr) {
         console.log("Test purchases_append user");
         console.log(usr);
     });
 
     //Test payments_get
     api.setUser('jorass', 'jorass');
-    api.fetchPayments(function(usr) {
+    api.fetchPayments(function (usr) {
         console.log("Test payments_get admin");
         console.log(usr);
     });
     api.setUser('edraug', 'edraug');
-    api.fetchPayments(function(usr) {
+    api.fetchPayments(function (usr) {
         console.log("Test payments_get user");
         console.log(usr);
     });
 
     //Test payments_get_all
     api.setUser('jorass', 'jorass');
-    api.fetchPaymentsAll(function(usr) {
+    api.fetchPaymentsAll(function (usr) {
         console.log("Test payments_get_all");
         console.log(usr);
     });
 
     //Test payments_append
     api.setUser('jorass', 'jorass');
-    api.appendPayments("59", "18", function(usr) {
+    api.appendPayments("59", "18", function (usr) {
         console.log("Test payments_append admin");
         console.log(usr);
     });
 
     //Test iou_get
     api.setUser('jorass', 'jorass');
-    api.fetchIOU(function(usr) {
+    api.fetchIOU(function (usr) {
         var info = JSON.parse(usr),
             name = info.payload[0].first_name + " " + info.payload[0].last_name,
             credit = info.payload[0].assets;
@@ -301,7 +366,7 @@ function testAPIConnection() {
         console.log(credit);
     });
     api.setUser('edraug', 'edraug');
-    api.fetchIOU(function(usr) {
+    api.fetchIOU(function (usr) {
         var info = JSON.parse(usr),
             name = info.payload[0].first_name + " " + info.payload[0].last_name,
             credit = info.payload[0].assets;
@@ -312,46 +377,46 @@ function testAPIConnection() {
 
     //Test iou_get_all
     api.setUser('jorass', 'jorass');
-    api.fetchIOUall(function(usr) {
+    api.fetchIOUall(function (usr) {
         console.log("Test iou_get_all");
         console.log(usr);
     });
 
     //Test beer_data_get
     api.setUser('jorass', 'jorass');
-    api.fetchBeerData("207504", function(usr) {
+    api.fetchBeerData("207504", function (usr) {
         console.log("Test beer_data_get admin");
         console.log(usr);
     });
     api.setUser('edraug', 'edraug');
-    api.fetchBeerData("207504", function(usr) {
+    api.fetchBeerData("207504", function (usr) {
         console.log("Test beer_data_get user");
         console.log(usr);
     });
 
     //Test user_edit
     api.setUser('jorass', 'jorass');
-    api.editUser('tester', 'retset', 'Tes', 'Ter', 'testmail@web.com', '0123456789', function(usr) {
+    api.editUser('tester', 'retset', 'Tes', 'Ter', 'testmail@web.com', '0123456789', function (usr) {
         console.log("Test user_edit");
         console.log(usr);
     });
 
     //Test user_get_all
     api.setUser('jorass', 'jorass');
-    api.fetchUsers(function(usr) {
+    api.fetchUsers(function (usr) {
         console.log("Test user_get_all");
         console.log(usr);
     });
 
     //Test inventory_append -the result cannot really be tested because inventory_get is static
     api.setUser('jorass', 'jorass');
-    api.updateInventory("22590", "20", "6.0", function(usr) {
+    api.updateInventory("22590", "20", "6.0", function (usr) {
         console.log("Test inventory_append");
         console.log(usr);
     });
-    
+
     //Test fetchContent
-    api.fetchContent( function(machineContent) {
-        console.log(machineContent); 
+    api.fetchContent(function (machineContent) {
+        console.log(machineContent);
     });
 }

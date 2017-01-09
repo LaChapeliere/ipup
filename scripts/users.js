@@ -27,7 +27,7 @@ function validateLogin() {
     //Checking the combination in the database
     api = new APIConnect();
     api.setUser(username, password);
-    api.fetchIOU(function(answer) {
+    api.fetchIOU(function (answer) {
         var info = JSON.parse(answer),
             type = info.type,
             payload = info.payload[0];
@@ -37,13 +37,13 @@ function validateLogin() {
             loginError(payload.msg);
             return;
         }
-        
+
         //If mobile -should also check credentials- change form destination
         console.log($("body").css("font-size"));
         if ($("body").css("font-size") == "15px") {
             document.forms["loginForm"].action = "../mobile/mobileAdmin.php";
         }
-        
+
 
         //Submit the login credential form if no error
         document.forms["loginForm"].submit();
@@ -65,7 +65,7 @@ function initUser(username, password) {
 
     //Set up the API connection and fetch basic info on the user
     user.setUser(username, password);
-    user.fetchIOU(function(answer) {
+    user.fetchIOU(function (answer) {
         var info = JSON.parse(answer),
             type = info.type,
             payload = info.payload[0];
@@ -88,7 +88,7 @@ function initUser(username, password) {
 
     //Determine if the user is an admin by sending an admin-only query to the database
     //@NOTE: This is an ugly method, but the credentials can only be checked by an admin...
-    user.fetchUsers(function(answer) {
+    user.fetchUsers(function (answer) {
         var info = JSON.parse(answer),
             type = info.type;
         if (!(type === "error")) {
@@ -120,7 +120,7 @@ function initUserMobile(username, password) {
 
     //Set up the API connection and fetch basic info on the user
     user.setUser(username, password);
-    user.fetchIOU(function(answer) {
+    user.fetchIOU(function (answer) {
         var info = JSON.parse(answer),
             type = info.type,
             payload = info.payload[0];
@@ -136,7 +136,7 @@ function initUserMobile(username, password) {
 
     //Determine if the user is an admin by sending an admin-only query to the database
     //@NOTE: This is an ugly method, but the credentials can only be checked by an admin...
-    user.fetchUsers(function(answer) {
+    user.fetchUsers(function (answer) {
         var info = JSON.parse(answer),
             type = info.type;
         if (type === "error") {
@@ -152,7 +152,10 @@ function initUserMobile(username, password) {
  * @param msg The login error
  */
 function loginError(msg) {
-    $(".overlay").css({ "visibility": "visible", "opacity": 1 });
+    $(".overlay").css({
+        "visibility": "visible",
+        "opacity": 1
+    });
     $("#errorMessage").text(msg);
 }
 
@@ -161,7 +164,10 @@ function loginError(msg) {
  * NOTE It would be good to check that the user has entered a message and contact info if the "Message admin" button was clicked
  */
 function closeLoginError() {
-    $(".overlay").css({ "opacity": 0, "visibility": 'hidden' });
+    $(".overlay").css({
+        "opacity": 0,
+        "visibility": 'hidden'
+    });
 }
 
 /**
@@ -184,7 +190,7 @@ function linkFormSubmit(url) {
  */
 function updateBalanceDisplay() {
     'use strict';
-    user.fetchIOU(function(answer) {
+    user.fetchIOU(function (answer) {
         var info = JSON.parse(answer), //Result from fetchIOU
             type = info.type, //Type of the answer
             payload = info.payload[0], //Payload of the answer
@@ -211,7 +217,7 @@ function populateUsers() {
         users; //The data
 
     //Fetch the data from the API
-    user.fetchUsers(function(answer) {
+    user.fetchUsers(function (answer) {
         var info = JSON.parse(answer),
             type = info.type;
 
@@ -244,12 +250,14 @@ function populateUsers() {
 
 
         //Make the rows clickable
-        $('#adminUserTableBody tr').each(function(row) {
+        $('#adminUserTableBody tr').each(function (row) {
             var username = $(this).find('.user_username')[0].innerHTML, //The username of the clicked row
                 name = $(this).find('.user_name')[0].innerHTML, //The name of the clicked row
                 debt = $(this).find('.user_debt')[0].innerHTML, //The debt of the clicked row
                 admin = $(this).find('.user_admin_owers')[0].innerHTML; //The admin power of the clicked row
-            $(this).on("click", function() { openEditUserPopup(name, debt, username, admin) });
+            $(this).on("click", function () {
+                openEditUserPopup(name, debt, username, admin)
+            });
 
         })
     });
@@ -264,7 +272,10 @@ function populateUsers() {
  */
 function openEditUserPopup(name, debt, username, admin) {
     //Display pop-up
-    $(".overlay").css({ "visibility": "visible", "opacity": 1 });
+    $(".overlay").css({
+        "visibility": "visible",
+        "opacity": 1
+    });
 
     displayInfoUserEdit(name, debt, username, admin);
 }
@@ -281,15 +292,17 @@ function displayInfoUserEdit(name, debt, username, admin) {
     $("#username").attr("placeholder", username);
     $("#name").attr("placeholder", name);
     $("#userBalance").attr("placeholder", debt + " kr");
-    $("#toggle_div").checked = (admin === "Yes");
+    $("#popup_toggle").checked = (admin === "Yes");
 
     //Fetch user info - Fake
     $("#userEmail").attr("placeholder", name + "@it.uu.se");
     $("#userPhone").attr("placeholder", "00 46 771 793 336");
 
     //Lock username field if existing user
-    if (username !== "") {
+    if (username.length > 0) {
         $("#username").prop("readonly", true);
+    } else {
+        $("#username").prop("readonly", false);
     }
 }
 
@@ -358,5 +371,6 @@ function saveEditUser() {
  */
 function addUser(api, newUsername, newPassword, firstName, lastName, email, phone) {
     'use strict';
-    api.editUser(newUsername, newPassword, firstName, lastName, email, phone, function() {});
+    api.editUser(newUsername, newPassword, firstName, lastName, email, phone, function () {});
+    populateUsers();
 }

@@ -20,7 +20,7 @@ var availableBevIds = {};
  */
 function getHistory() {
 
-    user.fetchPayments(function(answer) {
+    user.fetchPayments(function (answer) {
         var info = JSON.parse(answer),
             type = info.type,
             i = 0, //Loop index
@@ -35,12 +35,16 @@ function getHistory() {
         //If the list of payments was correctly retrieved
         payments = info.payload;
         for (; i < payments.length; i++) {
-            paymentsHistory.push({ subject: "Payment", timestamp: payments[i].timestamp, amount: payments[i].amount });
+            paymentsHistory.push({
+                subject: "Payment",
+                timestamp: payments[i].timestamp,
+                amount: payments[i].amount
+            });
         }
         populateHistory(paymentsHistory);
     });
 
-    user.fetchPurchases(function(answer) {
+    user.fetchPurchases(function (answer) {
         var info = JSON.parse(answer),
             type = info.type,
             i = 0, //Loop index
@@ -54,7 +58,12 @@ function getHistory() {
         //If the list of purchases was correctly retrieved
         purchases = info.payload;
         for (; i < purchases.length; i++) {
-            purchasesHistory.push({ subject: purchases[i].namn, timestamp: purchases[i].timestamp, amount: -purchases[i].price, beer_id: purchases[i].beer_id });
+            purchasesHistory.push({
+                subject: purchases[i].namn,
+                timestamp: purchases[i].timestamp,
+                amount: -purchases[i].price,
+                beer_id: purchases[i].beer_id
+            });
         }
         populateHistory(purchasesHistory);
 
@@ -89,18 +98,18 @@ function populateFavorites(history) {
         }
     }
     favoriteBeerId = Object.keys(drinkCounts)[0];
-    Object.keys(drinkCounts).forEach(function(key) {
+    Object.keys(drinkCounts).forEach(function (key) {
         favoriteBeerId = (drinkCounts[key] > drinkCounts[favoriteBeerId]) ? +key : favoriteBeerId;
     });
     //Get price
-    history.forEach(function(purchase) {
+    history.forEach(function (purchase) {
         if (purchase.beer_id == favoriteBeerId) {
             favoritePrice = -purchase.amount;
         }
     });
 
     //Get info for favorite drink and display it
-    user.fetchBeerData(favoriteBeerId, function(answer) {
+    user.fetchBeerData(favoriteBeerId, function (answer) {
         var info = JSON.parse(answer),
             type = info.type,
             description = info.payload[0],
@@ -129,7 +138,7 @@ function populateFavorites(history) {
     lastBeerId = history[0].beer_id;
     lastPrice = -history[0].amount;
     //Get info for last drink and display it
-    user.fetchBeerData(lastBeerId, function(answer) {
+    user.fetchBeerData(lastBeerId, function (answer) {
         var info = JSON.parse(answer),
             type = info.type,
             description = info.payload[0],
@@ -159,7 +168,7 @@ function populateFavorites(history) {
     favCompanyBeerId = history[Math.max(history.length - 8, 0)].beer_id;
     favCompanyPrice = -history[Math.max(history.length - 8, 0)].amount;
     //Get info for last drink and display it
-    user.fetchBeerData(favCompanyBeerId, function(answer) {
+    user.fetchBeerData(favCompanyBeerId, function (answer) {
         var info = JSON.parse(answer),
             type = info.type,
             description = info.payload[0],
@@ -188,7 +197,7 @@ function populateFavorites(history) {
     recoBeerId = machineContent[3].beer_id;
     recoPrice = machineContent[3].price;
     //Get info for last drink and display it
-    user.fetchBeerData(recoBeerId, function(answer) {
+    user.fetchBeerData(recoBeerId, function (answer) {
         var info = JSON.parse(answer),
             type = info.type,
             description = info.payload[0],
@@ -254,13 +263,13 @@ function sortHistory() {
         rows = $('#historyTable tbody tr:not(:first-child)').get(); //Get the unsorted rows in the table
 
     //Sort rows by date
-    $.each(rows, function() {
+    $.each(rows, function () {
         var $this = $(this),
             timestamp = this.cells[1].textContent,
             date = timestampToDate(timestamp); //Get date from timestamp
         $this.data('_ts', date.getTime()); //Get "absolute" time
         this.cells[3].textContent = date.getTime();
-    }).sort(function(a, b) { //Compare rows
+    }).sort(function (a, b) { //Compare rows
         var A = $(a).children('td').eq(3).text().toUpperCase();
         var B = $(b).children('td').eq(3).text().toUpperCase();
         if (A < B) {
@@ -272,12 +281,12 @@ function sortHistory() {
         return 0;
     });
 
-    $.each(rows, function(index, row) { //Reorder rows
+    $.each(rows, function (index, row) { //Reorder rows
         $('#historyTable').children('tbody').append(row);
     });
 
     //Add balance column
-    $.each(rows, function(index, row) { //Reorder rows
+    $.each(rows, function (index, row) { //Reorder rows
         balance += parseInt(row.cells[2].textContent);
         row.cells[3].textContent = balance;
     });

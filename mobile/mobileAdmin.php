@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         //Get the username and password from login page
         var $_POST = <?php echo !empty($_POST)?json_encode($_POST):'null';?>;
         if ($_POST === null || typeof $_POST['username'] == 'undefined') {
@@ -24,26 +24,26 @@
             $_POST["username"] = "ervtod";
             $_POST["password"] = "ervtod";
         }
-        
+
         //Initialize page
         initUserMobile($_POST["username"], $_POST["password"]);
         mobileNav();
         populateInventory();
         tableFilter.init();
-/*
-         $(function() {
-             console.log($('.lang'));
-                $('.translate').click(function() {
-                    var lang = $(this).attr('id');
-                    console.log($(this));
-                //     console.log($('.lang'));
-                    $('.lang').each(function(index, element) {
-                        console.log(element);
-                        console.log($(this));
-                        $(this).text(arrLang[lang][$(this).attr('key')]);
-                    });
-                });
-            });*/
+        /*
+                 $(function() {
+                     console.log($('.lang'));
+                        $('.translate').click(function() {
+                            var lang = $(this).attr('id');
+                            console.log($(this));
+                        //     console.log($('.lang'));
+                            $('.lang').each(function(index, element) {
+                                console.log(element);
+                                console.log($(this));
+                                $(this).text(arrLang[lang][$(this).attr('key')]);
+                            });
+                        });
+                    });*/
 
     });
 </script>
@@ -53,14 +53,21 @@
     </li>
     <li class="nav-item">
         <div class="logout">
-                <button class ="log_off_button"  onclick="window.location.assign('../html/login_yeah.php')">
-                    <span> Log Off</span>
-                </button>
+            <button class="log_off_button" onclick="window.location.assign('../html/login_yeah.php')">
+                <span> Log Off</span>
+            </button>
         </div>
     </li>
-    <li class="nav-item"><button class="SUM" id="mobileStockNav">Stock</button></li>
-    <li class="nav-item"><button class="SUM" id="mobileUsersNav">Users</button></li>
-    <li class="nav-item"><button class="SUM" id="mobileMachineNav">Machine <br />Content</button></li>
+    <li class="nav-item">
+        <button class="SUM" id="mobileStockNav">Stock</button>
+    </li>
+    <li class="nav-item">
+        <button class="SUM" id="mobileUsersNav">Users</button>
+    </li>
+    <li class="nav-item">
+        <button class="SUM" id="mobileMachineNav">Machine
+            <br />Content</button>
+    </li>
 </ul>
 
 <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -69,16 +76,16 @@
 <div class="site-wrap">
 
     <div class="content">
-    <!-- Here we include seperate php, depending on which button is pressed etc.. -->
-        
-                    <!-- TEST AREA  -->
+        <!-- Here we include seperate php, depending on which button is pressed etc.. -->
 
-                <?php include "mobile_stock.php";?>
+        <!-- TEST AREA  -->
+
+        <?php include "mobile_stock.php";?>
 
 
-                 <!-- END OF TEST AREA  -->
-        
-</div>
+            <!-- END OF TEST AREA  -->
+
+    </div>
     <div class="popup-content">
         <?php include "mobile_stock_popup.php";?>
     </div>

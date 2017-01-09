@@ -34,28 +34,28 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      * Getter of alcohol
      * @return alcohol
      */
-    this.isAlcoholic = function() {
+    this.isAlcoholic = function () {
         return alcohol;
     }
 
     /**
      * Set admin to true
      */
-    this.adminView = function() {
+    this.adminView = function () {
         admin = true;
     }
 
     /**
      * @return true is amount is 0
      */
-    this.isEmpty = function() {
+    this.isEmpty = function () {
         return amount == 0;
     }
 
     /**
      * Display the information for the beverage
      */
-    this.displayInfo = function() {
+    this.displayInfo = function () {
         var infoDisplay = display.getElementsByClassName("slotLeft")[0];
         infoDisplay.getElementsByClassName("drinkName")[0].textContent = name;
         infoDisplay.getElementsByClassName("price")[0].textContent = price + " kr";
@@ -66,7 +66,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
     /**
      * Fetch the image corresponding to the beverage category and set it as the display child image
      */
-    this.fetchImage = function() {
+    this.fetchImage = function () {
         display.getElementsByClassName("slotElement")[0].style.backgroundImage = 'url("./../resources/img/' + category + '.png")';
         display.getElementsByClassName("slotElement")[0].title = category.replace("_", " "); //Information pop-up + voice-over
     }
@@ -74,7 +74,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
     /**
      * Make the drink available is the consumer view by ungreying it and making it draggable
      */
-    this.makeAvailable = function() {
+    this.makeAvailable = function () {
         available = true;
         $(display).fadeTo(0, 1);
         $($(display).find("div")[0]).draggable().draggable('enable');
@@ -83,7 +83,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
     /**
      * Make the drink unavailable is the consumer view by greying it and making it non-draggable
      */
-    this.makeUnavailable = function() {
+    this.makeUnavailable = function () {
         available = false;
         $(display).fadeTo(0, 0.4);
         $($(display).find("div")[0]).draggable().draggable('disable');
@@ -93,7 +93,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
      * Update the quantity of a beverage
      * @param newQuantity The new quantity of beverage in this slot
      */
-    this.updateSlotQuantity = function(newQuantity) {
+    this.updateSlotQuantity = function (newQuantity) {
         var infoDisplay = display.getElementsByClassName("slotLeft")[0];
         amount = newQuantity;
         infoDisplay.getElementsByClassName("stock")[0].textContent = "# " + amount;
@@ -109,7 +109,7 @@ function Slot(beer_id, name, price, amount, category, alcohol, displayBlock) {
     /**
      * Wire the slot display to react to a double click and be added to the cart
      */
-    display.ondblclick = function() {
+    display.ondblclick = function () {
         if (!admin && available) {
             addProduct(beerId, name, price);
         } else if (admin) {
@@ -138,7 +138,7 @@ function populateSlotsConsumer(displayAlco, displaySoft, adminView) {
         softOnlyButton = document.getElementById("softDrinksButton"); //Filter button to make only soft available
 
     //Fetch the content and create a Slot object to hold it
-    api.fetchContent(function(machineContent) {
+    api.fetchContent(function (machineContent) {
         var beverage,
             beverageInfo,
             index;
@@ -171,13 +171,13 @@ function populateSlotsConsumer(displayAlco, displaySoft, adminView) {
         filterAlcoholDrinks(displayAlco, displaySoft);
 
         //Wire the filter buttons
-        allBevButton.onclick = function() {
+        allBevButton.onclick = function () {
             filterAlcoholDrinks(true, true);
         };
-        softOnlyButton.onclick = function() {
+        softOnlyButton.onclick = function () {
             filterAlcoholDrinks(false, true);
         };
-        alcoholOnlyButton.onclick = function() {
+        alcoholOnlyButton.onclick = function () {
             filterAlcoholDrinks(true, false);
         };
     }
@@ -192,7 +192,16 @@ function populateSlotsConsumer(displayAlco, displaySoft, adminView) {
 function beverageCategory(providedInfo) {
     'use strict';
     var category = "beer",
-        patterns = { red_wine: /rött vin/i, white_wine: /vitt vin/i, ale: /ale/i, stout: /stout/i, lager: /lager/i, cider: /cider/i, beer: /öl/i, soft: /alkoholfritt/i },
+        patterns = {
+            red_wine: /rött vin/i,
+            white_wine: /vitt vin/i,
+            ale: /ale/i,
+            stout: /stout/i,
+            lager: /lager/i,
+            cider: /cider/i,
+            beer: /öl/i,
+            soft: /alkoholfritt/i
+        },
         key,
         alcoholFreePattern = /alkoholfritt/i,
         alcoholic = !alcoholFreePattern.test(providedInfo);

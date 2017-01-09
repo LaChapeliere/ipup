@@ -6,17 +6,17 @@ function populateInventory() {
     $('#adminTableBody tr').not(':first').remove();
     var html = '', //The html string to build the table rows
         inventory; //The data
-    
+
     //Fetch the data from the API
-    user.fetchInventory(function(answer) {
+    user.fetchInventory(function (answer) {
         var info = JSON.parse(answer),
             type = info.type;
-        
+
         if (type === "error") {
             alert(info.payload[0].msg);
             return;
         }
-        
+
         //If the inventory was correctly retrieved
         inventory = info.payload;
         //For each drink
@@ -25,30 +25,32 @@ function populateInventory() {
             if (inventory[i].namn.length === 0) {
                 continue;
             }
-            
+
             //Build the html
-            html += "<tr class ='stock_admin'><div class='box'>" + 
-                    "<td class='name_entry'>" + inventory[i].namn + "</td>" +
-                    "<td class='price_entry'>" + inventory[i].price + "</td>" +
-                    "<td class='stock_entry'>" + inventory[i].count + "</td>" +
-                    "<td class='id_entry' hidden>" + inventory[i].beer_id + "</td>" +
-                    "</a></div></tr>";
+            html += "<tr class ='stock_admin'><div class='box'>" +
+                "<td class='name_entry'>" + inventory[i].namn + "</td>" +
+                "<td class='price_entry'>" + inventory[i].price + "</td>" +
+                "<td class='stock_entry'>" + inventory[i].count + "</td>" +
+                "<td class='id_entry' hidden>" + inventory[i].beer_id + "</td>" +
+                "</a></div></tr>";
         }
 
         //Feed the html to the table
         $('#adminTableBody tr').first().after(html);
         //Remove first -fake- row
         $('#adminTableBody tr:first').remove();
-        
+
         //Make the rows clickable
-        
-        $('#adminTableBody tr').each( function(row) {
+
+        $('#adminTableBody tr').each(function (row) {
             var name = $(this).find('.name_entry')[0].innerHTML, //The name of the clicked row
                 price = $(this).find('.price_entry')[0].innerHTML, //The price of the clicked row
                 count = $(this).find('.stock_entry')[0].innerHTML, //The amount of the clicked row
                 beer_id = $(this).find('.id_entry')[0].innerHTML; //The beer_id of the clicked row
-            $(this).on("click", function() {openEditBevPopup(name, price, count, beer_id)});
-            
+            $(this).on("click", function () {
+                openEditBevPopup(name, price, count, beer_id)
+            });
+
         })
     });
 }
@@ -62,13 +64,15 @@ function populateInventory() {
  */
 function openEditBevPopup(name, price, count, beer_id) {
     //Display pop-up
-    $(".overlay").css({"visibility": "visible", "opacity": 1});
-    
+    $(".overlay").css({
+        "visibility": "visible",
+        "opacity": 1
+    });
+
     //If new drink create a new random beer_id
     if (beer_id === -1) {
         beer_id = Math.floor((Math.random() * 1000) + 10000);
-    }
-    else {
+    } else {
         displayInfoBevEdit(name, price, count, beer_id);
     }
 }
@@ -88,10 +92,19 @@ function displayInfoBevEdit(name, price, count, beer_id) {
     $("#bevId").attr("placeholder", beer_id);
 
     //Fetch category info
-    user.fetchBeerData(beer_id, function(answer) {
+    user.fetchBeerData(beer_id, function (answer) {
         var info = JSON.parse(answer),
             type = info.type,
-            categoriesName = {soft: "Soft Drink", lager: "Lager", stout: "Stout", ale: "Ale", beer: "Beer", white_wine: "White Wine", red_wine: "Red Wine", cider: "Cider"}, //Dictionnary of names of the categories
+            categoriesName = {
+                soft: "Soft Drink",
+                lager: "Lager",
+                stout: "Stout",
+                ale: "Ale",
+                beer: "Beer",
+                white_wine: "White Wine",
+                red_wine: "Red Wine",
+                cider: "Cider"
+            }, //Dictionnary of names of the categories
             category; //The category info for the drink
 
         if (type === "error") {
@@ -110,8 +123,11 @@ function displayInfoBevEdit(name, price, count, beer_id) {
  */
 function closeEditPopup() {
     //Hide pop-up
-    $(".overlay").css({"opacity": 0, "visibility": 'hidden'});
-    $('#editForm').each (function(){
+    $(".overlay").css({
+        "opacity": 0,
+        "visibility": 'hidden'
+    });
+    $('#editForm').each(function () {
         this.val("");
     });
 }
@@ -130,13 +146,12 @@ function saveEditBev() {
     if (count.length <= 0) {
         count = document.getElementById("bevQuantity").placeholder;
     }
-    
+
     //Send info to API
     //Only sending the info currently required by the API, for example cannot change the name
-    user.updateInventory(beer_id, count, price, function() {});
-        
+    user.updateInventory(beer_id, count, price, function () {});
+
     closeEditPopup();
     //Reload the table
     populateInventory();
 }
-

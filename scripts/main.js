@@ -42,15 +42,15 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 */
-var tableFilter = (function(Arr) {
+var tableFilter = (function (Arr) {
 
     var _input;
 
     function _onInputEvent(e) {
         _input = e.target;
         var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
-        Arr.forEach.call(tables, function(table) {
-            Arr.forEach.call(table.tBodies, function(tbody) {
+        Arr.forEach.call(tables, function (table) {
+            Arr.forEach.call(table.tBodies, function (tbody) {
                 console.log(tbody);
                 console.log(tbody.rows);
                 Arr.forEach.call(tbody.rows, _filter);
@@ -65,10 +65,10 @@ var tableFilter = (function(Arr) {
     }
 
     return {
-        init: function() {
+        init: function () {
             var inputs = document.getElementsByClassName('light-table-filter');
             console.log(inputs);
-            Arr.forEach.call(inputs, function(input) {
+            Arr.forEach.call(inputs, function (input) {
                 input.oninput = _onInputEvent;
             });
         }

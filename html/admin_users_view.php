@@ -8,7 +8,8 @@
 <link href="../css/wrapper.css" rel="stylesheet" />
 <link href="../css/logoff_toggle.css" rel="stylesheet" />
 
-<link href="../css/adminContent.css" rel="stylesheet" /> <!--Overriding-->
+<link href="../css/adminContent.css" rel="stylesheet" />
+<!--Overriding-->
 <!--<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 -->
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
@@ -26,7 +27,7 @@
 <script src="../scripts/beverages.js"></script>
 <script src="../scripts/inventory.js"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         //Get the username and password from login page
         var $_POST = <?php echo !empty($_POST)?json_encode($_POST):'null';?>;
         if ($_POST === null || typeof $_POST['username'] == 'undefined') {
@@ -35,7 +36,7 @@
             $_POST["username"] = "ervtod";
             $_POST["password"] = "ervtod";
         }
-        
+
         //Initialize page
         initUser($_POST["username"], $_POST["password"]);
         populateUsers();
@@ -53,16 +54,16 @@
 <div id="wrapper">
     <div class="container">
         <?php include "adminTopBar.php";?>
-        <?php include "adminSideBar.php";?>
-        <?php include "adminContentUsers.php";?>
- 
-</div>
-    
+            <?php include "adminSideBar.php";?>
+                <?php include "adminContentUsers.php";?>
+
+    </div>
+
 </div>
 
 
 <body>
-<?php include "popup_user.php";?>
+    <?php include "popup_user.php";?>
 </body>
 
 </html>*/
