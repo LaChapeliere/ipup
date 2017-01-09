@@ -3,7 +3,7 @@
 
     <!-- Language setting - Top of sidebar -->
     <div id="language">
-              <?php $search_en= http_build_query(array_merge($_GET, array('lang'=>'eng')));?>
+            <?php $search_en= http_build_query(array_merge($_GET, array('lang'=>'eng')));?>
             <?php $search_swe= http_build_query(array_merge($_GET, array('lang'=>'swe')));?>
             <?php 
             function selfURL() { 
@@ -20,31 +20,13 @@
             function makeBeginningURL($preProcessedURL){
                 $processedURL = $preProcessedURL;
               // Removing query string 
-             /*   $url=strtok($_SERVER["REQUEST_URI"],'?');
-                  var_dump($url);
-                $url .= "?";*/
                  if(empty($_GET)){
                     $processedURL .= "?";
                 }
-
-             /*   if(empty($_GET)){
-                    $url .= "?";
-                }
-                */
                 if(array_key_exists("lang", $_GET)){
                     $processedURL = substr($processedURL, 0, -8);
                 }
                 return $processedURL; 
-                
-                // var_dump($processedURL);
-             /*   if(array_key_exists("lang", $_GET) && array_key_exists("filter", $_GET)){
-                    $processedURL = substr($processedURL, 0, -19);
-                   // var_dump($processedURL);
-                }
-                elseif(array_key_exists("lang", $_GET)){
-                    $processedURL = substr($processedURL, 0, -8);
-                }
-                return $processedURL; */
             }
 
              function makeEndURL($begURL){
@@ -64,14 +46,7 @@
                 return $endURL; 
             }
             ;?>
-            <?php ;?>
-             <?php ;?>
-
-        <!--    
-            <a href="index.php?<?php echo $search_swe?>"><input type="image" src="../resources/img/sweden.png" class="translate" style="width:40px;" id="swe" alt="Svenska"/></a>
-            <a href="index.php?<?php echo $search_en?>"><input type="image" src="../resources/img/england.png" class="translate" style="width:40px;" id="en" alt="English"/></a>
-           -->
-           
+               
             <a href="<?php echo makeBeginningURL(selfURL()).$search_swe?>"><input type="image" src="../resources/img/sweden.png" class="translate" style="width:40px;" id="swe" alt="Svenska"/></a>
             <a href="<?php echo makeBeginningURL(selfURL()).$search_en?>"><input type="image" src="../resources/img/england.png" class="translate" style="width:40px;" id="en" alt="English"/></a>
 
