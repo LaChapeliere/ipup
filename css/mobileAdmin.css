@@ -207,12 +207,14 @@ td {
 }
 
 .stock_admin:nth-child(even),
-.users_admin:nth-child(even) {
+.users_admin:nth-child(even),
+.machine_admin:nth-child(even) {
     background-color: white;
 }
 
 .stock_admin:nth-child(odd),
-.users_admin:nth-child(odd) {
+.users_admin:nth-child(odd),
+.machine_admin:nth-child(odd) {
     background-color: #E8E1CB;
 }
 

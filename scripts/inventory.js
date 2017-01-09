@@ -55,6 +55,63 @@ function populateInventory() {
     });
 }
 
+/**
+ * Populate the machine table in the mobile version with a fake content
+ */
+function populateMachineMobile() {
+    //Removing all rows but the header and the first data row -to be able to add new rows to the tbody
+    $('#adminMachineTableBody tr').not(':first').remove();
+    var html = '', //The html string to build the table rows
+        inventory; //The data
+
+    //Fetch the data from the API
+    user.fetchInventory(function (answer) {
+        var info = JSON.parse(answer),
+            type = info.type;
+
+        if (type === "error") {
+            alert(info.payload[0].msg);
+            return;
+        }
+
+        //If the inventory was correctly retrieved
+        inventory = info.payload;
+        //For each drink
+        for (var i = 4; i < 24; i++) {
+            //If no name ignore the drink
+            if (inventory[3 * i].namn.length === 0) {
+                continue;
+            }
+
+            //Build the html
+            html += "<tr class ='stock_admin'><div class='box'>" +
+                "<td class='machine_name_entry'>" + inventory[3 * i].namn + "</td>" +
+                "<td class='machine_price_entry'>" + inventory[3 * i].price + "</td>" +
+                "<td class='machine_stock_entry'>" + inventory[3 * i].count + "</td>" +
+                "<td class='machine_id_entry' hidden>" + inventory[3 * i].beer_id + "</td>" +
+                "</a></div></tr>";
+        }
+
+        //Feed the html to the table
+        $('#adminMachineTableBody tr').first().after(html);
+        //Remove first -fake- row
+        $('#adminMachineTableBody tr:first').remove();
+
+        //Make the rows clickable
+
+        $('#adminMachineTableBody tr').each(function (row) {
+            var name = $(this).find('.machine_name_entry')[0].innerHTML, //The name of the clicked row
+                price = $(this).find('.machine_price_entry')[0].innerHTML, //The price of the clicked row
+                count = $(this).find('.machine_stock_entry')[0].innerHTML, //The amount of the clicked row
+                beer_id = $(this).find('.machine_id_entry')[0].innerHTML; //The beer_id of the clicked row
+            $(this).on("click", function () {
+                openEditBevPopup(name, price, count, beer_id)
+            });
+
+        })
+    });
+}
+
 /*
  * Open pop-up to edit drink
  * @param name The name of the drink

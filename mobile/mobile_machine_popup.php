@@ -18,14 +18,12 @@
                         <option value="Grape Juice">
                             <option value="Water">
                                 <option value="Dragons blood">
-                                    <option value="Virgins blood">
-                                        <option value="Golden Shower">
-                                            <option value="Red wine">
-                                                <option value="White wine">
-                                                    <option value="tea">
-                                                        <option value="ice tea">
-                                                            <option value="sprite">
-                                                                <option value="coca cola">
+                                    <option value="Red wine">
+                                        <option value="White wine">
+                                            <option value="tea">
+                                                <option value="ice tea">
+                                                    <option value="sprite">
+                                                        <option value="coca cola">
                 </datalist>
 
 

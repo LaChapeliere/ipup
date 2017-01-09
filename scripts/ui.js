@@ -91,8 +91,7 @@ function mobileNav() {
         $.get('mobile_machine_popup.php', function (data) {
             $(".popup-content").html(data);
         });
-        console.log($(".adminTableBody"));
-        $(".machine_name_entry").html("Test");
+        populateMachineMobile();
     });
 }
 
