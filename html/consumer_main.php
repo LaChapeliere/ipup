@@ -8,8 +8,6 @@
 <link href="../css/sidebar.css" rel="stylesheet" />
 <link href="../css/user_content.css" rel="stylesheet" />
 <link href="../css/logoff_toggle.css" rel="stylesheet" />
-<!--<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
--->
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="../resources/machine_content.js"></script>
@@ -39,7 +37,6 @@
         initUser($_POST["username"], $_POST["password"]);
         populateSlotsConsumer(paramsDict["filter"] !== "soft", paramsDict["filter"] !== "alco", false);
         dragNDrop();
-
 
         // var currentLang = changeLanguage();      
         changeLanguage(paramsDict["lang"]);
