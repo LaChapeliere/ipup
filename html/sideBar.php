@@ -19,7 +19,6 @@
                     <?php 
             function makeBeginningURL($preProcessedURL){
                 $processedURL = $preProcessedURL;
-              // Removing query string 
                  if(empty($_GET)){
                     $processedURL .= "?";
                 }
