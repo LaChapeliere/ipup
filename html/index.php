@@ -32,16 +32,7 @@
             $_POST["password"] = "ervtod";
         }
         //Get filtering parameters for drinks and language parameter
-        var paramsDict = {};
-        window.location.search.substr(1).split("&").forEach(function (item) {
-            paramsDict[item.split("=")[0]] = item.split("=")[1]
-        });
-        if (paramsDict["filter"] == 'undefined') {
-            paramsDict["filter"] = "all";
-        }
-        if (paramsDict["lang"] == 'undefined') {
-            paramsDict["lang"] = "en";
-        }
+       var paramsDict = checkParameters();
 
         console.log(paramsDict);
         //Initialize page
