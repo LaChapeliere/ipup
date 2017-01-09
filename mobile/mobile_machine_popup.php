@@ -63,7 +63,7 @@
 
                 <!-- buttons for Save, Reset and Cancel -->
 
-                <div>
+                <div class="inputDiv">
                     <button type="button" id="save" onclick="saveEditBev()">Save</button>
                     <button input type="reset" id="reset">Reset</button>
                     <button type="button" id="cancel" onclick="closeEditPopup()">Cancel</button>
