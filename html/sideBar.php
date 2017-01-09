@@ -3,14 +3,78 @@
 
     <!-- Language setting - Top of sidebar -->
     <div id="language">
-        <?php $search_en= http_build_query(array_merge($_GET, array('lang'=>'en')));?>
+              <?php $search_en= http_build_query(array_merge($_GET, array('lang'=>'eng')));?>
             <?php $search_swe= http_build_query(array_merge($_GET, array('lang'=>'swe')));?>
-                <a href="index.php?<?php echo $search_swe?>">
-                    <input type="image" src="../resources/img/sweden.png" class="translate" style="width:40px;" id="swe" alt="Svenska" />
-                </a>
-                <a href="index.php?<?php echo $search_en?>">
-                    <input type="image" src="../resources/img/england.png" class="translate" style="width:40px;" id="en" alt="English" />
-                </a>
+            <?php 
+            function selfURL() { 
+                $s = empty($_SERVER["HTTPS"]) ? '' : ($_SERVER["HTTPS"] == "on") ? "s" : ""; 
+                $protocol = strleft(strtolower($_SERVER["SERVER_PROTOCOL"]), "/").$s; 
+                $port = ($_SERVER["SERVER_PORT"] == "80") ? "" : (":".$_SERVER["SERVER_PORT"]); 
+                return $protocol."://".$_SERVER['SERVER_NAME'].$port.$_SERVER['REQUEST_URI']; 
+                } 
+            function strleft($s1, $s2) { 
+                return substr($s1, 0, strpos($s1, $s2)); 
+                }
+            ?>
+            <?php 
+            function makeBeginningURL($preProcessedURL){
+                $processedURL = $preProcessedURL;
+              // Removing query string 
+             /*   $url=strtok($_SERVER["REQUEST_URI"],'?');
+                  var_dump($url);
+                $url .= "?";*/
+                 if(empty($_GET)){
+                    $processedURL .= "?";
+                }
+
+             /*   if(empty($_GET)){
+                    $url .= "?";
+                }
+                */
+                if(array_key_exists("lang", $_GET)){
+                    $processedURL = substr($processedURL, 0, -8);
+                }
+                return $processedURL; 
+                
+                // var_dump($processedURL);
+             /*   if(array_key_exists("lang", $_GET) && array_key_exists("filter", $_GET)){
+                    $processedURL = substr($processedURL, 0, -19);
+                   // var_dump($processedURL);
+                }
+                elseif(array_key_exists("lang", $_GET)){
+                    $processedURL = substr($processedURL, 0, -8);
+                }
+                return $processedURL; */
+            }
+
+             function makeEndURL($begURL){
+                $endURL = "";
+                if(empty($_GET) && substr($begURL,-1)!=="?"){
+                    $endURL .= "?";
+                }
+                if(array_key_exists("filter", $_GET)){
+                    $endURL .= "filter=".$_GET["filter"];
+                    if(array_key_exists("lang", $_GET)){
+                        $endURL .=  "&lang=".$_GET["lang"];
+                    }
+                }
+                elseif(array_key_exists("lang", $_GET)){
+                     $endURL .=  "lang=".$_GET["lang"];
+                }
+                return $endURL; 
+            }
+            ;?>
+            <?php ;?>
+             <?php ;?>
+
+        <!--    
+            <a href="index.php?<?php echo $search_swe?>"><input type="image" src="../resources/img/sweden.png" class="translate" style="width:40px;" id="swe" alt="Svenska"/></a>
+            <a href="index.php?<?php echo $search_en?>"><input type="image" src="../resources/img/england.png" class="translate" style="width:40px;" id="en" alt="English"/></a>
+           -->
+           
+            <a href="<?php echo makeBeginningURL(selfURL()).$search_swe?>"><input type="image" src="../resources/img/sweden.png" class="translate" style="width:40px;" id="swe" alt="Svenska"/></a>
+            <a href="<?php echo makeBeginningURL(selfURL()).$search_en?>"><input type="image" src="../resources/img/england.png" class="translate" style="width:40px;" id="en" alt="English"/></a>
+
     </div>
 
     <!-- The code for the profile picture -->
