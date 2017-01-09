@@ -76,8 +76,8 @@ var tableFilter = (function(Arr) {
 })(Array.prototype);
 
 /**
- * 
- * @return 
+ * The function goes through the query in the URL
+ * @return Array of key-value pairs
  */
 function checkParameters() {
     var paramsDict = {};
