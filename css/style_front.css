@@ -42,6 +42,15 @@ body {
     font-size: 25px;
 }
 
+@media screen and (max-height: 720px) {
+    /*Deal with the display of the form of the screen is to small*/
+    .field {
+        float: left;
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+    }
+}
+
 
 /*This is where the css code for the button starts*/
 
