@@ -9,8 +9,8 @@ html {
 #wrapper {
     margin-left: auto;
     margin-right: auto;
-    width: 1024px;
-    height: 768px;
+    width: 100%;
+    height: 100%;
     font-family: Dosis, sans-serif;
 }
 

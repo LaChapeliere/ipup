@@ -3,7 +3,7 @@
 #content {
     position: relative;
     height: 768px;
-    width: 824px;
+    width: auto;
 }
 
 
@@ -36,7 +36,7 @@ of hovering ------ DOUBLE CLICK OR DRAG TO ADD TO CART ------- */
 /* The table itself in the content section. Where all the drinks should appear */
 
 #beveragesTable {
-    width: auto;
+    width: 100%;
     border-collapse: separate;
     border-spacing: .42em .38em;
     margin-left: auto;
@@ -87,6 +87,18 @@ of hovering ------ DOUBLE CLICK OR DRAG TO ADD TO CART ------- */
     text-align: center;
     position: relative;
     /* This is so I can use position absolute in the .editSlot. If written like this, this becomes the parent div the .editSlot relates to, so when using the position: absolute, it wont place in the corner of the entire page, but the corner of the parent, namely this div :D */
+}
+
+@media screen and (max-width: 1023px) {
+    /*Hides the picture if the screen is too narrow*/
+    .slotElement {
+        display: none;
+    }
+    .product,
+    .ui-draggable,
+    .slotClass {
+        width: 100px;
+    }
 }
 
 

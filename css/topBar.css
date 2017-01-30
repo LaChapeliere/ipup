@@ -3,7 +3,7 @@
 #topBar {
     width: auto;
     position: static;
-    padding: 1.5em 1em .7em;
+    padding: 1.5em 0.3em .7em;
     background-color: rgb(116, 70, 16);
 }
 
@@ -42,6 +42,32 @@ header dt {
     color: rgb(0, 132, 0);
     text-decoration: none;
     box-shadow: 4px 4px 5px #000000;
+}
+
+@media screen and (max-width: 950px) {
+    /*Reduce the buttons font when the screen is to small*/
+    #historyStatsButton,
+    #allBevButton,
+    #softDrinksButton,
+    #alcoDrinksButton,
+    #stockButton,
+    #usersButton,
+    #machineContentButton {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 815px) {
+    /*Reduce the buttons font when the screen is to small*/
+    #historyStatsButton,
+    #allBevButton,
+    #softDrinksButton,
+    #alcoDrinksButton,
+    #stockButton,
+    #usersButton,
+    #machineContentButton {
+        font-size: 20px;
+    }
 }
 
 
